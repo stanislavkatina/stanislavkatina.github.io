@@ -1,182 +1,325 @@
-юЉmю&yєЮГтвn¶«Лси™жл{Ь™Ям…йez{м†X§{_?n)я¦Г©z¶­Љ‰зўЪ^®h­µзXЫЫњЭXY›ЫЫPЪ[™ЩYH™]ИЭ\ЭЫQ]™[ќ
-њ]X\ќЛZђЪ[™ЩY‹В€]Z[€ЯK€ќX›\О€ќYK€Ш[Щ[X›N€[ЩK€ЫЫ\ЬЩY€[ЩKџJNВ‚ЫЫњЭ[››Э[ЩQ\ЫZ\ЬИH
+const headroomChanged = new CustomEvent("quarto-hrChanged", {
+  detail: {},
+  bubbles: true,
+  cancelable: false,
+  composed: false,
+});
 
-HO€В€ЫЫњЭ[›‘[HЪ[™ЭЛ™ШЭ[Y[ќ™Щ][[Y[ќћRY
-њ]X\ќЛX[››Э[Щ[Y[ќЉNВ€Y€
-[›‘[
-HВ€[›‘[њ™[[Э™J
-NВ‚€ЫЫњЭ[›’YH[›‘[™Щ]]љXќ]J™]KX[››Э[Щ[Y[ќZYЉNВ€Ъ[™ЭЛ›ШШ[ЭЬYЩKњЩ]][J]X\ќЛX[››Э[ЩKIШ[›’YXќќYHЉNВ€BџNВ‚ЫЫњЭ[››Э[ЩT™YЪ\Э\€H
+const announceDismiss = () => {
+  const annEl = window.document.getElementById("quarto-announcement");
+  if (annEl) {
+    annEl.remove();
 
-HO€В€ЫЫњЭ[›‘[HЪ[™ЭЛ™ШЭ[Y[ќ™Щ][[Y[ќћRY
-њ]X\ќЛX[››Э[Щ[Y[ќЉNВ€Y€
-[›‘[
-HВ€ЫЫњЭ[›’YH[›‘[™Щ]]љXќ]J™]KX[››Э[Щ[Y[ќZYЉNВ€ЫЫњЭ\С\ЫZ\ЬЩYB€Ъ[™ЭЛ›ШШ[ЭЬYЩK™Щ]][J]X\ќЛX[››Э[ЩKIШ[›’YX
-H[ЩNВ€Y€
-\С\ЫZ\ЬЩY
-HВ€[››Э[ЩQ\ЫZ\ЬК
-NВ€™]\›ЋВ€H[ЩHВ€[›‘[Ы\ЬУ\Эњ™[[Э™JљY[€ЉNВ€B‚€ЫЫњЭXЭ[Ы‘[H[›‘[њ]Y\ћTЩ[XЭЬЉ‹њ]X\ќЛX[››Э[Щ[Y[ќXXЭ[Ы€ЉNВ€Y€
-XЭ[Ы‘[
-HВ€XЭ[Ы‘[Y]™[ќ\Э[™\ЉЫXЪИ‹ќ[Э[Ы€
-JHВ€Kњ™]™[ќY][
+    const annId = annEl.getAttribute("data-announcement-id");
+    window.localStorage.setItem(`quarto-announce-${annId}`, "true");
+  }
+};
 
-NВ€ЛИYHH\€[[YYX][B€[››Э[ЩQ\ЫZ\ЬК
-NВ€JNВ€B€BџNВ‚ќЪ[™ЭЛ™ШЭ[Y[ќY]™[ќ\Э[™\Љ‘УPЫЫќ[ќШYY‹ќ[Э[Ы€
+const announceRegister = () => {
+  const annEl = window.document.getElementById("quarto-announcement");
+  if (annEl) {
+    const annId = annEl.getAttribute("data-announcement-id");
+    const isDismissed =
+      window.localStorage.getItem(`quarto-announce-${annId}`) || false;
+    if (isDismissed) {
+      announceDismiss();
+      return;
+    } else {
+      annEl.classList.remove("hidden");
+    }
 
-HВ€][љ]H[ЩNВ‚€[››Э[ЩT™YЪ\Э\Љ
-NВ‚€ЛИX[YЩHHXЪИИЬќ]Ы‹Y€Ы™H\И™\Щ[ќ‚€]\ЭШЬ›ЫЬHЪ[™ЭЛњYЩVSЩ™њЩ]ШЭ[Y[ќ™ШЭ[Y[ќ[[Y[ќњШЬ›ЫЬВ€ЫЫњЭШЬ›ЫЭЫђќY™™\€HNВ€ЫЫњЭШЬ›Ы\ќY™™\€HНNВ€ЫЫњЭќ€HШЭ[Y[ќ™Щ][[Y[ќћRY
-њ]X\ќЛXXЪЛ]Л]ЬЉNВ€ЫЫњЭYPXЪХХЬH
+    const actionEl = annEl.querySelector(".quarto-announcement-action");
+    if (actionEl) {
+      actionEl.addEventListener("click", function (e) {
+        e.preventDefault();
+        // Hide the bar immediately
+        announceDismiss();
+      });
+    }
+  }
+};
 
-HO€В€ќ‹њЭ[K™\Ь^HH››Ы™HЋВ€NВ€ЫЫњЭЪЭРXЪХХЬH
+window.document.addEventListener("DOMContentLoaded", function () {
+  let init = false;
 
-HO€В€ќ‹њЭ[K™\Ь^HHљ[›[™KX›ШЪИЋВ€NВ€Y€
-ќЉHВ€Ъ[™ЭЛ™ШЭ[Y[ќY]™[ќ\Э[™\Љ€њШЬ›Ы‹€ќ[Э[Ы€
+  announceRegister();
 
-HВ€ЫЫњЭЭ\њ™[ќШЬ›ЫЬB€Ъ[™ЭЛњYЩVSЩ™њЩ]ШЭ[Y[ќ™ШЭ[Y[ќ[[Y[ќњШЬ›ЫЬВ‚€ЛИЪЭЬИ[™Y\ИHќ]Ы€	Ъ[ќ[YЩ[ќIИ\ИH\Щ\€ШЬ›ЫВ€Y€
-Э\њ™[ќШЬ›ЫЬHШЬ›ЫЭЫђќY™™\€€\ЭШЬ›ЫЬ
-HВ€YPXЪХХЬ
+  // Manage the back to top button, if one is present.
+  let lastScrollTop = window.pageYOffset || document.documentElement.scrollTop;
+  const scrollDownBuffer = 5;
+  const scrollUpBuffer = 35;
+  const btn = document.getElementById("quarto-back-to-top");
+  const hideBackToTop = () => {
+    btn.style.display = "none";
+  };
+  const showBackToTop = () => {
+    btn.style.display = "inline-block";
+  };
+  if (btn) {
+    window.document.addEventListener(
+      "scroll",
+      function () {
+        const currentScrollTop =
+          window.pageYOffset || document.documentElement.scrollTop;
 
-NВ€\ЭШЬ›ЫЬHЭ\њ™[ќШЬ›ЫЬHИ€Э\њ™[ќШЬ›ЫЬВ€H[ЩHY€
-Э\њ™[ќШЬ›ЫЬ\ЭШЬ›ЫЬHШЬ›Ы\ќY™™\ЉHВ€ЪЭРXЪХХЬ
+        // Shows and hides the button 'intelligently' as the user scrolls
+        if (currentScrollTop - scrollDownBuffer > lastScrollTop) {
+          hideBackToTop();
+          lastScrollTop = currentScrollTop <= 0 ? 0 : currentScrollTop;
+        } else if (currentScrollTop < lastScrollTop - scrollUpBuffer) {
+          showBackToTop();
+          lastScrollTop = currentScrollTop <= 0 ? 0 : currentScrollTop;
+        }
 
-NВ€\ЭШЬ›ЫЬHЭ\њ™[ќШЬ›ЫЬHИ€Э\њ™[ќШЬ›ЫЬВ€B‚€ЛИЪЭИHќ]Ы€]H›ЭЫKY\И]]HЬ€Y€
-Э\њ™[ќШЬ›ЫЬH
-HВ€YPXЪХХЬ
+        // Show the button at the bottom, hides it at the top
+        if (currentScrollTop <= 0) {
+          hideBackToTop();
+        } else if (
+          window.innerHeight + currentScrollTop >=
+          document.body.offsetHeight
+        ) {
+          showBackToTop();
+        }
+      },
+      false
+    );
+  }
 
-NВ€H[ЩHY€
-€Ъ[™ЭЛљ[›™\’ZYЪ
-ИЭ\њ™[ќШЬ›ЫЬЏB€ШЭ[Y[ќ›ЩK›Щ™њЩ]ZYЪ€
-HВ€ЪЭРXЪХХЬ
+  function throttle(func, wait) {
+    var timeout;
+    return function () {
+      const context = this;
+      const args = arguments;
+      const later = function () {
+        clearTimeout(timeout);
+        timeout = null;
+        func.apply(context, args);
+      };
 
-NВ€B€K€[ЩB€
-NВ€B‚€ќ[Э[Ы€›ЭJќ[ЛШZ]
-HВ€\€[Y[Э]В€™]\›€ќ[Э[Ы€
+      if (!timeout) {
+        timeout = setTimeout(later, wait);
+      }
+    };
+  }
 
-HВ€ЫЫњЭЫЫќ^H\ОВ€ЫЫњЭ\™ЬИH\™Э[Y[ќОВ€ЫЫњЭ]\€Hќ[Э[Ы€
+  function headerOffset() {
+    // Set an offset if there is are fixed top navbar
+    const headerEl = window.document.querySelector("header.fixed-top");
+    if (headerEl) {
+      return headerEl.clientHeight;
+    } else {
+      return 0;
+    }
+  }
 
-HВ€ЫX\•[Y[Э]
-[Y[Э]
-NВ€[Y[Э]Hќ[В€ќ[Л\JЫЫќ^\™ЬКNВ€NВ‚€Y€
-][Y[Э]
-HВ€[Y[Э]HЩ][Y[Э]
-]\‹ШZ]
-NВ€B€NВ€B‚€ќ[Э[Ы€XY\“Щ™њЩ]
+  function footerOffset() {
+    const footerEl = window.document.querySelector("footer.footer");
+    if (footerEl) {
+      return footerEl.clientHeight;
+    } else {
+      return 0;
+    }
+  }
 
-HВ€ЛИЩ][€Щ™њЩ]Y€\™H\И\™Hљ^YЬ]\‚€ЫЫњЭXY\‘[HЪ[™ЭЛ™ШЭ[Y[ќњ]Y\ћTЩ[XЭЬЉљXY\‹™љ^Y]ЬЉNВ€Y€
-XY\‘[
-HВ€™]\›€XY\‘[ЫY[ќZYЪВ€H[ЩHВ€™]\›€В€B€B‚€ќ[Э[Ы€›ЫЭ\“Щ™њЩ]
+  function dashboardOffset() {
+    const dashboardNavEl = window.document.getElementById(
+      "quarto-dashboard-header"
+    );
+    if (dashboardNavEl !== null) {
+      return dashboardNavEl.clientHeight;
+    } else {
+      return 0;
+    }
+  }
 
-HВ€ЫЫњЭ›ЫЭ\‘[HЪ[™ЭЛ™ШЭ[Y[ќњ]Y\ћTЩ[XЭЬЉ™›ЫЭ\‹™›ЫЭ\€ЉNВ€Y€
-›ЫЭ\‘[
-HВ€™]\›€›ЫЭ\‘[ЫY[ќZYЪВ€H[ЩHВ€™]\›€В€B€B‚€ќ[Э[Ы€\Ъ›Ш\™Щ™њЩ]
+  function updateDocumentOffsetWithoutAnimation() {
+    updateDocumentOffset(false);
+  }
 
-HВ€ЫЫњЭ\Ъ›Ш\™]‘[HЪ[™ЭЛ™ШЭ[Y[ќ™Щ][[Y[ќћRY
-€њ]X\ќЛY\Ъ›Ш\™ZXY\€‚€
-NВ€Y€
-\Ъ›Ш\™]‘[OOHќ[
-HВ€™]\›€\Ъ›Ш\™]‘[ЫY[ќZYЪВ€H[ЩHВ€™]\›€В€B€B‚€ќ[Э[Ы€\]QШЭ[Y[ќЩ™њЩ]Ъ]Э][љ[X][ЫЉ
-HВ€\]QШЭ[Y[ќЩ™њЩ]
-[ЩJNВ€B‚€ќ[Э[Ы€\]QШЭ[Y[ќЩ™њЩ]
-[љ[X]Y
-HВ€ЛИЩ]›ЩHЩ™њЩ]€ЫЫњЭЬЩ™њЩ]HXY\“Щ™њЩ]
+  function updateDocumentOffset(animated) {
+    // set body offset
+    const topOffset = headerOffset();
+    const bodyOffset = topOffset + footerOffset() + dashboardOffset();
+    const bodyEl = window.document.body;
+    bodyEl.setAttribute("data-bs-offset", topOffset);
+    bodyEl.style.paddingTop = topOffset + "px";
 
-NВ€ЫЫњЭ›ЩSЩ™њЩ]HЬЩ™њЩ]
-И›ЫЭ\“Щ™њЩ]
+    // deal with sidebar offsets
+    const sidebars = window.document.querySelectorAll(
+      ".sidebar, .headroom-target"
+    );
+    sidebars.forEach((sidebar) => {
+      if (!animated) {
+        sidebar.classList.add("notransition");
+        // Remove the no transition class after the animation has time to complete
+        setTimeout(function () {
+          sidebar.classList.remove("notransition");
+        }, 201);
+      }
 
-H
-И\Ъ›Ш\™Щ™њЩ]
+      if (window.Headroom && sidebar.classList.contains("sidebar-unpinned")) {
+        sidebar.style.top = "0";
+        sidebar.style.maxHeight = "100vh";
+      } else {
+        sidebar.style.top = topOffset + "px";
+        sidebar.style.maxHeight = "calc(100vh - " + topOffset + "px)";
+      }
+    });
 
-NВ€ЫЫњЭ›ЩQ[HЪ[™ЭЛ™ШЭ[Y[ќ›ЩNВ€›ЩQ[њЩ]]љXќ]J™]KXњЛ[Щ™њЩ]‹ЬЩ™њЩ]
-NВ€›ЩQ[њЭ[KњY[™ХЬHЬЩ™њЩ]
-ИњЋВ‚€ЛИX[Ъ]ЪYX\€Щ™њЩ]В€ЫЫњЭЪYX\њИHЪ[™ЭЛ™ШЭ[Y[ќњ]Y\ћTЩ[XЭЬђ[
-€‹њЪYX\‹љXY›ЫЫK]\™Щ]‚€
-NВ€ЪYX\њЛ™›Ь‘XXЪ
+    // allow space for footer
+    const mainContainer = window.document.querySelector(".quarto-container");
+    if (mainContainer) {
+      mainContainer.style.minHeight = "calc(100vh - " + bodyOffset + "px)";
+    }
 
-ЪYX\ЉHO€В€Y€
-X[љ[X]Y
-HВ€ЪYX\‹Ы\ЬУ\ЭY
-››Э[њЪ][Ы€ЉNВ€ЛИ™[[Э™HH›И[њЪ][Ы€Ы\ЬИYќ\€H[љ[X][Ы€\И[YHИЫЫ\]B€Щ][Y[Э]
-ќ[Э[Ы€
+    // link offset
+    let linkStyle = window.document.querySelector("#quarto-target-style");
+    if (!linkStyle) {
+      linkStyle = window.document.createElement("style");
+      linkStyle.setAttribute("id", "quarto-target-style");
+      window.document.head.appendChild(linkStyle);
+    }
+    while (linkStyle.firstChild) {
+      linkStyle.removeChild(linkStyle.firstChild);
+    }
+    if (topOffset > 0) {
+      linkStyle.appendChild(
+        window.document.createTextNode(`
+      section:target::before {
+        content: "";
+        display: block;
+        height: ${topOffset}px;
+        margin: -${topOffset}px 0 0;
+      }`)
+      );
+    }
+    if (init) {
+      window.dispatchEvent(headroomChanged);
+    }
+    init = true;
+  }
 
-HВ€ЪYX\‹Ы\ЬУ\Эњ™[[Э™J››Э[њЪ][Ы€ЉNВ€KЊJNВ€B‚€Y€
-Ъ[™ЭЛ’XY›ЫЫH	‰€ЪYX\‹Ы\ЬУ\ЭЫЫќZ[њКњЪYX\‹][њ[›™YЉJHВ€ЪYX\‹њЭ[KќЬHЊЋВ€ЪYX\‹њЭ[K›X^ZYЪHЊLљЋВ€H[ЩHВ€ЪYX\‹њЭ[KќЬHЬЩ™њЩ]
-ИњЋВ€ЪYX\‹њЭ[K›X^ZYЪHШ[КLљH€
-ИЬЩ™њЩ]
-Ињ
-HЋВ€B€JNВ‚€ЛИ[ЭИЬXЩH›Ь€›ЫЭ\‚€ЫЫњЭXZ[ђЫЫќZ[™\€HЪ[™ЭЛ™ШЭ[Y[ќњ]Y\ћTЩ[XЭЬЉ‹њ]X\ќЛXЫЫќZ[™\€ЉNВ€Y€
-XZ[ђЫЫќZ[™\ЉHВ€XZ[ђЫЫќZ[™\‹њЭ[K›Z[’ZYЪHШ[КLљH€
-И›ЩSЩ™њЩ]
-Ињ
-HЋВ€B‚€ЛИ[љИЩ™њЩ]€][љФЭ[HHЪ[™ЭЛ™ШЭ[Y[ќњ]Y\ћTЩ[XЭЬЉ€Ь]X\ќЛ]\™Щ]\Э[HЉNВ€Y€
-[[љФЭ[JHВ€[љФЭ[HHЪ[™ЭЛ™ШЭ[Y[ќЬ™X]Q[[Y[ќ
-њЭ[HЉNВ€[љФЭ[KњЩ]]љXќ]JљY‹њ]X\ќЛ]\™Щ]\Э[HЉNВ€Ъ[™ЭЛ™ШЭ[Y[ќљXY\[™Ъ[
-[љФЭ[JNВ€B€Ъ[H
-[љФЭ[K™љ\њЭЪ[
-HВ€[љФЭ[Kњ™[[Э™PЪ[
-[љФЭ[K™љ\њЭЪ[
-NВ€B€Y€
-ЬЩ™њЩ]€
-HВ€[љФЭ[K\[™Ъ[
-€Ъ[™ЭЛ™ШЭ[Y[ќЬ™X]U^›ЩJ€ЩXЭ[ЫЋќ\™Щ]Ћ™Y›Ь™HВ€ЫЫќ[ќ€€ЋВ€\Ь^N€›ШЪОВ€ZYЪ€	ЭЬЩ™њЩ]\В€X\™Ъ[Ћ€IЭЬЩ™њЩ]\В€X
-B€
-NВ€B€Y€
-[љ]
-HВ€Ъ[™ЭЛ™\Ь]Ъ]™[ќ
-XY›ЫЫPЪ[™ЩY
-NВ€B€[љ]HќYNВ€B‚€ЛИ[љ]X[^™HXY›ЫЫB€\€XY\€HЪ[™ЭЛ™ШЭ[Y[ќњ]Y\ћTЩ[XЭЬЉ€Ь]X\ќЛZXY\€ЉNВ€Y€
-XY\€	‰€Ъ[™ЭЛ’XY›ЫЫJHВ€ЫЫњЭXY›ЫЫHH™]ИЪ[™ЭЛ’XY›ЫЫJXY\‹В€Ы\[ЩN€K€Ы”[Ћ€ќ[Э[Ы€
+  // initialize headroom
+  var header = window.document.querySelector("#quarto-header");
+  if (header && window.Headroom) {
+    const headroom = new window.Headroom(header, {
+      tolerance: 5,
+      onPin: function () {
+        const sidebars = window.document.querySelectorAll(
+          ".sidebar, .headroom-target"
+        );
+        sidebars.forEach((sidebar) => {
+          sidebar.classList.remove("sidebar-unpinned");
+        });
+        updateDocumentOffset();
+      },
+      onUnpin: function () {
+        const sidebars = window.document.querySelectorAll(
+          ".sidebar, .headroom-target"
+        );
+        sidebars.forEach((sidebar) => {
+          sidebar.classList.add("sidebar-unpinned");
+        });
+        updateDocumentOffset();
+      },
+    });
+    headroom.init();
 
-HВ€ЫЫњЭЪYX\њИHЪ[™ЭЛ™ШЭ[Y[ќњ]Y\ћTЩ[XЭЬђ[
-€‹њЪYX\‹љXY›ЫЫK]\™Щ]‚€
-NВ€ЪYX\њЛ™›Ь‘XXЪ
+    let frozen = false;
+    window.quartoToggleHeadroom = function () {
+      if (frozen) {
+        headroom.unfreeze();
+        frozen = false;
+      } else {
+        headroom.freeze();
+        frozen = true;
+      }
+    };
+  }
 
-ЪYX\ЉHO€В€ЪYX\‹Ы\ЬУ\Эњ™[[Э™JњЪYX\‹][њ[›™YЉNВ€JNВ€\]QШЭ[Y[ќЩ™њЩ]
+  window.addEventListener(
+    "hashchange",
+    function (e) {
+      if (
+        getComputedStyle(document.documentElement).scrollBehavior !== "smooth"
+      ) {
+        window.scrollTo(0, window.pageYOffset - headerOffset());
+      }
+    },
+    false
+  );
 
-NВ€K€Ы•[њ[Ћ€ќ[Э[Ы€
+  // Observe size changed for the header
+  const headerEl = window.document.querySelector("header.fixed-top");
+  if (headerEl && window.ResizeObserver) {
+    const observer = new window.ResizeObserver(() => {
+      setTimeout(updateDocumentOffsetWithoutAnimation, 0);
+    });
+    observer.observe(headerEl, {
+      attributes: true,
+      childList: true,
+      characterData: true,
+    });
+  } else {
+    window.addEventListener(
+      "resize",
+      throttle(updateDocumentOffsetWithoutAnimation, 50)
+    );
+  }
+  setTimeout(updateDocumentOffsetWithoutAnimation, 250);
 
-HВ€ЫЫњЭЪYX\њИHЪ[™ЭЛ™ШЭ[Y[ќњ]Y\ћTЩ[XЭЬђ[
-€‹њЪYX\‹љXY›ЫЫK]\™Щ]‚€
-NВ€ЪYX\њЛ™›Ь‘XXЪ
+  // fixup index.html links if we aren't on the filesystem
+  if (window.location.protocol !== "file:") {
+    const links = window.document.querySelectorAll("a");
+    for (let i = 0; i < links.length; i++) {
+      if (links[i].href) {
+        links[i].dataset.originalHref = links[i].href;
+        links[i].href = links[i].href.replace(/\/index\.html/, "/");
+      }
+    }
 
-ЪYX\ЉHO€В€ЪYX\‹Ы\ЬУ\ЭY
-њЪYX\‹][њ[›™YЉNВ€JNВ€\]QШЭ[Y[ќЩ™њЩ]
+    // Fixup any sharing links that require urls
+    // Append url to any sharing urls
+    const sharingLinks = window.document.querySelectorAll(
+      "a.sidebar-tools-main-item, a.quarto-navigation-tool, a.quarto-navbar-tools, a.quarto-navbar-tools-item"
+    );
+    for (let i = 0; i < sharingLinks.length; i++) {
+      const sharingLink = sharingLinks[i];
+      const href = sharingLink.getAttribute("href");
+      if (href) {
+        sharingLink.setAttribute(
+          "href",
+          href.replace("|url|", window.location.href)
+        );
+      }
+    }
 
-NВ€K€JNВ€XY›ЫЫKљ[љ]
+    // Scroll the active navigation item into view, if necessary
+    const navSidebar = window.document.querySelector("nav#quarto-sidebar");
+    if (navSidebar) {
+      // Find the active item
+      const activeItem = navSidebar.querySelector("li.sidebar-item a.active");
+      if (activeItem) {
+        // Wait for the scroll height and height to resolve by observing size changes on the
+        // nav element that is scrollable
+        const resizeObserver = new ResizeObserver((_entries) => {
+          // The bottom of the element
+          const elBottom = activeItem.offsetTop;
+          const viewBottom = navSidebar.scrollTop + navSidebar.clientHeight;
 
-NВ‚€]њ›Ю™[€H[ЩNВ€Ъ[™ЭЛњ]X\ќХЩЩЫRXY›ЫЫHHќ[Э[Ы€
+          // The element height and scroll height are the same, then we are still loading
+          if (viewBottom !== navSidebar.scrollHeight) {
+            // Determine if the item isn't visible and scroll to it
+            if (elBottom >= viewBottom) {
+              navSidebar.scrollTop = elBottom;
+            }
 
-HВ€Y€
-њ›Ю™[ЉHВ€XY›ЫЫKќ[™њ™Y^™J
-NВ€њ›Ю™[€H[ЩNВ€H[ЩHВ€XY›ЫЫK™њ™Y^™J
-NВ€њ›Ю™[€HќYNВ€B€NВ€B‚€Ъ[™ЭЛY]™[ќ\Э[™\Љ€љ\ЪЪ[™ЩH‹€ќ[Э[Ы€
-JHВ€Y€
-€Щ]ЫЫ\]YЭ[JШЭ[Y[ќ™ШЭ[Y[ќ[[Y[ќ
-KњШЬ›Ы™Z]љ[Ь€OOHњЫ[ЫЭ‚€
-HВ€Ъ[™ЭЛњШЬ›ЫКЪ[™ЭЛњYЩVSЩ™њЩ]HXY\“Щ™њЩ]
-
-JNВ€B€K€[ЩB€
-NВ‚€ЛИШњЩ\ќ™HЪ^™HЪ[™ЩY›Ь€HXY\‚€ЫЫњЭXY\‘[HЪ[™ЭЛ™ШЭ[Y[ќњ]Y\ћTЩ[XЭЬЉљXY\‹™љ^Y]ЬЉNВ€Y€
-XY\‘[	‰€Ъ[™ЭЛ”™\Ъ^™SШњЩ\ќ™\ЉHВ€ЫЫњЭШњЩ\ќ™\€H™]ИЪ[™ЭЛ”™\Ъ^™SШњЩ\ќ™\Љ
-
-HO€В€Щ][Y[Э]
-\]QШЭ[Y[ќЩ™њЩ]Ъ]Э][љ[X][Ы‹
-NВ€JNВ€ШњЩ\ќ™\‹›ШњЩ\ќ™JXY\‘[В€]љXќ]\О€ќYK€Ъ[\Э€ќYK€Ъ\XЭ\‘]N€ќYK€JNВ€H[ЩHВ€Ъ[™ЭЛY]™[ќ\Э[™\Љ€њ™\Ъ^™H‹€›ЭJ\]QШЭ[Y[ќЩ™њЩ]Ъ]Э][љ[X][Ы‹L
-B€
-NВ€B€Щ][Y[Э]
-\]QШЭ[Y[ќЩ™њЩ]Ъ]Э][љ[X][Ы‹ЌL
-NВ‚€ЛИљ^\[™^љ[[љЬИY€ЩH\™[‰ЭЫ€Hљ[\Ю\Э[B€Y€
-Ъ[™ЭЛ›ШШ][Ы‹њ›ЭШЫЫOOH™љ[N€ЉHВ€ЫЫњЭ[љЬИHЪ[™ЭЛ™ШЭ[Y[ќњ]Y\ћTЩ[XЭЬђ[
-HЉNВ€›Ь€
-]HHИH[љЬЛ›[™ЭИJККHВ€Y€
-[љЬЦЪWKљ™YЉHВ€[љЬЦЪWK™]\Щ]›ЬљYЪ[[™Y€H[љЬЦЪWKљ™YЋВ€[љЬЦЪWKљ™Y€H[љЬЦЪWKљ™Y‹њ™\XЩJЧЪ[™^љ[Л‹ИЉNВ€B€B‚€ЛИљ^\[ћHЪ\љ[™И[љЬИ]™\]Z\™H\›В€ЛИ\[™\›И[ћHЪ\љ[™И\›В€ЫЫњЭЪ\љ[™У[љЬИHЪ[™ЭЛ™ШЭ[Y[ќњ]Y\ћTЩ[XЭЬђ[
-€KњЪYX\‹]ЫЫЛ[XZ[‹Z][KKњ]X\ќЛ[]љYШ][Ы‹]ЫЫKњ]X\ќЛ[]\‹]ЫЫЛKњ]X\ќЛ[]\‹]ЫЫЛZ][H‚€
-NВ€›Ь€
-]HHИHЪ\љ[™У[љЬЛ›[™ЭИJККHВ€ЫЫњЭЪ\љ[™У[љИHЪ\љ[™У[љЬЦЪWNВ€ЫЫњЭ™Y€HЪ\љ[™У[љЛ™Щ]]љXќ]Jљ™Y€ЉNВ€Y€
-™YЉHВ€Ъ\љ[™У[љЛњЩ]]љXќ]J€љ™Y€‹€™Y‹њ™\XЩJџ\›‹Ъ[™ЭЛ›ШШ][Ы‹љ™YЉB€
-NВ€B€B‚€ЛИШЬ›ЫHXЭ]™H]љYШ][Ы€][H[ќИљY]ЛY€™XЩ\ЬШ\ћB€ЫЫњЭ]”ЪYX\€HЪ[™ЭЛ™ШЭ[Y[ќњ]Y\ћTЩ[XЭЬЉ›]€Ь]X\ќЛ\ЪYX\€ЉNВ€Y€
-]”ЪYX\ЉHВ€ЛИљ[™HXЭ]™H][B€ЫЫњЭXЭ]™R][HH]”ЪYX\‹њ]Y\ћTЩ[XЭЬЉ›KњЪYX\‹Z][HKXЭ]™HЉNВ€Y€
-XЭ]™R][JHВ€ЛИШZ]›Ь€HШЬ›ЫZYЪ[™ZYЪИ™\ЫЫ™HћHШњЩ\ќљ[™ИЪ^™HЪ[™Щ\ИЫ€B€ЛИ]€[[Y[ќ]\ИШЬ›ЫX›B€ЫЫњЭ™\Ъ^™SШњЩ\ќ™\€H™]И™\Ъ^™SШњЩ\ќ™\Љ
-Щ[ќљY\КHO€В€ЛИH›ЭЫHЩ€H[[Y[ќ€ЫЫњЭ[›ЭЫHHXЭ]™R][K›Щ™њЩ]ЬВ€ЫЫњЭљY]Р›ЭЫHH]”ЪYX\‹њШЬ›ЫЬ
-И]”ЪYX\‹ЫY[ќZYЪВ‚€ЛИH[[Y[ќZYЪ[™ШЬ›ЫZYЪ\™HHШ[YK[€ЩH\™HЭ[ШY[™В€Y€
-љY]Р›ЭЫHOOH]”ЪYX\‹њШЬ›ЫZYЪ
-HВ€ЛИ]\›Z[™HY€H][H\Ы‰Эљ\ЪX›H[™ШЬ›ЫИ]€Y€
-[›ЭЫHЏHљY]Р›ЭЫJHВ€]”ЪYX\‹њШЬ›ЫЬH[›ЭЫNВ€B‚€ЛИЭЬШњЩ\ќљ[™И›ЭИЪ[ЩHЩIЭ™HЫЫ\]YHШЬ›Ы€™\Ъ^™SШњЩ\ќ™\‹ќ[›ШњЩ\ќ™J]”ЪYX\ЉNВ€B€JNВ€™\Ъ^™SШњЩ\ќ™\‹›ШњЩ\ќ™J]”ЪYX\ЉNВ€B€B€BџJNВ
+            // stop observing now since we've completed the scroll
+            resizeObserver.unobserve(navSidebar);
+          }
+        });
+        resizeObserver.observe(navSidebar);
+      }
+    }
+  }
+});

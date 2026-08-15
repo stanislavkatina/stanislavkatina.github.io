@@ -1,42 +1,95 @@
-þŠmþ&yºÞÃòân¶«Ëñè™æë{Ü™ßì…éez{ì†X§{_?n)ÿ¦Ã©z¶­Š‰ç¢Ú^®h­µçKËÈÜ›Ý\YXœÙ]Â‚™^Ü[˜Ý[Ûˆ[š]
+// grouped tabsets
 
-HÂˆÚ[™ÝË˜Y]™[\Ý[™\ŠœYÙ\ÚÝÈ‹
-Ù]™[
-HOˆÂˆ[˜Ý[ÛˆÙ]X”Ù][™ÜÊ
-HÂˆÛÛœÝ]HHØØ[ÝÜ˜YÙK™Ù]][Jœ]X\Ë\\œÚ\Ý[]XœÙ]ËY]HŠNÂˆYˆ
-Y]JHÂˆØØ[ÝÜ˜YÙKœÙ]][Jœ]X\Ë\\œÚ\Ý[]XœÙ]ËY]H‹žßHŠNÂˆ™]\›ˆßNÂˆBˆYˆ
-]JHÂˆ™]\›ˆ”ÓÓ‹œ\œÙJ]JNÂˆBˆB‚ˆ[˜Ý[ÛˆÙ]X”Ù][™ÜÊ]JHÂˆØØ[ÝÜ˜YÙKœÙ]][Jˆœ]X\Ë\\œÚ\Ý[]XœÙ]ËY]H‹ˆ”ÓÓ‹œÝš[™ÚYžJ]JBˆ
-NÂˆB‚ˆ[˜Ý[ÛˆÙ]X”Ý]JÜ›Ý\˜[YKÜ›Ý\˜[YJHÂˆÛÛœÝ]HHÙ]X”Ù][™ÜÊ
-NÂˆ]VÙÜ›Ý\˜[YWHHÜ›Ý\˜[YNÂˆÙ]X”Ù][™ÜÊ]JNÂˆB‚ˆ[˜Ý[ÛˆÙÙÛUXŠX‹XÝ]™JHÂˆÛÛœÝX”[™[YHX‹™Ù]]šX]J˜\šXKXÛÛ›ÛÈŠNÂˆÛÛœÝX”[™[HØÝ[Y[™Ù][[Y[žRY
-X”[™[Y
-NÂˆYˆ
-XÝ]™JHÂˆX‹˜Û\ÜÓ\Ý˜Y
-˜XÝ]™HŠNÂˆX”[™[˜Û\ÜÓ\Ý˜Y
-˜XÝ]™HŠNÂˆH[ÙHÂˆX‹˜Û\ÜÓ\Ýœ™[[Ý™J˜XÝ]™HŠNÂˆX”[™[˜Û\ÜÓ\Ýœ™[[Ý™J˜XÝ]™HŠNÂˆBˆB‚ˆ[˜Ý[ÛˆÙÙÛP[
-Ù[XÝYÜ›Ý\Ù[XÝÜœÕÔÞ[˜ÊHÂˆ›Üˆ
-ÛÛœÝÝ\ÑÜ›Ý\Xœ×HÙˆØš™XÝ™[šY\ÊÙ[XÝÜœÕÔÞ[˜ÊJHÂˆÛÛœÝXÝ]™HHÙ[XÝYÜ›Ý\OOH\ÑÜ›Ý\Âˆ›Üˆ
-ÛÛœÝXˆÙˆXœÊHÂˆÙÙÛUXŠX‹XÝ]™JNÂˆBˆBˆB‚ˆ[˜Ý[Ûˆš[™Ù[XÝÜœÕÔÞ[˜ÐžS[™ÝXYÙJ
-HÂˆÛÛœÝ™\Ý[HßNÂˆÛÛœÝXœÈH\œ˜^K™œ›ÛJˆØÝ[Y[œ]Y\žTÙ[XÝÜ[
-]–Ù]KYÜ›Ý\HVÚYIÝXœÙ]I×X
-Bˆ
-NÂˆ›Üˆ
-ÛÛœÝ][HÙˆXœÊHÂˆÛÛœÝ]ˆH][Kœ\™[[[Y[œ\™[[[Y[œ\™[[[Y[ÂˆÛÛœÝÜ›Ý\H]‹™Ù]]šX]J™]KYÜ›Ý\ŠNÂˆYˆ
-\™\Ý[ÙÜ›Ý\JHÂˆ™\Ý[ÙÜ›Ý\HHßNÂˆBˆÛÛœÝÙ[XÝÜœÕÔÞ[˜ÈH™\Ý[ÙÜ›Ý\NÂˆÛÛœÝ˜[YHH][Kš[›™\’SÂˆYˆ
-\Ù[XÝÜœÕÔÞ[˜ÖÝ˜[YWJHÂˆÙ[XÝÜœÕÔÞ[˜ÖÝ˜[YWHH×NÂˆBˆÙ[XÝÜœÕÔÞ[˜ÖÝ˜[YWKœ\Ú
-][JNÂˆBˆ™]\›ˆ™\Ý[ÂˆB‚ˆ[˜Ý[ÛˆÙ]\Ù[XÝÜ”Þ[˜Ê
-HÂˆÛÛœÝÙ[XÝÜœÕÔÞ[˜ÈHš[™Ù[XÝÜœÕÔÞ[˜ÐžS[™ÝXYÙJ
-NÂˆØš™XÝ™[šY\ÊÙ[XÝÜœÕÔÞ[˜ÊK™›Ü‘XXÚ
+export function init() {
+  window.addEventListener("pageshow", (_event) => {
+    function getTabSettings() {
+      const data = localStorage.getItem("quarto-persistent-tabsets-data");
+      if (!data) {
+        localStorage.setItem("quarto-persistent-tabsets-data", "{}");
+        return {};
+      }
+      if (data) {
+        return JSON.parse(data);
+      }
+    }
 
-ÙÜ›Ý\X”Ù]ÐžU˜[YWJHOˆÂˆØš™XÝ™[šY\ÊX”Ù]ÐžU˜[YJK™›Ü‘XXÚ
+    function setTabSettings(data) {
+      localStorage.setItem(
+        "quarto-persistent-tabsets-data",
+        JSON.stringify(data)
+      );
+    }
 
-Ý˜[YK][\×JHOˆÂˆ][\Ë™›Ü‘XXÚ
+    function setTabState(groupName, groupValue) {
+      const data = getTabSettings();
+      data[groupName] = groupValue;
+      setTabSettings(data);
+    }
 
-][JHOˆÂˆ][K˜Y]™[\Ý[™\Š˜ÛXÚÈ‹
-Ù]™[
-HOˆÂˆÙ]X”Ý]JÜ›Ý\˜[YJNÂˆÙÙÛP[
-˜[YKÙ[XÝÜœÕÔÞ[˜ÖÙÜ›Ý\JNÂˆJNÂˆJNÂˆJNÂˆJNÂˆ™]\›ˆÙ[XÝÜœÕÔÞ[˜ÎÂˆB‚ˆÛÛœÝÙ[XÝÜœÕÔÞ[˜ÈHÙ]\Ù[XÝÜ”Þ[˜Ê
-NÂˆ›Üˆ
-ÛÛœÝÙÜ›Ý\Ù[XÝY˜[YWHÙˆØš™XÝ™[šY\ÊÙ]X”Ù][™ÜÊ
-JJHÂˆÛÛœÝÙ[XÝÜœÈHÙ[XÝÜœÕÔÞ[˜ÖÙÜ›Ý\NÂˆËÈ]	ÜÈÜÜÚX›H]Ý[HÝ]HÚ]™\È\È[\HÙ[XÝ[ÛœËÛÈÙH^XÚ]HÚXÚÈ\™K‚ˆYˆ
-Ù[XÝÜœÊHÂˆÙÙÛP[
-Ù[XÝY˜[YKÙ[XÝÜœÊNÂˆBˆBˆJNÂŸB
+    function toggleTab(tab, active) {
+      const tabPanelId = tab.getAttribute("aria-controls");
+      const tabPanel = document.getElementById(tabPanelId);
+      if (active) {
+        tab.classList.add("active");
+        tabPanel.classList.add("active");
+      } else {
+        tab.classList.remove("active");
+        tabPanel.classList.remove("active");
+      }
+    }
+
+    function toggleAll(selectedGroup, selectorsToSync) {
+      for (const [thisGroup, tabs] of Object.entries(selectorsToSync)) {
+        const active = selectedGroup === thisGroup;
+        for (const tab of tabs) {
+          toggleTab(tab, active);
+        }
+      }
+    }
+
+    function findSelectorsToSyncByLanguage() {
+      const result = {};
+      const tabs = Array.from(
+        document.querySelectorAll(`div[data-group] a[id^='tabset-']`)
+      );
+      for (const item of tabs) {
+        const div = item.parentElement.parentElement.parentElement;
+        const group = div.getAttribute("data-group");
+        if (!result[group]) {
+          result[group] = {};
+        }
+        const selectorsToSync = result[group];
+        const value = item.innerHTML;
+        if (!selectorsToSync[value]) {
+          selectorsToSync[value] = [];
+        }
+        selectorsToSync[value].push(item);
+      }
+      return result;
+    }
+
+    function setupSelectorSync() {
+      const selectorsToSync = findSelectorsToSyncByLanguage();
+      Object.entries(selectorsToSync).forEach(([group, tabSetsByValue]) => {
+        Object.entries(tabSetsByValue).forEach(([value, items]) => {
+          items.forEach((item) => {
+            item.addEventListener("click", (_event) => {
+              setTabState(group, value);
+              toggleAll(value, selectorsToSync[group]);
+            });
+          });
+        });
+      });
+      return selectorsToSync;
+    }
+
+    const selectorsToSync = setupSelectorSync();
+    for (const [group, selectedName] of Object.entries(getTabSettings())) {
+      const selectors = selectorsToSync[group];
+      // it's possible that stale state gives us empty selections, so we explicitly check here.
+      if (selectors) {
+        toggleAll(selectedName, selectors);
+      }
+    }
+  });
+}

@@ -1,1833 +1,3 @@
-юЉmю&yєЮГтвn¶«Лси™жл{Ь™Ям…йez{м†X§{_?n)я¦Г©z¶­Љ‰зўЪ^®h­µзKК€H[ЫЫXKШ]]ШЫЫ\]KZњИKЊNKЊHRUXЩ[њЩH0ЄH[ЫЫXK[Л€[™ЫЫќљXќ]ЬњИО‹ЛЩЪ]X‹ЫЫKШ[ЫЫXKШ]]ШЫЫ\]H
-‹В€Yќ[Э[ЫЉK
-^И›Шљ™XЭЏO]\[Щ€^ЬќЙ‰€ќ[™Yљ[™Y€O]\[Щ€[Щ[OЭ
-^ЬќКN€™ќ[Э[Ы€ЏO]\[Щ€Yљ[™I‰™Yљ[™K[YЩYљ[™JИ™^ЬќИ—K
-Nќ
+/*! @algolia/autocomplete-js 1.19.1 | MIT License | В© Algolia, Inc. and contributors | https://github.com/algolia/autocomplete */
+!function(e,t){"object"==typeof exports&&"undefined"!=typeof module?t(exports):"function"==typeof define&&define.amd?define(["exports"],t):t((e="undefined"!=typeof globalThis?globalThis:e||self)["@algolia/autocomplete-js"]={})}(this,(function(e){"use strict";function t(e,t){var n=Object.keys(e);if(Object.getOwnPropertySymbols){var r=Object.getOwnPropertySymbols(e);t&&(r=r.filter((function(t){return Object.getOwnPropertyDescriptor(e,t).enumerable}))),n.push.apply(n,r)}return n}function n(e){for(var n=1;n<arguments.length;n++){var r=null!=arguments[n]?arguments[n]:{};n%2?t(Object(r),!0).forEach((function(t){o(e,t,r[t])})):Object.getOwnPropertyDescriptors?Object.defineProperties(e,Object.getOwnPropertyDescriptors(r)):t(Object(r)).forEach((function(t){Object.defineProperty(e,t,Object.getOwnPropertyDescriptor(r,t))}))}return e}function r(e){return r="function"==typeof Symbol&&"symbol"==typeof Symbol.iterator?function(e){return typeof e}:function(e){return e&&"function"==typeof Symbol&&e.constructor===Symbol&&e!==Symbol.prototype?"symbol":typeof e},r(e)}function o(e,t,n){return(t=function(e){var t=function(e,t){if("object"!=typeof e||null===e)return e;var n=e[Symbol.toPrimitive];if(void 0!==n){var r=n.call(e,t||"default");if("object"!=typeof r)return r;throw new TypeError("@@toPrimitive must return a primitive value.")}return("string"===t?String:Number)(e)}(e,"string");return"symbol"==typeof t?t:String(t)}(t))in e?Object.defineProperty(e,t,{value:n,enumerable:!0,configurable:!0,writable:!0}):e[t]=n,e}function i(){return i=Object.assign?Object.assign.bind():function(e){for(var t=1;t<arguments.length;t++){var n=arguments[t];for(var r in n)Object.prototype.hasOwnProperty.call(n,r)&&(e[r]=n[r])}return e},i.apply(this,arguments)}function u(e,t){if(null==e)return{};var n,r,o=function(e,t){if(null==e)return{};var n,r,o={},i=Object.keys(e);for(r=0;r<i.length;r++)n=i[r],t.indexOf(n)>=0||(o[n]=e[n]);return o}(e,t);if(Object.getOwnPropertySymbols){var i=Object.getOwnPropertySymbols(e);for(r=0;r<i.length;r++)n=i[r],t.indexOf(n)>=0||Object.prototype.propertyIsEnumerable.call(e,n)&&(o[n]=e[n])}return o}function a(e,t){return function(e){if(Array.isArray(e))return e}(e)||function(e,t){var n=null==e?null:"undefined"!=typeof Symbol&&e[Symbol.iterator]||e["@@iterator"];if(null!=n){var r,o,i,u,a=[],l=!0,c=!1;try{if(i=(n=n.call(e)).next,0===t){if(Object(n)!==n)return;l=!1}else for(;!(l=(r=i.call(n)).done)&&(a.push(r.value),a.length!==t);l=!0);}catch(e){c=!0,o=e}finally{try{if(!l&&null!=n.return&&(u=n.return(),Object(u)!==u))return}finally{if(c)throw o}}return a}}(e,t)||c(e,t)||function(){throw new TypeError("Invalid attempt to destructure non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method.")}()}function l(e){return function(e){if(Array.isArray(e))return s(e)}(e)||function(e){if("undefined"!=typeof Symbol&&null!=e[Symbol.iterator]||null!=e["@@iterator"])return Array.from(e)}(e)||c(e)||function(){throw new TypeError("Invalid attempt to spread non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method.")}()}function c(e,t){if(e){if("string"==typeof e)return s(e,t);var n=Object.prototype.toString.call(e).slice(8,-1);return"Object"===n&&e.constructor&&(n=e.constructor.name),"Map"===n||"Set"===n?Array.from(e):"Arguments"===n||/^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(n)?s(e,t):void 0}}function s(e,t){(null==t||t>e.length)&&(t=e.length);for(var n=0,r=new Array(t);n<t;n++)r[n]=e[n];return r}function f(e){return{current:e}}function p(e,t){var n=void 0;return function(){for(var r=arguments.length,o=new Array(r),i=0;i<r;i++)o[i]=arguments[i];n&&clearTimeout(n),n=setTimeout((function(){return e.apply(void 0,o)}),t)}}function m(e){return e.reduce((function(e,t){return e.concat(t)}),[])}var v=0;function d(){return"autocomplete-".concat(v++)}function y(e,t){return t.reduce((function(e,t){return e&&e[t]}),e)}function b(e){return 0===e.collections.length?0:e.collections.reduce((function(e,t){return e+t.items.length}),0)}function g(e){return e!==Object(e)}function h(e,t){if(e===t)return!0;if(g(e)||g(t)||"function"==typeof e||"function"==typeof t)return e===t;if(Object.keys(e).length!==Object.keys(t).length)return!1;for(var n=0,r=Object.keys(e);n<r.length;n++){var o=r[n];if(!(o in t))return!1;if(!h(e[o],t[o]))return!1}return!0}var _=function(){};var O="1.19.1",S=[{segment:"autocomplete-core",version:O}];function j(e){var t=e.item,n=e.items,r=void 0===n?[]:n;return{index:t.__autocomplete_indexName,items:[t],positions:[1+r.findIndex((function(e){return e.objectID===t.objectID}))],queryID:t.__autocomplete_queryID,algoliaSource:["autocomplete"]}}function P(e,t){return function(e){if(Array.isArray(e))return e}(e)||function(e,t){var n=null==e?null:"undefined"!=typeof Symbol&&e[Symbol.iterator]||e["@@iterator"];if(null!=n){var r,o,i,u,a=[],l=!0,c=!1;try{if(i=(n=n.call(e)).next,0===t){if(Object(n)!==n)return;l=!1}else for(;!(l=(r=i.call(n)).done)&&(a.push(r.value),a.length!==t);l=!0);}catch(e){c=!0,o=e}finally{try{if(!l&&null!=n.return&&(u=n.return(),Object(u)!==u))return}finally{if(c)throw o}}return a}}(e,t)||function(e,t){if(!e)return;if("string"==typeof e)return w(e,t);var n=Object.prototype.toString.call(e).slice(8,-1);"Object"===n&&e.constructor&&(n=e.constructor.name);if("Map"===n||"Set"===n)return Array.from(e);if("Arguments"===n||/^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(n))return w(e,t)}(e,t)||function(){throw new TypeError("Invalid attempt to destructure non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method.")}()}function w(e,t){(null==t||t>e.length)&&(t=e.length);for(var n=0,r=new Array(t);n<t;n++)r[n]=e[n];return r}var I=["items"],A=["items"];function E(e){return E="function"==typeof Symbol&&"symbol"==typeof Symbol.iterator?function(e){return typeof e}:function(e){return e&&"function"==typeof Symbol&&e.constructor===Symbol&&e!==Symbol.prototype?"symbol":typeof e},E(e)}function D(e){return function(e){if(Array.isArray(e))return C(e)}(e)||function(e){if("undefined"!=typeof Symbol&&null!=e[Symbol.iterator]||null!=e["@@iterator"])return Array.from(e)}(e)||function(e,t){if(!e)return;if("string"==typeof e)return C(e,t);var n=Object.prototype.toString.call(e).slice(8,-1);"Object"===n&&e.constructor&&(n=e.constructor.name);if("Map"===n||"Set"===n)return Array.from(e);if("Arguments"===n||/^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(n))return C(e,t)}(e)||function(){throw new TypeError("Invalid attempt to spread non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method.")}()}function C(e,t){(null==t||t>e.length)&&(t=e.length);for(var n=0,r=new Array(t);n<t;n++)r[n]=e[n];return r}function k(e,t){if(null==e)return{};var n,r,o=function(e,t){if(null==e)return{};var n,r,o={},i=Object.keys(e);for(r=0;r<i.length;r++)n=i[r],t.indexOf(n)>=0||(o[n]=e[n]);return o}(e,t);if(Object.getOwnPropertySymbols){var i=Object.getOwnPropertySymbols(e);for(r=0;r<i.length;r++)n=i[r],t.indexOf(n)>=0||Object.prototype.propertyIsEnumerable.call(e,n)&&(o[n]=e[n])}return o}function x(e,t){var n=Object.keys(e);if(Object.getOwnPropertySymbols){var r=Object.getOwnPropertySymbols(e);t&&(r=r.filter((function(t){return Object.getOwnPropertyDescriptor(e,t).enumerable}))),n.push.apply(n,r)}return n}function N(e){for(var t=1;t<arguments.length;t++){var n=null!=arguments[t]?arguments[t]:{};t%2?x(Object(n),!0).forEach((function(t){T(e,t,n[t])})):Object.getOwnPropertyDescriptors?Object.defineProperties(e,Object.getOwnPropertyDescriptors(n)):x(Object(n)).forEach((function(t){Object.defineProperty(e,t,Object.getOwnPropertyDescriptor(n,t))}))}return e}function T(e,t,n){return(t=function(e){var t=function(e,t){if("object"!==E(e)||null===e)return e;var n=e[Symbol.toPrimitive];if(void 0!==n){var r=n.call(e,t||"default");if("object"!==E(r))return r;throw new TypeError("@@toPrimitive must return a primitive value.")}return("string"===t?String:Number)(e)}(e,"string");return"symbol"===E(t)?t:String(t)}(t))in e?Object.defineProperty(e,t,{value:n,enumerable:!0,configurable:!0,writable:!0}):e[t]=n,e}function q(e){for(var t=arguments.length>1&&void 0!==arguments[1]?arguments[1]:20,n=[],r=0;r<e.objectIDs.length;r+=t)n.push(N(N({},e),{},{objectIDs:e.objectIDs.slice(r,r+t)}));return n}function B(e){return e.map((function(e){var t=e.items,n=k(e,I);return N(N({},n),{},{objectIDs:(null==t?void 0:t.map((function(e){return e.objectID})))||n.objectIDs})}))}function R(e){var t,n,r,o=(t=P((e.version||"").split(".").map(Number),2),n=t[0],r=t[1],n>=3||2===n&&r>=4||1===n&&r>=10);function i(t,n,r){if(o&&void 0!==r){var i=r[0].__autocomplete_algoliaCredentials,u={"X-Algolia-Application-Id":i.appId,"X-Algolia-API-Key":i.apiKey};e.apply(void 0,[t].concat(D(n),[{headers:u}]))}else e.apply(void 0,[t].concat(D(n)))}return{init:function(t,n){e("init",{appId:t,apiKey:n})},setAuthenticatedUserToken:function(t){e("setAuthenticatedUserToken",t)},setUserToken:function(t){e("setUserToken",t)},clickedObjectIDsAfterSearch:function(){for(var e=arguments.length,t=new Array(e),n=0;n<e;n++)t[n]=arguments[n];t.length>0&&i("clickedObjectIDsAfterSearch",B(t),t[0].items)},clickedObjectIDs:function(){for(var e=arguments.length,t=new Array(e),n=0;n<e;n++)t[n]=arguments[n];t.length>0&&i("clickedObjectIDs",B(t),t[0].items)},clickedFilters:function(){for(var t=arguments.length,n=new Array(t),r=0;r<t;r++)n[r]=arguments[r];n.length>0&&e.apply(void 0,["clickedFilters"].concat(n))},convertedObjectIDsAfterSearch:function(){for(var e=arguments.length,t=new Array(e),n=0;n<e;n++)t[n]=arguments[n];t.length>0&&i("convertedObjectIDsAfterSearch",B(t),t[0].items)},convertedObjectIDs:function(){for(var e=arguments.length,t=new Array(e),n=0;n<e;n++)t[n]=arguments[n];t.length>0&&i("convertedObjectIDs",B(t),t[0].items)},convertedFilters:function(){for(var t=arguments.length,n=new Array(t),r=0;r<t;r++)n[r]=arguments[r];n.length>0&&e.apply(void 0,["convertedFilters"].concat(n))},viewedObjectIDs:function(){for(var e=arguments.length,t=new Array(e),n=0;n<e;n++)t[n]=arguments[n];t.length>0&&t.reduce((function(e,t){var n=t.items,r=k(t,A);return[].concat(D(e),D(q(N(N({},r),{},{objectIDs:(null==n?void 0:n.map((function(e){return e.objectID})))||r.objectIDs})).map((function(e){return{items:n,payload:e}}))))}),[]).forEach((function(e){var t=e.items;return i("viewedObjectIDs",[e.payload],t)}))},viewedFilters:function(){for(var t=arguments.length,n=new Array(t),r=0;r<t;r++)n[r]=arguments[r];n.length>0&&e.apply(void 0,["viewedFilters"].concat(n))}}}function L(e){var t=e.items.reduce((function(e,t){var n;return e[t.__autocomplete_indexName]=(null!==(n=e[t.__autocomplete_indexName])&&void 0!==n?n:[]).concat(t),e}),{});return Object.keys(t).map((function(e){return{index:e,items:t[e],algoliaSource:["autocomplete"]}}))}function F(e){return e.objectID&&e.__autocomplete_indexName&&e.__autocomplete_queryID}function U(e){return U="function"==typeof Symbol&&"symbol"==typeof Symbol.iterator?function(e){return typeof e}:function(e){return e&&"function"==typeof Symbol&&e.constructor===Symbol&&e!==Symbol.prototype?"symbol":typeof e},U(e)}function M(e){return function(e){if(Array.isArray(e))return H(e)}(e)||function(e){if("undefined"!=typeof Symbol&&null!=e[Symbol.iterator]||null!=e["@@iterator"])return Array.from(e)}(e)||function(e,t){if(!e)return;if("string"==typeof e)return H(e,t);var n=Object.prototype.toString.call(e).slice(8,-1);"Object"===n&&e.constructor&&(n=e.constructor.name);if("Map"===n||"Set"===n)return Array.from(e);if("Arguments"===n||/^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(n))return H(e,t)}(e)||function(){throw new TypeError("Invalid attempt to spread non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method.")}()}function H(e,t){(null==t||t>e.length)&&(t=e.length);for(var n=0,r=new Array(t);n<t;n++)r[n]=e[n];return r}function V(e,t){var n=Object.keys(e);if(Object.getOwnPropertySymbols){var r=Object.getOwnPropertySymbols(e);t&&(r=r.filter((function(t){return Object.getOwnPropertyDescriptor(e,t).enumerable}))),n.push.apply(n,r)}return n}function W(e){for(var t=1;t<arguments.length;t++){var n=null!=arguments[t]?arguments[t]:{};t%2?V(Object(n),!0).forEach((function(t){Q(e,t,n[t])})):Object.getOwnPropertyDescriptors?Object.defineProperties(e,Object.getOwnPropertyDescriptors(n)):V(Object(n)).forEach((function(t){Object.defineProperty(e,t,Object.getOwnPropertyDescriptor(n,t))}))}return e}function Q(e,t,n){return(t=function(e){var t=function(e,t){if("object"!==U(e)||null===e)return e;var n=e[Symbol.toPrimitive];if(void 0!==n){var r=n.call(e,t||"default");if("object"!==U(r))return r;throw new TypeError("@@toPrimitive must return a primitive value.")}return("string"===t?String:Number)(e)}(e,"string");return"symbol"===U(t)?t:String(t)}(t))in e?Object.defineProperty(e,t,{value:n,enumerable:!0,configurable:!0,writable:!0}):e[t]=n,e}var K="2.15.0",$="https://cdn.jsdelivr.net/npm/search-insights@".concat(K,"/dist/search-insights.min.js"),z=p((function(e){var t=e.onItemsChange,n=e.items,r=e.insights,o=e.state;t({insights:r,insightsEvents:L({items:n}).map((function(e){return W({eventName:"Items Viewed"},e)})),state:o})}),400);function G(e){var t=function(e){return W({onItemsChange:function(e){var t=e.insights,n=e.insightsEvents,r=e.state;t.viewedObjectIDs.apply(t,M(n.map((function(e){return W(W({},e),{},{algoliaSource:J(e.algoliaSource,r.context)})}))))},onSelect:function(e){var t=e.insights,n=e.insightsEvents,r=e.state;t.clickedObjectIDsAfterSearch.apply(t,M(n.map((function(e){return W(W({},e),{},{algoliaSource:J(e.algoliaSource,r.context)})}))))},onActive:_,__autocomplete_clickAnalytics:!0},e)}(e),n=t.insightsClient,r=t.insightsInitParams,o=t.onItemsChange,i=t.onSelect,u=t.onActive,a=t.__autocomplete_clickAnalytics,l=n;if(n||function(e){if("undefined"!=typeof window)e({window:window})}((function(e){var t=e.window,n=t.AlgoliaAnalyticsObject||"aa";"string"==typeof n&&(l=t[n]),l||(t.AlgoliaAnalyticsObject=n,t[n]||(t[n]=function(){t[n].queue||(t[n].queue=[]);for(var e=arguments.length,r=new Array(e),o=0;o<e;o++)r[o]=arguments[o];t[n].queue.push(r)}),t[n].version=K,l=t[n],function(e){var t="[Autocomplete]: Could not load search-insights.js. Please load it manually following https://alg.li/insights-autocomplete";try{var n=e.document.createElement("script");n.async=!0,n.src=$,n.onerror=function(){console.error(t)},document.body.appendChild(n)}catch(e){console.error(t)}}(t))})),!l)return{};r&&l("init",W({partial:!0},r));var c=R(l),s=f([]),m=p((function(e){var t=e.state;if(t.isOpen){var n=t.collections.reduce((function(e,t){return[].concat(M(e),M(t.items))}),[]).filter(F);h(s.current.map((function(e){return e.objectID})),n.map((function(e){return e.objectID})))||(s.current=n,n.length>0&&z({onItemsChange:o,items:n,insights:c,state:t}))}}),0);return{name:"aa.algoliaInsightsPlugin",subscribe:function(e){var t=e.setContext,n=e.onSelect,r=e.onActive;function o(e){t({algoliaInsightsPlugin:{__algoliaSearchParameters:W(W({},a?{clickAnalytics:!0}:{}),e?{userToken:X(e)}:{}),insights:c}})}l("addAlgoliaAgent","insights-plugin"),o(),l("onUserTokenChange",(function(e){o(e)})),l("getUserToken",null,(function(e,t){o(t)})),n((function(e){var t=e.item,n=e.state,r=e.event,o=e.source;F(t)&&i({state:n,event:r,insights:c,item:t,insightsEvents:[W({eventName:"Item Selected"},j({item:t,items:o.getItems().filter(F)}))]})})),r((function(e){var t=e.item,n=e.source,r=e.state,o=e.event;F(t)&&u({state:r,event:o,insights:c,item:t,insightsEvents:[W({eventName:"Item Active"},j({item:t,items:n.getItems().filter(F)}))]})}))},onStateChange:function(e){var t=e.state;m({state:t})},__autocomplete_pluginOptions:e}}function J(){var e,t=arguments.length>0&&void 0!==arguments[0]?arguments[0]:[],n=arguments.length>1?arguments[1]:void 0;return[].concat(M(t),["autocomplete-internal"],M(null!==(e=n.algoliaInsightsPlugin)&&void 0!==e&&e.__automaticInsights?["autocomplete-automatic"]:[]))}function X(e){return"number"==typeof e?e.toString():e}function Y(e,t){var n=t;return{then:function(t,r){return Y(e.then(ee(t,n,e),ee(r,n,e)),n)},catch:function(t){return Y(e.catch(ee(t,n,e)),n)},finally:function(t){return t&&n.onCancelList.push(t),Y(e.finally(ee(t&&function(){return n.onCancelList=[],t()},n,e)),n)},cancel:function(){n.isCanceled=!0;var e=n.onCancelList;n.onCancelList=[],e.forEach((function(e){e()}))},isCanceled:function(){return!0===n.isCanceled}}}function Z(e){return Y(e,{isCanceled:!1,onCancelList:[]})}function ee(e,t,n){return e?function(n){return t.isCanceled?n:e(n)}:n}var te,ne=!0;function re(e,t,n,r){if(!n)return null;if(e<0&&(null===t||null!==r&&0===t))return n+e;var o=(null===t?-1:t)+e;return o<=-1||o>=n?null===r?null:0:o}function oe(e,t){var n=Object.keys(e);if(Object.getOwnPropertySymbols){var r=Object.getOwnPropertySymbols(e);t&&(r=r.filter((function(t){return Object.getOwnPropertyDescriptor(e,t).enumerable}))),n.push.apply(n,r)}return n}function ie(e){for(var t=1;t<arguments.length;t++){var n=null!=arguments[t]?arguments[t]:{};t%2?oe(Object(n),!0).forEach((function(t){ue(e,t,n[t])})):Object.getOwnPropertyDescriptors?Object.defineProperties(e,Object.getOwnPropertyDescriptors(n)):oe(Object(n)).forEach((function(t){Object.defineProperty(e,t,Object.getOwnPropertyDescriptor(n,t))}))}return e}function ue(e,t,n){return(t=function(e){var t=function(e,t){if("object"!==ae(e)||null===e)return e;var n=e[Symbol.toPrimitive];if(void 0!==n){var r=n.call(e,t||"default");if("object"!==ae(r))return r;throw new TypeError("@@toPrimitive must return a primitive value.")}return("string"===t?String:Number)(e)}(e,"string");return"symbol"===ae(t)?t:String(t)}(t))in e?Object.defineProperty(e,t,{value:n,enumerable:!0,configurable:!0,writable:!0}):e[t]=n,e}function ae(e){return ae="function"==typeof Symbol&&"symbol"==typeof Symbol.iterator?function(e){return typeof e}:function(e){return e&&"function"==typeof Symbol&&e.constructor===Symbol&&e!==Symbol.prototype?"symbol":typeof e},ae(e)}function le(e,t){var n="undefined"!=typeof Symbol&&e[Symbol.iterator]||e["@@iterator"];if(!n){if(Array.isArray(e)||(n=function(e,t){if(!e)return;if("string"==typeof e)return ce(e,t);var n=Object.prototype.toString.call(e).slice(8,-1);"Object"===n&&e.constructor&&(n=e.constructor.name);if("Map"===n||"Set"===n)return Array.from(e);if("Arguments"===n||/^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(n))return ce(e,t)}(e))||t&&e&&"number"==typeof e.length){n&&(e=n);var r=0,o=function(){};return{s:o,n:function(){return r>=e.length?{done:!0}:{done:!1,value:e[r++]}},e:function(e){throw e},f:o}}throw new TypeError("Invalid attempt to iterate non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method.")}var i,u=!0,a=!1;return{s:function(){n=n.call(e)},n:function(){var e=n.next();return u=e.done,e},e:function(e){a=!0,i=e},f:function(){try{u||null==n.return||n.return()}finally{if(a)throw i}}}}function ce(e,t){(null==t||t>e.length)&&(t=e.length);for(var n=0,r=new Array(t);n<t;n++)r[n]=e[n];return r}var se=function(e,t){var n,r=!1,o=[],i=le(e);try{for(i.s();!(n=i.n()).done;){var u,a,l,c=null===(u=n.value.__autocomplete_pluginOptions)||void 0===u||null===(a=(l=u).awaitSubmit)||void 0===a?void 0:a.call(l);if("number"==typeof c)o.push(c);else if(!0===c){r=!0;break}}}catch(e){i.e(e)}finally{i.f()}return r?t.wait():o.length>0?t.wait(Math.max.apply(Math,o)):void 0};function fe(e){var t=function(e){var t=e.collections.map((function(e){return e.items.length})).reduce((function(e,t,n){var r=(e[n-1]||0)+t;return e.push(r),e}),[]).reduce((function(t,n){return n<=e.activeItemId?t+1:t}),0);return e.collections[t]}(e);if(!t)return null;var n=t.items[function(e){for(var t=e.state,n=e.collection,r=!1,o=0,i=0;!1===r;){var u=t.collections[o];if(u===n){r=!0;break}i+=u.items.length,o++}return t.activeItemId-i}({state:e,collection:t})],r=t.source;return{item:n,itemInputValue:r.getItemInputValue({item:n,state:e}),itemUrl:r.getItemUrl({item:n,state:e}),source:r}}function pe(e,t,n){return[e,null==n?void 0:n.sourceId,t].filter(Boolean).join("-").replace(/\s/g,"")}var me=/((gt|sm)-|galaxy nexus)|samsung[- ]|samsungbrowser/i;function ve(e){return e.nativeEvent||e}function de(e){return de="function"==typeof Symbol&&"symbol"==typeof Symbol.iterator?function(e){return typeof e}:function(e){return e&&"function"==typeof Symbol&&e.constructor===Symbol&&e!==Symbol.prototype?"symbol":typeof e},de(e)}function ye(e,t){var n=Object.keys(e);if(Object.getOwnPropertySymbols){var r=Object.getOwnPropertySymbols(e);t&&(r=r.filter((function(t){return Object.getOwnPropertyDescriptor(e,t).enumerable}))),n.push.apply(n,r)}return n}function be(e,t,n){return(t=function(e){var t=function(e,t){if("object"!==de(e)||null===e)return e;var n=e[Symbol.toPrimitive];if(void 0!==n){var r=n.call(e,t||"default");if("object"!==de(r))return r;throw new TypeError("@@toPrimitive must return a primitive value.")}return("string"===t?String:Number)(e)}(e,"string");return"symbol"===de(t)?t:String(t)}(t))in e?Object.defineProperty(e,t,{value:n,enumerable:!0,configurable:!0,writable:!0}):e[t]=n,e}function ge(e,t,n){var r,o=t.initialState;return{getState:function(){return o},dispatch:function(r,i){var u=function(e){for(var t=1;t<arguments.length;t++){var n=null!=arguments[t]?arguments[t]:{};t%2?ye(Object(n),!0).forEach((function(t){be(e,t,n[t])})):Object.getOwnPropertyDescriptors?Object.defineProperties(e,Object.getOwnPropertyDescriptors(n)):ye(Object(n)).forEach((function(t){Object.defineProperty(e,t,Object.getOwnPropertyDescriptor(n,t))}))}return e}({},o);o=e(o,{type:r,props:t,payload:i}),n({state:o,prevState:u})},pendingRequests:(r=[],{add:function(e){return r.push(e),e.finally((function(){r=r.filter((function(t){return t!==e}))}))},cancelAll:function(){r.forEach((function(e){return e.cancel()}))},isEmpty:function(){return 0===r.length},wait:function(e){return ne?(ne=!1,te=e?Promise.race([Promise.all(r),new Promise((function(t){return setTimeout(t,e)}))]):Promise.all(r),te.then((function(){ne=!0}))):te}})}}function he(e){return he="function"==typeof Symbol&&"symbol"==typeof Symbol.iterator?function(e){return typeof e}:function(e){return e&&"function"==typeof Symbol&&e.constructor===Symbol&&e!==Symbol.prototype?"symbol":typeof e},he(e)}function _e(e,t){var n=Object.keys(e);if(Object.getOwnPropertySymbols){var r=Object.getOwnPropertySymbols(e);t&&(r=r.filter((function(t){return Object.getOwnPropertyDescriptor(e,t).enumerable}))),n.push.apply(n,r)}return n}function Oe(e){for(var t=1;t<arguments.length;t++){var n=null!=arguments[t]?arguments[t]:{};t%2?_e(Object(n),!0).forEach((function(t){Se(e,t,n[t])})):Object.getOwnPropertyDescriptors?Object.defineProperties(e,Object.getOwnPropertyDescriptors(n)):_e(Object(n)).forEach((function(t){Object.defineProperty(e,t,Object.getOwnPropertyDescriptor(n,t))}))}return e}function Se(e,t,n){return(t=function(e){var t=function(e,t){if("object"!==he(e)||null===e)return e;var n=e[Symbol.toPrimitive];if(void 0!==n){var r=n.call(e,t||"default");if("object"!==he(r))return r;throw new TypeError("@@toPrimitive must return a primitive value.")}return("string"===t?String:Number)(e)}(e,"string");return"symbol"===he(t)?t:String(t)}(t))in e?Object.defineProperty(e,t,{value:n,enumerable:!0,configurable:!0,writable:!0}):e[t]=n,e}function je(e){return je="function"==typeof Symbol&&"symbol"==typeof Symbol.iterator?function(e){return typeof e}:function(e){return e&&"function"==typeof Symbol&&e.constructor===Symbol&&e!==Symbol.prototype?"symbol":typeof e},je(e)}function Pe(e){return function(e){if(Array.isArray(e))return we(e)}(e)||function(e){if("undefined"!=typeof Symbol&&null!=e[Symbol.iterator]||null!=e["@@iterator"])return Array.from(e)}(e)||function(e,t){if(!e)return;if("string"==typeof e)return we(e,t);var n=Object.prototype.toString.call(e).slice(8,-1);"Object"===n&&e.constructor&&(n=e.constructor.name);if("Map"===n||"Set"===n)return Array.from(e);if("Arguments"===n||/^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(n))return we(e,t)}(e)||function(){throw new TypeError("Invalid attempt to spread non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method.")}()}function we(e,t){(null==t||t>e.length)&&(t=e.length);for(var n=0,r=new Array(t);n<t;n++)r[n]=e[n];return r}function Ie(e,t){var n=Object.keys(e);if(Object.getOwnPropertySymbols){var r=Object.getOwnPropertySymbols(e);t&&(r=r.filter((function(t){return Object.getOwnPropertyDescriptor(e,t).enumerable}))),n.push.apply(n,r)}return n}function Ae(e){for(var t=1;t<arguments.length;t++){var n=null!=arguments[t]?arguments[t]:{};t%2?Ie(Object(n),!0).forEach((function(t){Ee(e,t,n[t])})):Object.getOwnPropertyDescriptors?Object.defineProperties(e,Object.getOwnPropertyDescriptors(n)):Ie(Object(n)).forEach((function(t){Object.defineProperty(e,t,Object.getOwnPropertyDescriptor(n,t))}))}return e}function Ee(e,t,n){return(t=function(e){var t=function(e,t){if("object"!==je(e)||null===e)return e;var n=e[Symbol.toPrimitive];if(void 0!==n){var r=n.call(e,t||"default");if("object"!==je(r))return r;throw new TypeError("@@toPrimitive must return a primitive value.")}return("string"===t?String:Number)(e)}(e,"string");return"symbol"===je(t)?t:String(t)}(t))in e?Object.defineProperty(e,t,{value:n,enumerable:!0,configurable:!0,writable:!0}):e[t]=n,e}function De(e,t){var n,r="undefined"!=typeof window?window:{},o=e.plugins||[];return Ae(Ae({debug:!1,openOnFocus:!1,enterKeyHint:void 0,ignoreCompositionEvents:!1,placeholder:"",autoFocus:!1,defaultActiveItemId:null,stallThreshold:300,insights:void 0,environment:r,shouldPanelOpen:function(e){return b(e.state)>0},reshape:function(e){return e.sources}},e),{},{id:null!==(n=e.id)&&void 0!==n?n:d(),plugins:o,initialState:Ae({activeItemId:null,query:"",completion:null,collections:[],isOpen:!1,status:"idle",context:{}},e.initialState),onStateChange:function(t){var n;null===(n=e.onStateChange)||void 0===n||n.call(e,t),o.forEach((function(e){var n;return null===(n=e.onStateChange)||void 0===n?void 0:n.call(e,t)}))},onSubmit:function(t){var n;null===(n=e.onSubmit)||void 0===n||n.call(e,t),o.forEach((function(e){var n;return null===(n=e.onSubmit)||void 0===n?void 0:n.call(e,t)}))},onReset:function(t){var n;null===(n=e.onReset)||void 0===n||n.call(e,t),o.forEach((function(e){var n;return null===(n=e.onReset)||void 0===n?void 0:n.call(e,t)}))},getSources:function(n){return Promise.all([].concat(Pe(o.map((function(e){return e.getSources}))),[e.getSources]).filter(Boolean).map((function(e){return function(e,t){var n=[];return Promise.resolve(e(t)).then((function(e){return Promise.all(e.filter((function(e){return Boolean(e)})).map((function(e){if(e.sourceId,n.includes(e.sourceId))throw new Error("[Autocomplete] The `sourceId` ".concat(JSON.stringify(e.sourceId)," is not unique."));n.push(e.sourceId);var t={getItemInputValue:function(e){return e.state.query},getItemUrl:function(){},onSelect:function(e){(0,e.setIsOpen)(!1)},onActive:_,onResolve:_};Object.keys(t).forEach((function(e){t[e].__default=!0}));var r=ie(ie({},t),e);return Promise.resolve(r)})))}))}(e,n)}))).then((function(e){return m(e)})).then((function(e){return e.map((function(e){return Ae(Ae({},e),{},{onSelect:function(n){e.onSelect(n),t.forEach((function(e){var t;return null===(t=e.onSelect)||void 0===t?void 0:t.call(e,n)}))},onActive:function(n){e.onActive(n),t.forEach((function(e){var t;return null===(t=e.onActive)||void 0===t?void 0:t.call(e,n)}))},onResolve:function(n){e.onResolve(n),t.forEach((function(e){var t;return null===(t=e.onResolve)||void 0===t?void 0:t.call(e,n)}))}})}))}))},navigator:Ae({navigate:function(e){var t=e.itemUrl;r.location.assign(t)},navigateNewTab:function(e){var t=e.itemUrl,n=r.open(t,"_blank","noopener");null==n||n.focus()},navigateNewWindow:function(e){var t=e.itemUrl;r.open(t,"_blank","noopener")}},e.navigator)})}function Ce(e){return Ce="function"==typeof Symbol&&"symbol"==typeof Symbol.iterator?function(e){return typeof e}:function(e){return e&&"function"==typeof Symbol&&e.constructor===Symbol&&e!==Symbol.prototype?"symbol":typeof e},Ce(e)}function ke(e,t){var n=Object.keys(e);if(Object.getOwnPropertySymbols){var r=Object.getOwnPropertySymbols(e);t&&(r=r.filter((function(t){return Object.getOwnPropertyDescriptor(e,t).enumerable}))),n.push.apply(n,r)}return n}function xe(e){for(var t=1;t<arguments.length;t++){var n=null!=arguments[t]?arguments[t]:{};t%2?ke(Object(n),!0).forEach((function(t){Ne(e,t,n[t])})):Object.getOwnPropertyDescriptors?Object.defineProperties(e,Object.getOwnPropertyDescriptors(n)):ke(Object(n)).forEach((function(t){Object.defineProperty(e,t,Object.getOwnPropertyDescriptor(n,t))}))}return e}function Ne(e,t,n){return(t=function(e){var t=function(e,t){if("object"!==Ce(e)||null===e)return e;var n=e[Symbol.toPrimitive];if(void 0!==n){var r=n.call(e,t||"default");if("object"!==Ce(r))return r;throw new TypeError("@@toPrimitive must return a primitive value.")}return("string"===t?String:Number)(e)}(e,"string");return"symbol"===Ce(t)?t:String(t)}(t))in e?Object.defineProperty(e,t,{value:n,enumerable:!0,configurable:!0,writable:!0}):e[t]=n,e}function Te(e){return Te="function"==typeof Symbol&&"symbol"==typeof Symbol.iterator?function(e){return typeof e}:function(e){return e&&"function"==typeof Symbol&&e.constructor===Symbol&&e!==Symbol.prototype?"symbol":typeof e},Te(e)}function qe(e,t){var n=Object.keys(e);if(Object.getOwnPropertySymbols){var r=Object.getOwnPropertySymbols(e);t&&(r=r.filter((function(t){return Object.getOwnPropertyDescriptor(e,t).enumerable}))),n.push.apply(n,r)}return n}function Be(e){for(var t=1;t<arguments.length;t++){var n=null!=arguments[t]?arguments[t]:{};t%2?qe(Object(n),!0).forEach((function(t){Re(e,t,n[t])})):Object.getOwnPropertyDescriptors?Object.defineProperties(e,Object.getOwnPropertyDescriptors(n)):qe(Object(n)).forEach((function(t){Object.defineProperty(e,t,Object.getOwnPropertyDescriptor(n,t))}))}return e}function Re(e,t,n){return(t=function(e){var t=function(e,t){if("object"!==Te(e)||null===e)return e;var n=e[Symbol.toPrimitive];if(void 0!==n){var r=n.call(e,t||"default");if("object"!==Te(r))return r;throw new TypeError("@@toPrimitive must return a primitive value.")}return("string"===t?String:Number)(e)}(e,"string");return"symbol"===Te(t)?t:String(t)}(t))in e?Object.defineProperty(e,t,{value:n,enumerable:!0,configurable:!0,writable:!0}):e[t]=n,e}function Le(e){return function(e){if(Array.isArray(e))return Fe(e)}(e)||function(e){if("undefined"!=typeof Symbol&&null!=e[Symbol.iterator]||null!=e["@@iterator"])return Array.from(e)}(e)||function(e,t){if(!e)return;if("string"==typeof e)return Fe(e,t);var n=Object.prototype.toString.call(e).slice(8,-1);"Object"===n&&e.constructor&&(n=e.constructor.name);if("Map"===n||"Set"===n)return Array.from(e);if("Arguments"===n||/^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(n))return Fe(e,t)}(e)||function(){throw new TypeError("Invalid attempt to spread non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method.")}()}function Fe(e,t){(null==t||t>e.length)&&(t=e.length);for(var n=0,r=new Array(t);n<t;n++)r[n]=e[n];return r}function Ue(e){return Boolean(e.execute)}function Me(e,t,n){if(o=e,Boolean(null==o?void 0:o.execute)){var r="algolia"===e.requesterId?Object.assign.apply(Object,[{}].concat(Le(Object.keys(n.context).map((function(e){var t;return null===(t=n.context[e])||void 0===t?void 0:t.__algoliaSearchParameters}))))):{};return Be(Be({},e),{},{requests:e.queries.map((function(n){return{query:"algolia"===e.requesterId?Be(Be({},n),{},{params:Be(Be({},r),n.params)}):n,sourceId:t,transformResponse:e.transformResponse}}))})}var o;return{items:e,sourceId:t}}function He(e){var t=e.reduce((function(e,t){if(!Ue(t))return e.push(t),e;var n=t.searchClient,r=t.execute,o=t.requesterId,i=t.requests,u=e.find((function(e){return Ue(t)&&Ue(e)&&e.searchClient===n&&Boolean(o)&&e.requesterId===o}));if(u){var a;(a=u.items).push.apply(a,Le(i))}else{var l={execute:r,requesterId:o,items:i,searchClient:n};e.push(l)}return e}),[]).map((function(e){if(!Ue(e))return Promise.resolve(e);var t=e,n=t.execute,r=t.items;return n({searchClient:t.searchClient,requests:r})}));return Promise.all(t).then((function(e){return m(e)}))}function Ve(e,t,n){return t.map((function(t){var r,o=e.filter((function(e){return e.sourceId===t.sourceId})),i=o.map((function(e){return e.items})),u=o[0].transformResponse,a=u?u({results:r=i,hits:r.map((function(e){return e.hits})).filter(Boolean),facetHits:r.map((function(e){var t;return null===(t=e.facetHits)||void 0===t?void 0:t.map((function(e){return{label:e.value,count:e.count,_highlightResult:{label:{value:e.highlighted}}}}))})).filter(Boolean)}):i;return t.onResolve({source:t,results:i,items:a,state:n.getState()}),a.every(Boolean),'The `getItems` function from source "'.concat(t.sourceId,'" must return an array of items but returned ').concat(JSON.stringify(void 0),".\n\nDid you forget to return items?\n\nSee: https://www.algolia.com/doc/ui-libraries/autocomplete/core-concepts/sources/#param-getitems"),{source:t,items:a}}))}function We(e){return We="function"==typeof Symbol&&"symbol"==typeof Symbol.iterator?function(e){return typeof e}:function(e){return e&&"function"==typeof Symbol&&e.constructor===Symbol&&e!==Symbol.prototype?"symbol":typeof e},We(e)}var Qe=["event","nextState","props","query","refresh","store"];function Ke(e,t){var n=Object.keys(e);if(Object.getOwnPropertySymbols){var r=Object.getOwnPropertySymbols(e);t&&(r=r.filter((function(t){return Object.getOwnPropertyDescriptor(e,t).enumerable}))),n.push.apply(n,r)}return n}function $e(e){for(var t=1;t<arguments.length;t++){var n=null!=arguments[t]?arguments[t]:{};t%2?Ke(Object(n),!0).forEach((function(t){ze(e,t,n[t])})):Object.getOwnPropertyDescriptors?Object.defineProperties(e,Object.getOwnPropertyDescriptors(n)):Ke(Object(n)).forEach((function(t){Object.defineProperty(e,t,Object.getOwnPropertyDescriptor(n,t))}))}return e}function ze(e,t,n){return(t=function(e){var t=function(e,t){if("object"!==We(e)||null===e)return e;var n=e[Symbol.toPrimitive];if(void 0!==n){var r=n.call(e,t||"default");if("object"!==We(r))return r;throw new TypeError("@@toPrimitive must return a primitive value.")}return("string"===t?String:Number)(e)}(e,"string");return"symbol"===We(t)?t:String(t)}(t))in e?Object.defineProperty(e,t,{value:n,enumerable:!0,configurable:!0,writable:!0}):e[t]=n,e}function Ge(e,t){if(null==e)return{};var n,r,o=function(e,t){if(null==e)return{};var n,r,o={},i=Object.keys(e);for(r=0;r<i.length;r++)n=i[r],t.indexOf(n)>=0||(o[n]=e[n]);return o}(e,t);if(Object.getOwnPropertySymbols){var i=Object.getOwnPropertySymbols(e);for(r=0;r<i.length;r++)n=i[r],t.indexOf(n)>=0||Object.prototype.propertyIsEnumerable.call(e,n)&&(o[n]=e[n])}return o}var Je,Xe,Ye,Ze=null,et=(Je=-1,Xe=-1,Ye=void 0,function(e){var t=++Je;return Promise.resolve(e).then((function(e){return Ye&&t<Xe?Ye:(Xe=t,Ye=e,e)}))});function tt(e){var t=e.event,n=e.nextState,r=void 0===n?{}:n,o=e.props,i=e.query,u=e.refresh,a=e.store,l=Ge(e,Qe);Ze&&o.environment.clearTimeout(Ze);var c=l.setCollections,s=l.setIsOpen,f=l.setQuery,p=l.setActiveItemId,v=l.setStatus,d=l.setContext;if(f(i),p(o.defaultActiveItemId),!i&&!1===o.openOnFocus){var y,b=a.getState().collections.map((function(e){return $e($e({},e),{},{items:[]})}));v("idle"),c(b),s(null!==(y=r.isOpen)&&void 0!==y?y:o.shouldPanelOpen({state:a.getState()}));var g=Z(et(b).then((function(){return Promise.resolve()})));return a.pendingRequests.add(g)}v("loading"),Ze=o.environment.setTimeout((function(){v("stalled")}),o.stallThreshold);var h=Z(et(o.getSources($e({query:i,refresh:u,state:a.getState()},l)).then((function(e){return Promise.all(e.map((function(e){return Promise.resolve(e.getItems($e({query:i,refresh:u,state:a.getState()},l))).then((function(t){return Me(t,e.sourceId,a.getState())}))}))).then(He).then((function(t){var n,r=t.some((function(e){return function(e){return!Array.isArray(e)&&Boolean(null==e?void 0:e._automaticInsights)}(e.items)}));r&&d({algoliaInsightsPlugin:$e($e({},(null===(n=a.getState().context)||void 0===n?void 0:n.algoliaInsightsPlugin)||{}),{},{__automaticInsights:r})});return Ve(t,e,a)})).then((function(e){return function(e){var t=e.collections,n=e.props,r=e.state,o=t.reduce((function(e,t){return xe(xe({},e),{},Ne({},t.source.sourceId,xe(xe({},t.source),{},{getItems:function(){return m(t.items)}})))}),{}),i=n.plugins.reduce((function(e,t){return t.reshape?t.reshape(e):e}),{sourcesBySourceId:o,state:r}).sourcesBySourceId;return m(n.reshape({sourcesBySourceId:i,sources:Object.values(i),state:r})).filter(Boolean).map((function(e){return{source:e,items:e.getItems()}}))}({collections:e,props:o,state:a.getState()})}))})))).then((function(e){var n;v("idle"),c(e);var f=o.shouldPanelOpen({state:a.getState()});s(null!==(n=r.isOpen)&&void 0!==n?n:o.openOnFocus&&!i&&f||f);var p=fe(a.getState());if(null!==a.getState().activeItemId&&p){var m=p.item,d=p.itemInputValue,y=p.itemUrl,b=p.source;b.onActive($e({event:t,item:m,itemInputValue:d,itemUrl:y,refresh:u,source:b,state:a.getState()},l))}})).finally((function(){v("idle"),Ze&&o.environment.clearTimeout(Ze)}));return a.pendingRequests.add(h)}function nt(e){return nt="function"==typeof Symbol&&"symbol"==typeof Symbol.iterator?function(e){return typeof e}:function(e){return e&&"function"==typeof Symbol&&e.constructor===Symbol&&e!==Symbol.prototype?"symbol":typeof e},nt(e)}var rt=["event","props","refresh","store"];function ot(e,t){var n=Object.keys(e);if(Object.getOwnPropertySymbols){var r=Object.getOwnPropertySymbols(e);t&&(r=r.filter((function(t){return Object.getOwnPropertyDescriptor(e,t).enumerable}))),n.push.apply(n,r)}return n}function it(e){for(var t=1;t<arguments.length;t++){var n=null!=arguments[t]?arguments[t]:{};t%2?ot(Object(n),!0).forEach((function(t){ut(e,t,n[t])})):Object.getOwnPropertyDescriptors?Object.defineProperties(e,Object.getOwnPropertyDescriptors(n)):ot(Object(n)).forEach((function(t){Object.defineProperty(e,t,Object.getOwnPropertyDescriptor(n,t))}))}return e}function ut(e,t,n){return(t=function(e){var t=function(e,t){if("object"!==nt(e)||null===e)return e;var n=e[Symbol.toPrimitive];if(void 0!==n){var r=n.call(e,t||"default");if("object"!==nt(r))return r;throw new TypeError("@@toPrimitive must return a primitive value.")}return("string"===t?String:Number)(e)}(e,"string");return"symbol"===nt(t)?t:String(t)}(t))in e?Object.defineProperty(e,t,{value:n,enumerable:!0,configurable:!0,writable:!0}):e[t]=n,e}function at(e,t){if(null==e)return{};var n,r,o=function(e,t){if(null==e)return{};var n,r,o={},i=Object.keys(e);for(r=0;r<i.length;r++)n=i[r],t.indexOf(n)>=0||(o[n]=e[n]);return o}(e,t);if(Object.getOwnPropertySymbols){var i=Object.getOwnPropertySymbols(e);for(r=0;r<i.length;r++)n=i[r],t.indexOf(n)>=0||Object.prototype.propertyIsEnumerable.call(e,n)&&(o[n]=e[n])}return o}function lt(e){return lt="function"==typeof Symbol&&"symbol"==typeof Symbol.iterator?function(e){return typeof e}:function(e){return e&&"function"==typeof Symbol&&e.constructor===Symbol&&e!==Symbol.prototype?"symbol":typeof e},lt(e)}var ct=["props","refresh","store"],st=["inputElement","formElement","panelElement"],ft=["inputElement"],pt=["inputElement","maxLength"],mt=["source"],vt=["item","source"];function dt(e,t){var n=Object.keys(e);if(Object.getOwnPropertySymbols){var r=Object.getOwnPropertySymbols(e);t&&(r=r.filter((function(t){return Object.getOwnPropertyDescriptor(e,t).enumerable}))),n.push.apply(n,r)}return n}function yt(e){for(var t=1;t<arguments.length;t++){var n=null!=arguments[t]?arguments[t]:{};t%2?dt(Object(n),!0).forEach((function(t){bt(e,t,n[t])})):Object.getOwnPropertyDescriptors?Object.defineProperties(e,Object.getOwnPropertyDescriptors(n)):dt(Object(n)).forEach((function(t){Object.defineProperty(e,t,Object.getOwnPropertyDescriptor(n,t))}))}return e}function bt(e,t,n){return(t=function(e){var t=function(e,t){if("object"!==lt(e)||null===e)return e;var n=e[Symbol.toPrimitive];if(void 0!==n){var r=n.call(e,t||"default");if("object"!==lt(r))return r;throw new TypeError("@@toPrimitive must return a primitive value.")}return("string"===t?String:Number)(e)}(e,"string");return"symbol"===lt(t)?t:String(t)}(t))in e?Object.defineProperty(e,t,{value:n,enumerable:!0,configurable:!0,writable:!0}):e[t]=n,e}function gt(e,t){if(null==e)return{};var n,r,o=function(e,t){if(null==e)return{};var n,r,o={},i=Object.keys(e);for(r=0;r<i.length;r++)n=i[r],t.indexOf(n)>=0||(o[n]=e[n]);return o}(e,t);if(Object.getOwnPropertySymbols){var i=Object.getOwnPropertySymbols(e);for(r=0;r<i.length;r++)n=i[r],t.indexOf(n)>=0||Object.prototype.propertyIsEnumerable.call(e,n)&&(o[n]=e[n])}return o}function ht(e){var t=e.props,n=e.refresh,r=e.store,o=gt(e,ct);return{getEnvironmentProps:function(e){var n=e.inputElement,o=e.formElement,i=e.panelElement;function u(e){!r.getState().isOpen&&r.pendingRequests.isEmpty()||e.target===n||!1===[o,i].some((function(t){return n=t,r=e.target,n===r||n.contains(r);var n,r}))&&(r.dispatch("blur",null),t.debug||r.pendingRequests.cancelAll())}return yt({onTouchStart:u,onMouseDown:u,onTouchMove:function(e){!1!==r.getState().isOpen&&n===t.environment.document.activeElement&&e.target!==n&&n.blur()}},gt(e,st))},getRootProps:function(e){return yt({role:"combobox","aria-expanded":r.getState().isOpen,"aria-haspopup":"listbox","aria-controls":r.getState().isOpen?r.getState().collections.map((function(e){var n=e.source;return pe(t.id,"list",n)})).join(" "):void 0,"aria-labelledby":pe(t.id,"label")},e)},getFormProps:function(e){e.inputElement;var i=gt(e,ft),u=function(i){var u;t.onSubmit(yt({event:i,refresh:n,state:r.getState()},o)),r.dispatch("submit",null),null===(u=e.inputElement)||void 0===u||u.blur()};return yt({action:"",noValidate:!0,role:"search",onSubmit:function(e){e.preventDefault();var n=se(t.plugins,r.pendingRequests);void 0!==n?n.then((function(){return u(e)})):u(e)},onReset:function(i){var u;i.preventDefault(),t.onReset(yt({event:i,refresh:n,state:r.getState()},o)),r.dispatch("reset",null),null===(u=e.inputElement)||void 0===u||u.focus()}},i)},getLabelProps:function(e){return yt({htmlFor:pe(t.id,"input"),id:pe(t.id,"label")},e)},getInputProps:function(e){var i;function u(e){(t.openOnFocus||Boolean(r.getState().query))&&tt(yt({event:e,props:t,query:r.getState().completion||r.getState().query,refresh:n,store:r},o)),r.dispatch("focus",null)}var a=e||{};a.inputElement;var l=a.maxLength,c=void 0===l?512:l,s=gt(a,pt),f=fe(r.getState()),p=function(e){return Boolean(e&&e.match(me))}((null===(i=t.environment.navigator)||void 0===i?void 0:i.userAgent)||""),m=t.enterKeyHint||(null!=f&&f.itemUrl&&!p?"go":"search");return yt({"aria-autocomplete":"both","aria-activedescendant":r.getState().isOpen&&null!==r.getState().activeItemId?pe(t.id,"item-".concat(r.getState().activeItemId),null==f?void 0:f.source):void 0,"aria-controls":r.getState().isOpen?r.getState().collections.filter((function(e){return e.items.length>0})).map((function(e){var n=e.source;return pe(t.id,"list",n)})).join(" "):void 0,"aria-labelledby":pe(t.id,"label"),value:r.getState().completion||r.getState().query,id:pe(t.id,"input"),autoComplete:"off",autoCorrect:"off",autoCapitalize:"off",enterKeyHint:m,spellCheck:"false",autoFocus:t.autoFocus,placeholder:t.placeholder,maxLength:c,type:"search",onChange:function(e){var i=e.currentTarget.value;t.ignoreCompositionEvents&&ve(e).isComposing?o.setQuery(i):tt(yt({event:e,props:t,query:i.slice(0,c),refresh:n,store:r},o))},onCompositionEnd:function(e){tt(yt({event:e,props:t,query:e.currentTarget.value.slice(0,c),refresh:n,store:r},o))},onKeyDown:function(e){ve(e).isComposing||function(e){var t=e.event,n=e.props,r=e.refresh,o=e.store,i=at(e,rt);if("ArrowUp"===t.key||"ArrowDown"===t.key){var u=function(){var e=fe(o.getState()),t=n.environment.document.getElementById(pe(n.id,"item-".concat(o.getState().activeItemId),null==e?void 0:e.source));t&&(t.scrollIntoViewIfNeeded?t.scrollIntoViewIfNeeded(!1):t.scrollIntoView(!1))},a=function(){var e=fe(o.getState());if(null!==o.getState().activeItemId&&e){var n=e.item,u=e.itemInputValue,a=e.itemUrl,l=e.source;l.onActive(it({event:t,item:n,itemInputValue:u,itemUrl:a,refresh:r,source:l,state:o.getState()},i))}};t.preventDefault(),!1===o.getState().isOpen&&(n.openOnFocus||Boolean(o.getState().query))?tt(it({event:t,props:n,query:o.getState().query,refresh:r,store:o},i)).then((function(){o.dispatch(t.key,{nextActiveItemId:n.defaultActiveItemId}),a(),setTimeout(u,0)})):(o.dispatch(t.key,{}),a(),u())}else if("Escape"===t.key)t.preventDefault(),o.dispatch(t.key,null),o.pendingRequests.cancelAll();else if("Tab"===t.key)o.dispatch("blur",null),o.pendingRequests.cancelAll();else if("Enter"===t.key){if(null===o.getState().activeItemId||o.getState().collections.every((function(e){return 0===e.items.length}))){var l=se(n.plugins,o.pendingRequests);return void(void 0!==l?l.then(o.pendingRequests.cancelAll):n.debug||o.pendingRequests.cancelAll())}t.preventDefault();var c=fe(o.getState()),s=c.item,f=c.itemInputValue,p=c.itemUrl,m=c.source;if(t.metaKey||t.ctrlKey)void 0!==p&&(m.onSelect(it({event:t,item:s,itemInputValue:f,itemUrl:p,refresh:r,source:m,state:o.getState()},i)),n.navigator.navigateNewTab({itemUrl:p,item:s,state:o.getState()}));else if(t.shiftKey)void 0!==p&&(m.onSelect(it({event:t,item:s,itemInputValue:f,itemUrl:p,refresh:r,source:m,state:o.getState()},i)),n.navigator.navigateNewWindow({itemUrl:p,item:s,state:o.getState()}));else if(t.altKey);else{if(void 0!==p)return m.onSelect(it({event:t,item:s,itemInputValue:f,itemUrl:p,refresh:r,source:m,state:o.getState()},i)),void n.navigator.navigate({itemUrl:p,item:s,state:o.getState()});tt(it({event:t,nextState:{isOpen:!1},props:n,query:f,refresh:r,store:o},i)).then((function(){m.onSelect(it({event:t,item:s,itemInputValue:f,itemUrl:p,refresh:r,source:m,state:o.getState()},i))}))}}}(yt({event:e,props:t,refresh:n,store:r},o))},onFocus:u,onBlur:_,onClick:function(n){e.inputElement!==t.environment.document.activeElement||r.getState().isOpen||u(n)}},s)},getPanelProps:function(e){return yt({onMouseDown:function(e){e.preventDefault()},onMouseLeave:function(){r.dispatch("mouseleave",null)}},e)},getListProps:function(e){var n=e||{},r=n.source,o=gt(n,mt);return yt({role:"listbox","aria-labelledby":pe(t.id,"label"),id:pe(t.id,"list",r)},o)},getItemProps:function(e){var i=e.item,u=e.source,a=gt(e,vt);return yt({id:pe(t.id,"item-".concat(i.__autocomplete_id),u),role:"option","aria-selected":r.getState().activeItemId===i.__autocomplete_id,onMouseMove:function(e){if(i.__autocomplete_id!==r.getState().activeItemId){r.dispatch("mousemove",i.__autocomplete_id);var t=fe(r.getState());if(null!==r.getState().activeItemId&&t){var u=t.item,a=t.itemInputValue,l=t.itemUrl,c=t.source;c.onActive(yt({event:e,item:u,itemInputValue:a,itemUrl:l,refresh:n,source:c,state:r.getState()},o))}}},onMouseDown:function(e){e.preventDefault()},onClick:function(e){var a=u.getItemInputValue({item:i,state:r.getState()}),l=u.getItemUrl({item:i,state:r.getState()});(l?Promise.resolve():tt(yt({event:e,nextState:{isOpen:!1},props:t,query:a,refresh:n,store:r},o))).then((function(){u.onSelect(yt({event:e,item:i,itemInputValue:a,itemUrl:l,refresh:n,source:u,state:r.getState()},o))}))}},a)}}}function _t(e){return _t="function"==typeof Symbol&&"symbol"==typeof Symbol.iterator?function(e){return typeof e}:function(e){return e&&"function"==typeof Symbol&&e.constructor===Symbol&&e!==Symbol.prototype?"symbol":typeof e},_t(e)}function Ot(e,t){var n=Object.keys(e);if(Object.getOwnPropertySymbols){var r=Object.getOwnPropertySymbols(e);t&&(r=r.filter((function(t){return Object.getOwnPropertyDescriptor(e,t).enumerable}))),n.push.apply(n,r)}return n}function St(e){for(var t=1;t<arguments.length;t++){var n=null!=arguments[t]?arguments[t]:{};t%2?Ot(Object(n),!0).forEach((function(t){jt(e,t,n[t])})):Object.getOwnPropertyDescriptors?Object.defineProperties(e,Object.getOwnPropertyDescriptors(n)):Ot(Object(n)).forEach((function(t){Object.defineProperty(e,t,Object.getOwnPropertyDescriptor(n,t))}))}return e}function jt(e,t,n){return(t=function(e){var t=function(e,t){if("object"!==_t(e)||null===e)return e;var n=e[Symbol.toPrimitive];if(void 0!==n){var r=n.call(e,t||"default");if("object"!==_t(r))return r;throw new TypeError("@@toPrimitive must return a primitive value.")}return("string"===t?String:Number)(e)}(e,"string");return"symbol"===_t(t)?t:String(t)}(t))in e?Object.defineProperty(e,t,{value:n,enumerable:!0,configurable:!0,writable:!0}):e[t]=n,e}function Pt(e){var t,n,r,o,i=e.plugins,u=e.options,a=null===(t=((null===(n=u.__autocomplete_metadata)||void 0===n?void 0:n.userAgents)||[])[0])||void 0===t?void 0:t.segment,l=a?jt({},a,Object.keys((null===(r=u.__autocomplete_metadata)||void 0===r?void 0:r.options)||{})):{};return{plugins:i.map((function(e){return{name:e.name,options:Object.keys(e.__autocomplete_pluginOptions||[])}})),options:St({"autocomplete-core":Object.keys(u)},l),ua:S.concat((null===(o=u.__autocomplete_metadata)||void 0===o?void 0:o.userAgents)||[])}}function wt(e){var t,n=e.state;return!1===n.isOpen||null===n.activeItemId?null:(null===(t=fe(n))||void 0===t?void 0:t.itemInputValue)||null}function It(e){return It="function"==typeof Symbol&&"symbol"==typeof Symbol.iterator?function(e){return typeof e}:function(e){return e&&"function"==typeof Symbol&&e.constructor===Symbol&&e!==Symbol.prototype?"symbol":typeof e},It(e)}function At(e,t){var n=Object.keys(e);if(Object.getOwnPropertySymbols){var r=Object.getOwnPropertySymbols(e);t&&(r=r.filter((function(t){return Object.getOwnPropertyDescriptor(e,t).enumerable}))),n.push.apply(n,r)}return n}function Et(e){for(var t=1;t<arguments.length;t++){var n=null!=arguments[t]?arguments[t]:{};t%2?At(Object(n),!0).forEach((function(t){Dt(e,t,n[t])})):Object.getOwnPropertyDescriptors?Object.defineProperties(e,Object.getOwnPropertyDescriptors(n)):At(Object(n)).forEach((function(t){Object.defineProperty(e,t,Object.getOwnPropertyDescriptor(n,t))}))}return e}function Dt(e,t,n){return(t=function(e){var t=function(e,t){if("object"!==It(e)||null===e)return e;var n=e[Symbol.toPrimitive];if(void 0!==n){var r=n.call(e,t||"default");if("object"!==It(r))return r;throw new TypeError("@@toPrimitive must return a primitive value.")}return("string"===t?String:Number)(e)}(e,"string");return"symbol"===It(t)?t:String(t)}(t))in e?Object.defineProperty(e,t,{value:n,enumerable:!0,configurable:!0,writable:!0}):e[t]=n,e}var Ct=function(e,t){switch(t.type){case"setActiveItemId":case"mousemove":return Et(Et({},e),{},{activeItemId:t.payload});case"setQuery":return Et(Et({},e),{},{query:t.payload,completion:null});case"setCollections":return Et(Et({},e),{},{collections:t.payload});case"setIsOpen":return Et(Et({},e),{},{isOpen:t.payload});case"setStatus":return Et(Et({},e),{},{status:t.payload});case"setContext":return Et(Et({},e),{},{context:Et(Et({},e.context),t.payload)});case"ArrowDown":var n=Et(Et({},e),{},{activeItemId:t.payload.hasOwnProperty("nextActiveItemId")?t.payload.nextActiveItemId:re(1,e.activeItemId,b(e),t.props.defaultActiveItemId)});return Et(Et({},n),{},{completion:wt({state:n})});case"ArrowUp":var r=Et(Et({},e),{},{activeItemId:re(-1,e.activeItemId,b(e),t.props.defaultActiveItemId)});return Et(Et({},r),{},{completion:wt({state:r})});case"Escape":return e.isOpen?Et(Et({},e),{},{activeItemId:null,isOpen:!1,completion:null}):Et(Et({},e),{},{activeItemId:null,query:"",status:"idle",collections:[]});case"submit":return Et(Et({},e),{},{activeItemId:null,isOpen:!1,status:"idle"});case"reset":return Et(Et({},e),{},{activeItemId:!0===t.props.openOnFocus?t.props.defaultActiveItemId:null,status:"idle",completion:null,query:""});case"focus":return Et(Et({},e),{},{activeItemId:t.props.defaultActiveItemId,isOpen:(t.props.openOnFocus||Boolean(e.query))&&t.props.shouldPanelOpen({state:e})});case"blur":return t.props.debug?e:Et(Et({},e),{},{isOpen:!1,activeItemId:null});case"mouseleave":return Et(Et({},e),{},{activeItemId:t.props.defaultActiveItemId});default:return"The reducer action ".concat(JSON.stringify(t.type)," is not supported."),e}};function kt(e){return kt="function"==typeof Symbol&&"symbol"==typeof Symbol.iterator?function(e){return typeof e}:function(e){return e&&"function"==typeof Symbol&&e.constructor===Symbol&&e!==Symbol.prototype?"symbol":typeof e},kt(e)}function xt(e,t){var n=Object.keys(e);if(Object.getOwnPropertySymbols){var r=Object.getOwnPropertySymbols(e);t&&(r=r.filter((function(t){return Object.getOwnPropertyDescriptor(e,t).enumerable}))),n.push.apply(n,r)}return n}function Nt(e){for(var t=1;t<arguments.length;t++){var n=null!=arguments[t]?arguments[t]:{};t%2?xt(Object(n),!0).forEach((function(t){Tt(e,t,n[t])})):Object.getOwnPropertyDescriptors?Object.defineProperties(e,Object.getOwnPropertyDescriptors(n)):xt(Object(n)).forEach((function(t){Object.defineProperty(e,t,Object.getOwnPropertyDescriptor(n,t))}))}return e}function Tt(e,t,n){return(t=function(e){var t=function(e,t){if("object"!==kt(e)||null===e)return e;var n=e[Symbol.toPrimitive];if(void 0!==n){var r=n.call(e,t||"default");if("object"!==kt(r))return r;throw new TypeError("@@toPrimitive must return a primitive value.")}return("string"===t?String:Number)(e)}(e,"string");return"symbol"===kt(t)?t:String(t)}(t))in e?Object.defineProperty(e,t,{value:n,enumerable:!0,configurable:!0,writable:!0}):e[t]=n,e}function qt(e){var t=[],n=De(e,t),r=ge(Ct,n,(function(e){var t,r,i=e.prevState,c=e.state;if(n.onStateChange(Nt({prevState:i,state:c,refresh:u,navigator:n.navigator},o)),!l()&&null!==(t=c.context)&&void 0!==t&&null!==(r=t.algoliaInsightsPlugin)&&void 0!==r&&r.__automaticInsights&&!1!==n.insights){var s=G({__autocomplete_clickAnalytics:!1});n.plugins.push(s),a([s])}})),o=function(e){var t=e.store;return{setActiveItemId:function(e){t.dispatch("setActiveItemId",e)},setQuery:function(e){t.dispatch("setQuery",e)},setCollections:function(e){var n=0,r=e.map((function(e){return Oe(Oe({},e),{},{items:m(e.items).map((function(e){return Oe(Oe({},e),{},{__autocomplete_id:n++})}))})}));t.dispatch("setCollections",r)},setIsOpen:function(e){t.dispatch("setIsOpen",e)},setStatus:function(e){t.dispatch("setStatus",e)},setContext:function(e){t.dispatch("setContext",e)}}}({store:r}),i=ht(Nt({props:n,refresh:u,store:r,navigator:n.navigator},o));function u(){return tt(Nt({event:new Event("input"),nextState:{isOpen:r.getState().isOpen},props:n,navigator:n.navigator,query:r.getState().query,refresh:u,store:r},o))}function a(e){e.forEach((function(e){var r;return null===(r=e.subscribe)||void 0===r?void 0:r.call(e,Nt(Nt({},o),{},{navigator:n.navigator,refresh:u,onSelect:function(e){t.push({onSelect:e})},onActive:function(e){t.push({onActive:e})},onResolve:function(e){t.push({onResolve:e})}}))}))}function l(){return n.plugins.some((function(e){return"aa.algoliaInsightsPlugin"===e.name}))}if(n.insights&&!l()){var c="boolean"==typeof n.insights?{}:n.insights;n.plugins.push(G(c))}return a(n.plugins),function(e){var t,n,r=e.metadata,o=e.environment;if(null===(t=o.navigator)||void 0===t||null===(n=t.userAgent)||void 0===n?void 0:n.includes("Algolia Crawler")){var i=o.document.createElement("meta"),u=o.document.querySelector("head");i.name="algolia:metadata",setTimeout((function(){i.content=JSON.stringify(r),u.appendChild(i)}),0)}}({metadata:Pt({plugins:n.plugins,options:e}),environment:n.environment}),Nt(Nt({refresh:u,navigator:n.navigator},i),o)}var Bt=function(e,t,n,r){var o;t[0]=0;for(var i=1;i<t.length;i++){var u=t[i++],a=t[i]?(t[0]|=u?1:2,n[t[i++]]):t[++i];3===u?r[0]=a:4===u?r[1]=Object.assign(r[1]||{},a):5===u?(r[1]=r[1]||{})[t[++i]]=a:6===u?r[1][t[++i]]+=a+"":u?(o=e.apply(a,Bt(e,a,n,["",null])),r.push(o),a[0]?t[0]|=2:(t[i-2]=0,t[i]=o)):r.push(a)}return r},Rt=new Map;function Lt(e){var t=Rt.get(this);return t||(t=new Map,Rt.set(this,t)),(t=Bt(this,t.get(e)||(t.set(e,t=function(e){for(var t,n,r=1,o="",i="",u=[0],a=function(e){1===r&&(e||(o=o.replace(/^\s*\n\s*|\s*\n\s*$/g,"")))?u.push(0,e,o):3===r&&(e||o)?(u.push(3,e,o),r=2):2===r&&"..."===o&&e?u.push(4,e,0):2===r&&o&&!e?u.push(5,0,!0,o):r>=5&&((o||!e&&5===r)&&(u.push(r,0,o,n),r=6),e&&(u.push(r,e,0,n),r=6)),o=""},l=0;l<e.length;l++){l&&(1===r&&a(),a(l));for(var c=0;c<e[l].length;c++)t=e[l][c],1===r?"<"===t?(a(),u=[u],r=3):o+=t:4===r?"--"===o&&">"===t?(r=1,o=""):o=t+o[0]:i?t===i?i="":o+=t:'"'===t||"'"===t?i=t:">"===t?(a(),r=1):r&&("="===t?(r=5,n=o,o=""):"/"===t&&(r<5||">"===e[l][c+1])?(a(),3===r&&(u=u[0]),r=u,(u=u[0]).push(2,0,r),r=0):" "===t||"\t"===t||"\n"===t||"\r"===t?(a(),r=2):o+=t),3===r&&"!--"===o&&(r=4,u=u[0])}return a(),u}(e)),t),arguments,[])).length>1?t:t[0]}var Ft=function(e){var t=e.environment,n=t.document.createElementNS("http://www.w3.org/2000/svg","svg");n.setAttribute("class","aa-ClearIcon"),n.setAttribute("viewBox","0 0 24 24"),n.setAttribute("width","18"),n.setAttribute("height","18"),n.setAttribute("fill","currentColor");var r=t.document.createElementNS("http://www.w3.org/2000/svg","path");return r.setAttribute("d","M5.293 6.707l5.293 5.293-5.293 5.293c-0.391 0.391-0.391 1.024 0 1.414s1.024 0.391 1.414 0l5.293-5.293 5.293 5.293c0.391 0.391 1.024 0.391 1.414 0s0.391-1.024 0-1.414l-5.293-5.293 5.293-5.293c0.391-0.391 0.391-1.024 0-1.414s-1.024-0.391-1.414 0l-5.293 5.293-5.293-5.293c-0.391-0.391-1.024-0.391-1.414 0s-0.391 1.024 0 1.414z"),n.appendChild(r),n};function Ut(e,t){if("string"==typeof t){var n=e.document.querySelector(t);return"The element ".concat(JSON.stringify(t)," is not in the document."),n}return t}function Mt(){for(var e=arguments.length,t=new Array(e),n=0;n<e;n++)t[n]=arguments[n];return t.reduce((function(e,t){return Object.keys(t).forEach((function(n){var r=e[n],o=t[n];r!==o&&(e[n]=[r,o].filter(Boolean).join(" "))})),e}),{})}var Ht=function(e){return e&&"object"===r(e)&&"[object Object]"===Object.prototype.toString.call(e)};function Vt(){for(var e=arguments.length,t=new Array(e),n=0;n<e;n++)t[n]=arguments[n];return t.reduce((function(e,t){return Object.keys(t).forEach((function(n){var r=e[n],o=t[n];Array.isArray(r)&&Array.isArray(o)?e[n]=r.concat.apply(r,l(o)):Ht(r)&&Ht(o)?e[n]=Vt(r,o):e[n]=o})),e}),{})}function Wt(e,t){return Object.entries(e).reduce((function(e,r){var i=a(r,2),u=i[0],l=i[1];return t({key:u,value:l})?n(n({},e),{},o({},u,l)):e}),{})}var Qt=["ontouchstart","ontouchend","ontouchmove","ontouchcancel"];function Kt(e,t,n){e[t]=null===n?"":"number"!=typeof n?n:n+"px"}function $t(e){this._listeners[e.type](e)}function zt(e,t,n){var r,o,i=e[t];if("style"===t)if("string"==typeof n)e.style=n;else if(null===n)e.style="";else for(t in n)i&&n[t]===i[t]||Kt(e.style,t,n[t]);else"o"===t[0]&&"n"===t[1]?(r=t!==(t=t.replace(/Capture$/,"")),((o=t.toLowerCase())in e||Qt.includes(o))&&(t=o),t=t.slice(2),e._listeners||(e._listeners={}),e._listeners[t]=n,n?i||e.addEventListener(t,$t,r):e.removeEventListener(t,$t,r)):"list"!==t&&"tagName"!==t&&"form"!==t&&"type"!==t&&"size"!==t&&"download"!==t&&"href"!==t&&t in e?e[t]=null==n?"":n:"function"!=typeof n&&"dangerouslySetInnerHTML"!==t&&(null==n||!1===n&&!/^ar/.test(t)?e.removeAttribute(t):e.setAttribute(t,n))}function Gt(e){switch(e){case"onChange":return"onInput";case"onCompositionEnd":return"oncompositionend";default:return e}}function Jt(e,t){for(var n in t)zt(e,Gt(n),t[n])}function Xt(e,t){for(var n in t)"o"===n[0]&&"n"===n[1]||zt(e,Gt(n),t[n])}var Yt=["children"];function Zt(e){return function(t,n){var r=n.children,o=void 0===r?[]:r,i=u(n,Yt),a=e.document.createElement(t);return Jt(a,i),a.append.apply(a,l(o)),a}}var en=["autocompleteScopeApi","environment","classNames","getInputProps","getInputPropsCore","isDetached","state"],tn=function(e){var t=e.environment.document.createElementNS("http://www.w3.org/2000/svg","svg");return t.setAttribute("class","aa-LoadingIcon"),t.setAttribute("viewBox","0 0 100 100"),t.setAttribute("width","20"),t.setAttribute("height","20"),t.innerHTML='<circle\n  cx="50"\n  cy="50"\n  fill="none"\n  r="35"\n  stroke="currentColor"\n  stroke-dasharray="164.93361431346415 56.97787143782138"\n  stroke-width="6"\n>\n  <animateTransform\n    attributeName="transform"\n    type="rotate"\n    repeatCount="indefinite"\n    dur="1s"\n    values="0 50 50;90 50 50;180 50 50;360 50 50"\n    keyTimes="0;0.40;0.65;1"\n  />\n</circle>',t},nn=function(e){var t=e.environment,n=t.document.createElementNS("http://www.w3.org/2000/svg","svg");n.setAttribute("class","aa-SubmitIcon"),n.setAttribute("viewBox","0 0 24 24"),n.setAttribute("width","20"),n.setAttribute("height","20"),n.setAttribute("fill","currentColor");var r=t.document.createElementNS("http://www.w3.org/2000/svg","path");return r.setAttribute("d","M16.041 15.856c-0.034 0.026-0.067 0.055-0.099 0.087s-0.060 0.064-0.087 0.099c-1.258 1.213-2.969 1.958-4.855 1.958-1.933 0-3.682-0.782-4.95-2.050s-2.050-3.017-2.050-4.95 0.782-3.682 2.050-4.95 3.017-2.050 4.95-2.050 3.682 0.782 4.95 2.050 2.050 3.017 2.050 4.95c0 1.886-0.745 3.597-1.959 4.856zM21.707 20.293l-3.675-3.675c1.231-1.54 1.968-3.493 1.968-5.618 0-2.485-1.008-4.736-2.636-6.364s-3.879-2.636-6.364-2.636-4.736 1.008-6.364 2.636-2.636 3.879-2.636 6.364 1.008 4.736 2.636 6.364 3.879 2.636 6.364 2.636c2.125 0 4.078-0.737 5.618-1.968l3.675 3.675c0.391 0.391 1.024 0.391 1.414 0s0.391-1.024 0-1.414z"),n.appendChild(r),n};function rn(e){var t=e.autocomplete,r=e.autocompleteScopeApi,o=e.classNames,i=e.environment,a=e.isDetached,l=e.placeholder,c=void 0===l?"Search":l,s=e.propGetters,f=e.setIsModalOpen,p=e.state,m=e.translations,v=Zt(i),d=s.getRootProps(n({state:p,props:t.getRootProps({})},r)),y=v("div",n({class:o.root,ariaLabel:m.detachedSearchButtonTitle},d)),b=v("div",{class:o.detachedContainer,onMouseDown:function(e){e.stopPropagation()}}),g=v("div",{class:o.detachedOverlay,children:[b],onMouseDown:function(){f(!1),t.setIsOpen(!1)}}),h=s.getLabelProps(n({state:p,props:t.getLabelProps({})},r)),_=v("button",{class:o.submitButton,type:"submit",title:m.submitButtonTitle,children:[nn({environment:i})]}),O=v("label",n({class:o.label,children:[_],ariaLabel:m.submitButtonTitle},h)),S=v("button",{class:o.clearButton,type:"reset",title:m.clearButtonTitle,children:[Ft({environment:i})]}),j=v("div",{class:o.loadingIndicator,children:[tn({environment:i})]}),P=function(e){var t=e.autocompleteScopeApi,r=e.environment;e.classNames;var o=e.getInputProps,i=e.getInputPropsCore,a=e.isDetached,l=e.state,c=u(e,en),s=Zt(r)("input",c),f=o(n({state:l,props:i({inputElement:s}),inputElement:s},t));return Jt(s,n(n({},f),{},{onKeyDown:function(e){a&&"Tab"===e.key||f.onKeyDown(e)}})),s}({class:o.input,environment:i,state:p,getInputProps:s.getInputProps,getInputPropsCore:t.getInputProps,autocompleteScopeApi:r,isDetached:a}),w=v("div",{class:o.inputWrapperPrefix,children:[O,j]}),I=v("div",{class:o.inputWrapperSuffix,children:[S]}),A=v("div",{class:o.inputWrapper,children:[P]}),E=s.getFormProps(n({state:p,props:t.getFormProps({inputElement:P})},r)),D=v("form",n({class:o.form,children:[w,A,I]},E)),C=s.getPanelProps(n({state:p,props:t.getPanelProps({})},r)),k=v("div",n({class:o.panel},C)),x=v("div",{class:o.detachedSearchButtonQuery,textContent:p.query}),N=v("div",{class:o.detachedSearchButtonPlaceholder,hidden:Boolean(p.query),textContent:c});if(a){var T=v("div",{class:o.detachedSearchButtonIcon,children:[nn({environment:i})]}),q=v("button",{type:"button",class:o.detachedSearchButton,title:m.detachedSearchButtonTitle,id:h.id,onClick:function(){f(!0)},children:[T,N,x]}),B=v("button",{type:"button",class:o.detachedCancelButton,textContent:m.detachedCancelButtonText,onTouchStart:function(e){e.stopPropagation()},onClick:function(){t.setIsOpen(!1),f(!1)}}),R=v("div",{class:o.detachedFormContainer,children:[D,B]});b.appendChild(R),y.appendChild(q)}else y.appendChild(D);return{detachedContainer:b,detachedOverlay:g,detachedSearchButtonQuery:x,detachedSearchButtonPlaceholder:N,inputWrapper:A,input:P,root:y,form:D,label:O,submitButton:_,clearButton:S,loadingIndicator:j,panel:k}}var on,un,an,ln,cn,sn,fn,pn={},mn=[],vn=/acit|ex(?:s|g|n|p|$)|rph|grid|ows|mnc|ntw|ine[ch]|zoo|^ord|itera/i;function dn(e,t){for(var n in t)e[n]=t[n];return e}function yn(e){var t=e.parentNode;t&&t.removeChild(e)}function bn(e,t,n){var r,o,i,u={};for(i in t)"key"==i?r=t[i]:"ref"==i?o=t[i]:u[i]=t[i];if(arguments.length>2&&(u.children=arguments.length>3?on.call(arguments,2):n),"function"==typeof e&&null!=e.defaultProps)for(i in e.defaultProps)void 0===u[i]&&(u[i]=e.defaultProps[i]);return gn(e,u,r,o,null)}function gn(e,t,n,r,o){var i={type:e,props:t,key:n,ref:r,__k:null,__:null,__b:0,__e:null,__d:void 0,__c:null,__h:null,constructor:void 0,__v:null==o?++an:o};return null==o&&null!=un.vnode&&un.vnode(i),i}function hn(e){return e.children}function _n(e,t){this.props=e,this.context=t}function On(e,t){if(null==t)return e.__?On(e.__,e.__.__k.indexOf(e)+1):null;for(var n;t<e.__k.length;t++)if(null!=(n=e.__k[t])&&null!=n.__e)return n.__e;return"function"==typeof e.type?On(e):null}function Sn(e){var t,n;if(null!=(e=e.__)&&null!=e.__c){for(e.__e=e.__c.base=null,t=0;t<e.__k.length;t++)if(null!=(n=e.__k[t])&&null!=n.__e){e.__e=e.__c.base=n.__e;break}return Sn(e)}}function jn(e){(!e.__d&&(e.__d=!0)&&ln.push(e)&&!Pn.__r++||cn!==un.debounceRendering)&&((cn=un.debounceRendering)||sn)(Pn)}function Pn(){var e,t,n,r,o,i,u,a;for(ln.sort(fn);e=ln.shift();)e.__d&&(t=ln.length,r=void 0,o=void 0,u=(i=(n=e).__v).__e,(a=n.__P)&&(r=[],(o=dn({},i)).__v=i.__v+1,Nn(a,i,o,n.__n,void 0!==a.ownerSVGElement,null!=i.__h?[u]:null,r,null==u?On(i):u,i.__h),Tn(r,i),i.__e!=u&&Sn(i)),ln.length>t&&ln.sort(fn));Pn.__r=0}function wn(e,t,n,r,o,i,u,a,l,c){var s,f,p,m,v,d,y,b=r&&r.__k||mn,g=b.length;for(n.__k=[],s=0;s<t.length;s++)if(null!=(m=n.__k[s]=null==(m=t[s])||"boolean"==typeof m||"function"==typeof m?null:"string"==typeof m||"number"==typeof m||"bigint"==typeof m?gn(null,m,null,null,m):Array.isArray(m)?gn(hn,{children:m},null,null,null):m.__b>0?gn(m.type,m.props,m.key,m.ref?m.ref:null,m.__v):m)){if(m.__=n,m.__b=n.__b+1,null===(p=b[s])||p&&m.key==p.key&&m.type===p.type)b[s]=void 0;else for(f=0;f<g;f++){if((p=b[f])&&m.key==p.key&&m.type===p.type){b[f]=void 0;break}p=null}Nn(e,m,p=p||pn,o,i,u,a,l,c),v=m.__e,(f=m.ref)&&p.ref!=f&&(y||(y=[]),p.ref&&y.push(p.ref,null,m),y.push(f,m.__c||v,m)),null!=v?(null==d&&(d=v),"function"==typeof m.type&&m.__k===p.__k?m.__d=l=In(m,l,e):l=An(e,m,p,b,v,l),"function"==typeof n.type&&(n.__d=l)):l&&p.__e==l&&l.parentNode!=e&&(l=On(p))}for(n.__e=d,s=g;s--;)null!=b[s]&&("function"==typeof n.type&&null!=b[s].__e&&b[s].__e==n.__d&&(n.__d=En(r).nextSibling),Rn(b[s],b[s]));if(y)for(s=0;s<y.length;s++)Bn(y[s],y[++s],y[++s])}function In(e,t,n){for(var r,o=e.__k,i=0;o&&i<o.length;i++)(r=o[i])&&(r.__=e,t="function"==typeof r.type?In(r,t,n):An(n,r,r,o,r.__e,t));return t}function An(e,t,n,r,o,i){var u,a,l;if(void 0!==t.__d)u=t.__d,t.__d=void 0;else if(null==n||o!=i||null==o.parentNode)e:if(null==i||i.parentNode!==e)e.appendChild(o),u=null;else{for(a=i,l=0;(a=a.nextSibling)&&l<r.length;l+=1)if(a==o)break e;e.insertBefore(o,i),u=i}return void 0!==u?u:o.nextSibling}function En(e){var t,n,r;if(null==e.type||"string"==typeof e.type)return e.__e;if(e.__k)for(t=e.__k.length-1;t>=0;t--)if((n=e.__k[t])&&(r=En(n)))return r;return null}function Dn(e,t,n){"-"===t[0]?e.setProperty(t,null==n?"":n):e[t]=null==n?"":"number"!=typeof n||vn.test(t)?n:n+"px"}function Cn(e,t,n,r,o){var i;e:if("style"===t)if("string"==typeof n)e.style.cssText=n;else{if("string"==typeof r&&(e.style.cssText=r=""),r)for(t in r)n&&t in n||Dn(e.style,t,"");if(n)for(t in n)r&&n[t]===r[t]||Dn(e.style,t,n[t])}else if("o"===t[0]&&"n"===t[1])i=t!==(t=t.replace(/Capture$/,"")),t=t.toLowerCase()in e?t.toLowerCase().slice(2):t.slice(2),e.l||(e.l={}),e.l[t+i]=n,n?r||e.addEventListener(t,i?xn:kn,i):e.removeEventListener(t,i?xn:kn,i);else if("dangerouslySetInnerHTML"!==t){if(o)t=t.replace(/xlink(H|:h)/,"h").replace(/sName$/,"s");else if("width"!==t&&"height"!==t&&"href"!==t&&"list"!==t&&"form"!==t&&"tabIndex"!==t&&"download"!==t&&t in e)try{e[t]=null==n?"":n;break e}catch(e){}"function"==typeof n||(null==n||!1===n&&"-"!==t[4]?e.removeAttribute(t):e.setAttribute(t,n))}}function kn(e){return this.l[e.type+!1](un.event?un.event(e):e)}function xn(e){return this.l[e.type+!0](un.event?un.event(e):e)}function Nn(e,t,n,r,o,i,u,a,l){var c,s,f,p,m,v,d,y,b,g,h,_,O,S,j,P=t.type;if(void 0!==t.constructor)return null;null!=n.__h&&(l=n.__h,a=t.__e=n.__e,t.__h=null,i=[a]),(c=un.__b)&&c(t);try{e:if("function"==typeof P){if(y=t.props,b=(c=P.contextType)&&r[c.__c],g=c?b?b.props.value:c.__:r,n.__c?d=(s=t.__c=n.__c).__=s.__E:("prototype"in P&&P.prototype.render?t.__c=s=new P(y,g):(t.__c=s=new _n(y,g),s.constructor=P,s.render=Ln),b&&b.sub(s),s.props=y,s.state||(s.state={}),s.context=g,s.__n=r,f=s.__d=!0,s.__h=[],s._sb=[]),null==s.__s&&(s.__s=s.state),null!=P.getDerivedStateFromProps&&(s.__s==s.state&&(s.__s=dn({},s.__s)),dn(s.__s,P.getDerivedStateFromProps(y,s.__s))),p=s.props,m=s.state,s.__v=t,f)null==P.getDerivedStateFromProps&&null!=s.componentWillMount&&s.componentWillMount(),null!=s.componentDidMount&&s.__h.push(s.componentDidMount);else{if(null==P.getDerivedStateFromProps&&y!==p&&null!=s.componentWillReceiveProps&&s.componentWillReceiveProps(y,g),!s.__e&&null!=s.shouldComponentUpdate&&!1===s.shouldComponentUpdate(y,s.__s,g)||t.__v===n.__v){for(t.__v!==n.__v&&(s.props=y,s.state=s.__s,s.__d=!1),s.__e=!1,t.__e=n.__e,t.__k=n.__k,t.__k.forEach((function(e){e&&(e.__=t)})),h=0;h<s._sb.length;h++)s.__h.push(s._sb[h]);s._sb=[],s.__h.length&&u.push(s);break e}null!=s.componentWillUpdate&&s.componentWillUpdate(y,s.__s,g),null!=s.componentDidUpdate&&s.__h.push((function(){s.componentDidUpdate(p,m,v)}))}if(s.context=g,s.props=y,s.__P=e,_=un.__r,O=0,"prototype"in P&&P.prototype.render){for(s.state=s.__s,s.__d=!1,_&&_(t),c=s.render(s.props,s.state,s.context),S=0;S<s._sb.length;S++)s.__h.push(s._sb[S]);s._sb=[]}else do{s.__d=!1,_&&_(t),c=s.render(s.props,s.state,s.context),s.state=s.__s}while(s.__d&&++O<25);s.state=s.__s,null!=s.getChildContext&&(r=dn(dn({},r),s.getChildContext())),f||null==s.getSnapshotBeforeUpdate||(v=s.getSnapshotBeforeUpdate(p,m)),j=null!=c&&c.type===hn&&null==c.key?c.props.children:c,wn(e,Array.isArray(j)?j:[j],t,n,r,o,i,u,a,l),s.base=t.__e,t.__h=null,s.__h.length&&u.push(s),d&&(s.__E=s.__=null),s.__e=!1}else null==i&&t.__v===n.__v?(t.__k=n.__k,t.__e=n.__e):t.__e=qn(n.__e,t,n,r,o,i,u,l);(c=un.diffed)&&c(t)}catch(e){t.__v=null,(l||null!=i)&&(t.__e=a,t.__h=!!l,i[i.indexOf(a)]=null),un.__e(e,t,n)}}function Tn(e,t){un.__c&&un.__c(t,e),e.some((function(t){try{e=t.__h,t.__h=[],e.some((function(e){e.call(t)}))}catch(e){un.__e(e,t.__v)}}))}function qn(e,t,n,r,o,i,u,a){var l,c,s,f=n.props,p=t.props,m=t.type,v=0;if("svg"===m&&(o=!0),null!=i)for(;v<i.length;v++)if((l=i[v])&&"setAttribute"in l==!!m&&(m?l.localName===m:3===l.nodeType)){e=l,i[v]=null;break}if(null==e){if(null===m)return document.createTextNode(p);e=o?document.createElementNS("http://www.w3.org/2000/svg",m):document.createElement(m,p.is&&p),i=null,a=!1}if(null===m)f===p||a&&e.data===p||(e.data=p);else{if(i=i&&on.call(e.childNodes),c=(f=n.props||pn).dangerouslySetInnerHTML,s=p.dangerouslySetInnerHTML,!a){if(null!=i)for(f={},v=0;v<e.attributes.length;v++)f[e.attributes[v].name]=e.attributes[v].value;(s||c)&&(s&&(c&&s.__html==c.__html||s.__html===e.innerHTML)||(e.innerHTML=s&&s.__html||""))}if(function(e,t,n,r,o){var i;for(i in n)"children"===i||"key"===i||i in t||Cn(e,i,null,n[i],r);for(i in t)o&&"function"!=typeof t[i]||"children"===i||"key"===i||"value"===i||"checked"===i||n[i]===t[i]||Cn(e,i,t[i],n[i],r)}(e,p,f,o,a),s)t.__k=[];else if(v=t.props.children,wn(e,Array.isArray(v)?v:[v],t,n,r,o&&"foreignObject"!==m,i,u,i?i[0]:n.__k&&On(n,0),a),null!=i)for(v=i.length;v--;)null!=i[v]&&yn(i[v]);a||("value"in p&&void 0!==(v=p.value)&&(v!==e.value||"progress"===m&&!v||"option"===m&&v!==f.value)&&Cn(e,"value",v,f.value,!1),"checked"in p&&void 0!==(v=p.checked)&&v!==e.checked&&Cn(e,"checked",v,f.checked,!1))}return e}function Bn(e,t,n){try{"function"==typeof e?e(t):e.current=t}catch(e){un.__e(e,n)}}function Rn(e,t,n){var r,o;if(un.unmount&&un.unmount(e),(r=e.ref)&&(r.current&&r.current!==e.__e||Bn(r,null,t)),null!=(r=e.__c)){if(r.componentWillUnmount)try{r.componentWillUnmount()}catch(e){un.__e(e,t)}r.base=r.__P=null,e.__c=void 0}if(r=e.__k)for(o=0;o<r.length;o++)r[o]&&Rn(r[o],t,n||"function"!=typeof e.type);n||null==e.__e||yn(e.__e),e.__=e.__e=e.__d=void 0}function Ln(e,t,n){return this.constructor(e,n)}on=mn.slice,un={__e:function(e,t,n,r){for(var o,i,u;t=t.__;)if((o=t.__c)&&!o.__)try{if((i=o.constructor)&&null!=i.getDerivedStateFromError&&(o.setState(i.getDerivedStateFromError(e)),u=o.__d),null!=o.componentDidCatch&&(o.componentDidCatch(e,r||{}),u=o.__d),u)return o.__E=o}catch(t){e=t}throw e}},an=0,_n.prototype.setState=function(e,t){var n;n=null!=this.__s&&this.__s!==this.state?this.__s:this.__s=dn({},this.state),"function"==typeof e&&(e=e(dn({},n),this.props)),e&&dn(n,e),null!=e&&this.__v&&(t&&this._sb.push(t),jn(this))},_n.prototype.forceUpdate=function(e){this.__v&&(this.__e=!0,e&&this.__h.push(e),jn(this))},_n.prototype.render=hn,ln=[],sn="function"==typeof Promise?Promise.prototype.then.bind(Promise.resolve()):setTimeout,fn=function(e,t){return e.__v.__b-t.__v.__b},Pn.__r=0;var Fn="__aa-highlight__",Un="__/aa-highlight__";function Mn(e){var t=e.highlightedValue.split(Fn),n=t.shift(),r=function(){var e=arguments.length>0&&void 0!==arguments[0]?arguments[0]:[];return{get:function(){return e},add:function(t){var n=e[e.length-1];(null==n?void 0:n.isHighlighted)===t.isHighlighted?e[e.length-1]={value:n.value+t.value,isHighlighted:n.isHighlighted}:e.push(t)}}}(n?[{value:n,isHighlighted:!1}]:[]);return t.forEach((function(e){var t=e.split(Un);r.add({value:t[0],isHighlighted:!0}),""!==t[1]&&r.add({value:t[1],isHighlighted:!1})})),r.get()}function Hn(e){return function(e){if(Array.isArray(e))return Vn(e)}(e)||function(e){if("undefined"!=typeof Symbol&&null!=e[Symbol.iterator]||null!=e["@@iterator"])return Array.from(e)}(e)||function(e,t){if(!e)return;if("string"==typeof e)return Vn(e,t);var n=Object.prototype.toString.call(e).slice(8,-1);"Object"===n&&e.constructor&&(n=e.constructor.name);if("Map"===n||"Set"===n)return Array.from(e);if("Arguments"===n||/^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(n))return Vn(e,t)}(e)||function(){throw new TypeError("Invalid attempt to spread non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method.")}()}function Vn(e,t){(null==t||t>e.length)&&(t=e.length);for(var n=0,r=new Array(t);n<t;n++)r[n]=e[n];return r}function Wn(e){var t=e.hit,n=e.attribute,r=Array.isArray(n)?n:[n],o=y(t,["_highlightResult"].concat(Hn(r),["value"]));return"string"!=typeof o&&(o=y(t,r)||""),Mn({highlightedValue:o})}var Qn={"&amp;":"&","&lt;":"<","&gt;":">","&quot;":'"',"&#39;":"'"},Kn=new RegExp(/\w/i),$n=/&(amp|quot|lt|gt|#39);/g,zn=RegExp($n.source);function Gn(e,t){var n,r,o,i=e[t],u=(null===(n=e[t+1])||void 0===n?void 0:n.isHighlighted)||!0,a=(null===(r=e[t-1])||void 0===r?void 0:r.isHighlighted)||!0;return Kn.test((o=i.value)&&zn.test(o)?o.replace($n,(function(e){return Qn[e]})):o)||a!==u?i.isHighlighted:a}function Jn(e){return Jn="function"==typeof Symbol&&"symbol"==typeof Symbol.iterator?function(e){return typeof e}:function(e){return e&&"function"==typeof Symbol&&e.constructor===Symbol&&e!==Symbol.prototype?"symbol":typeof e},Jn(e)}function Xn(e,t){var n=Object.keys(e);if(Object.getOwnPropertySymbols){var r=Object.getOwnPropertySymbols(e);t&&(r=r.filter((function(t){return Object.getOwnPropertyDescriptor(e,t).enumerable}))),n.push.apply(n,r)}return n}function Yn(e){for(var t=1;t<arguments.length;t++){var n=null!=arguments[t]?arguments[t]:{};t%2?Xn(Object(n),!0).forEach((function(t){Zn(e,t,n[t])})):Object.getOwnPropertyDescriptors?Object.defineProperties(e,Object.getOwnPropertyDescriptors(n)):Xn(Object(n)).forEach((function(t){Object.defineProperty(e,t,Object.getOwnPropertyDescriptor(n,t))}))}return e}function Zn(e,t,n){return(t=function(e){var t=function(e,t){if("object"!==Jn(e)||null===e)return e;var n=e[Symbol.toPrimitive];if(void 0!==n){var r=n.call(e,t||"default");if("object"!==Jn(r))return r;throw new TypeError("@@toPrimitive must return a primitive value.")}return("string"===t?String:Number)(e)}(e,"string");return"symbol"===Jn(t)?t:String(t)}(t))in e?Object.defineProperty(e,t,{value:n,enumerable:!0,configurable:!0,writable:!0}):e[t]=n,e}function er(e){return e.some((function(e){return e.isHighlighted}))?e.map((function(t,n){return Yn(Yn({},t),{},{isHighlighted:!Gn(e,n)})})):e.map((function(e){return Yn(Yn({},e),{},{isHighlighted:!1})}))}function tr(e){return function(e){if(Array.isArray(e))return nr(e)}(e)||function(e){if("undefined"!=typeof Symbol&&null!=e[Symbol.iterator]||null!=e["@@iterator"])return Array.from(e)}(e)||function(e,t){if(!e)return;if("string"==typeof e)return nr(e,t);var n=Object.prototype.toString.call(e).slice(8,-1);"Object"===n&&e.constructor&&(n=e.constructor.name);if("Map"===n||"Set"===n)return Array.from(e);if("Arguments"===n||/^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(n))return nr(e,t)}(e)||function(){throw new TypeError("Invalid attempt to spread non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method.")}()}function nr(e,t){(null==t||t>e.length)&&(t=e.length);for(var n=0,r=new Array(t);n<t;n++)r[n]=e[n];return r}function rr(e){var t=e.hit,n=e.attribute,r=Array.isArray(n)?n:[n],o=y(t,["_snippetResult"].concat(tr(r),["value"]));return"string"!=typeof o&&(o=y(t,r)||""),Mn({highlightedValue:o})}function or(e){return or="function"==typeof Symbol&&"symbol"==typeof Symbol.iterator?function(e){return typeof e}:function(e){return e&&"function"==typeof Symbol&&e.constructor===Symbol&&e!==Symbol.prototype?"symbol":typeof e},or(e)}function ir(e,t){var n=Object.keys(e);if(Object.getOwnPropertySymbols){var r=Object.getOwnPropertySymbols(e);t&&(r=r.filter((function(t){return Object.getOwnPropertyDescriptor(e,t).enumerable}))),n.push.apply(n,r)}return n}function ur(e){for(var t=1;t<arguments.length;t++){var n=null!=arguments[t]?arguments[t]:{};t%2?ir(Object(n),!0).forEach((function(t){ar(e,t,n[t])})):Object.getOwnPropertyDescriptors?Object.defineProperties(e,Object.getOwnPropertyDescriptors(n)):ir(Object(n)).forEach((function(t){Object.defineProperty(e,t,Object.getOwnPropertyDescriptor(n,t))}))}return e}function ar(e,t,n){return(t=function(e){var t=function(e,t){if("object"!==or(e)||null===e)return e;var n=e[Symbol.toPrimitive];if(void 0!==n){var r=n.call(e,t||"default");if("object"!==or(r))return r;throw new TypeError("@@toPrimitive must return a primitive value.")}return("string"===t?String:Number)(e)}(e,"string");return"symbol"===or(t)?t:String(t)}(t))in e?Object.defineProperty(e,t,{value:n,enumerable:!0,configurable:!0,writable:!0}):e[t]=n,e}function lr(e){return lr="function"==typeof Symbol&&"symbol"==typeof Symbol.iterator?function(e){return typeof e}:function(e){return e&&"function"==typeof Symbol&&e.constructor===Symbol&&e!==Symbol.prototype?"symbol":typeof e},lr(e)}var cr=["params"];function sr(e,t){var n=Object.keys(e);if(Object.getOwnPropertySymbols){var r=Object.getOwnPropertySymbols(e);t&&(r=r.filter((function(t){return Object.getOwnPropertyDescriptor(e,t).enumerable}))),n.push.apply(n,r)}return n}function fr(e){for(var t=1;t<arguments.length;t++){var n=null!=arguments[t]?arguments[t]:{};t%2?sr(Object(n),!0).forEach((function(t){pr(e,t,n[t])})):Object.getOwnPropertyDescriptors?Object.defineProperties(e,Object.getOwnPropertyDescriptors(n)):sr(Object(n)).forEach((function(t){Object.defineProperty(e,t,Object.getOwnPropertyDescriptor(n,t))}))}return e}function pr(e,t,n){return(t=function(e){var t=function(e,t){if("object"!==lr(e)||null===e)return e;var n=e[Symbol.toPrimitive];if(void 0!==n){var r=n.call(e,t||"default");if("object"!==lr(r))return r;throw new TypeError("@@toPrimitive must return a primitive value.")}return("string"===t?String:Number)(e)}(e,"string");return"symbol"===lr(t)?t:String(t)}(t))in e?Object.defineProperty(e,t,{value:n,enumerable:!0,configurable:!0,writable:!0}):e[t]=n,e}function mr(e,t){if(null==e)return{};var n,r,o=function(e,t){if(null==e)return{};var n,r,o={},i=Object.keys(e);for(r=0;r<i.length;r++)n=i[r],t.indexOf(n)>=0||(o[n]=e[n]);return o}(e,t);if(Object.getOwnPropertySymbols){var i=Object.getOwnPropertySymbols(e);for(r=0;r<i.length;r++)n=i[r],t.indexOf(n)>=0||Object.prototype.propertyIsEnumerable.call(e,n)&&(o[n]=e[n])}return o}function vr(e){return function(e){if(Array.isArray(e))return dr(e)}(e)||function(e){if("undefined"!=typeof Symbol&&null!=e[Symbol.iterator]||null!=e["@@iterator"])return Array.from(e)}(e)||function(e,t){if(!e)return;if("string"==typeof e)return dr(e,t);var n=Object.prototype.toString.call(e).slice(8,-1);"Object"===n&&e.constructor&&(n=e.constructor.name);if("Map"===n||"Set"===n)return Array.from(e);if("Arguments"===n||/^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(n))return dr(e,t)}(e)||function(){throw new TypeError("Invalid attempt to spread non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method.")}()}function dr(e,t){(null==t||t>e.length)&&(t=e.length);for(var n=0,r=new Array(t);n<t;n++)r[n]=e[n];return r}function yr(e){var t=e.createElement,n=e.Fragment;function r(e){var r=e.hit,o=e.attribute,i=e.tagName,u=void 0===i?"mark":i;return t(n,{},Wn({hit:r,attribute:o}).map((function(e,n){return e.isHighlighted?t(u,{key:n},e.value):e.value})))}return r.__autocomplete_componentName="Highlight",r}function br(e){var t=e.createElement,n=e.Fragment;function r(e){var r,o=e.hit,i=e.attribute,u=e.tagName,a=void 0===u?"mark":u;return t(n,{},(r={hit:o,attribute:i},er(Wn(r))).map((function(e,n){return e.isHighlighted?t(a,{key:n},e.value):e.value})))}return r.__autocomplete_componentName="ReverseHighlight",r}function gr(e){var t=e.createElement,n=e.Fragment;function r(e){var r,o=e.hit,i=e.attribute,u=e.tagName,a=void 0===u?"mark":u;return t(n,{},(r={hit:o,attribute:i},er(rr(r))).map((function(e,n){return e.isHighlighted?t(a,{key:n},e.value):e.value})))}return r.__autocomplete_componentName="ReverseSnippet",r}function hr(e){var t=e.createElement,n=e.Fragment;function r(e){var r=e.hit,o=e.attribute,i=e.tagName,u=void 0===i?"mark":i;return t(n,{},rr({hit:r,attribute:o}).map((function(e,n){return e.isHighlighted?t(u,{key:n},e.value):e.value})))}return r.__autocomplete_componentName="Snippet",r}var _r=["classNames","container","getEnvironmentProps","getFormProps","getInputProps","getItemProps","getLabelProps","getListProps","getPanelProps","getRootProps","panelContainer","panelPlacement","render","renderNoResults","renderer","detachedMediaQuery","components","translations"],Or={clearButton:"aa-ClearButton",detachedCancelButton:"aa-DetachedCancelButton",detachedContainer:"aa-DetachedContainer",detachedFormContainer:"aa-DetachedFormContainer",detachedOverlay:"aa-DetachedOverlay",detachedSearchButton:"aa-DetachedSearchButton",detachedSearchButtonIcon:"aa-DetachedSearchButtonIcon",detachedSearchButtonPlaceholder:"aa-DetachedSearchButtonPlaceholder",detachedSearchButtonQuery:"aa-DetachedSearchButtonQuery",form:"aa-Form",input:"aa-Input",inputWrapper:"aa-InputWrapper",inputWrapperPrefix:"aa-InputWrapperPrefix",inputWrapperSuffix:"aa-InputWrapperSuffix",item:"aa-Item",label:"aa-Label",list:"aa-List",loadingIndicator:"aa-LoadingIndicator",panel:"aa-Panel",panelLayout:"aa-PanelLayout aa-Panel--scrollable",root:"aa-Autocomplete",source:"aa-Source",sourceFooter:"aa-SourceFooter",sourceHeader:"aa-SourceHeader",sourceNoResults:"aa-SourceNoResults",submitButton:"aa-SubmitButton"},Sr=function(e,t){var n=e.children;(0,e.render)(n,t)},jr={createElement:bn,Fragment:hn,render:function(e,t,n){var r,o,i;un.__&&un.__(e,t),o=(r="function"==typeof n)?null:n&&n.__k||t.__k,i=[],Nn(t,e=(!r&&n||t).__k=bn(hn,null,[e]),o||pn,pn,void 0!==t.ownerSVGElement,!r&&n?[n]:o?null:t.firstChild?on.call(t.childNodes):null,i,!r&&n?n:o?o.__e:t.firstChild,r),Tn(i,e)}};function Pr(e){var t=e.panelPlacement,n=e.container,r=e.form,o=e.environment,i=n.getBoundingClientRect(),u=(o.pageYOffset||o.document.documentElement.scrollTop||o.document.body.scrollTop||0)+i.top+i.height;switch(t){case"start":return{top:u,left:i.left};case"end":return{top:u,right:o.document.documentElement.clientWidth-(i.left+i.width)};case"full-width":return{top:u,left:0,right:0,width:"unset",maxWidth:"unset"};case"input-wrapper-width":var a=r.getBoundingClientRect();return{top:u,left:a.left,right:o.document.documentElement.clientWidth-(a.left+a.width),width:"unset",maxWidth:"unset"};default:throw new Error("[Autocomplete] The `panelPlacement` value ".concat(JSON.stringify(t)," is not valid."))}}var wr=[{segment:"autocomplete-js",version:O}],Ir=["components"];var Ar=function(e,t){function n(t){return e({searchClient:t.searchClient,queries:t.requests.map((function(e){return e.query}))}).then((function(e){return e.map((function(e,n){var r=t.requests[n];return{items:e,sourceId:r.sourceId,transformResponse:r.transformResponse}}))}))}return function(e){return function(r){return ur(ur({requesterId:t,execute:n},e),r)}}}((function(e){return function(e){var t=e.searchClient,n=e.queries,r=e.userAgents,o=void 0===r?[]:r;"function"==typeof t.addAlgoliaAgent&&[].concat(vr(S),vr(o)).forEach((function(e){var n=e.segment,r=e.version;t.addAlgoliaAgent(n,r)}));var i=function(e){var t=e.transporter||{},n=t.headers||t.baseHeaders||{},r=t.queryParameters||t.baseQueryParameters||{},o="x-algolia-application-id",i="x-algolia-api-key";return{appId:n[o]||r[o],apiKey:n[i]||r[i]}}(t),u=i.appId,a=i.apiKey;return t.search(n.map((function(e){var t=e.params;return fr(fr({},mr(e,cr)),{},{params:fr({hitsPerPage:5,highlightPreTag:Fn,highlightPostTag:Un},t)})}))).then((function(e){return e.results.map((function(e,t){var r;return fr(fr({},e),{},{hits:null===(r=e.hits)||void 0===r?void 0:r.map((function(r){return fr(fr({},r),{},{__autocomplete_indexName:e.index||n[t].indexName,__autocomplete_queryID:e.queryID,__autocomplete_algoliaCredentials:{appId:u,apiKey:a}})}))})}))}))}(n(n({},e),{},{userAgents:wr}))}),"algolia");var Er=Ar({transformResponse:function(e){return e.hits}});e.autocomplete=function(e){var t,r=function(){var e=[],t=[];function n(n){e.push(n);var r=n();t.push(r)}return{runEffect:n,cleanupEffects:function(){var e=t;t=[],e.forEach((function(e){e()}))},runEffects:function(){var t=e;e=[],t.forEach((function(e){n(e)}))}}}(),a=r.runEffect,l=r.cleanupEffects,c=r.runEffects,s=(t=[],{reactive:function(e){var n=e(),r={_fn:e,_ref:{current:n},get value(){return this._ref.current},set value(e){this._ref.current=e}};return t.push(r),r},runReactives:function(){t.forEach((function(e){e._ref.current=e._fn()}))}}),m=s.reactive,v=s.runReactives,y=f(!1),g=f(e),h=f(void 0),_=m((function(){return function(e){var t,r=e.classNames,o=e.container,i=e.getEnvironmentProps,a=e.getFormProps,l=e.getInputProps,c=e.getItemProps,s=e.getLabelProps,f=e.getListProps,p=e.getPanelProps,m=e.getRootProps,v=e.panelContainer,y=e.panelPlacement,b=e.render,g=e.renderNoResults,h=e.renderer,_=e.detachedMediaQuery,O=e.components,S=e.translations,j=u(e,_r),P="undefined"!=typeof window?window:{},w=Ut(P,o);w.tagName;var I=n(n({},jr),h),A={Highlight:yr(I),ReverseHighlight:br(I),ReverseSnippet:gr(I),Snippet:hr(I)};return{renderer:{classNames:Mt(Or,null!=r?r:{}),container:w,getEnvironmentProps:null!=i?i:function(e){return e.props},getFormProps:null!=a?a:function(e){return e.props},getInputProps:null!=l?l:function(e){return e.props},getItemProps:null!=c?c:function(e){return e.props},getLabelProps:null!=s?s:function(e){return e.props},getListProps:null!=f?f:function(e){return e.props},getPanelProps:null!=p?p:function(e){return e.props},getRootProps:null!=m?m:function(e){return e.props},panelContainer:v?Ut(P,v):P.document.body,panelPlacement:null!=y?y:"input-wrapper-width",render:null!=b?b:Sr,renderNoResults:g,renderer:I,detachedMediaQuery:null!=_?_:getComputedStyle(P.document.documentElement).getPropertyValue("--aa-detached-media-query"),components:n(n({},A),O),translations:n(n({},{clearButtonTitle:"Clear",detachedCancelButtonText:"Cancel",detachedSearchButtonTitle:"Search",submitButtonTitle:"Submit"}),S)},core:n(n({},j),{},{id:null!==(t=j.id)&&void 0!==t?t:d(),environment:P})}}(g.current)})),O=m((function(){return _.value.core.environment.matchMedia(_.value.renderer.detachedMediaQuery).matches})),S=m((function(){return qt(n(n({},_.value.core),{},{onStateChange:function(e){var t,n,r;y.current=e.state.collections.some((function(e){return e.source.templates.noResults})),null===(t=h.current)||void 0===t||t.call(h,e),null===(n=(r=_.value.core).onStateChange)||void 0===n||n.call(r,e)},shouldPanelOpen:g.current.shouldPanelOpen||function(e){var t=e.state;if(O.value)return!0;var n=b(t)>0;if(!_.value.core.openOnFocus&&!t.query)return n;var r=Boolean(y.current||_.value.renderer.renderNoResults);return!n&&r||n},__autocomplete_metadata:{userAgents:wr,options:e}}))})),j=f(n({collections:[],completion:null,context:{},isOpen:!1,query:"",activeItemId:null,status:"idle"},_.value.core.initialState)),P={getEnvironmentProps:_.value.renderer.getEnvironmentProps,getFormProps:_.value.renderer.getFormProps,getInputProps:_.value.renderer.getInputProps,getItemProps:_.value.renderer.getItemProps,getLabelProps:_.value.renderer.getLabelProps,getListProps:_.value.renderer.getListProps,getPanelProps:_.value.renderer.getPanelProps,getRootProps:_.value.renderer.getRootProps},w={setActiveItemId:S.value.setActiveItemId,setQuery:S.value.setQuery,setCollections:S.value.setCollections,setIsOpen:S.value.setIsOpen,setStatus:S.value.setStatus,setContext:S.value.setContext,refresh:S.value.refresh,navigator:S.value.navigator},I=m((function(){return Lt.bind(_.value.renderer.renderer.createElement)})),A=m((function(){return rn({autocomplete:S.value,autocompleteScopeApi:w,classNames:_.value.renderer.classNames,environment:_.value.core.environment,isDetached:O.value,placeholder:_.value.core.placeholder,propGetters:P,setIsModalOpen:k,state:j.current,translations:_.value.renderer.translations})}));function E(){Jt(A.value.panel,{style:O.value?{}:Pr({panelPlacement:_.value.renderer.panelPlacement,container:A.value.root,form:A.value.form,environment:_.value.core.environment})})}function D(e){j.current=e;var t={autocomplete:S.value,autocompleteScopeApi:w,classNames:_.value.renderer.classNames,components:_.value.renderer.components,container:_.value.renderer.container,html:I.value,dom:A.value,panelContainer:O.value?A.value.detachedContainer:_.value.renderer.panelContainer,propGetters:P,state:j.current,renderer:_.value.renderer.renderer},r=!b(e)&&!y.current&&_.value.renderer.renderNoResults||_.value.renderer.render;!function(e){var t=e.autocomplete,r=e.autocompleteScopeApi,o=e.dom,i=e.propGetters,u=e.state;Xt(o.root,i.getRootProps(n({state:u,props:t.getRootProps({})},r))),Xt(o.input,i.getInputProps(n({state:u,props:t.getInputProps({inputElement:o.input}),inputElement:o.input},r))),Jt(o.label,{hidden:"stalled"===u.status}),Jt(o.loadingIndicator,{hidden:"stalled"!==u.status}),Jt(o.clearButton,{hidden:!u.query}),Jt(o.detachedSearchButtonQuery,{textContent:u.query}),Jt(o.detachedSearchButtonPlaceholder,{hidden:Boolean(u.query)})}(t),function(e,t){var r=t.autocomplete,o=t.autocompleteScopeApi,u=t.classNames,a=t.html,l=t.dom,c=t.panelContainer,s=t.propGetters,f=t.state,p=t.components,m=t.renderer;if(f.isOpen){c.contains(l.panel)||"loading"===f.status||c.appendChild(l.panel),l.panel.classList.toggle("aa-Panel--stalled","stalled"===f.status);var v=f.collections.filter((function(e){var t=e.source,n=e.items;return t.templates.noResults||n.length>0})).map((function(e,t){var l=e.source,c=e.items;return m.createElement("section",{key:t,className:u.source,"data-autocomplete-source-id":l.sourceId},l.templates.header&&m.createElement("div",{className:u.sourceHeader},l.templates.header({components:p,createElement:m.createElement,Fragment:m.Fragment,items:c,source:l,state:f,html:a})),l.templates.noResults&&0===c.length?m.createElement("div",{className:u.sourceNoResults},l.templates.noResults({components:p,createElement:m.createElement,Fragment:m.Fragment,source:l,state:f,html:a})):m.createElement("ul",i({className:u.list},s.getListProps(n({state:f,props:r.getListProps({source:l})},o))),c.map((function(e){var t=r.getItemProps({item:e,source:l});return m.createElement("li",i({key:t.id,className:u.item},s.getItemProps(n({state:f,props:t},o))),l.templates.item({components:p,createElement:m.createElement,Fragment:m.Fragment,item:e,state:f,html:a}))}))),l.templates.footer&&m.createElement("div",{className:u.sourceFooter},l.templates.footer({components:p,createElement:m.createElement,Fragment:m.Fragment,items:c,source:l,state:f,html:a})))})),d=m.createElement(m.Fragment,null,m.createElement("div",{className:u.panelLayout},v),m.createElement("div",{className:"aa-GradientBottom"})),y=v.reduce((function(e,t){return e[t.props["data-autocomplete-source-id"]]=t,e}),{});e(n(n({children:d,state:f,sections:v,elements:y},m),{},{components:p,html:a},o),l.panel)}else c.contains(l.panel)&&c.removeChild(l.panel)}(r,t)}function C(){var e=arguments.length>0&&void 0!==arguments[0]?arguments[0]:{};l();var t=_.value.renderer,n=t.components,r=u(t,Ir);g.current=Vt(r,_.value.core,{components:Wt(n,(function(e){return!e.value.hasOwnProperty("__autocomplete_componentName")})),initialState:j.current},e),v(),c(),S.value.refresh().then((function(){D(j.current)}))}function k(e){e!==_.value.core.environment.document.body.contains(A.value.detachedOverlay)&&(e?(_.value.core.environment.document.body.appendChild(A.value.detachedOverlay),_.value.core.environment.document.body.classList.add("aa-Detached"),A.value.input.focus()):(_.value.core.environment.document.body.removeChild(A.value.detachedOverlay),_.value.core.environment.document.body.classList.remove("aa-Detached")))}return a((function(){var e=S.value.getEnvironmentProps({formElement:A.value.form,panelElement:A.value.panel,inputElement:A.value.input});return Jt(_.value.core.environment,e),function(){Jt(_.value.core.environment,Object.keys(e).reduce((function(e,t){return n(n({},e),{},o({},t,void 0))}),{}))}})),a((function(){var e=O.value?_.value.core.environment.document.body:_.value.renderer.panelContainer,t=O.value?A.value.detachedOverlay:A.value.panel;return O.value&&j.current.isOpen&&k(!0),D(j.current),function(){e.contains(t)&&(e.removeChild(t),e.classList.remove("aa-Detached"))}})),a((function(){var e=_.value.renderer.container;return e.appendChild(A.value.root),function(){e.removeChild(A.value.root)}})),a((function(){var e=p((function(e){D(e.state)}),0);return h.current=function(t){var n=t.state,r=t.prevState;(O.value&&r.isOpen!==n.isOpen&&k(n.isOpen),O.value||!n.isOpen||r.isOpen||E(),n.query!==r.query)&&_.value.core.environment.document.querySelectorAll(".aa-Panel--scrollable").forEach((function(e){0!==e.scrollTop&&(e.scrollTop=0)}));e({state:n})},function(){h.current=void 0}})),a((function(){var e=p((function(){var e=O.value;O.value=_.value.core.environment.matchMedia(_.value.renderer.detachedMediaQuery).matches,e!==O.value?C({}):requestAnimationFrame(E)}),20);return _.value.core.environment.addEventListener("resize",e),function(){_.value.core.environment.removeEventListener("resize",e)}})),a((function(){if(!O.value)return function(){};function e(e){A.value.detachedContainer.classList.toggle("aa-DetachedContainer--modal",e)}function t(t){e(t.matches)}var n=_.value.core.environment.matchMedia(getComputedStyle(_.value.core.environment.document.documentElement).getPropertyValue("--aa-detached-modal-media-query"));e(n.matches);var r=Boolean(n.addEventListener);return r?n.addEventListener("change",t):n.addListener(t),function(){r?n.removeEventListener("change",t):n.removeListener(t)}})),a((function(){return requestAnimationFrame(E),function(){}})),n(n({},w),{},{update:C,destroy:function(){l()}})},e.getAlgoliaFacets=function(e){var t=Ar({transformResponse:function(e){return e.facetHits}}),r=e.queries.map((function(e){return n(n({},e),{},{type:"facet"})}));return t(n(n({},e),{},{queries:r}))},e.getAlgoliaResults=Er,Object.defineProperty(e,"__esModule",{value:!0})}));
 
-OHќ[™Yљ[™Y€O]\[Щ€ЫШ[\ПЩЫШ[\О™_Щ[ЉVИђ[ЫЫXKШ]]ШЫЫ\]KZњИ—O^ЯJ_J\Л
-ќ[Э[ЫЉJ^Иќ\ЩHЭљXЭЋЩќ[Э[Ы€
-K
-^Э\€ЏSШљ™XЭљЩ^\КJNЪYЉШљ™XЭ™Щ]ЭЫ”›Ь\ќTЮ[X›ЫК^Э\€ЏSШљ™XЭ™Щ]ЭЫ”›Ь\ќTЮ[X›ЫКJNЭ	‰ЉЏ\‹™љ[\Љ
-ќ[Э[ЫЉ
-^Ь™]\›€Шљ™XЭ™Щ]ЭЫ”›Ь\ќQ\ШЬљ\ЬЉK
-K™[ќ[Y\X›_JJJK‹њ\Ъ\J‹Љ_\™]\›€џYќ[Э[Ы€ЉJ^Щ›ЬЉ\€ЏLNЫЏ\™Э[Y[ќЛ›[™ЭЫЉКК^Э\€Џ[ќ[OX\™Э[Y[ќЦЫ—OШ\™Э[Y[ќЦЫ—NћЯNЫ‰LЏЭ
-Шљ™XЭ
-ЉKL
-K™›Ь‘XXЪ
-
-ќ[Э[ЫЉ
-^ЫКK–ЭJ_JJN“Шљ™XЭ™Щ]ЭЫ”›Ь\ќQ\ШЬљ\ЬњПУШљ™XЭ™Yљ[™T›Ь\ќY\КKШљ™XЭ™Щ]ЭЫ”›Ь\ќQ\ШЬљ\ЬњКЉJNќ
-Шљ™XЭ
-ЉJK™›Ь‘XXЪ
-
-ќ[Э[ЫЉ
-^УШљ™XЭ™Yљ[™T›Ь\ќJKШљ™XЭ™Щ]ЭЫ”›Ь\ќQ\ШЬљ\ЬЉ‹
-J_JJ_\™]\›€_Yќ[Э[Ы€ЉJ^Ь™]\›€ЏH™ќ[Э[Ы€ЏO]\[Щ€Ю[X›Ы	‰€њЮ[X›ЫЏO]\[Щ€Ю[X›Ыљ]\]ЬЏЩќ[Э[ЫЉJ^Ь™]\›€\[Щ€_N™ќ[Э[ЫЉJ^Ь™]\›€I‰€™ќ[Э[Ы€ЏO]\[Щ€Ю[X›Ы	‰™KЫЫњЭќXЭЬЏOOTЮ[X›Ы	‰™HOOTЮ[X›Ыњ›ЭЭ\OИњЮ[X›ЫЋќ\[Щ€_KЉJ_Yќ[Э[Ы€КKЉ^Ь™]\›ЉYќ[Э[ЫЉJ^Э\€Yќ[Э[ЫЉK
-^ЪYЉ›Шљ™XЭ€O]\[Щ€_ќ[OOYJ\™]\›€NЭ\€ЏYVФЮ[X›ЫќФљ[Z]]™WNЪYЉ›ЪYOO[Љ^Э\€Џ[‹Ш[
-K™Y][ЉNЪYЉ›Шљ™XЭ€O]\[Щ€Љ\™]\›€ЋЭ›ЭИ™]И\Q\њ›ЬЉђФљ[Z]]™H]\Э™]\›€Hљ[Z]]™H[YK€Љ_\™]\›ЉњЭљ[™ИЏOO]ФЭљ[™О“ќ[X™\ЉJJ_JKњЭљ[™ИЉNЬ™]\›€њЮ[X›ЫЏO]\[Щ€Э”Эљ[™К
-_J
-JZ[€OУШљ™XЭ™Yљ[™T›Ь\ќJKЭ[YN›‹[ќ[Y\X›N€LЫЫ™љYЭ\X›N€LЬљ]X›N€LJN™VЭO[‹_Yќ[Э[Ы€J
-^Ь™]\›€OSШљ™XЭ\ЬЪYЫЏУШљ™XЭ\ЬЪYЫ‹љ[™
-
-N™ќ[Э[ЫЉJ^Щ›ЬЉ\€LNЭ\™Э[Y[ќЛ›[™ЭЭ
-КК^Э\€ЏX\™Э[Y[ќЦЭNЩ›ЬЉ\€€[€ЉSШљ™XЭњ›ЭЭ\Kљ\УЭЫ”›Ь\ќKШ[
-‹ЉI‰ЉVЬ—O[–Ь—J_\™]\›€_KK\J\Л\™Э[Y[ќК_Yќ[Э[Ы€JK
-^ЪYЉќ[OYJ\™]\›ћЯNЭ\€‹‹ПYќ[Э[ЫЉK
-^ЪYЉќ[OYJ\™]\›ћЯNЭ\€‹‹П^ЯKOSШљ™XЭљЩ^\КJNЩ›ЬЉЏLЬЏK›[™ЭЬЉКК[ЏZVЬ—Kљ[™^ЩЉЉOЏL
-ЦЫ—OYVЫ—JNЬ™]\›€ЯJK
-NЪYЉШљ™XЭ™Щ]ЭЫ”›Ь\ќTЮ[X›ЫК^Э\€OSШљ™XЭ™Щ]ЭЫ”›Ь\ќTЮ[X›ЫКJNЩ›ЬЉЏLЬЏK›[™ЭЬЉКК[ЏZVЬ—Kљ[™^ЩЉЉOЏLШљ™XЭњ›ЭЭ\Kњ›Ь\ќR\С[ќ[Y\X›KШ[
-KЉI‰ЉЦЫ—OYVЫ—J_\™]\›€ЯYќ[Э[Ы€JK
-^Ь™]\›€ќ[Э[ЫЉJ^ЪYЉ\њ^Kљ\Р\њ^JJJ\™]\›€_JJ_ќ[Э[ЫЉK
-^Э\€Џ[ќ[OYOЫќ[€ќ[™Yљ[™Y€O]\[Щ€Ю[X›Ы	‰™VФЮ[X›Ыљ]\]Ь—_VИђ]\]Ь€—NЪYЉќ[O[Љ^Э\€‹ЛKKOVЧKHLПHLNЭћ^ЪYЉOJЏ[‹Ш[
-JJK›™^OO]
-^ЪYЉШљ™XЭ
-ЉHOO[Љ\™]\›ЋЫHL_Y[ЩH›ЬЉИJJЏZKШ[
-ЉJK™Ы™JI‰ЉKњ\Ъ
-‹ќ[YJKK›[™ЭOO]
-NЫHL
-NЯXШ]Ъ
-J^ШПHLПY_Yљ[[^Эћ^ЪYЉ[	‰›ќ[O[‹њ™]\›‰‰ЉO[‹њ™]\›Љ
-KШљ™XЭ
-JHOO]JJ\™]\›џYљ[[^ЪYЉК]›ЭИЯ_\™]\›€__JK
-_КK
-_ќ[Э[ЫЉ
-^Э›ЭИ™]И\Q\њ›ЬЉ’[ќ[Y][\И\ЭќXЭ\™H›Ы‹Z]\X›H[њЭ[ЩK—’[€Ь™\€И™H]\X›K›Ы‹X\њ^HШљ™XЭИ]\Э]™HHФЮ[X›Ыљ]\]Ь—J
-HY]Щ€Љ_J
-_Yќ[Э[Ы€
-J^Ь™]\›€ќ[Э[ЫЉJ^ЪYЉ\њ^Kљ\Р\њ^JJJ\™]\›€КJ_JJ_ќ[Э[ЫЉJ^ЪYЉќ[™Yљ[™Y€O]\[Щ€Ю[X›Ы	‰›ќ[OYVФЮ[X›Ыљ]\]Ь—_ќ[OYVИђ]\]Ь€—J\™]\›€\њ^K™њ›ЫJJ_JJ_КJ_ќ[Э[ЫЉ
-^Э›ЭИ™]И\Q\њ›ЬЉ’[ќ[Y][\ИЬ™XY›Ы‹Z]\X›H[њЭ[ЩK—’[€Ь™\€И™H]\X›K›Ы‹X\њ^HШљ™XЭИ]\Э]™HHФЮ[X›Ыљ]\]Ь—J
-HY]Щ€Љ_J
-_Yќ[Э[Ы€КK
-^ЪYЉJ^ЪYЉњЭљ[™ИЏO]\[Щ€J\™]\›€КK
-NЭ\€ЏSШљ™XЭњ›ЭЭ\KќФЭљ[™ЛШ[
-JKњЫXЩJLJNЬ™]\›€“Шљ™XЭЏOO[‰‰™KЫЫњЭќXЭЬ‰‰ЉЏYKЫЫњЭќXЭЬ‹›[YJK“X\ЏOO[џ”Щ]ЏOO[ЏР\њ^K™њ›ЫJJN€ђ\™Э[Y[ќИЏOO[џЧЉО•Z_J[ќ
-ОЋMџМЉJОђЫ[\Y
-OР\њ^IЛќ\Э
-ЉOЬКK
-Nќ›ЪY_Yќ[Э[Ы€КK
-^Кќ[O]™K›[™Э
-I‰ЉYK›[™Э
-NЩ›ЬЉ\€ЏLЏ[™]И\њ^J
-NЫЏЫЉКК\–Ы—OYVЫ—NЬ™]\›€џYќ[Э[Ы€ЉJ^Ь™]\›ћШЭ\њ™[ќ™__Yќ[Э[Ы€
-K
-^Э\€Џ]›ЪYЬ™]\›€ќ[Э[ЫЉ
-^Щ›ЬЉ\€ЏX\™Э[Y[ќЛ›[™ЭП[™]И\њ^JЉKOLЪOЋЪJКК[ЦЪWOX\™Э[Y[ќЦЪWNЫ‰‰ЫX\•[Y[Э]
-ЉKЏ\Щ][Y[Э]
-
-ќ[Э[ЫЉ
-^Ь™]\›€K\J›ЪYК_JK
-__Yќ[Э[Ы€JJ^Ь™]\›€Kњ™YXЩJ
-ќ[Э[ЫЉK
-^Ь™]\›€KЫЫШ]
-
-_JKЧJ_]\€ЏLЩќ[Э[Ы€
-
-^Ь™]\›€]]ШЫЫ\]KH‹ЫЫШ]
-ЉКК_Yќ[Э[Ы€JK
-^Ь™]\›€њ™YXЩJ
-ќ[Э[ЫЉK
-^Ь™]\›€I‰™VЭ_JKJ_Yќ[Э[Ы€ЉJ^Ь™]\›€OOYKЫЫXЭ[ЫњЛ›[™ЭМ™KЫЫXЭ[ЫњЛњ™YXЩJ
-ќ[Э[ЫЉK
-^Ь™]\›€JЭљ][\Л›[™ЭJK
-_Yќ[Э[Ы€КJ^Ь™]\›€HOOSШљ™XЭ
-J_Yќ[Э[Ы€
-K
-^ЪYЉOOO]
-\™]\›€LЪYЉКJ_К
-_™ќ[Э[Ы€ЏO]\[Щ€_™ќ[Э[Ы€ЏO]\[Щ€
-\™]\›€OOO]ЪYЉШљ™XЭљЩ^\КJK›[™ЭOOSШљ™XЭљЩ^\К
-K›[™Э
-\™]\›€LNЩ›ЬЉ\€ЏLЏSШљ™XЭљЩ^\КJNЫЏ‹›[™ЭЫЉКК^Э\€П\–Ы—NЪYЉJИ[€
-J\™]\›€LNЪYЉZ
-VЫЧKЫЧJJ\™]\›€L_\™]\›€L]\€ПYќ[Э[ЫЉ
-^ЯNЭ\€ПHЊKЊNKЊH‹ПVЮЬЩYЫY[ќ€]]ШЫЫ\]KXЫЬ™H‹™\њЪ[ЫЋ“ЯWNЩќ[Э[Ы€ЉJ^Э\€YKљ][KЏYKљ][\ЛЏ]›ЪYOO[ЏЦЧN›ЋЬ™]\›ћЪ[™^ќ—ЧШ]]ШЫЫ\]WЪ[™^[YK][\О–ЭKЬЪ][ЫњО–МJЬ‹™љ[™[™^
-
-ќ[Э[ЫЉJ^Ь™]\›€K›Шљ™XЭQOO]›Шљ™XЭQJJWK]Y\ћRQќ—ЧШ]]ШЫЫ\]WЬ]Y\ћRQ[ЫЫXTЫЭ\ЩN–И]]ШЫЫ\]H—__Yќ[Э[Ы€
-K
-^Ь™]\›€ќ[Э[ЫЉJ^ЪYЉ\њ^Kљ\Р\њ^JJJ\™]\›€_JJ_ќ[Э[ЫЉK
-^Э\€Џ[ќ[OYOЫќ[€ќ[™Yљ[™Y€O]\[Щ€Ю[X›Ы	‰™VФЮ[X›Ыљ]\]Ь—_VИђ]\]Ь€—NЪYЉќ[O[Љ^Э\€‹ЛKKOVЧKHLПHLNЭћ^ЪYЉOJЏ[‹Ш[
-JJK›™^OO]
-^ЪYЉШљ™XЭ
-ЉHOO[Љ\™]\›ЋЫHL_Y[ЩH›ЬЉИJJЏZKШ[
-ЉJK™Ы™JI‰ЉKњ\Ъ
-‹ќ[YJKK›[™ЭOO]
-NЫHL
-NЯXШ]Ъ
-J^ШПHLПY_Yљ[[^Эћ^ЪYЉ[	‰›ќ[O[‹њ™]\›‰‰ЉO[‹њ™]\›Љ
-KШљ™XЭ
-JHOO]JJ\™]\›џYљ[[^ЪYЉК]›ЭИЯ_\™]\›€__JK
-_ќ[Э[ЫЉK
-^ЪYЉYJ\™]\›ЋЪYЉњЭљ[™ИЏO]\[Щ€J\™]\›€КK
-NЭ\€ЏSШљ™XЭњ›ЭЭ\KќФЭљ[™ЛШ[
-JKњЫXЩJLJNИ“Шљ™XЭЏOO[‰‰™KЫЫњЭќXЭЬ‰‰ЉЏYKЫЫњЭќXЭЬ‹›[YJNЪYЉ“X\ЏOO[џ”Щ]ЏOO[Љ\™]\›€\њ^K™њ›ЫJJNЪYЉђ\™Э[Y[ќИЏOO[џЧЉО•Z_J[ќ
-ОЋMџМЉJОђЫ[\Y
-OР\њ^IЛќ\Э
-ЉJ\™]\›€КK
-_JK
-_ќ[Э[ЫЉ
-^Э›ЭИ™]И\Q\њ›ЬЉ’[ќ[Y][\И\ЭќXЭ\™H›Ы‹Z]\X›H[њЭ[ЩK—’[€Ь™\€И™H]\X›K›Ы‹X\њ^HШљ™XЭИ]\Э]™HHФЮ[X›Ыљ]\]Ь—J
-HY]Щ€Љ_J
-_Yќ[Э[Ы€КK
-^Кќ[O]™K›[™Э
-I‰ЉYK›[™Э
-NЩ›ЬЉ\€ЏLЏ[™]И\њ^J
-NЫЏЫЉКК\–Ы—OYVЫ—NЬ™]\›€џ]\€OVИљ][\И—KOVИљ][\И—NЩќ[Э[Ы€JJ^Ь™]\›€OH™ќ[Э[Ы€ЏO]\[Щ€Ю[X›Ы	‰€њЮ[X›ЫЏO]\[Щ€Ю[X›Ыљ]\]ЬЏЩќ[Э[ЫЉJ^Ь™]\›€\[Щ€_N™ќ[Э[ЫЉJ^Ь™]\›€I‰€™ќ[Э[Ы€ЏO]\[Щ€Ю[X›Ы	‰™KЫЫњЭќXЭЬЏOOTЮ[X›Ы	‰™HOOTЮ[X›Ыњ›ЭЭ\OИњЮ[X›ЫЋќ\[Щ€_KJJ_Yќ[Э[Ы€
-J^Ь™]\›€ќ[Э[ЫЉJ^ЪYЉ\њ^Kљ\Р\њ^JJJ\™]\›€КJ_JJ_ќ[Э[ЫЉJ^ЪYЉќ[™Yљ[™Y€O]\[Щ€Ю[X›Ы	‰›ќ[OYVФЮ[X›Ыљ]\]Ь—_ќ[OYVИђ]\]Ь€—J\™]\›€\њ^K™њ›ЫJJ_JJ_ќ[Э[ЫЉK
-^ЪYЉYJ\™]\›ЋЪYЉњЭљ[™ИЏO]\[Щ€J\™]\›€КK
-NЭ\€ЏSШљ™XЭњ›ЭЭ\KќФЭљ[™ЛШ[
-JKњЫXЩJLJNИ“Шљ™XЭЏOO[‰‰™KЫЫњЭќXЭЬ‰‰ЉЏYKЫЫњЭќXЭЬ‹›[YJNЪYЉ“X\ЏOO[џ”Щ]ЏOO[Љ\™]\›€\њ^K™њ›ЫJJNЪYЉђ\™Э[Y[ќИЏOO[џЧЉО•Z_J[ќ
-ОЋMџМЉJОђЫ[\Y
-OР\њ^IЛќ\Э
-ЉJ\™]\›€КK
-_JJ_ќ[Э[ЫЉ
-^Э›ЭИ™]И\Q\њ›ЬЉ’[ќ[Y][\ИЬ™XY›Ы‹Z]\X›H[њЭ[ЩK—’[€Ь™\€И™H]\X›K›Ы‹X\њ^HШљ™XЭИ]\Э]™HHФЮ[X›Ыљ]\]Ь—J
-HY]Щ€Љ_J
-_Yќ[Э[Ы€КK
-^Кќ[O]™K›[™Э
-I‰ЉYK›[™Э
-NЩ›ЬЉ\€ЏLЏ[™]И\њ^J
-NЫЏЫЉКК\–Ы—OYVЫ—NЬ™]\›€џYќ[Э[Ы€КK
-^ЪYЉќ[OYJ\™]\›ћЯNЭ\€‹‹ПYќ[Э[ЫЉK
-^ЪYЉќ[OYJ\™]\›ћЯNЭ\€‹‹П^ЯKOSШљ™XЭљЩ^\КJNЩ›ЬЉЏLЬЏK›[™ЭЬЉКК[ЏZVЬ—Kљ[™^ЩЉЉOЏL
-ЦЫ—OYVЫ—JNЬ™]\›€ЯJK
-NЪYЉШљ™XЭ™Щ]ЭЫ”›Ь\ќTЮ[X›ЫК^Э\€OSШљ™XЭ™Щ]ЭЫ”›Ь\ќTЮ[X›ЫКJNЩ›ЬЉЏLЬЏK›[™ЭЬЉКК[ЏZVЬ—Kљ[™^ЩЉЉOЏLШљ™XЭњ›ЭЭ\Kњ›Ь\ќR\С[ќ[Y\X›KШ[
-KЉI‰ЉЦЫ—OYVЫ—J_\™]\›€ЯYќ[Э[Ы€
-K
-^Э\€ЏSШљ™XЭљЩ^\КJNЪYЉШљ™XЭ™Щ]ЭЫ”›Ь\ќTЮ[X›ЫК^Э\€ЏSШљ™XЭ™Щ]ЭЫ”›Ь\ќTЮ[X›ЫКJNЭ	‰ЉЏ\‹™љ[\Љ
-ќ[Э[ЫЉ
-^Ь™]\›€Шљ™XЭ™Щ]ЭЫ”›Ь\ќQ\ШЬљ\ЬЉK
-K™[ќ[Y\X›_JJJK‹њ\Ъ\J‹Љ_\™]\›€џYќ[Э[Ы€ЉJ^Щ›ЬЉ\€LNЭ\™Э[Y[ќЛ›[™ЭЭ
-КК^Э\€Џ[ќ[OX\™Э[Y[ќЦЭOШ\™Э[Y[ќЦЭNћЯNЭ	LЏЮ
-Шљ™XЭ
-ЉKL
-K™›Ь‘XXЪ
-
-ќ[Э[ЫЉ
-^Х
-K–ЭJ_JJN“Шљ™XЭ™Щ]ЭЫ”›Ь\ќQ\ШЬљ\ЬњПУШљ™XЭ™Yљ[™T›Ь\ќY\КKШљ™XЭ™Щ]ЭЫ”›Ь\ќQ\ШЬљ\ЬњКЉJNћ
-Шљ™XЭ
-ЉJK™›Ь‘XXЪ
-
-ќ[Э[ЫЉ
-^УШљ™XЭ™Yљ[™T›Ь\ќJKШљ™XЭ™Щ]ЭЫ”›Ь\ќQ\ШЬљ\ЬЉ‹
-J_JJ_\™]\›€_Yќ[Э[Ы€
-KЉ^Ь™]\›ЉYќ[Э[ЫЉJ^Э\€Yќ[Э[ЫЉK
-^ЪYЉ›Шљ™XЭ€OOQJJ_ќ[OOYJ\™]\›€NЭ\€ЏYVФЮ[X›ЫќФљ[Z]]™WNЪYЉ›ЪYOO[Љ^Э\€Џ[‹Ш[
-K™Y][ЉNЪYЉ›Шљ™XЭ€OOQJЉJ\™]\›€ЋЭ›ЭИ™]И\Q\њ›ЬЉђФљ[Z]]™H]\Э™]\›€Hљ[Z]]™H[YK€Љ_\™]\›ЉњЭљ[™ИЏOO]ФЭљ[™О“ќ[X™\ЉJJ_JKњЭљ[™ИЉNЬ™]\›€њЮ[X›ЫЏOOQJ
-OЭ”Эљ[™К
-_J
-JZ[€OУШљ™XЭ™Yљ[™T›Ь\ќJKЭ[YN›‹[ќ[Y\X›N€LЫЫ™љYЭ\X›N€LЬљ]X›N€LJN™VЭO[‹_Yќ[Э[Ы€JJ^Щ›ЬЉ\€X\™Э[Y[ќЛ›[™ЭЊI‰ќ›ЪYOOX\™Э[Y[ќЦМWOШ\™Э[Y[ќЦМWNЊЊЏVЧKЏLЬЏK›Шљ™XЭQЛ›[™ЭЬЉП]
-[‹њ\Ъ
-ЉЉЯKJKЯKЫШљ™XЭQО™K›Шљ™XЭQЛњЫXЩJ‹ЉЭ
-_JJNЬ™]\›€џYќ[Э[Ы€ЉJ^Ь™]\›€K›X\
-
-ќ[Э[ЫЉJ^Э\€YKљ][\ЛЏZКKJNЬ™]\›€ЉЉЯKЉKЯKЫШљ™XЭQОЉќ[O]Э›ЪYќ›X\
-
-ќ[Э[ЫЉJ^Ь™]\›€K›Шљ™XЭQJJJ_‹›Шљ™XЭQЯJ_JJ_Yќ[Э[Ы€ЉJ^Э\€‹‹ПJT
-
-Kќ™\њЪ[Ыџ€ЉKњЬ]
-‹€ЉK›X\
-ќ[X™\ЉKЉKЏ]МKЏ]МWKЏЏLЯЏOO[‰‰њЏЏMOOO[‰‰њЏЏLL
-NЩќ[Э[Ы€J‹Љ^ЪYЉЙ‰ќ›ЪYOO\Љ^Э\€O\–МK—ЧШ]]ШЫЫ\]WШ[ЫЫXPЬ™Y[ќX[ЛO^И–P[ЫЫXKP\XШ][Ы‹RYЋљK\Y–P[ЫЫXKPTKRЩ^HЋљK\RЩ^_NЩK\J›ЪYЭKЫЫШ]
-
-ЉKЮЪXY\њОќ_WJJ_Y[ЩHK\J›ЪYЭKЫЫШ]
-
-ЉJJ_\™]\›ћЪ[љ]™ќ[Э[ЫЉЉ^ЩJљ[љ]‹Ш\Yќ\RЩ^N›џJ_KЩ]]][ќXШ]Y\Щ\•ЪЩ[Ћ™ќ[Э[ЫЉ
-^ЩJњЩ]]][ќXШ]Y\Щ\•ЪЩ[€‹
-_KЩ]\Щ\•ЪЩ[Ћ™ќ[Э[ЫЉ
-^ЩJњЩ]\Щ\•ЪЩ[€‹
-_KЫXЪЩYШљ™XЭQРYќ\”ЩX\Ъ™ќ[Э[ЫЉ
-^Щ›ЬЉ\€OX\™Э[Y[ќЛ›[™Э[™]И\њ^JJKЏLЫЏNЫЉКК]Ы—OX\™Э[Y[ќЦЫ—NЭ›[™ЭЊ	‰љJЫXЪЩYШљ™XЭQРYќ\”ЩX\Ъ‹Љ
-KМKљ][\К_KЫXЪЩYШљ™XЭQО™ќ[Э[ЫЉ
-^Щ›ЬЉ\€OX\™Э[Y[ќЛ›[™Э[™]И\њ^JJKЏLЫЏNЫЉКК]Ы—OX\™Э[Y[ќЦЫ—NЭ›[™ЭЊ	‰љJЫXЪЩYШљ™XЭQИ‹Љ
-KМKљ][\К_KЫXЪЩYљ[\њО™ќ[Э[ЫЉ
-^Щ›ЬЉ\€X\™Э[Y[ќЛ›[™ЭЏ[™]И\њ^J
-KЏLЬЏЬЉКК[–Ь—OX\™Э[Y[ќЦЬ—NЫ‹›[™ЭЊ	‰™K\J›ЪYИЫXЪЩYљ[\њИ—KЫЫШ]
-ЉJ_KЫЫќ™\ќYШљ™XЭQРYќ\”ЩX\Ъ™ќ[Э[ЫЉ
-^Щ›ЬЉ\€OX\™Э[Y[ќЛ›[™Э[™]И\њ^JJKЏLЫЏNЫЉКК]Ы—OX\™Э[Y[ќЦЫ—NЭ›[™ЭЊ	‰љJЫЫќ™\ќYШљ™XЭQРYќ\”ЩX\Ъ‹Љ
-KМKљ][\К_KЫЫќ™\ќYШљ™XЭQО™ќ[Э[ЫЉ
-^Щ›ЬЉ\€OX\™Э[Y[ќЛ›[™Э[™]И\њ^JJKЏLЫЏNЫЉКК]Ы—OX\™Э[Y[ќЦЫ—NЭ›[™ЭЊ	‰љJЫЫќ™\ќYШљ™XЭQИ‹Љ
-KМKљ][\К_KЫЫќ™\ќYљ[\њО™ќ[Э[ЫЉ
-^Щ›ЬЉ\€X\™Э[Y[ќЛ›[™ЭЏ[™]И\њ^J
-KЏLЬЏЬЉКК[–Ь—OX\™Э[Y[ќЦЬ—NЫ‹›[™ЭЊ	‰™K\J›ЪYИЫЫќ™\ќYљ[\њИ—KЫЫШ]
-ЉJ_KљY]ЩYШљ™XЭQО™ќ[Э[ЫЉ
-^Щ›ЬЉ\€OX\™Э[Y[ќЛ›[™Э[™]И\њ^JJKЏLЫЏNЫЉКК]Ы—OX\™Э[Y[ќЦЫ—NЭ›[™ЭЊ	‰ќњ™YXЩJ
-ќ[Э[ЫЉK
-^Э\€Џ]љ][\ЛЏZКJNЬ™]\›–ЧKЫЫШ]
-
-JK
-JЉЉЯKЉKЯKЫШљ™XЭQОЉќ[O[ЏЭ›ЪY›‹›X\
-
-ќ[Э[ЫЉJ^Ь™]\›€K›Шљ™XЭQJJJ_‹›Шљ™XЭQЯJJK›X\
-
-ќ[Э[ЫЉJ^Ь™]\›ћЪ][\О›‹^[ШY™__JJJJ_JKЧJK™›Ь‘XXЪ
-
-ќ[Э[ЫЉJ^Э\€YKљ][\ОЬ™]\›€JќљY]ЩYШљ™XЭQИ‹ЩKњ^[ШYK
-_JJ_KљY]ЩYљ[\њО™ќ[Э[ЫЉ
-^Щ›ЬЉ\€X\™Э[Y[ќЛ›[™ЭЏ[™]И\њ^J
-KЏLЬЏЬЉКК[–Ь—OX\™Э[Y[ќЦЬ—NЫ‹›[™ЭЊ	‰™K\J›ЪYИќљY]ЩYљ[\њИ—KЫЫШ]
-ЉJ___Yќ[Э[Ы€
-J^Э\€YKљ][\Лњ™YXЩJ
-ќ[Э[ЫЉK
-^Э\€ЋЬ™]\›€VЭ—ЧШ]]ШЫЫ\]WЪ[™^[YWOJќ[OOJЏYVЭ—ЧШ]]ШЫЫ\]WЪ[™^[YWJI‰ќ›ЪYOO[ЏЫЋ–ЧJKЫЫШ]
-
-K_JKЯJNЬ™]\›€Шљ™XЭљЩ^\К
-K›X\
-
-ќ[Э[ЫЉJ^Ь™]\›ћЪ[™^™K][\ОќЩWK[ЫЫXTЫЭ\ЩN–И]]ШЫЫ\]H—__JJ_Yќ[Э[Ы€ЉJ^Ь™]\›€K›Шљ™XЭQ	‰™K—ЧШ]]ШЫЫ\]WЪ[™^[YI‰™K—ЧШ]]ШЫЫ\]WЬ]Y\ћRQYќ[Э[Ы€JJ^Ь™]\›€OH™ќ[Э[Ы€ЏO]\[Щ€Ю[X›Ы	‰€њЮ[X›ЫЏO]\[Щ€Ю[X›Ыљ]\]ЬЏЩќ[Э[ЫЉJ^Ь™]\›€\[Щ€_N™ќ[Э[ЫЉJ^Ь™]\›€I‰€™ќ[Э[Ы€ЏO]\[Щ€Ю[X›Ы	‰™KЫЫњЭќXЭЬЏOOTЮ[X›Ы	‰™HOOTЮ[X›Ыњ›ЭЭ\OИњЮ[X›ЫЋќ\[Щ€_KJJ_Yќ[Э[Ы€JJ^Ь™]\›€ќ[Э[ЫЉJ^ЪYЉ\њ^Kљ\Р\њ^JJJ\™]\›€
-J_JJ_ќ[Э[ЫЉJ^ЪYЉќ[™Yљ[™Y€O]\[Щ€Ю[X›Ы	‰›ќ[OYVФЮ[X›Ыљ]\]Ь—_ќ[OYVИђ]\]Ь€—J\™]\›€\њ^K™њ›ЫJJ_JJ_ќ[Э[ЫЉK
-^ЪYЉYJ\™]\›ЋЪYЉњЭљ[™ИЏO]\[Щ€J\™]\›€
-K
-NЭ\€ЏSШљ™XЭњ›ЭЭ\KќФЭљ[™ЛШ[
-JKњЫXЩJLJNИ“Шљ™XЭЏOO[‰‰™KЫЫњЭќXЭЬ‰‰ЉЏYKЫЫњЭќXЭЬ‹›[YJNЪYЉ“X\ЏOO[џ”Щ]ЏOO[Љ\™]\›€\њ^K™њ›ЫJJNЪYЉђ\™Э[Y[ќИЏOO[џЧЉО•Z_J[ќ
-ОЋMџМЉJОђЫ[\Y
-OР\њ^IЛќ\Э
-ЉJ\™]\›€
-K
-_JJ_ќ[Э[ЫЉ
-^Э›ЭИ™]И\Q\њ›ЬЉ’[ќ[Y][\ИЬ™XY›Ы‹Z]\X›H[њЭ[ЩK—’[€Ь™\€И™H]\X›K›Ы‹X\њ^HШљ™XЭИ]\Э]™HHФЮ[X›Ыљ]\]Ь—J
-HY]Щ€Љ_J
-_Yќ[Э[Ы€
-K
-^Кќ[O]™K›[™Э
-I‰ЉYK›[™Э
-NЩ›ЬЉ\€ЏLЏ[™]И\њ^J
-NЫЏЫЉКК\–Ы—OYVЫ—NЬ™]\›€џYќ[Э[Ы€ЉK
-^Э\€ЏSШљ™XЭљЩ^\КJNЪYЉШљ™XЭ™Щ]ЭЫ”›Ь\ќTЮ[X›ЫК^Э\€ЏSШљ™XЭ™Щ]ЭЫ”›Ь\ќTЮ[X›ЫКJNЭ	‰ЉЏ\‹™љ[\Љ
-ќ[Э[ЫЉ
-^Ь™]\›€Шљ™XЭ™Щ]ЭЫ”›Ь\ќQ\ШЬљ\ЬЉK
-K™[ќ[Y\X›_JJJK‹њ\Ъ\J‹Љ_\™]\›€џYќ[Э[Ы€КJ^Щ›ЬЉ\€LNЭ\™Э[Y[ќЛ›[™ЭЭ
-КК^Э\€Џ[ќ[OX\™Э[Y[ќЦЭOШ\™Э[Y[ќЦЭNћЯNЭ	LЏХЉШљ™XЭ
-ЉKL
-K™›Ь‘XXЪ
-
-ќ[Э[ЫЉ
-^ФJK–ЭJ_JJN“Шљ™XЭ™Щ]ЭЫ”›Ь\ќQ\ШЬљ\ЬњПУШљ™XЭ™Yљ[™T›Ь\ќY\КKШљ™XЭ™Щ]ЭЫ”›Ь\ќQ\ШЬљ\ЬњКЉJN•ЉШљ™XЭ
-ЉJK™›Ь‘XXЪ
-
-ќ[Э[ЫЉ
-^УШљ™XЭ™Yљ[™T›Ь\ќJKШљ™XЭ™Щ]ЭЫ”›Ь\ќQ\ШЬљ\ЬЉ‹
-J_JJ_\™]\›€_Yќ[Э[Ы€JKЉ^Ь™]\›ЉYќ[Э[ЫЉJ^Э\€Yќ[Э[ЫЉK
-^ЪYЉ›Шљ™XЭ€OOUJJ_ќ[OOYJ\™]\›€NЭ\€ЏYVФЮ[X›ЫќФљ[Z]]™WNЪYЉ›ЪYOO[Љ^Э\€Џ[‹Ш[
-K™Y][ЉNЪYЉ›Шљ™XЭ€OOUJЉJ\™]\›€ЋЭ›ЭИ™]И\Q\њ›ЬЉђФљ[Z]]™H]\Э™]\›€Hљ[Z]]™H[YK€Љ_\™]\›ЉњЭљ[™ИЏOO]ФЭљ[™О“ќ[X™\ЉJJ_JKњЭљ[™ИЉNЬ™]\›€њЮ[X›ЫЏOOUJ
-OЭ”Эљ[™К
-_J
-JZ[€OУШљ™XЭ™Yљ[™T›Ь\ќJKЭ[YN›‹[ќ[Y\X›N€LЫЫ™љYЭ\X›N€LЬљ]X›N€LJN™VЭO[‹_]\€ПHЊ‹ЊMKЊ‹	HљО‹ЛШЩ‹љњЩ[]њ‹›™]ЫњKЬЩX\ЪZ[њЪYЪР‹ЫЫШ]
-Л‹Щ\ЭЬЩX\ЪZ[њЪYЪЛ›Z[‹љњИЉKЏ\
-
-ќ[Э[ЫЉJ^Э\€YK›Ы’][\РЪ[™ЩKЏYKљ][\ЛЏYKљ[њЪYЪЛПYKњЭ]NЭ
-Ъ[њЪYЪОњ‹[њЪYЪС]™[ќО“
-Ъ][\О›џJK›X\
-
-ќ[Э[ЫЉJ^Ь™]\›€КЩ]™[ќ[YN€’][\ИљY]ЩYџKJ_JJKЭ]N›ЯJ_JK
-NЩќ[Э[Ы€КJ^Э\€Yќ[Э[ЫЉJ^Ь™]\›€КЫЫ’][\РЪ[™ЩN™ќ[Э[ЫЉJ^Э\€YKљ[њЪYЪЛЏYKљ[њЪYЪС]™[ќЛЏYKњЭ]NЭќљY]ЩYШљ™XЭQЛ\JJ‹›X\
-
-ќ[Э[ЫЉJ^Ь™]\›€ККЯKJKЯKШ[ЫЫXTЫЭ\ЩN’ЉK[ЫЫXTЫЭ\ЩK‹ЫЫќ^
-_J_JJJJ_KЫ”Щ[XЭ™ќ[Э[ЫЉJ^Э\€YKљ[њЪYЪЛЏYKљ[њЪYЪС]™[ќЛЏYKњЭ]NЭЫXЪЩYШљ™XЭQРYќ\”ЩX\Ъ\JJ‹›X\
-
-ќ[Э[ЫЉJ^Ь™]\›€ККЯKJKЯKШ[ЫЫXTЫЭ\ЩN’ЉK[ЫЫXTЫЭ\ЩK‹ЫЫќ^
-_J_JJJJ_KЫђXЭ]™N—ЛЧШ]]ШЫЫ\]WШЫXЪР[[]XЬО€LKJ_JJKЏ]љ[њЪYЪРЫY[ќЏ]љ[њЪYЪТ[љ]\[\ЛП]›Ы’][\РЪ[™ЩKO]›Ы”Щ[XЭO]›ЫђXЭ]™KO]—ЧШ]]ШЫЫ\]WШЫXЪР[[]XЬЛ[ЋЪYЉџќ[Э[ЫЉJ^ЪYЉќ[™Yљ[™Y€O]\[Щ€Ъ[™ЭКYJЭЪ[™ЭОќЪ[™ЭЯJ_J
-ќ[Э[ЫЉJ^Э\€YKќЪ[™ЭЛЏ]ђ[ЫЫXP[[]XЬУШљ™XЭXHЋИњЭљ[™ИЏO]\[Щ€‰‰Љ]Ы—JK
-ђ[ЫЫXP[[]XЬУШљ™XЭ[‹Ы—_
-Ы—OYќ[Э[ЫЉ
-^ЭЫ—Kњ]Y]Y_
-Ы—Kњ]Y]YOVЧJNЩ›ЬЉ\€OX\™Э[Y[ќЛ›[™ЭЏ[™]И\њ^JJKПLЫПNЫККК\–ЫЧOX\™Э[Y[ќЦЫЧNЭЫ—Kњ]Y]YKњ\Ъ
-Љ_JKЫ—Kќ™\њЪ[ЫЏRЛ]Ы—Kќ[Э[ЫЉJ^Э\€H–Р]]ШЫЫ\]WN€ЫЭ[›ЭШYЩX\ЪZ[њЪYЪЛљњЛ€X\ЩHШY]X[ќX[H›ЫЭЪ[™ИО‹ЛШ[Л›KЪ[њЪYЪЛX]]ШЫЫ\]HЋЭћ^Э\€ЏYK™ШЭ[Y[ќЬ™X]Q[[Y[ќ
-њШЬљ\ЉNЫ‹\Ю[ПHL‹њЬПI‹›Ы™\њ›ЬЏYќ[Э[ЫЉ
-^ШЫЫњЫЫK™\њ›ЬЉ
-_KШЭ[Y[ќ›ЩK\[™Ъ[
-Љ_XШ]Ъ
-J^ШЫЫњЫЫK™\њ›ЬЉ
-__J
-J_JJK[
-\™]\›ћЯNЬ‰‰›
-љ[љ]‹КЬ\ќX[€LKЉJNЭ\€ПTЉ
-KПYЉЧJKO\
-
-ќ[Э[ЫЉJ^Э\€YKњЭ]NЪYЉљ\УЬ[Љ^Э\€Џ]ЫЫXЭ[ЫњЛњ™YXЩJ
-ќ[Э[ЫЉK
-^Ь™]\›–ЧKЫЫШ]
-JJKJљ][\КJ_JKЧJK™љ[\ЉЉNЪ
-ЛЭ\њ™[ќ›X\
-
-ќ[Э[ЫЉJ^Ь™]\›€K›Шљ™XЭQJJK‹›X\
-
-ќ[Э[ЫЉJ^Ь™]\›€K›Шљ™XЭQJJJ_
-ЛЭ\њ™[ќ[‹‹›[™ЭЊ	‰ћЉЫЫ’][\РЪ[™ЩN›Л][\О›‹[њЪYЪОЛЭ]NќJJ__JK
-NЬ™]\›ћЫ[YN€XK[ЫЫXR[њЪYЪФYЪ[€‹ЭXњШЬљX™N™ќ[Э[ЫЉJ^Э\€YKњЩ]ЫЫќ^ЏYK›Ы”Щ[XЭЏYK›ЫђXЭ]™NЩќ[Э[Ы€КJ^Э
-Ш[ЫЫXR[њЪYЪФYЪ[ЋћЧЧШ[ЫЫXTЩX\Ъ\[Y]\њО•ККЯKOЮШЫXЪР[[]XЬО€LNћЯJKOЮЭ\Щ\•ЪЩ[Ћ–
-J_NћЯJK[њЪYЪОЯ_J_[
-Y[ЫЫXPYЩ[ќ‹љ[њЪYЪЛ\YЪ[€ЉKК
-K
-›Ы•\Щ\•ЪЩ[ђЪ[™ЩH‹
-ќ[Э[ЫЉJ^ЫКJ_JJK
-™Щ]\Щ\•ЪЩ[€‹ќ[
-ќ[Э[ЫЉK
-^ЫК
-_JJKЉ
-ќ[Э[ЫЉJ^Э\€YKљ][KЏYKњЭ]KЏYK™]™[ќПYKњЫЭ\ЩNСЉ
-I‰љJЬЭ]N›‹]™[ќњ‹[њЪYЪОЛ][Nќ[њЪYЪС]™[ќО–ХКЩ]™[ќ[YN€’][HЩ[XЭYџKЉЪ][Nќ][\О›Л™Щ]][\К
-K™љ[\ЉЉ_JJW_J_JJKЉ
-ќ[Э[ЫЉJ^Э\€YKљ][KЏYKњЫЭ\ЩKЏYKњЭ]KПYK™]™[ќСЉ
-I‰ќJЬЭ]Nњ‹]™[ќ›Л[њЪYЪОЛ][Nќ[њЪYЪС]™[ќО–ХКЩ]™[ќ[YN€’][HXЭ]™HџKЉЪ][Nќ][\О›‹™Щ]][\К
-K™љ[\ЉЉ_JJW_J_JJ_KЫ”Э]PЪ[™ЩN™ќ[Э[ЫЉJ^Э\€YKњЭ]NЫJЬЭ]NќJ_KЧШ]]ШЫЫ\]WЬYЪ[“Ь[ЫњО™__Yќ[Э[Ы€Љ
-^Э\€KX\™Э[Y[ќЛ›[™ЭЊ	‰ќ›ЪYOOX\™Э[Y[ќЦМOШ\™Э[Y[ќЦМN–ЧKЏX\™Э[Y[ќЛ›[™ЭЊOШ\™Э[Y[ќЦМWNќ›ЪYЬ™]\›–ЧKЫЫШ]
-J
-KИ]]ШЫЫ\]KZ[ќ\›[—KJќ[OOJO[‹[ЫЫXR[њЪYЪФYЪ[ЉI‰ќ›ЪYOOYI‰™K—ЧШ]]ЫX]XТ[њЪYЪПЦИ]]ШЫЫ\]KX]]ЫX]XИ—N–ЧJJ_Yќ[Э[Ы€
-J^Ь™]\›€›ќ[X™\€ЏO]\[Щ€OЩKќФЭљ[™К
-N™_Yќ[Э[Ы€JK
-^Э\€Џ]Ь™]\›ћЭ[Ћ™ќ[Э[ЫЉЉ^Ь™]\›€JKќ[ЉYJ‹JKYJ‹‹JJKЉ_KШ]Ъ™ќ[Э[ЫЉ
-^Ь™]\›€JKШ]Ъ
-YJ‹JJKЉ_Kљ[[N™ќ[Э[ЫЉ
-^Ь™]\›€	‰›‹›ЫђШ[Щ[\Эњ\Ъ
-
-KJK™љ[[JYJ	‰™ќ[Э[ЫЉ
-^Ь™]\›€‹›ЫђШ[Щ[\ЭVЧK
-
-_K‹JJKЉ_KШ[Щ[™ќ[Э[ЫЉ
-^Ы‹љ\РШ[Щ[YHLЭ\€O[‹›ЫђШ[Щ[\ЭЫ‹›ЫђШ[Щ[\ЭVЧKK™›Ь‘XXЪ
-
-ќ[Э[ЫЉJ^ЩJ
-_JJ_K\РШ[Щ[Y™ќ[Э[ЫЉ
-^Ь™]\›€LOO[‹љ\РШ[Щ[Y__Yќ[Э[Ы€ЉJ^Ь™]\›€JKЪ\РШ[Щ[Y€LKЫђШ[Щ[\Э–Ч_J_Yќ[Э[Ы€YJKЉ^Ь™]\›€OЩќ[Э[ЫЉЉ^Ь™]\›€љ\РШ[Щ[YЫЋ™JЉ_N›џ]\€K™OHLЩќ[Э[Ы€™JK‹Љ^ЪYЉ[Љ\™]\›€ќ[ЪYЉO	‰Љќ[OO]ќ[OO\‰‰ЊOO]
-J\™]\›€ЉЩNЭ\€ПJќ[OO]ЛLNќ
-JЩNЬ™]\›€ПKL_ПЏ[ЏЫќ[OO\ЏЫќ[Њ›ЯYќ[Э[Ы€ЩJK
-^Э\€ЏSШљ™XЭљЩ^\КJNЪYЉШљ™XЭ™Щ]ЭЫ”›Ь\ќTЮ[X›ЫК^Э\€ЏSШљ™XЭ™Щ]ЭЫ”›Ь\ќTЮ[X›ЫКJNЭ	‰ЉЏ\‹™љ[\Љ
-ќ[Э[ЫЉ
-^Ь™]\›€Шљ™XЭ™Щ]ЭЫ”›Ь\ќQ\ШЬљ\ЬЉK
-K™[ќ[Y\X›_JJJK‹њ\Ъ\J‹Љ_\™]\›€џYќ[Э[Ы€YJJ^Щ›ЬЉ\€LNЭ\™Э[Y[ќЛ›[™ЭЭ
-КК^Э\€Џ[ќ[OX\™Э[Y[ќЦЭOШ\™Э[Y[ќЦЭNћЯNЭ	LЏЫЩJШљ™XЭ
-ЉKL
-K™›Ь‘XXЪ
-
-ќ[Э[ЫЉ
-^ЭYJK–ЭJ_JJN“Шљ™XЭ™Щ]ЭЫ”›Ь\ќQ\ШЬљ\ЬњПУШљ™XЭ™Yљ[™T›Ь\ќY\КKШљ™XЭ™Щ]ЭЫ”›Ь\ќQ\ШЬљ\ЬњКЉJN›ЩJШљ™XЭ
-ЉJK™›Ь‘XXЪ
-
-ќ[Э[ЫЉ
-^УШљ™XЭ™Yљ[™T›Ь\ќJKШљ™XЭ™Щ]ЭЫ”›Ь\ќQ\ШЬљ\ЬЉ‹
-J_JJ_\™]\›€_Yќ[Э[Ы€YJKЉ^Ь™]\›ЉYќ[Э[ЫЉJ^Э\€Yќ[Э[ЫЉK
-^ЪYЉ›Шљ™XЭ€OOXYJJ_ќ[OOYJ\™]\›€NЭ\€ЏYVФЮ[X›ЫќФљ[Z]]™WNЪYЉ›ЪYOO[Љ^Э\€Џ[‹Ш[
-K™Y][ЉNЪYЉ›Шљ™XЭ€OOXYJЉJ\™]\›€ЋЭ›ЭИ™]И\Q\њ›ЬЉђФљ[Z]]™H]\Э™]\›€Hљ[Z]]™H[YK€Љ_\™]\›ЉњЭљ[™ИЏOO]ФЭљ[™О“ќ[X™\ЉJJ_JKњЭљ[™ИЉNЬ™]\›€њЮ[X›ЫЏOOXYJ
-OЭ”Эљ[™К
-_J
-JZ[€OУШљ™XЭ™Yљ[™T›Ь\ќJKЭ[YN›‹[ќ[Y\X›N€LЫЫ™љYЭ\X›N€LЬљ]X›N€LJN™VЭO[‹_Yќ[Э[Ы€YJJ^Ь™]\›€YOH™ќ[Э[Ы€ЏO]\[Щ€Ю[X›Ы	‰€њЮ[X›ЫЏO]\[Щ€Ю[X›Ыљ]\]ЬЏЩќ[Э[ЫЉJ^Ь™]\›€\[Щ€_N™ќ[Э[ЫЉJ^Ь™]\›€I‰€™ќ[Э[Ы€ЏO]\[Щ€Ю[X›Ы	‰™KЫЫњЭќXЭЬЏOOTЮ[X›Ы	‰™HOOTЮ[X›Ыњ›ЭЭ\OИњЮ[X›ЫЋќ\[Щ€_KYJJ_Yќ[Э[Ы€JK
-^Э\€ЏHќ[™Yљ[™Y€O]\[Щ€Ю[X›Ы	‰™VФЮ[X›Ыљ]\]Ь—_VИђ]\]Ь€—NЪYЉ[Љ^ЪYЉ\њ^Kљ\Р\њ^JJ_
-ЏYќ[Э[ЫЉK
-^ЪYЉYJ\™]\›ЋЪYЉњЭљ[™ИЏO]\[Щ€J\™]\›€ЩJK
-NЭ\€ЏSШљ™XЭњ›ЭЭ\KќФЭљ[™ЛШ[
-JKњЫXЩJLJNИ“Шљ™XЭЏOO[‰‰™KЫЫњЭќXЭЬ‰‰ЉЏYKЫЫњЭќXЭЬ‹›[YJNЪYЉ“X\ЏOO[џ”Щ]ЏOO[Љ\™]\›€\њ^K™њ›ЫJJNЪYЉђ\™Э[Y[ќИЏOO[џЧЉО•Z_J[ќ
-ОЋMџМЉJОђЫ[\Y
-OР\њ^IЛќ\Э
-ЉJ\™]\›€ЩJK
-_JJJ_	‰™I‰€›ќ[X™\€ЏO]\[Щ€K›[™Э
-^Ы‰‰ЉO[ЉNЭ\€ЏLПYќ[Э[ЫЉ
-^ЯNЬ™]\›ћЬО›ЛЋ™ќ[Э[ЫЉ
-^Ь™]\›€ЏЏYK›[™ЭЮЩЫ™N€LNћЩЫ™N€LK[YN™VЬЉКЧ__KN™ќ[Э[ЫЉJ^Э›ЭИ_KЋ›Я_]›ЭИ™]И\Q\њ›ЬЉ’[ќ[Y][\И]\]H›Ы‹Z]\X›H[њЭ[ЩK—’[€Ь™\€И™H]\X›K›Ы‹X\њ^HШљ™XЭИ]\Э]™HHФЮ[X›Ыљ]\]Ь—J
-HY]Щ€Љ_]\€KOHLOHLNЬ™]\›ћЬО™ќ[Э[ЫЉ
-^ЫЏ[‹Ш[
-J_KЋ™ќ[Э[ЫЉ
-^Э\€O[‹›™^
-
-NЬ™]\›€OYK™Ы™K_KN™ќ[Э[ЫЉJ^ШOHLOY_KЋ™ќ[Э[ЫЉ
-^Эћ^Э_ќ[O[‹њ™]\›џ‹њ™]\›Љ
-_Yљ[[^ЪYЉJ]›ЭИ____Yќ[Э[Ы€ЩJK
-^Кќ[O]™K›[™Э
-I‰ЉYK›[™Э
-NЩ›ЬЉ\€ЏLЏ[™]И\њ^J
-NЫЏЫЉКК\–Ы—OYVЫ—NЬ™]\›€џ]\€ЩOYќ[Э[ЫЉK
-^Э\€‹ЏHLKПVЧKO[JJNЭћ^Щ›ЬЉKњК
-NИJЏZK›Љ
-JK™Ы™NК^Э\€KKП[ќ[OOJO[‹ќ[YK—ЧШ]]ШЫЫ\]WЬYЪ[“Ь[ЫњК_›ЪYOO]_ќ[OOJOJ]JK]ШZ]ЭX›Z]
-_›ЪYOOXOЭ›ЪYKШ[
-
-NЪYЉ›ќ[X™\€ЏO]\[Щ€К[Лњ\Ъ
-КNЩ[ЩHYЉLOOXК^ЬЏHLШњ™XZЯ__XШ]Ъ
-J^ЪK™JJ_Yљ[[^ЪK™Љ
-_\™]\›€ЏЭќШZ]
-
-N›Л›[™ЭЊЭќШZ]
-X]›X^\JX]КJNќ›ЪYNЩќ[Э[Ы€™JJ^Э\€Yќ[Э[ЫЉJ^Э\€YKЫЫXЭ[ЫњЛ›X\
-
-ќ[Э[ЫЉJ^Ь™]\›€Kљ][\Л›[™ЭJJKњ™YXЩJ
-ќ[Э[ЫЉKЉ^Э\€ЏJVЫ‹LW_
-JЭЬ™]\›€Kњ\Ъ
-ЉK_JKЧJKњ™YXЩJ
-ќ[Э[ЫЉЉ^Ь™]\›€ЏYKXЭ]™R][RYЭ
-МNќJK
-NЬ™]\›€KЫЫXЭ[ЫњЦЭ_JJNЪYЉ]
-\™]\›€ќ[Э\€Џ]љ][\ЦЩќ[Э[ЫЉJ^Щ›ЬЉ\€YKњЭ]KЏYKЫЫXЭ[Ы‹ЏHLKПLOLИLOOO\ЋК^Э\€O]ЫЫXЭ[ЫњЦЫЧNЪYЉOOO[Љ^ЬЏHLШњ™XZЯZJП]Kљ][\Л›[™ЭККЯ\™]\›€XЭ]™R][RYZ_JЬЭ]N™KЫЫXЭ[ЫЋќJWKЏ]њЫЭ\ЩNЬ™]\›ћЪ][N›‹][R[њ][YNњ‹™Щ]][R[њ][YJЪ][N›‹Э]N™_JK][U\›њ‹™Щ]][U\›
-Ъ][N›‹Э]N™_JKЫЭ\ЩNњџ_Yќ[Э[Ы€JKЉ^Ь™]\›–ЩKќ[O[ЏЭ›ЪY›‹њЫЭ\ЩRYK™љ[\Љ›ЫЫX[ЉKљ›Ъ[Љ‹HЉKњ™\XЩJЧЛЩЛ€Љ_]\€YOKК
-ЭЫJK_Ш[^H™^\К_Ш[\Э[™ЦЛH_Ш[\Э[™Шњ›ЭЬЩ\‹ЪNЩќ[Э[Ы€™JJ^Ь™]\›€K›]]™Q]™[ќ_Yќ[Э[Ы€JJ^Ь™]\›€OH™ќ[Э[Ы€ЏO]\[Щ€Ю[X›Ы	‰€њЮ[X›ЫЏO]\[Щ€Ю[X›Ыљ]\]ЬЏЩќ[Э[ЫЉJ^Ь™]\›€\[Щ€_N™ќ[Э[ЫЉJ^Ь™]\›€I‰€™ќ[Э[Ы€ЏO]\[Щ€Ю[X›Ы	‰™KЫЫњЭќXЭЬЏOOTЮ[X›Ы	‰™HOOTЮ[X›Ыњ›ЭЭ\OИњЮ[X›ЫЋќ\[Щ€_KJJ_Yќ[Э[Ы€YJK
-^Э\€ЏSШљ™XЭљЩ^\КJNЪYЉШљ™XЭ™Щ]ЭЫ”›Ь\ќTЮ[X›ЫК^Э\€ЏSШљ™XЭ™Щ]ЭЫ”›Ь\ќTЮ[X›ЫКJNЭ	‰ЉЏ\‹™љ[\Љ
-ќ[Э[ЫЉ
-^Ь™]\›€Шљ™XЭ™Щ]ЭЫ”›Ь\ќQ\ШЬљ\ЬЉK
-K™[ќ[Y\X›_JJJK‹њ\Ъ\J‹Љ_\™]\›€џYќ[Э[Ы€™JKЉ^Ь™]\›ЉYќ[Э[ЫЉJ^Э\€Yќ[Э[ЫЉK
-^ЪYЉ›Шљ™XЭ€OOYJJ_ќ[OOYJ\™]\›€NЭ\€ЏYVФЮ[X›ЫќФљ[Z]]™WNЪYЉ›ЪYOO[Љ^Э\€Џ[‹Ш[
-K™Y][ЉNЪYЉ›Шљ™XЭ€OOYJЉJ\™]\›€ЋЭ›ЭИ™]И\Q\њ›ЬЉђФљ[Z]]™H]\Э™]\›€Hљ[Z]]™H[YK€Љ_\™]\›ЉњЭљ[™ИЏOO]ФЭљ[™О“ќ[X™\ЉJJ_JKњЭљ[™ИЉNЬ™]\›€њЮ[X›ЫЏOOYJ
-OЭ”Эљ[™К
-_J
-JZ[€OУШљ™XЭ™Yљ[™T›Ь\ќJKЭ[YN›‹[ќ[Y\X›N€LЫЫ™љYЭ\X›N€LЬљ]X›N€LJN™VЭO[‹_Yќ[Э[Ы€ЩJKЉ^Э\€‹П]љ[љ]X[Э]NЬ™]\›ћЩЩ]Э]N™ќ[Э[ЫЉ
-^Ь™]\›€ЯK\Ь]Ъ™ќ[Э[ЫЉ‹J^Э\€OYќ[Э[ЫЉJ^Щ›ЬЉ\€LNЭ\™Э[Y[ќЛ›[™ЭЭ
-КК^Э\€Џ[ќ[OX\™Э[Y[ќЦЭOШ\™Э[Y[ќЦЭNћЯNЭ	LЏЮYJШљ™XЭ
-ЉKL
-K™›Ь‘XXЪ
-
-ќ[Э[ЫЉ
-^Ш™JK–ЭJ_JJN“Шљ™XЭ™Щ]ЭЫ”›Ь\ќQ\ШЬљ\ЬњПУШљ™XЭ™Yљ[™T›Ь\ќY\КKШљ™XЭ™Щ]ЭЫ”›Ь\ќQ\ШЬљ\ЬњКЉJNћYJШљ™XЭ
-ЉJK™›Ь‘XXЪ
-
-ќ[Э[ЫЉ
-^УШљ™XЭ™Yљ[™T›Ь\ќJKШљ™XЭ™Щ]ЭЫ”›Ь\ќQ\ШЬљ\ЬЉ‹
-J_JJ_\™]\›€_JЯKКNЫПYJЛЭ\Nњ‹›ЬОќ^[ШYљ_JKЉЬЭ]N›Л™]”Э]Nќ_J_K[™[™Ф™\]Y\ЭОЉЏVЧKШY™ќ[Э[ЫЉJ^Ь™]\›€‹њ\Ъ
-JKK™љ[[J
-ќ[Э[ЫЉ
-^ЬЏ\‹™љ[\Љ
-ќ[Э[ЫЉ
-^Ь™]\›€OOY_JJ_JJ_KШ[Щ[[™ќ[Э[ЫЉ
-^Ь‹™›Ь‘XXЪ
-
-ќ[Э[ЫЉJ^Ь™]\›€KШ[Щ[
-
-_JJ_K\С[\N™ќ[Э[ЫЉ
-^Ь™]\›€OO\‹›[™ЭKШZ]™ќ[Э[ЫЉJ^Ь™]\›€™OК™OHLKOYOФ›ЫZ\ЩKњXЩJФ›ЫZ\ЩK[
-ЉK™]И›ЫZ\ЩJ
-ќ[Э[ЫЉ
-^Ь™]\›€Щ][Y[Э]
-J_JJWJN”›ЫZ\ЩK[
-ЉKKќ[Љ
-ќ[Э[ЫЉ
-^Ы™OHLJJJNќ__J__Yќ[Э[Ы€JJ^Ь™]\›€OH™ќ[Э[Ы€ЏO]\[Щ€Ю[X›Ы	‰€њЮ[X›ЫЏO]\[Щ€Ю[X›Ыљ]\]ЬЏЩќ[Э[ЫЉJ^Ь™]\›€\[Щ€_N™ќ[Э[ЫЉJ^Ь™]\›€I‰€™ќ[Э[Ы€ЏO]\[Щ€Ю[X›Ы	‰™KЫЫњЭќXЭЬЏOOTЮ[X›Ы	‰™HOOTЮ[X›Ыњ›ЭЭ\OИњЮ[X›ЫЋќ\[Щ€_KJJ_Yќ[Э[Ы€ЩJK
-^Э\€ЏSШљ™XЭљЩ^\КJNЪYЉШљ™XЭ™Щ]ЭЫ”›Ь\ќTЮ[X›ЫК^Э\€ЏSШљ™XЭ™Щ]ЭЫ”›Ь\ќTЮ[X›ЫКJNЭ	‰ЉЏ\‹™љ[\Љ
-ќ[Э[ЫЉ
-^Ь™]\›€Шљ™XЭ™Щ]ЭЫ”›Ь\ќQ\ШЬљ\ЬЉK
-K™[ќ[Y\X›_JJJK‹њ\Ъ\J‹Љ_\™]\›€џYќ[Э[Ы€ЩJJ^Щ›ЬЉ\€LNЭ\™Э[Y[ќЛ›[™ЭЭ
-КК^Э\€Џ[ќ[OX\™Э[Y[ќЦЭOШ\™Э[Y[ќЦЭNћЯNЭ	LЏЧЩJШљ™XЭ
-ЉKL
-K™›Ь‘XXЪ
-
-ќ[Э[ЫЉ
-^ФЩJK–ЭJ_JJN“Шљ™XЭ™Щ]ЭЫ”›Ь\ќQ\ШЬљ\ЬњПУШљ™XЭ™Yљ[™T›Ь\ќY\КKШљ™XЭ™Щ]ЭЫ”›Ь\ќQ\ШЬљ\ЬњКЉJN—ЩJШљ™XЭ
-ЉJK™›Ь‘XXЪ
-
-ќ[Э[ЫЉ
-^УШљ™XЭ™Yљ[™T›Ь\ќJKШљ™XЭ™Щ]ЭЫ”›Ь\ќQ\ШЬљ\ЬЉ‹
-J_JJ_\™]\›€_Yќ[Э[Ы€ЩJKЉ^Ь™]\›ЉYќ[Э[ЫЉJ^Э\€Yќ[Э[ЫЉK
-^ЪYЉ›Шљ™XЭ€OOZJJ_ќ[OOYJ\™]\›€NЭ\€ЏYVФЮ[X›ЫќФљ[Z]]™WNЪYЉ›ЪYOO[Љ^Э\€Џ[‹Ш[
-K™Y][ЉNЪYЉ›Шљ™XЭ€OOZJЉJ\™]\›€ЋЭ›ЭИ™]И\Q\њ›ЬЉђФљ[Z]]™H]\Э™]\›€Hљ[Z]]™H[YK€Љ_\™]\›ЉњЭљ[™ИЏOO]ФЭљ[™О“ќ[X™\ЉJJ_JKњЭљ[™ИЉNЬ™]\›€њЮ[X›ЫЏOOZJ
-OЭ”Эљ[™К
-_J
-JZ[€OУШљ™XЭ™Yљ[™T›Ь\ќJKЭ[YN›‹[ќ[Y\X›N€LЫЫ™љYЭ\X›N€LЬљ]X›N€LJN™VЭO[‹_Yќ[Э[Ы€™JJ^Ь™]\›€™OH™ќ[Э[Ы€ЏO]\[Щ€Ю[X›Ы	‰€њЮ[X›ЫЏO]\[Щ€Ю[X›Ыљ]\]ЬЏЩќ[Э[ЫЉJ^Ь™]\›€\[Щ€_N™ќ[Э[ЫЉJ^Ь™]\›€I‰€™ќ[Э[Ы€ЏO]\[Щ€Ю[X›Ы	‰™KЫЫњЭќXЭЬЏOOTЮ[X›Ы	‰™HOOTЮ[X›Ыњ›ЭЭ\OИњЮ[X›ЫЋќ\[Щ€_K™JJ_Yќ[Э[Ы€JJ^Ь™]\›€ќ[Э[ЫЉJ^ЪYЉ\њ^Kљ\Р\њ^JJJ\™]\›€ЩJJ_JJ_ќ[Э[ЫЉJ^ЪYЉќ[™Yљ[™Y€O]\[Щ€Ю[X›Ы	‰›ќ[OYVФЮ[X›Ыљ]\]Ь—_ќ[OYVИђ]\]Ь€—J\™]\›€\њ^K™њ›ЫJJ_JJ_ќ[Э[ЫЉK
-^ЪYЉYJ\™]\›ЋЪYЉњЭљ[™ИЏO]\[Щ€J\™]\›€ЩJK
-NЭ\€ЏSШљ™XЭњ›ЭЭ\KќФЭљ[™ЛШ[
-JKњЫXЩJLJNИ“Шљ™XЭЏOO[‰‰™KЫЫњЭќXЭЬ‰‰ЉЏYKЫЫњЭќXЭЬ‹›[YJNЪYЉ“X\ЏOO[џ”Щ]ЏOO[Љ\™]\›€\њ^K™њ›ЫJJNЪYЉђ\™Э[Y[ќИЏOO[џЧЉО•Z_J[ќ
-ОЋMџМЉJОђЫ[\Y
-OР\њ^IЛќ\Э
-ЉJ\™]\›€ЩJK
-_JJ_ќ[Э[ЫЉ
-^Э›ЭИ™]И\Q\њ›ЬЉ’[ќ[Y][\ИЬ™XY›Ы‹Z]\X›H[њЭ[ЩK—’[€Ь™\€И™H]\X›K›Ы‹X\њ^HШљ™XЭИ]\Э]™HHФЮ[X›Ыљ]\]Ь—J
-HY]Щ€Љ_J
-_Yќ[Э[Ы€ЩJK
-^Кќ[O]™K›[™Э
-I‰ЉYK›[™Э
-NЩ›ЬЉ\€ЏLЏ[™]И\њ^J
-NЫЏЫЉКК\–Ы—OYVЫ—NЬ™]\›€џYќ[Э[Ы€YJK
-^Э\€ЏSШљ™XЭљЩ^\КJNЪYЉШљ™XЭ™Щ]ЭЫ”›Ь\ќTЮ[X›ЫК^Э\€ЏSШљ™XЭ™Щ]ЭЫ”›Ь\ќTЮ[X›ЫКJNЭ	‰ЉЏ\‹™љ[\Љ
-ќ[Э[ЫЉ
-^Ь™]\›€Шљ™XЭ™Щ]ЭЫ”›Ь\ќQ\ШЬљ\ЬЉK
-K™[ќ[Y\X›_JJJK‹њ\Ъ\J‹Љ_\™]\›€џYќ[Э[Ы€YJJ^Щ›ЬЉ\€LNЭ\™Э[Y[ќЛ›[™ЭЭ
-КК^Э\€Џ[ќ[OX\™Э[Y[ќЦЭOШ\™Э[Y[ќЦЭNћЯNЭ	LЏТYJШљ™XЭ
-ЉKL
-K™›Ь‘XXЪ
-
-ќ[Э[ЫЉ
-^СYJK–ЭJ_JJN“Шљ™XЭ™Щ]ЭЫ”›Ь\ќQ\ШЬљ\ЬњПУШљ™XЭ™Yљ[™T›Ь\ќY\КKШљ™XЭ™Щ]ЭЫ”›Ь\ќQ\ШЬљ\ЬњКЉJN’YJШљ™XЭ
-ЉJK™›Ь‘XXЪ
-
-ќ[Э[ЫЉ
-^УШљ™XЭ™Yљ[™T›Ь\ќJKШљ™XЭ™Щ]ЭЫ”›Ь\ќQ\ШЬљ\ЬЉ‹
-J_JJ_\™]\›€_Yќ[Э[Ы€YJKЉ^Ь™]\›ЉYќ[Э[ЫЉJ^Э\€Yќ[Э[ЫЉK
-^ЪYЉ›Шљ™XЭ€OOZ™JJ_ќ[OOYJ\™]\›€NЭ\€ЏYVФЮ[X›ЫќФљ[Z]]™WNЪYЉ›ЪYOO[Љ^Э\€Џ[‹Ш[
-K™Y][ЉNЪYЉ›Шљ™XЭ€OOZ™JЉJ\™]\›€ЋЭ›ЭИ™]И\Q\њ›ЬЉђФљ[Z]]™H]\Э™]\›€Hљ[Z]]™H[YK€Љ_\™]\›ЉњЭљ[™ИЏOO]ФЭљ[™О“ќ[X™\ЉJJ_JKњЭљ[™ИЉNЬ™]\›€њЮ[X›ЫЏOOZ™J
-OЭ”Эљ[™К
-_J
-JZ[€OУШљ™XЭ™Yљ[™T›Ь\ќJKЭ[YN›‹[ќ[Y\X›N€LЫЫ™љYЭ\X›N€LЬљ]X›N€LJN™VЭO[‹_Yќ[Э[Ы€JK
-^Э\€‹ЏHќ[™Yљ[™Y€O]\[Щ€Ъ[™ЭПЭЪ[™ЭОћЯKПYKњYЪ[њЯЧNЬ™]\›€YJYJЩXќYО€LKЬ[“Ы‘›ШЭ\О€LK[ќ\’Щ^R[ќќ›ЪYYЫ›Ь™PЫЫ\ЬЪ][Ы‘]™[ќО€LKXЩZЫ\Ћ€€‹]]С›ШЭ\О€LKY][XЭ]™R][RY›ќ[Э[™\ЪЫЊМ[њЪYЪОќ›ЪY[ќљ\›Ы›Y[ќњ‹ЪЭ[[™[Ь[Ћ™ќ[Э[ЫЉJ^Ь™]\›€ЉKњЭ]JOЊK™\Ъ\N™ќ[Э[ЫЉJ^Ь™]\›€KњЫЭ\Щ\Я_KJKЯKЪY›ќ[OOJЏYKљY
-I‰ќ›ЪYOO[ЏЫЋ™
-
-KYЪ[њО›Л[љ]X[Э]NђYJШXЭ]™R][RY›ќ[]Y\ћN€€‹ЫЫ\][ЫЋ›ќ[ЫЫXЭ[ЫњО–ЧK\УЬ[Ћ€LKЭ]\О€љYH‹ЫЫќ^ћЯ_KKљ[љ]X[Э]JKЫ”Э]PЪ[™ЩN™ќ[Э[ЫЉ
-^Э\€ЋЫќ[OOJЏYK›Ы”Э]PЪ[™ЩJ_›ЪYOO[џ‹Ш[
-K
-KЛ™›Ь‘XXЪ
-
-ќ[Э[ЫЉJ^Э\€ЋЬ™]\›€ќ[OOJЏYK›Ы”Э]PЪ[™ЩJ_›ЪYOO[ЏЭ›ЪY›‹Ш[
-K
-_JJ_KЫ”ЭX›Z]™ќ[Э[ЫЉ
-^Э\€ЋЫќ[OOJЏYK›Ы”ЭX›Z]
-_›ЪYOO[џ‹Ш[
-K
-KЛ™›Ь‘XXЪ
-
-ќ[Э[ЫЉJ^Э\€ЋЬ™]\›€ќ[OOJЏYK›Ы”ЭX›Z]
-_›ЪYOO[ЏЭ›ЪY›‹Ш[
-K
-_JJ_KЫ”™\Щ]™ќ[Э[ЫЉ
-^Э\€ЋЫќ[OOJЏYK›Ы”™\Щ]
-_›ЪYOO[џ‹Ш[
-K
-KЛ™›Ь‘XXЪ
-
-ќ[Э[ЫЉJ^Э\€ЋЬ™]\›€ќ[OOJЏYK›Ы”™\Щ]
-_›ЪYOO[ЏЭ›ЪY›‹Ш[
-K
-_JJ_KЩ]ЫЭ\Щ\О™ќ[Э[ЫЉЉ^Ь™]\›€›ЫZ\ЩK[
-ЧKЫЫШ]
-JЛ›X\
-
-ќ[Э[ЫЉJ^Ь™]\›€K™Щ]ЫЭ\Щ\ЯJJJKЩK™Щ]ЫЭ\Щ\ЧJK™љ[\Љ›ЫЫX[ЉK›X\
-
-ќ[Э[ЫЉJ^Ь™]\›€ќ[Э[ЫЉK
-^Э\€ЏVЧNЬ™]\›€›ЫZ\ЩKњ™\ЫЫ™JJ
-JKќ[Љ
-ќ[Э[ЫЉJ^Ь™]\›€›ЫZ\ЩK[
-K™љ[\Љ
-ќ[Э[ЫЉJ^Ь™]\›€›ЫЫX[ЉJ_JJK›X\
-
-ќ[Э[ЫЉJ^ЪYЉKњЫЭ\ЩRY‹љ[ЫY\КKњЫЭ\ЩRY
-J]›ЭИ™]И\њ›ЬЉ–Р]]ШЫЫ\]WHHЫЭ\ЩRY‹ЫЫШ]
-”УУ‹њЭљ[™ЪYћJKњЫЭ\ЩRY
-K€\И›Э[љ\]YK€ЉJNЫ‹њ\Ъ
-KњЫЭ\ЩRY
-NЭ\€^ЩЩ]][R[њ][YN™ќ[Э[ЫЉJ^Ь™]\›€KњЭ]Kњ]Y\ћ_KЩ]][U\›™ќ[Э[ЫЉ
-^ЯKЫ”Щ[XЭ™ќ[Э[ЫЉJ^КKњЩ]\УЬ[ЉJLJ_KЫђXЭ]™N—ЛЫ”™\ЫЫ™N—ЯNУШљ™XЭљЩ^\К
-K™›Ь‘XXЪ
-
-ќ[Э[ЫЉJ^ЭЩWK—ЧЩY][HLJJNЭ\€ЏZYJYJЯK
-KJNЬ™]\›€›ЫZ\ЩKњ™\ЫЫ™JЉ_JJJ_JJ_JKЉ_JJJKќ[Љ
-ќ[Э[ЫЉJ^Ь™]\›€JJ_JJKќ[Љ
-ќ[Э[ЫЉJ^Ь™]\›€K›X\
-
-ќ[Э[ЫЉJ^Ь™]\›€YJYJЯKJKЯKЫЫ”Щ[XЭ™ќ[Э[ЫЉЉ^ЩK›Ы”Щ[XЭ
-ЉK™›Ь‘XXЪ
-
-ќ[Э[ЫЉJ^Э\€Ь™]\›€ќ[OOJYK›Ы”Щ[XЭ
-_›ЪYOO]Э›ЪYќШ[
-KЉ_JJ_KЫђXЭ]™N™ќ[Э[ЫЉЉ^ЩK›ЫђXЭ]™JЉK™›Ь‘XXЪ
-
-ќ[Э[ЫЉJ^Э\€Ь™]\›€ќ[OOJYK›ЫђXЭ]™J_›ЪYOO]Э›ЪYќШ[
-KЉ_JJ_KЫ”™\ЫЫ™N™ќ[Э[ЫЉЉ^ЩK›Ы”™\ЫЫ™JЉK™›Ь‘XXЪ
-
-ќ[Э[ЫЉJ^Э\€Ь™]\›€ќ[OOJYK›Ы”™\ЫЫ™J_›ЪYOO]Э›ЪYќШ[
-KЉ_JJ__J_JJ_JJ_K]љYШ]ЬЋђYJЫ]љYШ]N™ќ[Э[ЫЉJ^Э\€YKљ][U\›Ь‹›ШШ][Ы‹\ЬЪYЫЉ
-_K]љYШ]S™]ХXЋ™ќ[Э[ЫЉJ^Э\€YKљ][U\›Џ\‹›Ь[Љ—Ш›[љИ‹››ЫЬ[™\€ЉNЫќ[O[џ‹™›ШЭ\К
-_K]љYШ]S™]ХЪ[™ЭО™ќ[Э[ЫЉJ^Э\€YKљ][U\›Ь‹›Ь[Љ—Ш›[љИ‹››ЫЬ[™\€Љ__KK›]љYШ]ЬЉ_J_Yќ[Э[Ы€ЩJJ^Ь™]\›€ЩOH™ќ[Э[Ы€ЏO]\[Щ€Ю[X›Ы	‰€њЮ[X›ЫЏO]\[Щ€Ю[X›Ыљ]\]ЬЏЩќ[Э[ЫЉJ^Ь™]\›€\[Щ€_N™ќ[Э[ЫЉJ^Ь™]\›€I‰€™ќ[Э[Ы€ЏO]\[Щ€Ю[X›Ы	‰™KЫЫњЭќXЭЬЏOOTЮ[X›Ы	‰™HOOTЮ[X›Ыњ›ЭЭ\OИњЮ[X›ЫЋќ\[Щ€_KЩJJ_Yќ[Э[Ы€ЩJK
-^Э\€ЏSШљ™XЭљЩ^\КJNЪYЉШљ™XЭ™Щ]ЭЫ”›Ь\ќTЮ[X›ЫК^Э\€ЏSШљ™XЭ™Щ]ЭЫ”›Ь\ќTЮ[X›ЫКJNЭ	‰ЉЏ\‹™љ[\Љ
-ќ[Э[ЫЉ
-^Ь™]\›€Шљ™XЭ™Щ]ЭЫ”›Ь\ќQ\ШЬљ\ЬЉK
-K™[ќ[Y\X›_JJJK‹њ\Ъ\J‹Љ_\™]\›€џYќ[Э[Ы€JJ^Щ›ЬЉ\€LNЭ\™Э[Y[ќЛ›[™ЭЭ
-КК^Э\€Џ[ќ[OX\™Э[Y[ќЦЭOШ\™Э[Y[ќЦЭNћЯNЭ	LЏЪЩJШљ™XЭ
-ЉKL
-K™›Ь‘XXЪ
-
-ќ[Э[ЫЉ
-^У™JK–ЭJ_JJN“Шљ™XЭ™Щ]ЭЫ”›Ь\ќQ\ШЬљ\ЬњПУШљ™XЭ™Yљ[™T›Ь\ќY\КKШљ™XЭ™Щ]ЭЫ”›Ь\ќQ\ШЬљ\ЬњКЉJNљЩJШљ™XЭ
-ЉJK™›Ь‘XXЪ
-
-ќ[Э[ЫЉ
-^УШљ™XЭ™Yљ[™T›Ь\ќJKШљ™XЭ™Щ]ЭЫ”›Ь\ќQ\ШЬљ\ЬЉ‹
-J_JJ_\™]\›€_Yќ[Э[Ы€™JKЉ^Ь™]\›ЉYќ[Э[ЫЉJ^Э\€Yќ[Э[ЫЉK
-^ЪYЉ›Шљ™XЭ€OOPЩJJ_ќ[OOYJ\™]\›€NЭ\€ЏYVФЮ[X›ЫќФљ[Z]]™WNЪYЉ›ЪYOO[Љ^Э\€Џ[‹Ш[
-K™Y][ЉNЪYЉ›Шљ™XЭ€OOPЩJЉJ\™]\›€ЋЭ›ЭИ™]И\Q\њ›ЬЉђФљ[Z]]™H]\Э™]\›€Hљ[Z]]™H[YK€Љ_\™]\›ЉњЭљ[™ИЏOO]ФЭљ[™О“ќ[X™\ЉJJ_JKњЭљ[™ИЉNЬ™]\›€њЮ[X›ЫЏOOPЩJ
-OЭ”Эљ[™К
-_J
-JZ[€OУШљ™XЭ™Yљ[™T›Ь\ќJKЭ[YN›‹[ќ[Y\X›N€LЫЫ™љYЭ\X›N€LЬљ]X›N€LJN™VЭO[‹_Yќ[Э[Ы€JJ^Ь™]\›€OH™ќ[Э[Ы€ЏO]\[Щ€Ю[X›Ы	‰€њЮ[X›ЫЏO]\[Щ€Ю[X›Ыљ]\]ЬЏЩќ[Э[ЫЉJ^Ь™]\›€\[Щ€_N™ќ[Э[ЫЉJ^Ь™]\›€I‰€™ќ[Э[Ы€ЏO]\[Щ€Ю[X›Ы	‰™KЫЫњЭќXЭЬЏOOTЮ[X›Ы	‰™HOOTЮ[X›Ыњ›ЭЭ\OИњЮ[X›ЫЋќ\[Щ€_KJJ_Yќ[Э[Ы€YJK
-^Э\€ЏSШљ™XЭљЩ^\КJNЪYЉШљ™XЭ™Щ]ЭЫ”›Ь\ќTЮ[X›ЫК^Э\€ЏSШљ™XЭ™Щ]ЭЫ”›Ь\ќTЮ[X›ЫКJNЭ	‰ЉЏ\‹™љ[\Љ
-ќ[Э[ЫЉ
-^Ь™]\›€Шљ™XЭ™Щ]ЭЫ”›Ь\ќQ\ШЬљ\ЬЉK
-K™[ќ[Y\X›_JJJK‹њ\Ъ\J‹Љ_\™]\›€џYќ[Э[Ы€™JJ^Щ›ЬЉ\€LNЭ\™Э[Y[ќЛ›[™ЭЭ
-КК^Э\€Џ[ќ[OX\™Э[Y[ќЦЭOШ\™Э[Y[ќЦЭNћЯNЭ	LЏЬYJШљ™XЭ
-ЉKL
-K™›Ь‘XXЪ
-
-ќ[Э[ЫЉ
-^Ф™JK–ЭJ_JJN“Шљ™XЭ™Щ]ЭЫ”›Ь\ќQ\ШЬљ\ЬњПУШљ™XЭ™Yљ[™T›Ь\ќY\КKШљ™XЭ™Щ]ЭЫ”›Ь\ќQ\ШЬљ\ЬњКЉJNњYJШљ™XЭ
-ЉJK™›Ь‘XXЪ
-
-ќ[Э[ЫЉ
-^УШљ™XЭ™Yљ[™T›Ь\ќJKШљ™XЭ™Щ]ЭЫ”›Ь\ќQ\ШЬљ\ЬЉ‹
-J_JJ_\™]\›€_Yќ[Э[Ы€™JKЉ^Ь™]\›ЉYќ[Э[ЫЉJ^Э\€Yќ[Э[ЫЉK
-^ЪYЉ›Шљ™XЭ€OOUJJ_ќ[OOYJ\™]\›€NЭ\€ЏYVФЮ[X›ЫќФљ[Z]]™WNЪYЉ›ЪYOO[Љ^Э\€Џ[‹Ш[
-K™Y][ЉNЪYЉ›Шљ™XЭ€OOUJЉJ\™]\›€ЋЭ›ЭИ™]И\Q\њ›ЬЉђФљ[Z]]™H]\Э™]\›€Hљ[Z]]™H[YK€Љ_\™]\›ЉњЭљ[™ИЏOO]ФЭљ[™О“ќ[X™\ЉJJ_JKњЭљ[™ИЉNЬ™]\›€њЮ[X›ЫЏOOUJ
-OЭ”Эљ[™К
-_J
-JZ[€OУШљ™XЭ™Yљ[™T›Ь\ќJKЭ[YN›‹[ќ[Y\X›N€LЫЫ™љYЭ\X›N€LЬљ]X›N€LJN™VЭO[‹_Yќ[Э[Ы€JJ^Ь™]\›€ќ[Э[ЫЉJ^ЪYЉ\њ^Kљ\Р\њ^JJJ\™]\›€™JJ_JJ_ќ[Э[ЫЉJ^ЪYЉќ[™Yљ[™Y€O]\[Щ€Ю[X›Ы	‰›ќ[OYVФЮ[X›Ыљ]\]Ь—_ќ[OYVИђ]\]Ь€—J\™]\›€\њ^K™њ›ЫJJ_JJ_ќ[Э[ЫЉK
-^ЪYЉYJ\™]\›ЋЪYЉњЭљ[™ИЏO]\[Щ€J\™]\›€™JK
-NЭ\€ЏSШљ™XЭњ›ЭЭ\KќФЭљ[™ЛШ[
-JKњЫXЩJLJNИ“Шљ™XЭЏOO[‰‰™KЫЫњЭќXЭЬ‰‰ЉЏYKЫЫњЭќXЭЬ‹›[YJNЪYЉ“X\ЏOO[џ”Щ]ЏOO[Љ\™]\›€\њ^K™њ›ЫJJNЪYЉђ\™Э[Y[ќИЏOO[џЧЉО•Z_J[ќ
-ОЋMџМЉJОђЫ[\Y
-OР\њ^IЛќ\Э
-ЉJ\™]\›€™JK
-_JJ_ќ[Э[ЫЉ
-^Э›ЭИ™]И\Q\њ›ЬЉ’[ќ[Y][\ИЬ™XY›Ы‹Z]\X›H[њЭ[ЩK—’[€Ь™\€И™H]\X›K›Ы‹X\њ^HШљ™XЭИ]\Э]™HHФЮ[X›Ыљ]\]Ь—J
-HY]Щ€Љ_J
-_Yќ[Э[Ы€™JK
-^Кќ[O]™K›[™Э
-I‰ЉYK›[™Э
-NЩ›ЬЉ\€ЏLЏ[™]И\њ^J
-NЫЏЫЉКК\–Ы—OYVЫ—NЬ™]\›€џYќ[Э[Ы€YJJ^Ь™]\›€›ЫЫX[ЉK™^XЭ]J_Yќ[Э[Ы€YJKЉ^ЪYЉПYK›ЫЫX[Љќ[O[ПЭ›ЪY›Л™^XЭ]JJ^Э\€ЏH[ЫЫXHЏOOYKњ™\]Y\Э\’YУШљ™XЭ\ЬЪYЫ‹\JШљ™XЭЮЯWKЫЫШ]
-JШљ™XЭљЩ^\К‹ЫЫќ^
-K›X\
-
-ќ[Э[ЫЉJ^Э\€Ь™]\›€ќ[OOJ[‹ЫЫќ^ЩWJ_›ЪYOO]Э›ЪYќ—ЧШ[ЫЫXTЩX\Ъ\[Y]\њЯJJJJJNћЯNЬ™]\›€™J™JЯKJKЯKЬ™\]Y\ЭО™Kњ]Y\љY\Л›X\
-
-ќ[Э[ЫЉЉ^Ь™]\›ћЬ]Y\ћN€[ЫЫXHЏOOYKњ™\]Y\Э\’YР™J™JЯKЉKЯKЬ\[\Ођ™J™JЯKЉK‹њ\[\К_JN›‹ЫЭ\ЩRYќ[њЩ›Ь›T™\ЬЫњЩN™Kќ[њЩ›Ь›T™\ЬЫњЩ__JJ_J_]\€ОЬ™]\›ћЪ][\О™KЫЭ\ЩRYќ_Yќ[Э[Ы€JJ^Э\€YKњ™YXЩJ
-ќ[Э[ЫЉK
-^ЪYЉUYJ
-J\™]\›€Kњ\Ъ
-
-KNЭ\€Џ]њЩX\ЪЫY[ќЏ]™^XЭ]KП]њ™\]Y\Э\’YO]њ™\]Y\ЭЛOYK™љ[™
-
-ќ[Э[ЫЉJ^Ь™]\›€YJ
-I‰•YJJI‰™KњЩX\ЪЫY[ќOO[‰‰ђ›ЫЫX[ЉКI‰™Kњ™\]Y\Э\’YOO[ЯJJNЪYЉJ^Э\€NКO]Kљ][\КKњ\Ъ\JKJJJ_Y[Щ^Э\€^Щ^XЭ]Nњ‹™\]Y\Э\’Y›Л][\ОљKЩX\ЪЫY[ќ›џNЩKњ\Ъ
-
-_\™]\›€_JKЧJK›X\
-
-ќ[Э[ЫЉJ^ЪYЉUYJJJ\™]\›€›ЫZ\ЩKњ™\ЫЫ™JJNЭ\€YKЏ]™^XЭ]KЏ]љ][\ОЬ™]\›€ЉЬЩX\ЪЫY[ќќњЩX\ЪЫY[ќ™\]Y\ЭОњџJ_JJNЬ™]\›€›ЫZ\ЩK[
-
-Kќ[Љ
-ќ[Э[ЫЉJ^Ь™]\›€JJ_JJ_Yќ[Э[Ы€™JKЉ^Ь™]\›€›X\
-
-ќ[Э[ЫЉ
-^Э\€‹ПYK™љ[\Љ
-ќ[Э[ЫЉJ^Ь™]\›€KњЫЭ\ЩRYOO]њЫЭ\ЩRYJJKO[Л›X\
-
-ќ[Э[ЫЉJ^Ь™]\›€Kљ][\ЯJJKO[ЦМKќ[њЩ›Ь›T™\ЬЫњЩKO]OЭJЬ™\Э[ОњЏZK]Оњ‹›X\
-
-ќ[Э[ЫЉJ^Ь™]\›€Kљ]ЯJJK™љ[\Љ›ЫЫX[ЉKXЩ]]Оњ‹›X\
-
-ќ[Э[ЫЉJ^Э\€Ь™]\›€ќ[OOJYK™XЩ]]К_›ЪYOO]Э›ЪYќ›X\
-
-ќ[Э[ЫЉJ^Ь™]\›ћЫX™[™Kќ[YKЫЭ[ќ™KЫЭ[ќЪYЪYЪ™\Э[ћЫX™[ћЭ[YN™KљYЪYЪY___JJ_JJK™љ[\Љ›ЫЫX[Љ_JNљNЬ™]\›€›Ы”™\ЫЫ™JЬЫЭ\ЩNќ™\Э[ОљK][\ОKЭ]N›‹™Щ]Э]J
-_JKK™]™\ћJ›ЫЫX[ЉK	ХHЩ]][\Шќ[Э[Ы€њ›ЫHЫЭ\ЩH‰ЛЫЫШ]
-њЫЭ\ЩRY	И€]\Э™]\›€[€\њ^HЩ€][\Иќ]™]\›™Y	КKЫЫШ]
-”УУ‹њЭљ[™ЪYћJ›ЪY
-K‹——‘Y[ЭH›Ь™Щ]И™]\›€][\ПЧ—”ЩYN€О‹ЛЭЭЭЛ[ЫЫXKЫЫKЩШЛЭZK[Xњ\љY\ЛШ]]ШЫЫ\]KШЫЬ™KXЫЫЩ\ЛЬЫЭ\Щ\ЛИЬ\[KYЩ]][\ИЉKЬЫЭ\ЩNќ][\О__JJ_Yќ[Э[Ы€ЩJJ^Ь™]\›€ЩOH™ќ[Э[Ы€ЏO]\[Щ€Ю[X›Ы	‰€њЮ[X›ЫЏO]\[Щ€Ю[X›Ыљ]\]ЬЏЩќ[Э[ЫЉJ^Ь™]\›€\[Щ€_N™ќ[Э[ЫЉJ^Ь™]\›€I‰€™ќ[Э[Ы€ЏO]\[Щ€Ю[X›Ы	‰™KЫЫњЭќXЭЬЏOOTЮ[X›Ы	‰™HOOTЮ[X›Ыњ›ЭЭ\OИњЮ[X›ЫЋќ\[Щ€_KЩJJ_]\€YOVИ™]™[ќ‹›™^Э]H‹њ›ЬИ‹њ]Y\ћH‹њ™Yњ™\Ъ‹њЭЬ™H—NЩќ[Э[Ы€ЩJK
-^Э\€ЏSШљ™XЭљЩ^\КJNЪYЉШљ™XЭ™Щ]ЭЫ”›Ь\ќTЮ[X›ЫК^Э\€ЏSШљ™XЭ™Щ]ЭЫ”›Ь\ќTЮ[X›ЫКJNЭ	‰ЉЏ\‹™љ[\Љ
-ќ[Э[ЫЉ
-^Ь™]\›€Шљ™XЭ™Щ]ЭЫ”›Ь\ќQ\ШЬљ\ЬЉK
-K™[ќ[Y\X›_JJJK‹њ\Ъ\J‹Љ_\™]\›€џYќ[Э[Ы€	JJ^Щ›ЬЉ\€LNЭ\™Э[Y[ќЛ›[™ЭЭ
-КК^Э\€Џ[ќ[OX\™Э[Y[ќЦЭOШ\™Э[Y[ќЦЭNћЯNЭ	LЏТЩJШљ™XЭ
-ЉKL
-K™›Ь‘XXЪ
-
-ќ[Э[ЫЉ
-^Ю™JK–ЭJ_JJN“Шљ™XЭ™Щ]ЭЫ”›Ь\ќQ\ШЬљ\ЬњПУШљ™XЭ™Yљ[™T›Ь\ќY\КKШљ™XЭ™Щ]ЭЫ”›Ь\ќQ\ШЬљ\ЬњКЉJN’ЩJШљ™XЭ
-ЉJK™›Ь‘XXЪ
-
-ќ[Э[ЫЉ
-^УШљ™XЭ™Yљ[™T›Ь\ќJKШљ™XЭ™Щ]ЭЫ”›Ь\ќQ\ШЬљ\ЬЉ‹
-J_JJ_\™]\›€_Yќ[Э[Ы€™JKЉ^Ь™]\›ЉYќ[Э[ЫЉJ^Э\€Yќ[Э[ЫЉK
-^ЪYЉ›Шљ™XЭ€OOUЩJJ_ќ[OOYJ\™]\›€NЭ\€ЏYVФЮ[X›ЫќФљ[Z]]™WNЪYЉ›ЪYOO[Љ^Э\€Џ[‹Ш[
-K™Y][ЉNЪYЉ›Шљ™XЭ€OOUЩJЉJ\™]\›€ЋЭ›ЭИ™]И\Q\њ›ЬЉђФљ[Z]]™H]\Э™]\›€Hљ[Z]]™H[YK€Љ_\™]\›ЉњЭљ[™ИЏOO]ФЭљ[™О“ќ[X™\ЉJJ_JKњЭљ[™ИЉNЬ™]\›€њЮ[X›ЫЏOOUЩJ
-OЭ”Эљ[™К
-_J
-JZ[€OУШљ™XЭ™Yљ[™T›Ь\ќJKЭ[YN›‹[ќ[Y\X›N€LЫЫ™љYЭ\X›N€LЬљ]X›N€LJN™VЭO[‹_Yќ[Э[Ы€ЩJK
-^ЪYЉќ[OYJ\™]\›ћЯNЭ\€‹‹ПYќ[Э[ЫЉK
-^ЪYЉќ[OYJ\™]\›ћЯNЭ\€‹‹П^ЯKOSШљ™XЭљЩ^\КJNЩ›ЬЉЏLЬЏK›[™ЭЬЉКК[ЏZVЬ—Kљ[™^ЩЉЉOЏL
-ЦЫ—OYVЫ—JNЬ™]\›€ЯJK
-NЪYЉШљ™XЭ™Щ]ЭЫ”›Ь\ќTЮ[X›ЫК^Э\€OSШљ™XЭ™Щ]ЭЫ”›Ь\ќTЮ[X›ЫКJNЩ›ЬЉЏLЬЏK›[™ЭЬЉКК[ЏZVЬ—Kљ[™^ЩЉЉOЏLШљ™XЭњ›ЭЭ\Kњ›Ь\ќR\С[ќ[Y\X›KШ[
-KЉI‰ЉЦЫ—OYVЫ—J_\™]\›€Я]\€™KKYK™O[ќ[]J™OKLKOKLKYO]›ЪYќ[Э[ЫЉJ^Э\€JКТ™NЬ™]\›€›ЫZ\ЩKњ™\ЫЫ™JJKќ[Љ
-ќ[Э[ЫЉJ^Ь™]\›€YI‰ќOЦYNЉO]YOYKJ_JJ_JNЩќ[Э[Ы€
-J^Э\€YK™]™[ќЏYK›™^Э]KЏ]›ЪYOO[ЏЮЯN›‹ПYKњ›ЬЛOYKњ]Y\ћKOYKњ™Yњ™\ЪOYKњЭЬ™KQЩJKYJNЦ™I‰›Л™[ќљ\›Ы›Y[ќЫX\•[Y[Э]
-™JNЭ\€П[њЩ]ЫЫXЭ[ЫњЛП[њЩ]\УЬ[‹Џ[њЩ]]Y\ћK[њЩ]XЭ]™R][RYЏ[њЩ]Э]\Л[њЩ]ЫЫќ^ЪYЉЉJK
-Л™Y][XЭ]™R][RY
-KZI‰€LOOO[Л›Ь[“Ы‘›ШЭ\К^Э\€KЏXK™Щ]Э]J
-KЫЫXЭ[ЫњЛ›X\
-
-ќ[Э[ЫЉJ^Ь™]\›€	J	JЯKJKЯKЪ][\О–Ч_J_JJNЭЉљYHЉKКЉKКќ[OOJO\‹љ\УЬ[ЉI‰ќ›ЪYOO^OЮN›ЛњЪЭ[[™[Ь[ЉЬЭ]NK™Щ]Э]J
-_JJNЭ\€ПVЉ]
-ЉKќ[Љ
-ќ[Э[ЫЉ
-^Ь™]\›€›ЫZ\ЩKњ™\ЫЫ™J
-_JJJNЬ™]\›€Kњ[™[™Ф™\]Y\ЭЛY
-К_]Љ›ШY[™ИЉK™O[Л™[ќљ\›Ы›Y[ќњЩ][Y[Э]
-
-ќ[Э[ЫЉ
-^ЭЉњЭ[YЉ_JKЛњЭ[™\ЪЫ
-NЭ\€VЉ]
-Л™Щ]ЫЭ\Щ\К	JЬ]Y\ћNљK™Yњ™\ЪќKЭ]NK™Щ]Э]J
-_K
-JKќ[Љ
-ќ[Э[ЫЉJ^Ь™]\›€›ЫZ\ЩK[
-K›X\
-
-ќ[Э[ЫЉJ^Ь™]\›€›ЫZ\ЩKњ™\ЫЫ™JK™Щ]][\К	JЬ]Y\ћNљK™Yњ™\ЪќKЭ]NK™Щ]Э]J
-_K
-JJKќ[Љ
-ќ[Э[ЫЉ
-^Ь™]\›€YJKњЫЭ\ЩRYK™Щ]Э]J
-J_JJ_JJJKќ[ЉJKќ[Љ
-ќ[Э[ЫЉ
-^Э\€‹Џ]њЫЫYJ
-ќ[Э[ЫЉJ^Ь™]\›€ќ[Э[ЫЉJ^Ь™]\›€P\њ^Kљ\Р\њ^JJI‰ђ›ЫЫX[Љќ[OYOЭ›ЪY™K—Ш]]ЫX]XТ[њЪYЪК_JKљ][\К_JJNЬ‰‰™
-Ш[ЫЫXR[њЪYЪФYЪ[Ћ‰J	JЯK
-ќ[OOJЏXK™Щ]Э]J
-KЫЫќ^
-_›ЪYOO[ЏЭ›ЪY›‹[ЫЫXR[њЪYЪФYЪ[Љ_ЯJKЯKЧЧШ]]ЫX]XТ[њЪYЪОњџJ_JNЬ™]\›€™JKJ_JJKќ[Љ
-ќ[Э[ЫЉJ^Ь™]\›€ќ[Э[ЫЉJ^Э\€YKЫЫXЭ[ЫњЛЏYKњ›ЬЛЏYKњЭ]KП]њ™YXЩJ
-ќ[Э[ЫЉK
-^Ь™]\›€JJЯKJKЯK™JЯKњЫЭ\ЩKњЫЭ\ЩRYJJЯKњЫЭ\ЩJKЯKЩЩ]][\О™ќ[Э[ЫЉ
-^Ь™]\›€Jљ][\К__JJJ_JKЯJKO[‹њYЪ[њЛњ™YXЩJ
-ќ[Э[ЫЉK
-^Ь™]\›€њ™\Ъ\OЭњ™\Ъ\JJN™_JKЬЫЭ\Щ\РћTЫЭ\ЩRY›ЛЭ]NњџJKњЫЭ\Щ\РћTЫЭ\ЩRYЬ™]\›€J‹њ™\Ъ\JЬЫЭ\Щ\РћTЫЭ\ЩRYљKЫЭ\Щ\О“Шљ™XЭќ[Y\КJKЭ]NњџJJK™љ[\Љ›ЫЫX[ЉK›X\
-
-ќ[Э[ЫЉJ^Ь™]\›ћЬЫЭ\ЩN™K][\О™K™Щ]][\К
-__JJ_JШЫЫXЭ[ЫњО™K›ЬО›ЛЭ]NK™Щ]Э]J
-_J_JJ_JJJJKќ[Љ
-ќ[Э[ЫЉJ^Э\€ЋЭЉљYHЉKКJNЭ\€Џ[ЛњЪЭ[[™[Ь[ЉЬЭ]NK™Щ]Э]J
-_JNЬКќ[OOJЏ\‹љ\УЬ[ЉI‰ќ›ЪYOO[ЏЫЋ›Л›Ь[“Ы‘›ШЭ\Й‰€ZI‰™џЉNЭ\€Y™JK™Щ]Э]J
-JNЪYЉќ[OOXK™Щ]Э]J
-KXЭ]™R][RY	‰њ
-^Э\€O\љ][K\љ][R[њ][YKO\љ][U\›Џ\њЫЭ\ЩNШ‹›ЫђXЭ]™J	JЩ]™[ќќ][N›K][R[њ][YN™][U\›ћK™Yњ™\ЪќKЫЭ\ЩN‹Э]NK™Щ]Э]J
-_K
-J__JJK™љ[[J
-ќ[Э[ЫЉ
-^ЭЉљYHЉK™I‰›Л™[ќљ\›Ы›Y[ќЫX\•[Y[Э]
-™J_JJNЬ™]\›€Kњ[™[™Ф™\]Y\ЭЛY
-
-_Yќ[Э[Ы€ќ
-J^Ь™]\›€ќH™ќ[Э[Ы€ЏO]\[Щ€Ю[X›Ы	‰€њЮ[X›ЫЏO]\[Щ€Ю[X›Ыљ]\]ЬЏЩќ[Э[ЫЉJ^Ь™]\›€\[Щ€_N™ќ[Э[ЫЉJ^Ь™]\›€I‰€™ќ[Э[Ы€ЏO]\[Щ€Ю[X›Ы	‰™KЫЫњЭќXЭЬЏOOTЮ[X›Ы	‰™HOOTЮ[X›Ыњ›ЭЭ\OИњЮ[X›ЫЋќ\[Щ€_Kќ
-J_]\€ќVИ™]™[ќ‹њ›ЬИ‹њ™Yњ™\Ъ‹њЭЬ™H—NЩќ[Э[Ы€Э
-K
-^Э\€ЏSШљ™XЭљЩ^\КJNЪYЉШљ™XЭ™Щ]ЭЫ”›Ь\ќTЮ[X›ЫК^Э\€ЏSШљ™XЭ™Щ]ЭЫ”›Ь\ќTЮ[X›ЫКJNЭ	‰ЉЏ\‹™љ[\Љ
-ќ[Э[ЫЉ
-^Ь™]\›€Шљ™XЭ™Щ]ЭЫ”›Ь\ќQ\ШЬљ\ЬЉK
-K™[ќ[Y\X›_JJJK‹њ\Ъ\J‹Љ_\™]\›€џYќ[Э[Ы€]
-J^Щ›ЬЉ\€LNЭ\™Э[Y[ќЛ›[™ЭЭ
-КК^Э\€Џ[ќ[OX\™Э[Y[ќЦЭOШ\™Э[Y[ќЦЭNћЯNЭ	LЏЫЭ
-Шљ™XЭ
-ЉKL
-K™›Ь‘XXЪ
-
-ќ[Э[ЫЉ
-^Э]
-K–ЭJ_JJN“Шљ™XЭ™Щ]ЭЫ”›Ь\ќQ\ШЬљ\ЬњПУШљ™XЭ™Yљ[™T›Ь\ќY\КKШљ™XЭ™Щ]ЭЫ”›Ь\ќQ\ШЬљ\ЬњКЉJN›Э
-Шљ™XЭ
-ЉJK™›Ь‘XXЪ
-
-ќ[Э[ЫЉ
-^УШљ™XЭ™Yљ[™T›Ь\ќJKШљ™XЭ™Щ]ЭЫ”›Ь\ќQ\ШЬљ\ЬЉ‹
-J_JJ_\™]\›€_Yќ[Э[Ы€]
-KЉ^Ь™]\›ЉYќ[Э[ЫЉJ^Э\€Yќ[Э[ЫЉK
-^ЪYЉ›Шљ™XЭ€OO[ќ
-J_ќ[OOYJ\™]\›€NЭ\€ЏYVФЮ[X›ЫќФљ[Z]]™WNЪYЉ›ЪYOO[Љ^Э\€Џ[‹Ш[
-K™Y][ЉNЪYЉ›Шљ™XЭ€OO[ќ
-ЉJ\™]\›€ЋЭ›ЭИ™]И\Q\њ›ЬЉђФљ[Z]]™H]\Э™]\›€Hљ[Z]]™H[YK€Љ_\™]\›ЉњЭљ[™ИЏOO]ФЭљ[™О“ќ[X™\ЉJJ_JKњЭљ[™ИЉNЬ™]\›€њЮ[X›ЫЏOO[ќ
-
-OЭ”Эљ[™К
-_J
-JZ[€OУШљ™XЭ™Yљ[™T›Ь\ќJKЭ[YN›‹[ќ[Y\X›N€LЫЫ™љYЭ\X›N€LЬљ]X›N€LJN™VЭO[‹_Yќ[Э[Ы€]
-K
-^ЪYЉќ[OYJ\™]\›ћЯNЭ\€‹‹ПYќ[Э[ЫЉK
-^ЪYЉќ[OYJ\™]\›ћЯNЭ\€‹‹П^ЯKOSШљ™XЭљЩ^\КJNЩ›ЬЉЏLЬЏK›[™ЭЬЉКК[ЏZVЬ—Kљ[™^ЩЉЉOЏL
-ЦЫ—OYVЫ—JNЬ™]\›€ЯJK
-NЪYЉШљ™XЭ™Щ]ЭЫ”›Ь\ќTЮ[X›ЫК^Э\€OSШљ™XЭ™Щ]ЭЫ”›Ь\ќTЮ[X›ЫКJNЩ›ЬЉЏLЬЏK›[™ЭЬЉКК[ЏZVЬ—Kљ[™^ЩЉЉOЏLШљ™XЭњ›ЭЭ\Kњ›Ь\ќR\С[ќ[Y\X›KШ[
-KЉI‰ЉЦЫ—OYVЫ—J_\™]\›€ЯYќ[Э[Ы€
-J^Ь™]\›€H™ќ[Э[Ы€ЏO]\[Щ€Ю[X›Ы	‰€њЮ[X›ЫЏO]\[Щ€Ю[X›Ыљ]\]ЬЏЩќ[Э[ЫЉJ^Ь™]\›€\[Щ€_N™ќ[Э[ЫЉJ^Ь™]\›€I‰€™ќ[Э[Ы€ЏO]\[Щ€Ю[X›Ы	‰™KЫЫњЭќXЭЬЏOOTЮ[X›Ы	‰™HOOTЮ[X›Ыњ›ЭЭ\OИњЮ[X›ЫЋќ\[Щ€_K
-J_]\€ЭVИњ›ЬИ‹њ™Yњ™\Ъ‹њЭЬ™H—KЭVИљ[њ][[Y[ќ‹™›Ь›Q[[Y[ќ‹њ[™[[[Y[ќ—KќVИљ[њ][[Y[ќ—KVИљ[њ][[Y[ќ‹›X^[™Э—K]VИњЫЭ\ЩH—KќVИљ][H‹њЫЭ\ЩH—NЩќ[Э[Ы€
-K
-^Э\€ЏSШљ™XЭљЩ^\КJNЪYЉШљ™XЭ™Щ]ЭЫ”›Ь\ќTЮ[X›ЫК^Э\€ЏSШљ™XЭ™Щ]ЭЫ”›Ь\ќTЮ[X›ЫКJNЭ	‰ЉЏ\‹™љ[\Љ
-ќ[Э[ЫЉ
-^Ь™]\›€Шљ™XЭ™Щ]ЭЫ”›Ь\ќQ\ШЬљ\ЬЉK
-K™[ќ[Y\X›_JJJK‹њ\Ъ\J‹Љ_\™]\›€џYќ[Э[Ы€]
-J^Щ›ЬЉ\€LNЭ\™Э[Y[ќЛ›[™ЭЭ
-КК^Э\€Џ[ќ[OX\™Э[Y[ќЦЭOШ\™Э[Y[ќЦЭNћЯNЭ	LЏЩ
-Шљ™XЭ
-ЉKL
-K™›Ь‘XXЪ
-
-ќ[Э[ЫЉ
-^Шќ
-K–ЭJ_JJN“Шљ™XЭ™Щ]ЭЫ”›Ь\ќQ\ШЬљ\ЬњПУШљ™XЭ™Yљ[™T›Ь\ќY\КKШљ™XЭ™Щ]ЭЫ”›Ь\ќQ\ШЬљ\ЬњКЉJN™
-Шљ™XЭ
-ЉJK™›Ь‘XXЪ
-
-ќ[Э[ЫЉ
-^УШљ™XЭ™Yљ[™T›Ь\ќJKШљ™XЭ™Щ]ЭЫ”›Ь\ќQ\ШЬљ\ЬЉ‹
-J_JJ_\™]\›€_Yќ[Э[Ы€ќ
-KЉ^Ь™]\›ЉYќ[Э[ЫЉJ^Э\€Yќ[Э[ЫЉK
-^ЪYЉ›Шљ™XЭ€OO[
-J_ќ[OOYJ\™]\›€NЭ\€ЏYVФЮ[X›ЫќФљ[Z]]™WNЪYЉ›ЪYOO[Љ^Э\€Џ[‹Ш[
-K™Y][ЉNЪYЉ›Шљ™XЭ€OO[
-ЉJ\™]\›€ЋЭ›ЭИ™]И\Q\њ›ЬЉђФљ[Z]]™H]\Э™]\›€Hљ[Z]]™H[YK€Љ_\™]\›ЉњЭљ[™ИЏOO]ФЭљ[™О“ќ[X™\ЉJJ_JKњЭљ[™ИЉNЬ™]\›€њЮ[X›ЫЏOO[
-
-OЭ”Эљ[™К
-_J
-JZ[€OУШљ™XЭ™Yљ[™T›Ь\ќJKЭ[YN›‹[ќ[Y\X›N€LЫЫ™љYЭ\X›N€LЬљ]X›N€LJN™VЭO[‹_Yќ[Э[Ы€Э
-K
-^ЪYЉќ[OYJ\™]\›ћЯNЭ\€‹‹ПYќ[Э[ЫЉK
-^ЪYЉќ[OYJ\™]\›ћЯNЭ\€‹‹П^ЯKOSШљ™XЭљЩ^\КJNЩ›ЬЉЏLЬЏK›[™ЭЬЉКК[ЏZVЬ—Kљ[™^ЩЉЉOЏL
-ЦЫ—OYVЫ—JNЬ™]\›€ЯJK
-NЪYЉШљ™XЭ™Щ]ЭЫ”›Ь\ќTЮ[X›ЫК^Э\€OSШљ™XЭ™Щ]ЭЫ”›Ь\ќTЮ[X›ЫКJNЩ›ЬЉЏLЬЏK›[™ЭЬЉКК[ЏZVЬ—Kљ[™^ЩЉЉOЏLШљ™XЭњ›ЭЭ\Kњ›Ь\ќR\С[ќ[Y\X›KШ[
-KЉI‰ЉЦЫ—OYVЫ—J_\™]\›€ЯYќ[Э[Ы€
-J^Э\€YKњ›ЬЛЏYKњ™Yњ™\ЪЏYKњЭЬ™KПYЭ
-KЭ
-NЬ™]\›ћЩЩ][ќљ\›Ы›Y[ќ›ЬО™ќ[Э[ЫЉJ^Э\€ЏYKљ[њ][[Y[ќПYK™›Ь›Q[[Y[ќOYKњ[™[[[Y[ќЩќ[Э[Ы€JJ^И\‹™Щ]Э]J
-Kљ\УЬ[‰‰њ‹њ[™[™Ф™\]Y\ЭЛљ\С[\J
-_Kќ\™Щ]OO[џLOOOVЫЛWKњЫЫYJ
-ќ[Э[ЫЉ
-^Ь™]\›€Џ]ЏYKќ\™Щ]ЏOO\џ‹ЫЫќZ[њКЉNЭ\€‹џJJI‰Љ‹™\Ь]Ъ
-›\€‹ќ[
-K™XќYЯ‹њ[™[™Ф™\]Y\ЭЛШ[Щ[[
-
-J_\™]\›€]
-ЫЫ•ЭXЪЭ\ќќKЫ“[Э\ЩQЭЫЋќKЫ•ЭXЪ[Э™N™ќ[Э[ЫЉJ^ИLHOO\‹™Щ]Э]J
-Kљ\УЬ[‰‰›ЏOO]™[ќљ\›Ы›Y[ќ™ШЭ[Y[ќXЭ]™Q[[Y[ќ	‰™Kќ\™Щ]OO[‰‰›‹›\Љ
-__KЭ
-KЭ
-J_KЩ]›ЫЭ›ЬО™ќ[Э[ЫЉJ^Ь™]\›€]
-Ь›ЫN€ЫЫX›Ш›Ю‹\љXKY^[™YЋњ‹™Щ]Э]J
-Kљ\УЬ[‹\љXKZ\ЬЬ\Ћ€›\Э›Ю‹\љXKXЫЫќ›ЫИЋњ‹™Щ]Э]J
-Kљ\УЬ[ЏЬ‹™Щ]Э]J
-KЫЫXЭ[ЫњЛ›X\
-
-ќ[Э[ЫЉJ^Э\€ЏYKњЫЭ\ЩNЬ™]\›€JљY›\Э‹Љ_JJKљ›Ъ[Љ€ЉNќ›ЪY\љXK[X™[YћHЋњJљY›X™[Љ_KJ_KЩ]›Ь›T›ЬО™ќ[Э[ЫЉJ^ЩKљ[њ][[Y[ќЭ\€OYЭ
-Kќ
-KOYќ[Э[ЫЉJ^Э\€NЭ›Ы”ЭX›Z]
-]
-Щ]™[ќљK™Yњ™\Ъ›‹Э]Nњ‹™Щ]Э]J
-_KКJK‹™\Ь]Ъ
-њЭX›Z]‹ќ[
-Kќ[OOJOYKљ[њ][[Y[ќ
-_›ЪYOO]_K›\Љ
-_NЬ™]\›€]
-ШXЭ[ЫЋ€€‹›Х[Y]N€L›ЫN€њЩX\Ъ‹Ы”ЭX›Z]™ќ[Э[ЫЉJ^ЩKњ™]™[ќY][
-
-NЭ\€Џ\ЩJњYЪ[њЛ‹њ[™[™Ф™\]Y\ЭКNЭ›ЪYOO[ЏЫ‹ќ[Љ
-ќ[Э[ЫЉ
-^Ь™]\›€JJ_JJNќJJ_KЫ”™\Щ]™ќ[Э[ЫЉJ^Э\€NЪKњ™]™[ќY][
-
-K›Ы”™\Щ]
-]
-Щ]™[ќљK™Yњ™\Ъ›‹Э]Nњ‹™Щ]Э]J
-_KКJK‹™\Ь]Ъ
-њ™\Щ]‹ќ[
-Kќ[OOJOYKљ[њ][[Y[ќ
-_›ЪYOO]_K™›ШЭ\К
-__KJ_KЩ]X™[›ЬО™ќ[Э[ЫЉJ^Ь™]\›€]
-Ъ[›ЬЋњJљYљ[њ]ЉKYњJљY›X™[Љ_KJ_KЩ][њ]›ЬО™ќ[Э[ЫЉJ^Э\€NЩќ[Э[Ы€JJ^К›Ь[“Ы‘›ШЭ\Я›ЫЫX[Љ‹™Щ]Э]J
-Kњ]Y\ћJJI‰ќ
-]
-Щ]™[ќ™K›ЬОќ]Y\ћNњ‹™Щ]Э]J
-KЫЫ\][Ыџ‹™Щ]Э]J
-Kњ]Y\ћK™Yњ™\Ъ›‹ЭЬ™NњџKКJK‹™\Ь]Ъ
-™›ШЭ\И‹ќ[
-_]\€OY_ЯNШKљ[њ][[Y[ќЭ\€XK›X^[™ЭП]›ЪYOO[НLLЋ›ПYЭ
-K
-KЏY™J‹™Щ]Э]J
-JKYќ[Э[ЫЉJ^Ь™]\›€›ЫЫX[ЉI‰™K›X]Ъ
-YJJ_J
-ќ[OOJO]™[ќљ\›Ы›Y[ќ›]љYШ]ЬЉ_›ЪYOOZOЭ›ЪYљKќ\Щ\ђYЩ[ќ
-_€ЉKO]™[ќ\’Щ^R[ќ
-ќ[OY‰‰™‹љ][U\›	‰€\И™ЫИЋ€њЩX\ЪЉNЬ™]\›€]
-И\љXKX]]ШЫЫ\]HЋ€›Э‹\љXKXXЭ]™Y\ШЩ[™[ќЋњ‹™Щ]Э]J
-Kљ\УЬ[‰‰›ќ[OO\‹™Щ]Э]J
-KXЭ]™R][RYЬJљYљ][KH‹ЫЫШ]
-‹™Щ]Э]J
-KXЭ]™R][RY
-Kќ[OYЏЭ›ЪY™‹њЫЭ\ЩJNќ›ЪY\љXKXЫЫќ›ЫИЋњ‹™Щ]Э]J
-Kљ\УЬ[ЏЬ‹™Щ]Э]J
-KЫЫXЭ[ЫњЛ™љ[\Љ
-ќ[Э[ЫЉJ^Ь™]\›€Kљ][\Л›[™ЭЊJJK›X\
-
-ќ[Э[ЫЉJ^Э\€ЏYKњЫЭ\ЩNЬ™]\›€JљY›\Э‹Љ_JJKљ›Ъ[Љ€ЉNќ›ЪY\љXK[X™[YћHЋњJљY›X™[ЉK[YNњ‹™Щ]Э]J
-KЫЫ\][Ыџ‹™Щ]Э]J
-Kњ]Y\ћKYњJљYљ[њ]ЉK]]РЫЫ\]N€›Щ™€‹]]РЫЬњ™XЭ€›Щ™€‹]]РШ\][^™N€›Щ™€‹[ќ\’Щ^R[ќ›KЬ[ЪXЪО€™[ЩH‹]]С›ШЭ\Оќ]]С›ШЭ\ЛXЩZЫ\ЋќњXЩZЫ\‹X^[™ЭЛ\N€њЩX\Ъ‹ЫђЪ[™ЩN™ќ[Э[ЫЉJ^Э\€OYKЭ\њ™[ќ\™Щ]ќ[YNЭљYЫ›Ь™PЫЫ\ЬЪ][Ы‘]™[ќЙ‰ќ™JJKљ\РЫЫ\ЬЪ[™ПЫЛњЩ]]Y\ћJJNќ
-]
-Щ]™[ќ™K›ЬОќ]Y\ћNљKњЫXЩJКK™Yњ™\Ъ›‹ЭЬ™NњџKКJ_KЫђЫЫ\ЬЪ][Ы‘[™™ќ[Э[ЫЉJ^Э
-]
-Щ]™[ќ™K›ЬОќ]Y\ћN™KЭ\њ™[ќ\™Щ]ќ[YKњЫXЩJКK™Yњ™\Ъ›‹ЭЬ™NњџKКJ_KЫ’Щ^QЭЫЋ™ќ[Э[ЫЉJ^Э™JJKљ\РЫЫ\ЬЪ[™Яќ[Э[ЫЉJ^Э\€YK™]™[ќЏYKњ›ЬЛЏYKњ™Yњ™\ЪПYKњЭЬ™KOX]
-Kќ
-NЪYЉђ\њ›ЭХ\ЏOO]љЩ^_ђ\њ›ЭСЭЫ€ЏOO]љЩ^J^Э\€OYќ[Э[ЫЉ
-^Э\€OY™JЛ™Щ]Э]J
-JK[‹™[ќљ\›Ы›Y[ќ™ШЭ[Y[ќ™Щ][[Y[ќћRY
-J‹љYљ][KH‹ЫЫШ]
-Л™Щ]Э]J
-KXЭ]™R][RY
-Kќ[OYOЭ›ЪY™KњЫЭ\ЩJJNЭ	‰ЉњШЬ›Ы[ќХљY]ТY“™YYYЭњШЬ›Ы[ќХљY]ТY“™YYY
-LJNќњШЬ›Ы[ќХљY]КLJJ_KOYќ[Э[ЫЉ
-^Э\€OY™JЛ™Щ]Э]J
-JNЪYЉќ[OO[Л™Щ]Э]J
-KXЭ]™R][RY	‰™J^Э\€ЏYKљ][KOYKљ][R[њ][YKOYKљ][U\›YKњЫЭ\ЩNЫ›ЫђXЭ]™J]
-Щ]™[ќќ][N›‹][R[њ][YNќK][U\›K™Yњ™\Ъњ‹ЫЭ\ЩN›Э]N›Л™Щ]Э]J
-_KJJ__NЭњ™]™[ќY][
-
-KLOOO[Л™Щ]Э]J
-Kљ\УЬ[‰‰Љ‹›Ь[“Ы‘›ШЭ\Я›ЫЫX[ЉЛ™Щ]Э]J
-Kњ]Y\ћJJOЭ
-]
-Щ]™[ќќ›ЬО›‹]Y\ћN›Л™Щ]Э]J
-Kњ]Y\ћK™Yњ™\Ъњ‹ЭЬ™N›ЯKJJKќ[Љ
-ќ[Э[ЫЉ
-^ЫЛ™\Ь]Ъ
-љЩ^KЫ™^XЭ]™R][RY›‹™Y][XЭ]™R][RYJKJ
-KЩ][Y[Э]
-K
-_JJNЉЛ™\Ь]Ъ
-љЩ^KЯJKJ
-KJ
-J_Y[ЩHYЉ‘\ШШ\HЏOO]љЩ^J]њ™]™[ќY][
-
-KЛ™\Ь]Ъ
-љЩ^Kќ[
-KЛњ[™[™Ф™\]Y\ЭЛШ[Щ[[
-
-NЩ[ЩHYЉ•X€ЏOO]љЩ^J[Л™\Ь]Ъ
-›\€‹ќ[
-KЛњ[™[™Ф™\]Y\ЭЛШ[Щ[[
-
-NЩ[ЩHYЉ‘[ќ\€ЏOO]љЩ^J^ЪYЉќ[OO[Л™Щ]Э]J
-KXЭ]™R][RYЛ™Щ]Э]J
-KЫЫXЭ[ЫњЛ™]™\ћJ
-ќ[Э[ЫЉJ^Ь™]\›€OOYKљ][\Л›[™ЭJJJ^Э\€\ЩJ‹њYЪ[њЛЛњ[™[™Ф™\]Y\ЭКNЬ™]\›€›ЪY
-›ЪYOO[Ыќ[ЉЛњ[™[™Ф™\]Y\ЭЛШ[Щ[[
-N›‹™XќYЯЛњ[™[™Ф™\]Y\ЭЛШ[Щ[[
-
-J_]њ™]™[ќY][
-
-NЭ\€ПY™JЛ™Щ]Э]J
-JKПXЛљ][KЏXЛљ][R[њ][YKXЛљ][U\›OXЛњЫЭ\ЩNЪYЉ›Y]RЩ^_Э›Щ^J]›ЪYOO\	‰ЉK›Ы”Щ[XЭ
-]
-Щ]™[ќќ][NњЛ][R[њ][YN™‹][U\›њ™Yњ™\Ъњ‹ЫЭ\ЩN›KЭ]N›Л™Щ]Э]J
-_KJJK‹›]љYШ]Ь‹›]љYШ]S™]ХXЉЪ][U\›њ][NњЛЭ]N›Л™Щ]Э]J
-_JJNЩ[ЩHYЉњЪYќЩ^J]›ЪYOO\	‰ЉK›Ы”Щ[XЭ
-]
-Щ]™[ќќ][NњЛ][R[њ][YN™‹][U\›њ™Yњ™\Ъњ‹ЫЭ\ЩN›KЭ]N›Л™Щ]Э]J
-_KJJK‹›]љYШ]Ь‹›]љYШ]S™]ХЪ[™ЭКЪ][U\›њ][NњЛЭ]N›Л™Щ]Э]J
-_JJNЩ[ЩHYЉ[Щ^JNЩ[Щ^ЪYЉ›ЪYOO\
-\™]\›€K›Ы”Щ[XЭ
-]
-Щ]™[ќќ][NњЛ][R[њ][YN™‹][U\›њ™Yњ™\Ъњ‹ЫЭ\ЩN›KЭ]N›Л™Щ]Э]J
-_KJJK›ЪY‹›]љYШ]Ь‹›]љYШ]JЪ][U\›њ][NњЛЭ]N›Л™Щ]Э]J
-_JNЭ
-]
-Щ]™[ќќ™^Э]NћЪ\УЬ[Ћ€L_K›ЬО›‹]Y\ћN™‹™Yњ™\Ъњ‹ЭЬ™N›ЯKJJKќ[Љ
-ќ[Э[ЫЉ
-^ЫK›Ы”Щ[XЭ
-]
-Щ]™[ќќ][NњЛ][R[њ][YN™‹][U\›њ™Yњ™\Ъњ‹ЫЭ\ЩN›KЭ]N›Л™Щ]Э]J
-_KJJ_JJ___J]
-Щ]™[ќ™K›ЬОќ™Yњ™\Ъ›‹ЭЬ™NњџKКJ_KЫ‘›ШЭ\ОќKЫђ›\Ћ—ЛЫђЫXЪО™ќ[Э[ЫЉЉ^ЩKљ[њ][[Y[ќOO]™[ќљ\›Ы›Y[ќ™ШЭ[Y[ќXЭ]™Q[[Y[ќ‹™Щ]Э]J
-Kљ\УЬ[џJЉ__KК_KЩ][™[›ЬО™ќ[Э[ЫЉJ^Ь™]\›€]
-ЫЫ“[Э\ЩQЭЫЋ™ќ[Э[ЫЉJ^ЩKњ™]™[ќY][
-
-_KЫ“[Э\ЩSX]™N™ќ[Э[ЫЉ
-^Ь‹™\Ь]Ъ
-›[Э\Щ[X]™H‹ќ[
-__KJ_KЩ]\Э›ЬО™ќ[Э[ЫЉJ^Э\€ЏY_ЯKЏ[‹њЫЭ\ЩKПYЭ
-‹]
-NЬ™]\›€]
-Ь›ЫN€›\Э›Ю‹\љXK[X™[YћHЋњJљY›X™[ЉKYњJљY›\Э‹Љ_KК_KЩ]][T›ЬО™ќ[Э[ЫЉJ^Э\€OYKљ][KOYKњЫЭ\ЩKOYЭ
-Kќ
-NЬ™]\›€]
-ЪYњJљYљ][KH‹ЫЫШ]
-K—ЧШ]]ШЫЫ\]WЪY
-KJK›ЫN€›Ь[Ы€‹\љXK\Щ[XЭYЋњ‹™Щ]Э]J
-KXЭ]™R][RYOOZK—ЧШ]]ШЫЫ\]WЪYЫ“[Э\ЩS[Э™N™ќ[Э[ЫЉJ^ЪYЉK—ЧШ]]ШЫЫ\]WЪYOO\‹™Щ]Э]J
-KXЭ]™R][RY
-^Ь‹™\Ь]Ъ
-›[Э\Щ[[Э™H‹K—ЧШ]]ШЫЫ\]WЪY
-NЭ\€Y™J‹™Щ]Э]J
-JNЪYЉќ[OO\‹™Щ]Э]J
-KXЭ]™R][RY	‰ќ
-^Э\€O]љ][KO]љ][R[њ][YK]љ][U\›П]њЫЭ\ЩNШЛ›ЫђXЭ]™J]
-Щ]™[ќ™K][NќK][R[њ][YNK][U\››™Yњ™\Ъ›‹ЫЭ\ЩNЛЭ]Nњ‹™Щ]Э]J
-_KКJ___KЫ“[Э\ЩQЭЫЋ™ќ[Э[ЫЉJ^ЩKњ™]™[ќY][
-
-_KЫђЫXЪО™ќ[Э[ЫЉJ^Э\€O]K™Щ]][R[њ][YJЪ][NљKЭ]Nњ‹™Щ]Э]J
-_JK]K™Щ]][U\›
-Ъ][NљKЭ]Nњ‹™Щ]Э]J
-_JNКФ›ЫZ\ЩKњ™\ЫЫ™J
-Nќ
-]
-Щ]™[ќ™K™^Э]NћЪ\УЬ[Ћ€L_K›ЬОќ]Y\ћNK™Yњ™\Ъ›‹ЭЬ™NњџKКJJKќ[Љ
-ќ[Э[ЫЉ
-^ЭK›Ы”Щ[XЭ
-]
-Щ]™[ќ™K][NљK][R[њ][YNK][U\››™Yњ™\Ъ›‹ЫЭ\ЩNќKЭ]Nњ‹™Щ]Э]J
-_KКJ_JJ__KJ___Yќ[Э[Ы€Э
-J^Ь™]\›€ЭH™ќ[Э[Ы€ЏO]\[Щ€Ю[X›Ы	‰€њЮ[X›ЫЏO]\[Щ€Ю[X›Ыљ]\]ЬЏЩќ[Э[ЫЉJ^Ь™]\›€\[Щ€_N™ќ[Э[ЫЉJ^Ь™]\›€I‰€™ќ[Э[Ы€ЏO]\[Щ€Ю[X›Ы	‰™KЫЫњЭќXЭЬЏOOTЮ[X›Ы	‰™HOOTЮ[X›Ыњ›ЭЭ\OИњЮ[X›ЫЋќ\[Щ€_KЭ
-J_Yќ[Э[Ы€Э
-K
-^Э\€ЏSШљ™XЭљЩ^\КJNЪYЉШљ™XЭ™Щ]ЭЫ”›Ь\ќTЮ[X›ЫК^Э\€ЏSШљ™XЭ™Щ]ЭЫ”›Ь\ќTЮ[X›ЫКJNЭ	‰ЉЏ\‹™љ[\Љ
-ќ[Э[ЫЉ
-^Ь™]\›€Шљ™XЭ™Щ]ЭЫ”›Ь\ќQ\ШЬљ\ЬЉK
-K™[ќ[Y\X›_JJJK‹њ\Ъ\J‹Љ_\™]\›€џYќ[Э[Ы€Э
-J^Щ›ЬЉ\€LNЭ\™Э[Y[ќЛ›[™ЭЭ
-КК^Э\€Џ[ќ[OX\™Э[Y[ќЦЭOШ\™Э[Y[ќЦЭNћЯNЭ	LЏУЭ
-Шљ™XЭ
-ЉKL
-K™›Ь‘XXЪ
-
-ќ[Э[ЫЉ
-^Ъќ
-K–ЭJ_JJN“Шљ™XЭ™Щ]ЭЫ”›Ь\ќQ\ШЬљ\ЬњПУШљ™XЭ™Yљ[™T›Ь\ќY\КKШљ™XЭ™Щ]ЭЫ”›Ь\ќQ\ШЬљ\ЬњКЉJN“Э
-Шљ™XЭ
-ЉJK™›Ь‘XXЪ
-
-ќ[Э[ЫЉ
-^УШљ™XЭ™Yљ[™T›Ь\ќJKШљ™XЭ™Щ]ЭЫ”›Ь\ќQ\ШЬљ\ЬЉ‹
-J_JJ_\™]\›€_Yќ[Э[Ы€ќ
-KЉ^Ь™]\›ЉYќ[Э[ЫЉJ^Э\€Yќ[Э[ЫЉK
-^ЪYЉ›Шљ™XЭ€OOWЭ
-J_ќ[OOYJ\™]\›€NЭ\€ЏYVФЮ[X›ЫќФљ[Z]]™WNЪYЉ›ЪYOO[Љ^Э\€Џ[‹Ш[
-K™Y][ЉNЪYЉ›Шљ™XЭ€OOWЭ
-ЉJ\™]\›€ЋЭ›ЭИ™]И\Q\њ›ЬЉђФљ[Z]]™H]\Э™]\›€Hљ[Z]]™H[YK€Љ_\™]\›ЉњЭљ[™ИЏOO]ФЭљ[™О“ќ[X™\ЉJJ_JKњЭљ[™ИЉNЬ™]\›€њЮ[X›ЫЏOOWЭ
-
-OЭ”Эљ[™К
-_J
-JZ[€OУШљ™XЭ™Yљ[™T›Ь\ќJKЭ[YN›‹[ќ[Y\X›N€LЫЫ™љYЭ\X›N€LЬљ]X›N€LJN™VЭO[‹_Yќ[Э[Ы€
-J^Э\€‹‹ЛOYKњYЪ[њЛOYK›Ь[ЫњЛO[ќ[OOJJ
-ќ[OOJЏ]K—ЧШ]]ШЫЫ\]WЫY]Y]J_›ЪYOO[ЏЭ›ЪY›‹ќ\Щ\ђYЩ[ќК_ЧJVМJ_›ЪYOO]Э›ЪYќњЩYЫY[ќXOЪќ
-ЯKKШљ™XЭљЩ^\К
-ќ[OOJЏ]K—ЧШ]]ШЫЫ\]WЫY]Y]J_›ЪYOO\ЏЭ›ЪYњ‹›Ь[ЫњК_ЯJJNћЯNЬ™]\›ћЬYЪ[њОљK›X\
-
-ќ[Э[ЫЉJ^Ь™]\›ћЫ[YN™K›[YKЬ[ЫњО“Шљ™XЭљЩ^\КK—ЧШ]]ШЫЫ\]WЬYЪ[“Ь[ЫњЯЧJ__JJKЬ[ЫњО”Э
-И]]ШЫЫ\]KXЫЬ™HЋ“Шљ™XЭљЩ^\КJ_K
-KXN”ЛЫЫШ]
-
-ќ[OOJП]K—ЧШ]]ШЫЫ\]WЫY]Y]J_›ЪYOO[ПЭ›ЪY›Лќ\Щ\ђYЩ[ќК_ЧJ__Yќ[Э[Ы€Э
-J^Э\€ЏYKњЭ]NЬ™]\›€LOOO[‹љ\УЬ[џќ[OO[‹XЭ]™R][RYЫќ[Љќ[OOJY™JЉJ_›ЪYOO]Э›ЪYќљ][R[њ][YJ_ќ[Yќ[Э[Ы€]
-J^Ь™]\›€]H™ќ[Э[Ы€ЏO]\[Щ€Ю[X›Ы	‰€њЮ[X›ЫЏO]\[Щ€Ю[X›Ыљ]\]ЬЏЩќ[Э[ЫЉJ^Ь™]\›€\[Щ€_N™ќ[Э[ЫЉJ^Ь™]\›€I‰€™ќ[Э[Ы€ЏO]\[Щ€Ю[X›Ы	‰™KЫЫњЭќXЭЬЏOOTЮ[X›Ы	‰™HOOTЮ[X›Ыњ›ЭЭ\OИњЮ[X›ЫЋќ\[Щ€_K]
-J_Yќ[Э[Ы€]
-K
-^Э\€ЏSШљ™XЭљЩ^\КJNЪYЉШљ™XЭ™Щ]ЭЫ”›Ь\ќTЮ[X›ЫК^Э\€ЏSШљ™XЭ™Щ]ЭЫ”›Ь\ќTЮ[X›ЫКJNЭ	‰ЉЏ\‹™љ[\Љ
-ќ[Э[ЫЉ
-^Ь™]\›€Шљ™XЭ™Щ]ЭЫ”›Ь\ќQ\ШЬљ\ЬЉK
-K™[ќ[Y\X›_JJJK‹њ\Ъ\J‹Љ_\™]\›€џYќ[Э[Ы€]
-J^Щ›ЬЉ\€LNЭ\™Э[Y[ќЛ›[™ЭЭ
-КК^Э\€Џ[ќ[OX\™Э[Y[ќЦЭOШ\™Э[Y[ќЦЭNћЯNЭ	LЏР]
-Шљ™XЭ
-ЉKL
-K™›Ь‘XXЪ
-
-ќ[Э[ЫЉ
-^С
-K–ЭJ_JJN“Шљ™XЭ™Щ]ЭЫ”›Ь\ќQ\ШЬљ\ЬњПУШљ™XЭ™Yљ[™T›Ь\ќY\КKШљ™XЭ™Щ]ЭЫ”›Ь\ќQ\ШЬљ\ЬњКЉJNђ]
-Шљ™XЭ
-ЉJK™›Ь‘XXЪ
-
-ќ[Э[ЫЉ
-^УШљ™XЭ™Yљ[™T›Ь\ќJKШљ™XЭ™Щ]ЭЫ”›Ь\ќQ\ШЬљ\ЬЉ‹
-J_JJ_\™]\›€_Yќ[Э[Ы€
-KЉ^Ь™]\›ЉYќ[Э[ЫЉJ^Э\€Yќ[Э[ЫЉK
-^ЪYЉ›Шљ™XЭ€OOR]
-J_ќ[OOYJ\™]\›€NЭ\€ЏYVФЮ[X›ЫќФљ[Z]]™WNЪYЉ›ЪYOO[Љ^Э\€Џ[‹Ш[
-K™Y][ЉNЪYЉ›Шљ™XЭ€OOR]
-ЉJ\™]\›€ЋЭ›ЭИ™]И\Q\њ›ЬЉђФљ[Z]]™H]\Э™]\›€Hљ[Z]]™H[YK€Љ_\™]\›ЉњЭљ[™ИЏOO]ФЭљ[™О“ќ[X™\ЉJJ_JKњЭљ[™ИЉNЬ™]\›€њЮ[X›ЫЏOOR]
-
-OЭ”Эљ[™К
-_J
-JZ[€OУШљ™XЭ™Yљ[™T›Ь\ќJKЭ[YN›‹[ќ[Y\X›N€LЫЫ™љYЭ\X›N€LЬљ]X›N€LJN™VЭO[‹_]\€ЭYќ[Э[ЫЉK
-^ЬЭЪ]Ъ
-ќ\J^ШШ\ЩHњЩ]XЭ]™R][RYЋШ\ЩH›[Э\Щ[[Э™HЋњ™]\›€]
-]
-ЯKJKЯKШXЭ]™R][RYќњ^[ШYJNШШ\ЩHњЩ]]Y\ћHЋњ™]\›€]
-]
-ЯKJKЯKЬ]Y\ћNќњ^[ШYЫЫ\][ЫЋ›ќ[JNШШ\ЩHњЩ]ЫЫXЭ[ЫњИЋњ™]\›€]
-]
-ЯKJKЯKШЫЫXЭ[ЫњОќњ^[ШYJNШШ\ЩHњЩ]\УЬ[€Ћњ™]\›€]
-]
-ЯKJKЯKЪ\УЬ[Ћќњ^[ШYJNШШ\ЩHњЩ]Э]\ИЋњ™]\›€]
-]
-ЯKJKЯKЬЭ]\Оќњ^[ШYJNШШ\ЩHњЩ]ЫЫќ^Ћњ™]\›€]
-]
-ЯKJKЯKШЫЫќ^‘]
-]
-ЯKKЫЫќ^
-Kњ^[ШY
-_JNШШ\ЩHђ\њ›ЭСЭЫ€Ћќ\€ЏQ]
-]
-ЯKJKЯKШXЭ]™R][RYќњ^[ШYљ\УЭЫ”›Ь\ќJ›™^XЭ]™R][RYЉOЭњ^[ШY›™^XЭ]™R][RYњ™JKKXЭ]™R][RYЉJKњ›ЬЛ™Y][XЭ]™R][RY
-_JNЬ™]\›€]
-]
-ЯKЉKЯKШЫЫ\][ЫЋќЭ
-ЬЭ]N›џJ_JNШШ\ЩHђ\њ›ЭХ\Ћќ\€ЏQ]
-]
-ЯKJKЯKШXЭ]™R][RYњ™JLKKXЭ]™R][RYЉJKњ›ЬЛ™Y][XЭ]™R][RY
-_JNЬ™]\›€]
-]
-ЯKЉKЯKШЫЫ\][ЫЋќЭ
-ЬЭ]NњџJ_JNШШ\ЩH‘\ШШ\HЋњ™]\›€Kљ\УЬ[ЏС]
-]
-ЯKJKЯKШXЭ]™R][RY›ќ[\УЬ[Ћ€LKЫЫ\][ЫЋ›ќ[JN‘]
-]
-ЯKJKЯKШXЭ]™R][RY›ќ[]Y\ћN€€‹Э]\О€љYH‹ЫЫXЭ[ЫњО–Ч_JNШШ\ЩHњЭX›Z]Ћњ™]\›€]
-]
-ЯKJKЯKШXЭ]™R][RY›ќ[\УЬ[Ћ€LKЭ]\О€љYHџJNШШ\ЩHњ™\Щ]Ћњ™]\›€]
-]
-ЯKJKЯKШXЭ]™R][RY€LOO]њ›ЬЛ›Ь[“Ы‘›ШЭ\ПЭњ›ЬЛ™Y][XЭ]™R][RY›ќ[Э]\О€љYH‹ЫЫ\][ЫЋ›ќ[]Y\ћN€€џJNШШ\ЩH™›ШЭ\ИЋњ™]\›€]
-]
-ЯKJKЯKШXЭ]™R][RYќњ›ЬЛ™Y][XЭ]™R][RY\УЬ[ЋЉњ›ЬЛ›Ь[“Ы‘›ШЭ\Я›ЫЫX[ЉKњ]Y\ћJJI‰ќњ›ЬЛњЪЭ[[™[Ь[ЉЬЭ]N™_J_JNШШ\ЩH›\€Ћњ™]\›€њ›ЬЛ™XќYПЩN‘]
-]
-ЯKJKЯKЪ\УЬ[Ћ€LKXЭ]™R][RY›ќ[JNШШ\ЩH›[Э\Щ[X]™HЋњ™]\›€]
-]
-ЯKJKЯKШXЭ]™R][RYќњ›ЬЛ™Y][XЭ]™R][RYJNЩY][њ™]\›€•H™YXЩ\€XЭ[Ы€‹ЫЫШ]
-”УУ‹њЭљ[™ЪYћJќ\JK€\И›ЭЭ\ЬќY€ЉK__NЩќ[Э[Ы€Э
-J^Ь™]\›€ЭH™ќ[Э[Ы€ЏO]\[Щ€Ю[X›Ы	‰€њЮ[X›ЫЏO]\[Щ€Ю[X›Ыљ]\]ЬЏЩќ[Э[ЫЉJ^Ь™]\›€\[Щ€_N™ќ[Э[ЫЉJ^Ь™]\›€I‰€™ќ[Э[Ы€ЏO]\[Щ€Ю[X›Ы	‰™KЫЫњЭќXЭЬЏOOTЮ[X›Ы	‰™HOOTЮ[X›Ыњ›ЭЭ\OИњЮ[X›ЫЋќ\[Щ€_KЭ
-J_Yќ[Э[Ы€
-K
-^Э\€ЏSШљ™XЭљЩ^\КJNЪYЉШљ™XЭ™Щ]ЭЫ”›Ь\ќTЮ[X›ЫК^Э\€ЏSШљ™XЭ™Щ]ЭЫ”›Ь\ќTЮ[X›ЫКJNЭ	‰ЉЏ\‹™љ[\Љ
-ќ[Э[ЫЉ
-^Ь™]\›€Шљ™XЭ™Щ]ЭЫ”›Ь\ќQ\ШЬљ\ЬЉK
-K™[ќ[Y\X›_JJJK‹њ\Ъ\J‹Љ_\™]\›€џYќ[Э[Ы€ќ
-J^Щ›ЬЉ\€LNЭ\™Э[Y[ќЛ›[™ЭЭ
-КК^Э\€Џ[ќ[OX\™Э[Y[ќЦЭOШ\™Э[Y[ќЦЭNћЯNЭ	LЏЮ
-Шљ™XЭ
-ЉKL
-K™›Ь‘XXЪ
-
-ќ[Э[ЫЉ
-^Х
-K–ЭJ_JJN“Шљ™XЭ™Щ]ЭЫ”›Ь\ќQ\ШЬљ\ЬњПУШљ™XЭ™Yљ[™T›Ь\ќY\КKШљ™XЭ™Щ]ЭЫ”›Ь\ќQ\ШЬљ\ЬњКЉJNћ
-Шљ™XЭ
-ЉJK™›Ь‘XXЪ
-
-ќ[Э[ЫЉ
-^УШљ™XЭ™Yљ[™T›Ь\ќJKШљ™XЭ™Щ]ЭЫ”›Ь\ќQ\ШЬљ\ЬЉ‹
-J_JJ_\™]\›€_Yќ[Э[Ы€
-KЉ^Ь™]\›ЉYќ[Э[ЫЉJ^Э\€Yќ[Э[ЫЉK
-^ЪYЉ›Шљ™XЭ€OOZЭ
-J_ќ[OOYJ\™]\›€NЭ\€ЏYVФЮ[X›ЫќФљ[Z]]™WNЪYЉ›ЪYOO[Љ^Э\€Џ[‹Ш[
-K™Y][ЉNЪYЉ›Шљ™XЭ€OOZЭ
-ЉJ\™]\›€ЋЭ›ЭИ™]И\Q\њ›ЬЉђФљ[Z]]™H]\Э™]\›€Hљ[Z]]™H[YK€Љ_\™]\›ЉњЭљ[™ИЏOO]ФЭљ[™О“ќ[X™\ЉJJ_JKњЭљ[™ИЉNЬ™]\›€њЮ[X›ЫЏOOZЭ
-
-OЭ”Эљ[™К
-_J
-JZ[€OУШљ™XЭ™Yљ[™T›Ь\ќJKЭ[YN›‹[ќ[Y\X›N€LЫЫ™љYЭ\X›N€LЬљ]X›N€LJN™VЭO[‹_Yќ[Э[Ы€]
-J^Э\€VЧKЏQJK
-KЏYЩJЭ‹
-ќ[Э[ЫЉJ^Э\€‹OYKњ™]”Э]KПYKњЭ]NЪYЉ‹›Ы”Э]PЪ[™ЩJќ
-Ь™]”Э]NљKЭ]NЛ™Yњ™\ЪќK]љYШ]ЬЋ›‹›]љYШ]ЬџKКJK[
-
-I‰›ќ[OOJXЛЫЫќ^
-I‰ќ›ЪYOO]	‰›ќ[OOJЏ][ЫЫXR[њЪYЪФYЪ[ЉI‰ќ›ЪYOO\‰‰њ‹—ЧШ]]ЫX]XТ[њЪYЪЙ‰€LHOO[‹љ[њЪYЪК^Э\€ПQКЧЧШ]]ШЫЫ\]WШЫXЪР[[]XЬО€L_JNЫ‹њYЪ[њЛњ\Ъ
-КKJЬЧJ__JJKПYќ[Э[ЫЉJ^Э\€YKњЭЬ™NЬ™]\›ћЬЩ]XЭ]™R][RY™ќ[Э[ЫЉJ^Э™\Ь]Ъ
-њЩ]XЭ]™R][RY‹J_KЩ]]Y\ћN™ќ[Э[ЫЉJ^Э™\Ь]Ъ
-њЩ]]Y\ћH‹J_KЩ]ЫЫXЭ[ЫњО™ќ[Э[ЫЉJ^Э\€ЏLЏYK›X\
-
-ќ[Э[ЫЉJ^Ь™]\›€ЩJЩJЯKJKЯKЪ][\О›JKљ][\КK›X\
-
-ќ[Э[ЫЉJ^Ь™]\›€ЩJЩJЯKJKЯKЧЧШ]]ШЫЫ\]WЪY›ЉКЯJ_JJ_J_JJNЭ™\Ь]Ъ
-њЩ]ЫЫXЭ[ЫњИ‹Љ_KЩ]\УЬ[Ћ™ќ[Э[ЫЉJ^Э™\Ь]Ъ
-њЩ]\УЬ[€‹J_KЩ]Э]\О™ќ[Э[ЫЉJ^Э™\Ь]Ъ
-њЩ]Э]\И‹J_KЩ]ЫЫќ^™ќ[Э[ЫЉJ^Э™\Ь]Ъ
-њЩ]ЫЫќ^‹J___JЬЭЬ™NњџJKOZ
-ќ
-Ь›ЬО›‹™Yњ™\ЪќKЭЬ™Nњ‹]љYШ]ЬЋ›‹›]љYШ]ЬџKКJNЩќ[Э[Ы€J
-^Ь™]\›€
-ќ
-Щ]™[ќ›™]И]™[ќ
-љ[њ]ЉK™^Э]NћЪ\УЬ[Ћњ‹™Щ]Э]J
-Kљ\УЬ[џK›ЬО›‹]љYШ]ЬЋ›‹›]љYШ]Ь‹]Y\ћNњ‹™Щ]Э]J
-Kњ]Y\ћK™Yњ™\ЪќKЭЬ™NњџKКJ_Yќ[Э[Ы€JJ^ЩK™›Ь‘XXЪ
-
-ќ[Э[ЫЉJ^Э\€ЋЬ™]\›€ќ[OOJЏYKњЭXњШЬљX™J_›ЪYOO\ЏЭ›ЪYњ‹Ш[
-Kќ
-ќ
-ЯKКKЯKЫ]љYШ]ЬЋ›‹›]љYШ]Ь‹™Yњ™\ЪќKЫ”Щ[XЭ™ќ[Э[ЫЉJ^Эњ\Ъ
-ЫЫ”Щ[XЭ™_J_KЫђXЭ]™N™ќ[Э[ЫЉJ^Эњ\Ъ
-ЫЫђXЭ]™N™_J_KЫ”™\ЫЫ™N™ќ[Э[ЫЉJ^Эњ\Ъ
-ЫЫ”™\ЫЫ™N™_J__JJ_JJ_Yќ[Э[Ы€
-
-^Ь™]\›€‹њYЪ[њЛњЫЫYJ
-ќ[Э[ЫЉJ^Ь™]\›€XK[ЫЫXR[њЪYЪФYЪ[€ЏOOYK›[Y_JJ_ZYЉ‹љ[њЪYЪЙ‰€[
-
-J^Э\€ПH›ЫЫX[€ЏO]\[Щ€‹љ[њЪYЪПЮЯN›‹љ[њЪYЪОЫ‹њYЪ[њЛњ\Ъ
-ККJ_\™]\›€J‹њYЪ[њКKќ[Э[ЫЉJ^Э\€‹ЏYK›Y]Y]KПYK™[ќљ\›Ы›Y[ќЪYЉќ[OOJ[Л›]љYШ]ЬЉ_›ЪYOO]ќ[OOJЏ]ќ\Щ\ђYЩ[ќ
-_›ЪYOO[ЏЭ›ЪY›‹љ[ЫY\Кђ[ЫЫXHЬ]Ы\€ЉJ^Э\€O[Л™ШЭ[Y[ќЬ™X]Q[[Y[ќ
-›Y]HЉKO[Л™ШЭ[Y[ќњ]Y\ћTЩ[XЭЬЉљXYЉNЪK›[YOH[ЫЫXN›Y]Y]H‹Щ][Y[Э]
-
-ќ[Э[ЫЉ
-^ЪKЫЫќ[ќR”УУ‹њЭљ[™ЪYћJЉKK\[™Ъ[
-J_JK
-__JЫY]Y]N”
-ЬYЪ[њО›‹њYЪ[њЛЬ[ЫњО™_JK[ќљ\›Ы›Y[ќ›‹™[ќљ\›Ы›Y[ќJKќ
-ќ
-Ь™Yњ™\ЪќK]љYШ]ЬЋ›‹›]љYШ]ЬџKJKК_]\€ќYќ[Э[ЫЉK‹Љ^Э\€ОЭМOLЩ›ЬЉ\€OLNЪO›[™ЭЪJКК^Э\€O]ЪJКЧKO]ЪWOКМ_]OМNЊ‹–ЭЪJКЧWJNќККЪWNМПOO]OЬ–МOXNЌOO]OЬ–МWOSШљ™XЭ\ЬЪYЫЉ–МW_ЯKJNЌOOO]OК–МWO\–МW_ЯJVЭККЪWWOXNЌЏOO]OЬ–МWVЭККЪWWJПXJИ€ЋќOКПYK\JKќ
-KK‹И€‹ќ[JJK‹њ\Ъ
-КKVМOЭМ_LЋЉЪKL—OLЪWO[КJNњ‹њ\Ъ
-J_\™]\›€џKќ[™]ИX\Щќ[Э[Ы€
-J^Э\€Tќ™Щ]
-\КNЬ™]\›€
-[™]ИX\ќњЩ]
-\Л
-JK
-Pќ
-\Л™Щ]
-J_
-њЩ]
-KYќ[Э[ЫЉJ^Щ›ЬЉ\€‹ЏLKПH€‹OH€‹OVМKOYќ[Э[ЫЉJ^МOOO\‰‰Љ_
-П[Лњ™\XЩJЧ—К——КџК——К‰ЩЛ€ЉJJOЭKњ\Ъ
-KКNЊПOO\‰‰Љ_КOКKњ\Ъ
-ЛKКKЏLЉNЊЏOO\‰‰€‹‹‹€ЏOO[Й‰™OЭKњ\Ъ
-K
-NЊЏOO\‰‰›Й‰€YOЭKњ\Ъ
-KLКNњЏЏMI‰Љ
-ЯYI‰ЌOOO\ЉI‰ЉKњ\Ъ
-‹ЛЉKЏMЉKI‰ЉKњ\Ъ
-‹KЉKЏMЉJKПH€џKLЫK›[™ЭЫ
-КК^Ы	‰ЉOOO\‰‰J
-KJ
-JNЩ›ЬЉ\€ПLШПVЫK›[™ЭШККК]YVЫVШЧKOOO\ЏИЏЏOO]КJ
-KOVЭWKЏLКN›КП]ЌOO\ЏИ‹KHЏOO[Й‰€Џ€ЏOO]КЏLKПH€ЉN›П]
-ЫЦМNљOЭOOZOЪOH€Ћ›КП]‰И‰ПOO]‰ИЏOO]ЪO]€Џ€ЏOO]КJ
-KЏLJNњ‰‰ЉЏHЏOO]КЏMKЏ[ЛПH€ЉN€‹ИЏOO]	‰ЉЏ_Џ€ЏOOYVЫVШКМWJOКJ
-KПOO\‰‰ЉO]VМJKЏ]K
-O]VМJKњ\Ъ
-‹ЉKЏL
-N€€ЏOO]—ЏOO]—€ЏOO]—€ЏOO]КJ
-KЏLЉN›КП]
-KПOO\‰‰€€KKHЏOO[Й‰ЉЏMO]VМJ_\™]\›€J
-K_JJJK
-K\™Э[Y[ќЛЧJJK›[™ЭЊOЭќМ_]\€ќYќ[Э[ЫЉJ^Э\€YK™[ќљ\›Ы›Y[ќЏ]™ШЭ[Y[ќЬ™X]Q[[Y[ќ”Кљ‹ЛЭЭЭЛќМЛ›Ь™ЛМЊЬЭ™И‹њЭ™ИЉNЫ‹њЩ]]љXќ]JЫ\ЬИ‹XKPЫX\’XЫЫ€ЉK‹њЩ]]љXќ]JќљY]Р›Ю‹ЊЌЌЉK‹њЩ]]љXќ]JќЪY‹ЊNЉK‹њЩ]]љXќ]JљZYЪ‹ЊNЉK‹њЩ]]љXќ]J™љ[‹Э\њ™[ќЫЫЬ€ЉNЭ\€Џ]™ШЭ[Y[ќЬ™X]Q[[Y[ќ”Кљ‹ЛЭЭЭЛќМЛ›Ь™ЛМЊЬЭ™И‹њ]ЉNЬ™]\›€‹њЩ]]љXќ]J™‹“MKЊЋLИ‹ЌМЫKЊЋLИKЊЋLЛMKЊЋLИKЊЋLШЛLЊОLHЊОLKLЊОLHKЊЌKЌMМKЊЌЊОLHKЌMKЊЋLЛMKЊЋLИKЊЋLИKЊЋLШМЊОLHЊОLHKЊЌЊОLHKЌMМЊОLKLKЊЌLKЌMMKЊЋLЛMKЊЋLИKЊЋLЛMKЊЋLШМЊОLKLЊОLHЊОLKLKЊЌLKЌMЛLKЊЌLЊОLKLKЌMMKЊЋLИKЊЋLЛMKЊЋLЛMKЊЋLШЛLЊОLKLЊОLKLKЊЌLЊОLKLKЌMЛLЊОLHKЊЌKЌM€ЉK‹\[™Ъ[
-ЉKџNЩќ[Э[Ы€]
-K
-^ЪYЉњЭљ[™ИЏO]\[Щ€
-^Э\€ЏYK™ШЭ[Y[ќњ]Y\ћTЩ[XЭЬЉ
-NЬ™]\›€•H[[Y[ќ‹ЫЫШ]
-”УУ‹њЭљ[™ЪYћJ
-K€\И›Э[€HШЭ[Y[ќ€ЉKџ\™]\›€Yќ[Э[Ы€]
-
-^Щ›ЬЉ\€OX\™Э[Y[ќЛ›[™Э[™]И\њ^JJKЏLЫЏNЫЉКК]Ы—OX\™Э[Y[ќЦЫ—NЬ™]\›€њ™YXЩJ
-ќ[Э[ЫЉK
-^Ь™]\›€Шљ™XЭљЩ^\К
-K™›Ь‘XXЪ
-
-ќ[Э[ЫЉЉ^Э\€ЏYVЫ—KП]Ы—NЬ€OO[Й‰ЉVЫ—OVЬ‹ЧK™љ[\Љ›ЫЫX[ЉKљ›Ъ[Љ€ЉJ_JJK_JKЯJ_]\€Yќ[Э[ЫЉJ^Ь™]\›€I‰€›Шљ™XЭЏOO\ЉJI‰€–ЫШљ™XЭШљ™XЭHЏOOSШљ™XЭњ›ЭЭ\KќФЭљ[™ЛШ[
-J_NЩќ[Э[Ы€ќ
-
-^Щ›ЬЉ\€OX\™Э[Y[ќЛ›[™Э[™]И\њ^JJKЏLЫЏNЫЉКК]Ы—OX\™Э[Y[ќЦЫ—NЬ™]\›€њ™YXЩJ
-ќ[Э[ЫЉK
-^Ь™]\›€Шљ™XЭљЩ^\К
-K™›Ь‘XXЪ
-
-ќ[Э[ЫЉЉ^Э\€ЏYVЫ—KП]Ы—NР\њ^Kљ\Р\њ^JЉI‰ђ\њ^Kљ\Р\њ^JКOЩVЫ—O\‹ЫЫШ]\J‹
-КJN’
-ЉI‰’
-КOЩVЫ—OUќ
-‹КN™VЫ—O[ЯJJK_JKЯJ_Yќ[Э[Ы€Э
-K
-^Ь™]\›€Шљ™XЭ™[ќљY\КJKњ™YXЩJ
-ќ[Э[ЫЉKЉ^Э\€OXJ‹ЉKOZVМKZVМWNЬ™]\›€
-ЪЩ^NќK[YN›JOЫЉЉЯKJKЯKКЯKK
-JN™_JKЯJ_]\€]VИ›ЫќЭXЪЭ\ќ‹›ЫќЭXЪ[™‹›ЫќЭXЪ[Э™H‹›ЫќЭXЪШ[Щ[—NЩќ[Э[Ы€Э
-KЉ^ЩVЭO[ќ[OO[ЏИ€Ћ€›ќ[X™\€€O]\[Щ€ЏЫЋ›ЉИњџYќ[Э[Ы€	
-J^Э\Л—Ы\Э[™\њЦЩKќ\WJJ_Yќ[Э[Ы€ќ
-KЉ^Э\€‹ЛOYVЭNЪYЉњЭ[HЏOO]
-ZYЉњЭљ[™ИЏO]\[Щ€ЉYKњЭ[O[ЋЩ[ЩHYЉќ[OO[ЉYKњЭ[OH€ЋЩ[ЩH›ЬЉ[€ЉZI‰›–ЭOOOZVЭ_Э
-KњЭ[K–ЭJNЩ[ЩH›ИЏOO]МI‰€›€ЏOO]МWOКЏ]OOJ]њ™\XЩJРШ\\™IЛ€ЉJK
-
-П]ќУЭЩ\ђШ\ЩJ
-JZ[€_]љ[ЫY\ККJI‰Љ[КK]њЫXЩJЉKK—Ы\Э[™\њЯ
-K—Ы\Э[™\њП^ЯJKK—Ы\Э[™\њЦЭO[‹ЏЪ_KY]™[ќ\Э[™\Љ	ЉN™Kњ™[[Э™Q]™[ќ\Э[™\Љ	ЉJN€›\Э€OO]	‰€ќYУ[YH€OO]	‰€™›Ь›H€OO]	‰€ќ\H€OO]	‰€њЪ^™H€OO]	‰€™ЭЫ›ШY€OO]	‰€љ™Y€€OO]	‰ќ[€OЩVЭO[ќ[O[ЏИ€Ћ›Ћ€™ќ[Э[Ы€€O]\[Щ€‰‰€™[™Щ\›Э\ЫTЩ][›™\’S€OO]	‰Љќ[O[џLOOO[‰‰€KЧ\‹Лќ\Э
-
-OЩKњ™[[Э™P]љXќ]J
-N™KњЩ]]љXќ]JЉJ_Yќ[Э[Ы€Э
-J^ЬЭЪ]Ъ
-J^ШШ\ЩH›ЫђЪ[™ЩHЋњ™]\›€›Ы’[њ]ЋШШ\ЩH›ЫђЫЫ\ЬЪ][Ы‘[™Ћњ™]\›€›ЫЫЫ\ЬЪ][Ы™[™ЋЩY][њ™]\›€__Yќ[Э[Ы€ќ
-K
-^Щ›ЬЉ\€€[€
-^ќ
-KЭ
-ЉKЫ—J_Yќ[Э[Ы€
-K
-^Щ›ЬЉ\€€[€
-H›ИЏOO[–МI‰€›€ЏOO[–МW_ќ
-KЭ
-ЉKЫ—J_]\€]VИЪ[™[€—NЩќ[Э[Ы€ќ
-J^Ь™]\›€ќ[Э[ЫЉЉ^Э\€Џ[‹Ъ[™[‹П]›ЪYOO\ЏЦЧNњ‹O]J‹]
-KOYK™ШЭ[Y[ќЬ™X]Q[[Y[ќ
-
-NЬ™]\›€ќ
-KJKK\[™\JK
-КJK__]\€[ЏVИ]]ШЫЫ\]TШЫЬP\H‹™[ќљ\›Ы›Y[ќ‹Ы\ЬУ[Y\И‹™Щ][њ]›ЬИ‹™Щ][њ]›ЬРЫЬ™H‹љ\С]XЪY‹њЭ]H—KЏYќ[Э[ЫЉJ^Э\€YK™[ќљ\›Ы›Y[ќ™ШЭ[Y[ќЬ™X]Q[[Y[ќ”Кљ‹ЛЭЭЭЛќМЛ›Ь™ЛМЊЬЭ™И‹њЭ™ИЉNЬ™]\›€њЩ]]љXќ]JЫ\ЬИ‹XKSШY[™ТXЫЫ€ЉKњЩ]]љXќ]JќљY]Р›Ю‹ЊLLЉKњЩ]]љXќ]JќЪY‹ЊЊЉKњЩ]]љXќ]JљZYЪ‹ЊЊЉKљ[›™\’SIПЪ\ЫW€ЮHЌL—€ЮOHЌL—€љ[H››Ы™H—€ЏHЊНH—€Э›ЪЩOHЭ\њ™[ќЫЫЬ€—€Э›ЪЩKY\Ъ\њ^OHЊMЌЋLМНЊMМLНЌMHM‹ЋMНОМMНОЊLО—€Э›ЪЩK]ЪYHЌ€—Џ—€[љ[X]U[њЩ›Ь›W€]љXќ]S[YOHќ[њЩ›Ь›H—€\OHњ›Э]H—€™\X]ЫЭ[ќHљ[™Yљ[љ]H—€\ЏHЊ\И—€[Y\ПHЊLLОLLLМNLLМНЊLL—€Щ^U[Y\ПHЊМЌМЌЌNМH—€П—ЏШЪ\ЫO‰ЛK›ЏYќ[Э[ЫЉJ^Э\€YK™[ќљ\›Ы›Y[ќЏ]™ШЭ[Y[ќЬ™X]Q[[Y[ќ”Кљ‹ЛЭЭЭЛќМЛ›Ь™ЛМЊЬЭ™И‹њЭ™ИЉNЫ‹њЩ]]љXќ]JЫ\ЬИ‹XKTЭX›Z]XЫЫ€ЉK‹њЩ]]љXќ]JќљY]Р›Ю‹ЊЌЌЉK‹њЩ]]љXќ]JќЪY‹ЊЊЉK‹њЩ]]љXќ]JљZYЪ‹ЊЊЉK‹њЩ]]љXќ]J™љ[‹Э\њ™[ќЫЫЬ€ЉNЭ\€Џ]™ШЭ[Y[ќЬ™X]Q[[Y[ќ”Кљ‹ЛЭЭЭЛќМЛ›Ь™ЛМЊЬЭ™И‹њ]ЉNЬ™]\›€‹њЩ]]љXќ]J™‹“LM‹ЊHMKЋMЛLЊНЊЌ‹LЊЌИЊMKLЊNHЊЬЛLЊЊЊЌLЊИЊNXЛLKЊЌNKЊЊLЛL‹ЋMЋHKЋMNMЋMHKЋMNLKЋLМИLЛЌЋ‹LЌО‹MЋMKL‹ЊLЛL‹ЊLLЛЊMЛL‹ЊLMЋMHЌО‹LЛЌЋ€‹ЊLMЋMHЛЊMЛL‹ЊLЋMKL‹ЊLЛЌЋ€ЌО€ЋMH‹ЊL‹ЊLЛЊMИ‹ЊLЋMXМKЋ‹LЌНHЛЌNMЛLKЋMNHЋMћ“LЊKЌМИЊЊЋLЫLЛЌЌНKLЛЌЌНXМKЊЊМKLKЌMKЋMЋLЛЌLИKЋMЋMKЌЊNL‹ЌKLKЊMЌМН‹L‹ЌЊН‹M‹ЊНЌЛLЛЋОKL‹ЌЊН‹M‹ЊНЌL‹ЌЊН‹MЌМН€KЊM‹ЊНЌ‹ЌЊН‹L‹ЌЊН€ЛЋОKL‹ЌЊН€‹ЊНЌKЊЌМН€‹ЌЊН€‹ЊНЌЛЋОH‹ЌЊН€‹ЊНЌ‹ЌЊНМ‹ЊLЌHЊОLЌМНИKЌЊNLKЋMЋЛЌЌНHЛЌЌНXМЊОLHЊОLHKЊЌЊОLHKЌMМЊОLKLKЊЌLKЌM€ЉK‹\[™Ъ[
-ЉKџNЩќ[Э[Ы€›ЉJ^Э\€YK]]ШЫЫ\]KЏYK]]ШЫЫ\]TШЫЬP\KПYKЫ\ЬУ[Y\ЛOYK™[ќљ\›Ы›Y[ќOYKљ\С]XЪYYKњXЩZЫ\‹П]›ЪYOO[И”ЩX\ЪЋ›ПYKњ›ЬЩ]\њЛЏYKњЩ]\У[Щ[Ь[‹YKњЭ]KOYKќ[њЫ][ЫњЛЏVќ
-JK\Л™Щ]›ЫЭ›ЬКЉЬЭ]Nњ›ЬОќ™Щ]›ЫЭ›ЬКЯJ_KЉJKO]Љ™]€‹ЉШЫ\ЬО›Лњ›ЫЭ\љXSX™[›K™]XЪYЩX\Ъќ]Ы•]_K
-JKЏ]Љ™]€‹ШЫ\ЬО›Л™]XЪYЫЫќZ[™\‹Ы“[Э\ЩQЭЫЋ™ќ[Э[ЫЉJ^ЩKњЭЬ›ЬYШ][ЫЉ
-__JKП]Љ™]€‹ШЫ\ЬО›Л™]XЪYЭ™\›^KЪ[™[Ћ–Ш—KЫ“[Э\ЩQЭЫЋ™ќ[Э[ЫЉ
-^ЩЉLJKњЩ]\УЬ[ЉLJ__JK\Л™Щ]X™[›ЬКЉЬЭ]Nњ›ЬОќ™Щ]X™[›ЬКЯJ_KЉJKП]Љќ]Ы€‹ШЫ\ЬО›ЛњЭX›Z]ќ]Ы‹\N€њЭX›Z]‹]N›KњЭX›Z]ќ]Ы•]KЪ[™[Ћ–Ы›ЉЩ[ќљ\›Ы›Y[ќљ_JW_JKП]Љ›X™[‹ЉШЫ\ЬО›Л›X™[Ъ[™[Ћ–ЧЧK\љXSX™[›KњЭX›Z]ќ]Ы•]_K
-JKП]Љќ]Ы€‹ШЫ\ЬО›ЛЫX\ђќ]Ы‹\N€њ™\Щ]‹]N›KЫX\ђќ]Ы•]KЪ[™[Ћ–Сќ
-Щ[ќљ\›Ы›Y[ќљ_JW_JKЏ]Љ™]€‹ШЫ\ЬО›Л›ШY[™Т[™XШ]Ь‹Ъ[™[Ћ–ЭЉЩ[ќљ\›Ы›Y[ќљ_JW_JKYќ[Э[ЫЉJ^Э\€YK]]ШЫЫ\]TШЫЬP\KЏYK™[ќљ\›Ы›Y[ќЩKЫ\ЬУ[Y\ОЭ\€ПYK™Щ][њ]›ЬЛOYK™Щ][њ]›ЬРЫЬ™KOYKљ\С]XЪYYKњЭ]KП]JK[ЉKПVќ
-ЉJљ[њ]‹КKЏ[КЉЬЭ]N››ЬОљJЪ[њ][[Y[ќњЯJK[њ][[Y[ќњЯK
-JNЬ™]\›€ќ
-ЛЉЉЯKЉKЯKЫЫ’Щ^QЭЫЋ™ќ[Э[ЫЉJ^ШI‰€•X€ЏOOYKљЩ^_‹›Ы’Щ^QЭЫЉJ__JJKЯJШЫ\ЬО›Лљ[њ][ќљ\›Ы›Y[ќљKЭ]NњЩ][њ]›ЬОњЛ™Щ][њ]›ЬЛЩ][њ]›ЬРЫЬ™Nќ™Щ][њ]›ЬЛ]]ШЫЫ\]TШЫЬP\Nњ‹\С]XЪY_JKП]Љ™]€‹ШЫ\ЬО›Лљ[њ]Ь\\”™Yљ^Ъ[™[Ћ–УЛ—_JKO]Љ™]€‹ШЫ\ЬО›Лљ[њ]Ь\\”ЭY™љ^Ъ[™[Ћ–ФЧ_JKO]Љ™]€‹ШЫ\ЬО›Лљ[њ]Ь\\‹Ъ[™[Ћ–Ф_JKO\Л™Щ]›Ь›T›ЬКЉЬЭ]Nњ›ЬОќ™Щ]›Ь›T›ЬКЪ[њ][[Y[ќ”J_KЉJK]Љ™›Ь›H‹ЉШЫ\ЬО›Л™›Ь›KЪ[™[Ћ–ЭЛKW_KJJKП\Л™Щ][™[›ЬКЉЬЭ]Nњ›ЬОќ™Щ][™[›ЬКЯJ_KЉJKП]Љ™]€‹ЉШЫ\ЬО›Лњ[™[KКJK]Љ™]€‹ШЫ\ЬО›Л™]XЪYЩX\Ъќ]Ы”]Y\ћK^ЫЫќ[ќњњ]Y\ћ_JKЏ]Љ™]€‹ШЫ\ЬО›Л™]XЪYЩX\Ъќ]Ы”XЩZЫ\‹Y[Ћђ›ЫЫX[Љњ]Y\ћJK^ЫЫќ[ќЯJNЪYЉJ^Э\€]Љ™]€‹ШЫ\ЬО›Л™]XЪYЩX\Ъќ]Ы’XЫЫ‹Ъ[™[Ћ–Ы›ЉЩ[ќљ\›Ы›Y[ќљ_JW_JKO]Љќ]Ы€‹Э\N€ќ]Ы€‹Ы\ЬО›Л™]XЪYЩX\Ъќ]Ы‹]N›K™]XЪYЩX\Ъќ]Ы•]KYљљYЫђЫXЪО™ќ[Э[ЫЉ
-^ЩЉL
-_KЪ[™[Ћ–Х‹_JKЏ]Љќ]Ы€‹Э\N€ќ]Ы€‹Ы\ЬО›Л™]XЪYШ[Щ[ќ]Ы‹^ЫЫќ[ќ›K™]XЪYШ[Щ[ќ]Ы•^Ы•ЭXЪЭ\ќ™ќ[Э[ЫЉJ^ЩKњЭЬ›ЬYШ][ЫЉ
-_KЫђЫXЪО™ќ[Э[ЫЉ
-^ЭњЩ]\УЬ[ЉLJKЉLJ__JKЏ]Љ™]€‹ШЫ\ЬО›Л™]XЪY›Ь›PЫЫќZ[™\‹Ъ[™[Ћ–С—_JNШ‹\[™Ъ[
-ЉKK\[™Ъ[
-J_Y[ЩHK\[™Ъ[
-
-NЬ™]\›ћЩ]XЪYЫЫќZ[™\Ћ‹]XЪYЭ™\›^N™Л]XЪYЩX\Ъќ]Ы”]Y\ћNћ]XЪYЩX\Ъќ]Ы”XЩZЫ\Ћ“‹[њ]Ь\\ЋђK[њ]”›ЫЭћK›Ь›N‘X™[“ЛЭX›Z]ќ]ЫЋ—ЛЫX\ђќ]ЫЋ”ЛШY[™Т[™XШ]ЬЋљ‹[™[љЯ_]\€Ы‹[‹[‹‹Ы‹Ы‹›‹Џ^ЯK[ЏVЧK›ЏKШXЪ]^
-ОњЯЯџ	
-_њЬљYЭЬЯ[ЯќЯ[™VШЪ_›ЫЯ›Ь™]\KЪNЩќ[Э[Ы€ЉK
-^Щ›ЬЉ\€€[€
-YVЫ—O]Ы—NЬ™]\›€_Yќ[Э[Ы€[ЉJ^Э\€YKњ\™[ќ›ЩNЭ	‰ќњ™[[Э™PЪ[
-J_Yќ[Э[Ы€›ЉKЉ^Э\€‹ЛKO^ЯNЩ›ЬЉH[€
-HљЩ^HЏOZOЬЏ]ЪWN€њ™Y€ЏOZOЫП]ЪWNќVЪWO]ЪWNЪYЉ\™Э[Y[ќЛ›[™ЭЊ‰‰ЉKЪ[™[ЏX\™Э[Y[ќЛ›[™ЭЊПЫЫ‹Ш[
-\™Э[Y[ќЛЉN›ЉK™ќ[Э[Ы€ЏO]\[Щ€I‰›ќ[OYK™Y][›ЬКY›ЬЉH[€K™Y][›ЬК]›ЪYOO]VЪWI‰ЉVЪWOYK™Y][›ЬЦЪWJNЬ™]\›€ЫЉKK‹Лќ[
-_Yќ[Э[Ы€ЫЉK‹‹К^Э\€O^Э\N™K›ЬОќЩ^N›‹™YЋњ‹ЧЪО›ќ[ЧО›ќ[ЧШЋЊЧЩN›ќ[ЧЩќ›ЪYЧШО›ќ[ЧЪ›ќ[ЫЫњЭќXЭЬЋќ›ЪYЧЭЋ›ќ[O[ПККШ[Ћ›ЯNЬ™]\›€ќ[O[Й‰›ќ[O][‹ќ››ЩI‰ќ[‹ќ››ЩJJK_Yќ[Э[Ы€ЉJ^Ь™]\›€KЪ[™[џYќ[Э[Ы€ЫЉK
-^Э\Лњ›ЬПYK\ЛЫЫќ^]Yќ[Э[Ы€ЫЉK
-^ЪYЉќ[O]
-\™]\›€K—ЧПУЫЉK—ЧЛK—ЧЛ—ЧЪЛљ[™^ЩЉJJМJN›ќ[Щ›ЬЉ\€ЋЭK—ЧЪЛ›[™ЭЭ
-ККZYЉќ[OJЏYK—ЧЪЦЭJI‰›ќ[O[‹—ЧЩJ\™]\›€‹—ЧЩNЬ™]\›€™ќ[Э[Ы€ЏO]\[Щ€Kќ\OУЫЉJN›ќ[Yќ[Э[Ы€ЫЉJ^Э\€ЋЪYЉќ[OJOYK—ЧКI‰›ќ[OYK—ЧШК^Щ›ЬЉK—ЧЩOYK—ЧШЛ\ЩO[ќ[LЭK—ЧЪЛ›[™ЭЭ
-ККZYЉќ[OJЏYK—ЧЪЦЭJI‰›ќ[O[‹—ЧЩJ^ЩK—ЧЩOYK—ЧШЛ\ЩO[‹—ЧЩNШњ™XZЯ\™]\›€ЫЉJ__Yќ[Э[Ы€›ЉJ^КYK—ЧЩ	‰ЉK—ЧЩHL
-I‰›‹њ\Ъ
-JI‰€T‹—ЧЬЉКЯЫ€OO][‹™X›Э[ЩT™[™\љ[™КI‰Љ
-ЫЏ][‹™X›Э[ЩT™[™\љ[™К_ЫЉJЉ_Yќ[Э[Ы€Љ
-^Э\€K‹‹ЛKKNЩ›ЬЉ‹њЫЬќ
-›ЉNЩO[‹њЪYќ
-
-NКYK—ЧЩ	‰Љ[‹›[™ЭЏ]›ЪYП]›ЪYOJOJЏYJK—ЧЭЉK—ЧЩK
-O[‹—ЧФ
-I‰ЉЏVЧK
-ПYЉЯKJJK—ЧЭЏZK—ЧЭЉМK›ЉKKЛ‹—ЧЫ‹›ЪYOOXK›ЭЫ™\”Х‘С[[Y[ќќ[OZK—ЧЪЦЭWN›ќ[‹ќ[O]OУЫЉJNќKK—ЧЪ
-KЉ‹JKK—ЧЩHO]I‰”ЫЉJJK‹›[™Эќ	‰›‹њЫЬќ
-›ЉJNФ‹—ЧЬЏLYќ[Э[Ы€ЫЉK‹‹ЛKKKК^Э\€Л‹K‹KЏ\‰‰њ‹—ЧЪЯ[‹ПX‹›[™ЭЩ›ЬЉ‹—ЧЪПVЧKПLЬП›[™ЭЬКККZYЉќ[OJO[‹—ЧЪЦЬЧO[ќ[OJO]ЬЧJ_›ЫЫX[€ЏO]\[Щ€_™ќ[Э[Ы€ЏO]\[Щ€OЫќ[€њЭљ[™ИЏO]\[Щ€_›ќ[X™\€ЏO]\[Щ€_љYЪ[ќЏO]\[Щ€OЩЫЉќ[Kќ[ќ[JNђ\њ^Kљ\Р\њ^JJOЩЫЉ‹ШЪ[™[Ћ›_Kќ[ќ[ќ[
-N›K—ЧШЏЊЩЫЉKќ\KKњ›ЬЛKљЩ^KKњ™YЏЫKњ™YЋ›ќ[K—ЧЭЉN›JJ^ЪYЉK—ЧП[‹K—ЧШЏ[‹—ЧШЉМKќ[OOJX–ЬЧJ_	‰›KљЩ^OO\љЩ^I‰›Kќ\OOO\ќ\JX–ЬЧO]›ЪYЩ[ЩH›ЬЉЏLЩЏОЩЉКК^ЪYЉ
-X–Щ—JI‰›KљЩ^OO\љЩ^I‰›Kќ\OOO\ќ\J^Ш–Щ—O]›ЪYШњ™XZЯ\[ќ[S›ЉKK\‹ЛKKKКKЏ[K—ЧЩK
-Џ[Kњ™YЉI‰њњ™Y€OY‰‰Љ_
-OVЧJKњ™Y‰‰ћKњ\Ъ
-њ™Y‹ќ[JKKњ\Ъ
-‹K—ЧШЯ‹JJKќ[O]ЏКќ[OY	‰Љ]ЉK™ќ[Э[Ы€ЏO]\[Щ€Kќ\I‰›K—ЧЪПOO\—ЧЪПЫK—ЧЩ[R[ЉKJN›P[ЉKK‹‹
-K™ќ[Э[Ы€ЏO]\[Щ€‹ќ\I‰Љ‹—ЧЩ[
-JN›	‰њ—ЧЩOO[	‰›њ\™[ќ›ЩHOYI‰ЉSЫЉ
-J_Y›ЬЉ‹—ЧЩOYПYОЬЛKNК[ќ[OX–ЬЧI‰Љ™ќ[Э[Ы€ЏO]\[Щ€‹ќ\I‰›ќ[OX–ЬЧK—ЧЩI‰–ЬЧK—ЧЩOO[‹—ЧЩ	‰Љ‹—ЧЩQ[ЉЉK›™^ЪX›[™КK›Љ–ЬЧK–ЬЧJJNЪYЉJY›ЬЉПLЬПK›[™ЭЬКККP›ЉVЬЧKVККЬЧKVККЬЧJ_Yќ[Э[Ы€[ЉKЉ^Щ›ЬЉ\€‹ПYK—ЧЪЛOLЫЙ‰љOЛ›[™ЭЪJККJЏ[ЦЪWJI‰Љ‹—ЧПYKH™ќ[Э[Ы€ЏO]\[Щ€‹ќ\OТ[Љ‹ЉNђ[Љ‹‹‹Л‹—ЧЩK
-JNЬ™]\›€Yќ[Э[Ы€[ЉK‹‹ЛJ^Э\€KKЪYЉ›ЪYOO]—ЧЩ
-]O]—ЧЩ—ЧЩ]›ЪYЩ[ЩHYЉќ[O[џИOZ_ќ[O[Лњ\™[ќ›ЩJYNљYЉќ[OZ_Kњ\™[ќ›ЩHOOYJYK\[™Ъ[
-КKO[ќ[Щ[Щ^Щ›ЬЉOZKLКOXK›™^ЪX›[™КI‰›‹›[™ЭЫ
-ПLJZYЉOO[КXњ™XZИNЩKљ[њЩ\ќ™Y›Ь™JЛJKOZ_\™]\›€›ЪYOO]OЭN›Л›™^ЪX›[™ЯYќ[Э[Ы€[ЉJ^Э\€‹ЋЪYЉќ[OYKќ\_њЭљ[™ИЏO]\[Щ€Kќ\J\™]\›€K—ЧЩNЪYЉK—ЧЪКY›ЬЉYK—ЧЪЛ›[™ЭLNЭЏLЭKJZYЉ
-ЏYK—ЧЪЦЭJI‰ЉЏQ[ЉЉJJ\™]\›€ЋЬ™]\›€ќ[Yќ[Э[Ы€ЉKЉ^И‹HЏOO]МOЩKњЩ]›Ь\ќJќ[O[ЏИ€Ћ›ЉN™VЭO[ќ[O[ЏИ€Ћ€›ќ[X™\€€O]\[Щ€џ›‹ќ\Э
-
-OЫЋ›ЉИњџYќ[Э[Ы€ЫЉK‹‹К^Э\€NЩNљYЉњЭ[HЏOO]
-ZYЉњЭљ[™ИЏO]\[Щ€ЉYKњЭ[KЬЬХ^[ЋЩ[Щ^ЪYЉњЭљ[™ИЏO]\[Щ€‰‰ЉKњЭ[KЬЬХ^\ЏH€ЉKЉY›ЬЉ[€Љ[‰‰ќ[€џЉKњЭ[K€ЉNЪYЉЉY›ЬЉ[€Љ\‰‰›–ЭOOO\–Э_ЉKњЭ[K–ЭJ_Y[ЩHYЉ›ИЏOO]МI‰€›€ЏOO]МWJZO]OOJ]њ™\XЩJРШ\\™IЛ€ЉJK]ќУЭЩ\ђШ\ЩJ
-Z[€OЭќУЭЩ\ђШ\ЩJ
-KњЫXЩJЉNќњЫXЩJЉKK›
-K›^ЯJKK›Э
-ЪWO[‹ЏЬџKY]™[ќ\Э[™\ЉOЮЋљЫ‹JN™Kњ™[[Э™Q]™[ќ\Э[™\ЉOЮЋљЫ‹JNЩ[ЩHYЉ™[™Щ\›Э\ЫTЩ][›™\’S€OO]
-^ЪYЉК]]њ™\XЩJЮ[љКљ
-KЛљЉKњ™\XЩJЬУ[YIЛњИЉNЩ[ЩHYЉќЪY€OO]	‰€љZYЪ€OO]	‰€љ™Y€€OO]	‰€›\Э€OO]	‰€™›Ь›H€OO]	‰€ќX’[™^€OO]	‰€™ЭЫ›ШY€OO]	‰ќ[€J]ћ^ЩVЭO[ќ[O[ЏИ€Ћ›ЋШњ™XZИ_XШ]Ъ
-J^ЯH™ќ[Э[Ы€ЏO]\[Щ€џ
-ќ[O[џLOOO[‰‰€‹H€OO]НOЩKњ™[[Э™P]љXќ]J
-N™KњЩ]]љXќ]JЉJ__Yќ[Э[Ы€ЫЉJ^Ь™]\›€\Л›ЩKќ\JИLWJ[‹™]™[ќЭ[‹™]™[ќ
-JN™J_Yќ[Э[Ы€ЉJ^Ь™]\›€\Л›ЩKќ\JИLJ[‹™]™[ќЭ[‹™]™[ќ
-JN™J_Yќ[Э[Ы€›ЉK‹‹ЛKKK
-^Э\€ЛЛ‹K‹K‹ЛЛЛЛ‹]ќ\NЪYЉ›ЪYOO]ЫЫњЭќXЭЬЉ\™]\›€ќ[Ыќ[O[‹—ЧЪ	‰Љ[‹—ЧЪO]—ЧЩO[‹—ЧЩK—ЧЪ[ќ[OVШWJK
-П][‹—ЧШЉI‰К
-NЭћ^ЩNљYЉ™ќ[Э[Ы€ЏO]\[Щ€
-^ЪYЉO]њ›ЬЛЏJПTЫЫќ^\JI‰њ–ШЛ—ЧШЧKПXПШЏШ‹њ›ЬЛќ[YNЛ—ЧОњ‹‹—ЧШПЩJП]—ЧШП[‹—ЧШКK—ЧП\Л—ЧСNЉњ›ЭЭ\Hљ[€	‰”њ›ЭЭ\Kњ™[™\ЏЭ—ЧШП\П[™]И
-KКNЉ—ЧШП\П[™]ИЫЉKКKЛЫЫњЭќXЭЬЏTЛњ™[™\ЏSЉK‰‰‹њЭXЉКKЛњ›ЬП^KЛњЭ]_
-ЛњЭ]O^ЯJKЛЫЫќ^YЛЛ—ЧЫЏ\‹Џ\Л—ЧЩHLЛ—ЧЪVЧKЛ—ЬШЏVЧJKќ[O\Л—ЧЬЙ‰ЉЛ—ЧЬП\ЛњЭ]JKќ[OT™Щ]\љ]™YЭ]Qњ›ЫT›ЬЙ‰ЉЛ—ЧЬПO\ЛњЭ]I‰ЉЛ—ЧЬПYЉЯKЛ—ЧЬКJKЉЛ—ЧЬЛ™Щ]\љ]™YЭ]Qњ›ЫT›ЬКKЛ—ЧЬКJJK\Лњ›ЬЛO\ЛњЭ]KЛ—ЧЭЏ]Љ[ќ[OT™Щ]\љ]™YЭ]Qњ›ЫT›ЬЙ‰›ќ[O\ЛЫЫ\Ы™[ќЪ[[Э[ќ	‰њЛЫЫ\Ы™[ќЪ[[Э[ќ
-
-Kќ[O\ЛЫЫ\Ы™[ќY[Э[ќ	‰њЛ—ЧЪњ\Ъ
-ЛЫЫ\Ы™[ќY[Э[ќ
-NЩ[Щ^ЪYЉќ[OT™Щ]\љ]™YЭ]Qњ›ЫT›ЬЙ‰ћHOO\	‰›ќ[O\ЛЫЫ\Ы™[ќЪ[™XЩZ]™T›ЬЙ‰њЛЫЫ\Ы™[ќЪ[™XЩZ]™T›ЬКKКK\Л—ЧЩI‰›ќ[O\ЛњЪЭ[ЫЫ\Ы™[ќ\]I‰€LOOO\ЛњЪЭ[ЫЫ\Ы™[ќ\]JKЛ—ЧЬЛК_—ЧЭЏOO[‹—ЧЭЉ^Щ›ЬЉ—ЧЭ€OO[‹—ЧЭ‰‰ЉЛњ›ЬП^KЛњЭ]O\Л—ЧЬЛЛ—ЧЩHLJKЛ—ЧЩOHLK—ЧЩO[‹—ЧЩK—ЧЪП[‹—ЧЪЛ—ЧЪЛ™›Ь‘XXЪ
-
-ќ[Э[ЫЉJ^ЩI‰ЉK—ЧП]
-_JJKLЪЛ—ЬШ‹›[™ЭЪ
-КК\Л—ЧЪњ\Ъ
-Л—ЬШ–ЪJNЬЛ—ЬШЏVЧKЛ—ЧЪ›[™Э	‰ќKњ\Ъ
-КNШњ™XZИ_[ќ[O\ЛЫЫ\Ы™[ќЪ[\]I‰њЛЫЫ\Ы™[ќЪ[\]JKЛ—ЧЬЛКKќ[O\ЛЫЫ\Ы™[ќY\]I‰њЛ—ЧЪњ\Ъ
-
-ќ[Э[ЫЉ
-^ЬЛЫЫ\Ы™[ќY\]JKЉ_JJ_ZYЉЛЫЫќ^YЛЛњ›ЬП^KЛ—ЧФYKП][‹—ЧЬ‹ПLњ›ЭЭ\Hљ[€	‰”њ›ЭЭ\Kњ™[™\Љ^Щ›ЬЉЛњЭ]O\Л—ЧЬЛЛ—ЧЩHLKЙ‰—К
-KП\Лњ™[™\ЉЛњ›ЬЛЛњЭ]KЛЫЫќ^
-KПLФПЛ—ЬШ‹›[™ЭФККК\Л—ЧЪњ\Ъ
-Л—ЬШ–ФЧJNЬЛ—ЬШЏVЧ_Y[ЩHЮЬЛ—ЧЩHLKЙ‰—К
-KП\Лњ™[™\ЉЛњ›ЬЛЛњЭ]KЛЫЫќ^
-KЛњЭ]O\Л—ЧЬЯ]Ъ[JЛ—ЧЩ	‰ЉКУПЌJNЬЛњЭ]O\Л—ЧЬЛќ[O\Л™Щ]Ъ[ЫЫќ^	‰ЉЏYЉЉЯKЉKЛ™Щ]Ъ[ЫЫќ^
-
-JJKџќ[O\Л™Щ]Ы\ЪЭ™Y›Ь™U\]_
-Џ\Л™Щ]Ы\ЪЭ™Y›Ь™U\]JJJKЏ[ќ[OXЙ‰Лќ\OOOZ‰‰›ќ[OXЛљЩ^OШЛњ›ЬЛЪ[™[ЋЛЫЉK\њ^Kљ\Р\њ^JЉOЪЋ–Ъ—K‹‹ЛKKK
-KЛ\ЩO]—ЧЩK—ЧЪ[ќ[Л—ЧЪ›[™Э	‰ќKњ\Ъ
-КK	‰ЉЛ—ЧСO\Л—ЧП[ќ[
-KЛ—ЧЩOHL_Y[ЩHќ[OZI‰ќ—ЧЭЏOO[‹—ЧЭЏК—ЧЪП[‹—ЧЪЛ—ЧЩO[‹—ЧЩJNќ—ЧЩO\[Љ‹—ЧЩK‹‹ЛKK
-NКП][‹™Y™™Y
-I‰К
-_XШ]Ъ
-J^Э—ЧЭЏ[ќ[
-ќ[OZJI‰Љ—ЧЩOXK—ЧЪHH[VЪKљ[™^ЩЉJWO[ќ[
-K[‹—ЧЩJKЉ__Yќ[Э[Ы€ЉK
-^Э[‹—ЧШЙ‰ќ[‹—ЧШКJKKњЫЫYJ
-ќ[Э[ЫЉ
-^Эћ^ЩO]—ЧЪ—ЧЪVЧKKњЫЫYJ
-ќ[Э[ЫЉJ^ЩKШ[
-
-_JJ_XШ]Ъ
-J^Э[‹—ЧЩJK—ЧЭЉ__JJ_Yќ[Э[Ы€[ЉK‹‹ЛKKJ^Э\€ЛЛЏ[‹њ›ЬЛ]њ›ЬЛO]ќ\KЏLЪYЉњЭ™ИЏOO[I‰ЉПHL
-Kќ[OZJY›ЬЉЭЏK›[™ЭЭЉККZYЉ
-ZVЭ—JI‰€њЩ]]љXќ]Hљ[€OHH[I‰ЉOЫ›ШШ[[YOOO[NЊПOO[››ЩU\JJ^ЩO[VЭ—O[ќ[Шњ™XZЯZYЉќ[OYJ^ЪYЉќ[OO[J\™]\›€ШЭ[Y[ќЬ™X]U^›ЩJ
-NЩO[ПЩШЭ[Y[ќЬ™X]Q[[Y[ќ”Кљ‹ЛЭЭЭЛќМЛ›Ь™ЛМЊЬЭ™И‹JN™ШЭ[Y[ќЬ™X]Q[[Y[ќ
-Kљ\Й‰њ
-KO[ќ[OHL_ZYЉќ[OO[JYЏOO\I‰™K™]OOO\
-K™]O\
-NЩ[Щ^ЪYЉOZI‰›Ы‹Ш[
-KЪ[›Щ\КKПJЏ[‹њ›ЬЯЉK™[™Щ\›Э\ЫTЩ][›™\’SП\™[™Щ\›Э\ЫTЩ][›™\’SXJ^ЪYЉќ[OZJY›ЬЉЏ^ЯKЏLЭЏK]љXќ]\Л›[™ЭЭЉККY–ЩK]љXќ]\ЦЭ—K›[YWOYK]љXќ]\ЦЭ—Kќ[YNКЯКI‰ЉЙ‰ЉЙ‰њЛ—ЧЪ[OXЛ—ЧЪ[Л—ЧЪ[OOYKљ[›™\’S
-_
-Kљ[›™\’S\Й‰њЛ—ЧЪ[€ЉJ_ZYЉќ[Э[ЫЉK‹‹К^Э\€NЩ›ЬЉH[€ЉHЪ[™[€ЏOOZ_љЩ^HЏOOZ_H[€ЫЉKKќ[–ЪWKЉNЩ›ЬЉH[€
-[Й‰€™ќ[Э[Ы€€O]\[Щ€ЪW_Ъ[™[€ЏOOZ_љЩ^HЏOOZ_ќ[YHЏOOZ_ЪXЪЩYЏOOZ_–ЪWOOO]ЪW_ЫЉKKЪWK–ЪWKЉ_JK‹ЛJKК]—ЧЪПVЧNЩ[ЩHYЉЏ]њ›ЬЛЪ[™[‹ЫЉK\њ^Kљ\Р\њ^JЉOЭЋ–Э—K‹‹Й‰€™›Ь™ZYЫ“Шљ™XЭ€OO[KKKOЪVМN›‹—ЧЪЙ‰“ЫЉ‹
-KJKќ[OZJY›ЬЉЏZK›[™ЭЭ‹KNК[ќ[OZVЭ—I‰ћ[ЉVЭ—JNШ_
-ќ[YHљ[€	‰ќ›ЪYOOJЏ\ќ[YJI‰Љ€OOYKќ[Y_њ›ЩЬ™\ЬИЏOO[I‰€]џ›Ь[Ы€ЏOO[I‰ќ€OOY‹ќ[YJI‰ђЫЉKќ[YH‹‹‹ќ[YKLJKЪXЪЩYљ[€	‰ќ›ЪYOOJЏ\ЪXЪЩY
-I‰ќ€OOYKЪXЪЩY	‰ђЫЉKЪXЪЩY‹‹‹ЪXЪЩYLJJ_\™]\›€_Yќ[Э[Ы€›ЉKЉ^Эћ^И™ќ[Э[Ы€ЏO]\[Щ€OЩJ
-N™KЭ\њ™[ќ]XШ]Ъ
-J^Э[‹—ЧЩJKЉ__Yќ[Э[Ы€›ЉKЉ^Э\€‹ОЪYЉ[‹ќ[›[Э[ќ	‰ќ[‹ќ[›[Э[ќ
-JK
-ЏYKњ™YЉI‰Љ‹Э\њ™[ќ	‰њ‹Э\њ™[ќOOYK—ЧЩ_›Љ‹ќ[
-JKќ[OJЏYK—ЧШКJ^ЪYЉ‹ЫЫ\Ы™[ќЪ[[›[Э[ќ
-]ћ^Ь‹ЫЫ\Ы™[ќЪ[[›[Э[ќ
-
-_XШ]Ъ
-J^Э[‹—ЧЩJK
-_\‹\ЩO\‹—ЧФ[ќ[K—ЧШП]›ЪYZYЉЏYK—ЧЪКY›ЬЉПLЫП‹›[™ЭЫККК\–ЫЧI‰”›Љ–ЫЧKџ™ќ[Э[Ы€€O]\[Щ€Kќ\JNЫџќ[OYK—ЧЩ_[ЉK—ЧЩJKK—ЧПYK—ЧЩOYK—ЧЩ]›ЪYYќ[Э[Ы€ЉKЉ^Ь™]\›€\ЛЫЫњЭќXЭЬЉKЉ_[ЫЏ[[‹њЫXЩK[Џ^ЧЧЩN™ќ[Э[ЫЉK‹Љ^Щ›ЬЉ\€ЛKNЭ]—ЧОКZYЉ
-П]—ЧШКI‰€[Л—ЧК]ћ^ЪYЉ
-O[ЛЫЫњЭќXЭЬЉI‰›ќ[OZK™Щ]\љ]™YЭ]Qњ›ЫQ\њ›Ь‰‰ЉЛњЩ]Э]JK™Щ]\љ]™YЭ]Qњ›ЫQ\њ›ЬЉJJKO[Л—ЧЩ
-Kќ[O[ЛЫЫ\Ы™[ќYШ]Ъ	‰ЉЛЫЫ\Ы™[ќYШ]Ъ
-KџЯJKO[Л—ЧЩ
-KJ\™]\›€Л—ЧСO[ЯXШ]Ъ
-
-^ЩO]]›ЭИ__K[ЏLЫ‹њ›ЭЭ\KњЩ]Э]OYќ[Э[ЫЉK
-^Э\€ЋЫЏ[ќ[O]\Л—ЧЬЙ‰ќ\Л—ЧЬИOO]\ЛњЭ]OЭ\Л—ЧЬОќ\Л—ЧЬПYЉЯK\ЛњЭ]JK™ќ[Э[Ы€ЏO]\[Щ€I‰ЉOYJЉЯKЉK\Лњ›ЬКJKI‰™Љ‹JKќ[OYI‰ќ\Л—ЧЭ‰‰Љ	‰ќ\Л—ЬШ‹њ\Ъ
-
-K›Љ\КJ_KЫ‹њ›ЭЭ\K™›ЬЩU\]OYќ[Э[ЫЉJ^Э\Л—ЧЭ‰‰Љ\Л—ЧЩOHLI‰ќ\Л—ЧЪњ\Ъ
-JK›Љ\КJ_KЫ‹њ›ЭЭ\Kњ™[™\ЏZ‹ЏVЧKЫЏH™ќ[Э[Ы€ЏO]\[Щ€›ЫZ\ЩOФ›ЫZ\ЩKњ›ЭЭ\Kќ[‹љ[™
-›ЫZ\ЩKњ™\ЫЫ™J
-JNњЩ][Y[Э]›ЏYќ[Э[ЫЉK
-^Ь™]\›€K—ЧЭ‹—ЧШ‹]—ЧЭ‹—ЧШџK‹—ЧЬЏLЭ\€›ЏH—ЧШXKZYЪYЪЧИ‹[ЏH—ЧЛШXKZYЪYЪЧИЋЩќ[Э[Ы€[ЉJ^Э\€YKљYЪYЪY[YKњЬ]
-›ЉKЏ]њЪYќ
-
-KЏYќ[Э[ЫЉ
-^Э\€OX\™Э[Y[ќЛ›[™ЭЊ	‰ќ›ЪYOOX\™Э[Y[ќЦМOШ\™Э[Y[ќЦМN–ЧNЬ™]\›ћЩЩ]™ќ[Э[ЫЉ
-^Ь™]\›€_KY™ќ[Э[ЫЉ
-^Э\€ЏYVЩK›[™ЭLWNКќ[O[ЏЭ›ЪY›‹љ\ТYЪYЪY
-OOO]љ\ТYЪYЪYЩVЩK›[™ЭLWO^Э[YN›‹ќ[YJЭќ[YK\ТYЪYЪY›‹љ\ТYЪYЪYN™Kњ\Ъ
-
-___JЏЦЮЭ[YN›‹\ТYЪYЪY€L_WN–ЧJNЬ™]\›€™›Ь‘XXЪ
-
-ќ[Э[ЫЉJ^Э\€YKњЬ]
-[ЉNЬ‹Y
-Э[YNќМK\ТYЪYЪY€LJK€€OO]МWI‰њ‹Y
-Э[YNќМWK\ТYЪYЪY€L_J_JJK‹™Щ]
-
-_Yќ[Э[Ы€ЉJ^Ь™]\›€ќ[Э[ЫЉJ^ЪYЉ\њ^Kљ\Р\њ^JJJ\™]\›€›ЉJ_JJ_ќ[Э[ЫЉJ^ЪYЉќ[™Yљ[™Y€O]\[Щ€Ю[X›Ы	‰›ќ[OYVФЮ[X›Ыљ]\]Ь—_ќ[OYVИђ]\]Ь€—J\™]\›€\њ^K™њ›ЫJJ_JJ_ќ[Э[ЫЉK
-^ЪYЉYJ\™]\›ЋЪYЉњЭљ[™ИЏO]\[Щ€J\™]\›€›ЉK
-NЭ\€ЏSШљ™XЭњ›ЭЭ\KќФЭљ[™ЛШ[
-JKњЫXЩJLJNИ“Шљ™XЭЏOO[‰‰™KЫЫњЭќXЭЬ‰‰ЉЏYKЫЫњЭќXЭЬ‹›[YJNЪYЉ“X\ЏOO[џ”Щ]ЏOO[Љ\™]\›€\њ^K™њ›ЫJJNЪYЉђ\™Э[Y[ќИЏOO[џЧЉО•Z_J[ќ
-ОЋMџМЉJОђЫ[\Y
-OР\њ^IЛќ\Э
-ЉJ\™]\›€›ЉK
-_JJ_ќ[Э[ЫЉ
-^Э›ЭИ™]И\Q\њ›ЬЉ’[ќ[Y][\ИЬ™XY›Ы‹Z]\X›H[њЭ[ЩK—’[€Ь™\€И™H]\X›K›Ы‹X\њ^HШљ™XЭИ]\Э]™HHФЮ[X›Ыљ]\]Ь—J
-HY]Щ€Љ_J
-_Yќ[Э[Ы€›ЉK
-^Кќ[O]™K›[™Э
-I‰ЉYK›[™Э
-NЩ›ЬЉ\€ЏLЏ[™]И\њ^J
-NЫЏЫЉКК\–Ы—OYVЫ—NЬ™]\›€џYќ[Э[Ы€ЫЉJ^Э\€YKљ]ЏYK]љXќ]KЏP\њ^Kљ\Р\њ^JЉOЫЋ–Ы—KП^JИ—ЪYЪYЪ™\Э[—KЫЫШ]
-ЉЉKИќ[YH—JJNЬ™]\›€њЭљ[™И€O]\[Щ€Й‰ЉП^JЉ_€ЉK[ЉЪYЪYЪY[YN›ЯJ_]\€[Џ^И‰[\ИЋ€‰€‹‰›ИЋ€Џ‹‰™ЭИЋ€Џ€‹‰њ][ЭИЋ‰И‰Л‰€МОNИЋ€‰ИџKЫЏ[™]И™YС^
-ЧЛЪJK	ЏKЙЉ[\][ЭЭМОJNЛЩЛ›ЏT™YС^
-	‹њЫЭ\ЩJNЩќ[Э[Ы€ЫЉK
-^Э\€‹‹ЛOYVЭKOJќ[OOJЏYVЭ
-МWJ_›ЪYOO[ЏЭ›ЪY›‹љ\ТYЪYЪY
-_LOJќ[OOJЏYVЭLWJ_›ЪYOO\ЏЭ›ЪYњ‹љ\ТYЪYЪY
-_LЬ™]\›€Ы‹ќ\Э
-
-ПZKќ[YJI‰ћ›‹ќ\Э
-КOЫЛњ™\XЩJ	‹
-ќ[Э[ЫЉJ^Ь™]\›€[–ЩW_JJN›К_HOO]OЪKљ\ТYЪYЪY_Yќ[Э[Ы€›ЉJ^Ь™]\›€›ЏH™ќ[Э[Ы€ЏO]\[Щ€Ю[X›Ы	‰€њЮ[X›ЫЏO]\[Щ€Ю[X›Ыљ]\]ЬЏЩќ[Э[ЫЉJ^Ь™]\›€\[Щ€_N™ќ[Э[ЫЉJ^Ь™]\›€I‰€™ќ[Э[Ы€ЏO]\[Щ€Ю[X›Ы	‰™KЫЫњЭќXЭЬЏOOTЮ[X›Ы	‰™HOOTЮ[X›Ыњ›ЭЭ\OИњЮ[X›ЫЋќ\[Щ€_K›ЉJ_Yќ[Э[Ы€ЉK
-^Э\€ЏSШљ™XЭљЩ^\КJNЪYЉШљ™XЭ™Щ]ЭЫ”›Ь\ќTЮ[X›ЫК^Э\€ЏSШљ™XЭ™Щ]ЭЫ”›Ь\ќTЮ[X›ЫКJNЭ	‰ЉЏ\‹™љ[\Љ
-ќ[Э[ЫЉ
-^Ь™]\›€Шљ™XЭ™Щ]ЭЫ”›Ь\ќQ\ШЬљ\ЬЉK
-K™[ќ[Y\X›_JJJK‹њ\Ъ\J‹Љ_\™]\›€џYќ[Э[Ы€[ЉJ^Щ›ЬЉ\€LNЭ\™Э[Y[ќЛ›[™ЭЭ
-КК^Э\€Џ[ќ[OX\™Э[Y[ќЦЭOШ\™Э[Y[ќЦЭNћЯNЭ	LЏЦЉШљ™XЭ
-ЉKL
-K™›Ь‘XXЪ
-
-ќ[Э[ЫЉ
-^Ц›ЉK–ЭJ_JJN“Шљ™XЭ™Щ]ЭЫ”›Ь\ќQ\ШЬљ\ЬњПУШљ™XЭ™Yљ[™T›Ь\ќY\КKШљ™XЭ™Щ]ЭЫ”›Ь\ќQ\ШЬљ\ЬњКЉJN–ЉШљ™XЭ
-ЉJK™›Ь‘XXЪ
-
-ќ[Э[ЫЉ
-^УШљ™XЭ™Yљ[™T›Ь\ќJKШљ™XЭ™Щ]ЭЫ”›Ь\ќQ\ШЬљ\ЬЉ‹
-J_JJ_\™]\›€_Yќ[Э[Ы€›ЉKЉ^Ь™]\›ЉYќ[Э[ЫЉJ^Э\€Yќ[Э[ЫЉK
-^ЪYЉ›Шљ™XЭ€OOR›ЉJ_ќ[OOYJ\™]\›€NЭ\€ЏYVФЮ[X›ЫќФљ[Z]]™WNЪYЉ›ЪYOO[Љ^Э\€Џ[‹Ш[
-K™Y][ЉNЪYЉ›Шљ™XЭ€OOR›ЉЉJ\™]\›€ЋЭ›ЭИ™]И\Q\њ›ЬЉђФљ[Z]]™H]\Э™]\›€Hљ[Z]]™H[YK€Љ_\™]\›ЉњЭљ[™ИЏOO]ФЭљ[™О“ќ[X™\ЉJJ_JKњЭљ[™ИЉNЬ™]\›€њЮ[X›ЫЏOOR›Љ
-OЭ”Эљ[™К
-_J
-JZ[€OУШљ™XЭ™Yљ[™T›Ь\ќJKЭ[YN›‹[ќ[Y\X›N€LЫЫ™љYЭ\X›N€LЬљ]X›N€LJN™VЭO[‹_Yќ[Э[Ы€\ЉJ^Ь™]\›€KњЫЫYJ
-ќ[Э[ЫЉJ^Ь™]\›€Kљ\ТYЪYЪYJJOЩK›X\
-
-ќ[Э[ЫЉЉ^Ь™]\›€[Љ[ЉЯK
-KЯKЪ\ТYЪYЪY€QЫЉKЉ_J_JJN™K›X\
-
-ќ[Э[ЫЉJ^Ь™]\›€[Љ[ЉЯKJKЯKЪ\ТYЪYЪY€L_J_JJ_Yќ[Э[Ы€ЉJ^Ь™]\›€ќ[Э[ЫЉJ^ЪYЉ\њ^Kљ\Р\њ^JJJ\™]\›€њЉJ_JJ_ќ[Э[ЫЉJ^ЪYЉќ[™Yљ[™Y€O]\[Щ€Ю[X›Ы	‰›ќ[OYVФЮ[X›Ыљ]\]Ь—_ќ[OYVИђ]\]Ь€—J\™]\›€\њ^K™њ›ЫJJ_JJ_ќ[Э[ЫЉK
-^ЪYЉYJ\™]\›ЋЪYЉњЭљ[™ИЏO]\[Щ€J\™]\›€њЉK
-NЭ\€ЏSШљ™XЭњ›ЭЭ\KќФЭљ[™ЛШ[
-JKњЫXЩJLJNИ“Шљ™XЭЏOO[‰‰™KЫЫњЭќXЭЬ‰‰ЉЏYKЫЫњЭќXЭЬ‹›[YJNЪYЉ“X\ЏOO[џ”Щ]ЏOO[Љ\™]\›€\њ^K™њ›ЫJJNЪYЉђ\™Э[Y[ќИЏOO[џЧЉО•Z_J[ќ
-ОЋMџМЉJОђЫ[\Y
-OР\њ^IЛќ\Э
-ЉJ\™]\›€њЉK
-_JJ_ќ[Э[ЫЉ
-^Э›ЭИ™]И\Q\њ›ЬЉ’[ќ[Y][\ИЬ™XY›Ы‹Z]\X›H[њЭ[ЩK—’[€Ь™\€И™H]\X›K›Ы‹X\њ^HШљ™XЭИ]\Э]™HHФЮ[X›Ыљ]\]Ь—J
-HY]Щ€Љ_J
-_Yќ[Э[Ы€њЉK
-^Кќ[O]™K›[™Э
-I‰ЉYK›[™Э
-NЩ›ЬЉ\€ЏLЏ[™]И\њ^J
-NЫЏЫЉКК\–Ы—OYVЫ—NЬ™]\›€џYќ[Э[Ы€њЉJ^Э\€YKљ]ЏYK]љXќ]KЏP\њ^Kљ\Р\њ^JЉOЫЋ–Ы—KП^JИ—ЬЫљ\]™\Э[—KЫЫШ]
-ЉЉKИќ[YH—JJNЬ™]\›€њЭљ[™И€O]\[Щ€Й‰ЉП^JЉ_€ЉK[ЉЪYЪYЪY[YN›ЯJ_Yќ[Э[Ы€ЬЉJ^Ь™]\›€ЬЏH™ќ[Э[Ы€ЏO]\[Щ€Ю[X›Ы	‰€њЮ[X›ЫЏO]\[Щ€Ю[X›Ыљ]\]ЬЏЩќ[Э[ЫЉJ^Ь™]\›€\[Щ€_N™ќ[Э[ЫЉJ^Ь™]\›€I‰€™ќ[Э[Ы€ЏO]\[Щ€Ю[X›Ы	‰™KЫЫњЭќXЭЬЏOOTЮ[X›Ы	‰™HOOTЮ[X›Ыњ›ЭЭ\OИњЮ[X›ЫЋќ\[Щ€_KЬЉJ_Yќ[Э[Ы€\ЉK
-^Э\€ЏSШљ™XЭљЩ^\КJNЪYЉШљ™XЭ™Щ]ЭЫ”›Ь\ќTЮ[X›ЫК^Э\€ЏSШљ™XЭ™Щ]ЭЫ”›Ь\ќTЮ[X›ЫКJNЭ	‰ЉЏ\‹™љ[\Љ
-ќ[Э[ЫЉ
-^Ь™]\›€Шљ™XЭ™Щ]ЭЫ”›Ь\ќQ\ШЬљ\ЬЉK
-K™[ќ[Y\X›_JJJK‹њ\Ъ\J‹Љ_\™]\›€џYќ[Э[Ы€\ЉJ^Щ›ЬЉ\€LNЭ\™Э[Y[ќЛ›[™ЭЭ
-КК^Э\€Џ[ќ[OX\™Э[Y[ќЦЭOШ\™Э[Y[ќЦЭNћЯNЭ	LЏЪ\ЉШљ™XЭ
-ЉKL
-K™›Ь‘XXЪ
-
-ќ[Э[ЫЉ
-^Ш\ЉK–ЭJ_JJN“Шљ™XЭ™Щ]ЭЫ”›Ь\ќQ\ШЬљ\ЬњПУШљ™XЭ™Yљ[™T›Ь\ќY\КKШљ™XЭ™Щ]ЭЫ”›Ь\ќQ\ШЬљ\ЬњКЉJNљ\ЉШљ™XЭ
-ЉJK™›Ь‘XXЪ
-
-ќ[Э[ЫЉ
-^УШљ™XЭ™Yљ[™T›Ь\ќJKШљ™XЭ™Щ]ЭЫ”›Ь\ќQ\ШЬљ\ЬЉ‹
-J_JJ_\™]\›€_Yќ[Э[Ы€\ЉKЉ^Ь™]\›ЉYќ[Э[ЫЉJ^Э\€Yќ[Э[ЫЉK
-^ЪYЉ›Шљ™XЭ€OO[ЬЉJ_ќ[OOYJ\™]\›€NЭ\€ЏYVФЮ[X›ЫќФљ[Z]]™WNЪYЉ›ЪYOO[Љ^Э\€Џ[‹Ш[
-K™Y][ЉNЪYЉ›Шљ™XЭ€OO[ЬЉЉJ\™]\›€ЋЭ›ЭИ™]И\Q\њ›ЬЉђФљ[Z]]™H]\Э™]\›€Hљ[Z]]™H[YK€Љ_\™]\›ЉњЭљ[™ИЏOO]ФЭљ[™О“ќ[X™\ЉJJ_JKњЭљ[™ИЉNЬ™]\›€њЮ[X›ЫЏOO[ЬЉ
-OЭ”Эљ[™К
-_J
-JZ[€OУШљ™XЭ™Yљ[™T›Ь\ќJKЭ[YN›‹[ќ[Y\X›N€LЫЫ™љYЭ\X›N€LЬљ]X›N€LJN™VЭO[‹_Yќ[Э[Ы€ЉJ^Ь™]\›€ЏH™ќ[Э[Ы€ЏO]\[Щ€Ю[X›Ы	‰€њЮ[X›ЫЏO]\[Щ€Ю[X›Ыљ]\]ЬЏЩќ[Э[ЫЉJ^Ь™]\›€\[Щ€_N™ќ[Э[ЫЉJ^Ь™]\›€I‰€™ќ[Э[Ы€ЏO]\[Щ€Ю[X›Ы	‰™KЫЫњЭќXЭЬЏOOTЮ[X›Ы	‰™HOOTЮ[X›Ыњ›ЭЭ\OИњЮ[X›ЫЋќ\[Щ€_KЉJ_]\€ЬЏVИњ\[\И—NЩќ[Э[Ы€ЬЉK
-^Э\€ЏSШљ™XЭљЩ^\КJNЪYЉШљ™XЭ™Щ]ЭЫ”›Ь\ќTЮ[X›ЫК^Э\€ЏSШљ™XЭ™Щ]ЭЫ”›Ь\ќTЮ[X›ЫКJNЭ	‰ЉЏ\‹™љ[\Љ
-ќ[Э[ЫЉ
-^Ь™]\›€Шљ™XЭ™Щ]ЭЫ”›Ь\ќQ\ШЬљ\ЬЉK
-K™[ќ[Y\X›_JJJK‹њ\Ъ\J‹Љ_\™]\›€џYќ[Э[Ы€њЉJ^Щ›ЬЉ\€LNЭ\™Э[Y[ќЛ›[™ЭЭ
-КК^Э\€Џ[ќ[OX\™Э[Y[ќЦЭOШ\™Э[Y[ќЦЭNћЯNЭ	LЏЬЬЉШљ™XЭ
-ЉKL
-K™›Ь‘XXЪ
-
-ќ[Э[ЫЉ
-^ЬЉK–ЭJ_JJN“Шљ™XЭ™Щ]ЭЫ”›Ь\ќQ\ШЬљ\ЬњПУШљ™XЭ™Yљ[™T›Ь\ќY\КKШљ™XЭ™Щ]ЭЫ”›Ь\ќQ\ШЬљ\ЬњКЉJNњЬЉШљ™XЭ
-ЉJK™›Ь‘XXЪ
-
-ќ[Э[ЫЉ
-^УШљ™XЭ™Yљ[™T›Ь\ќJKШљ™XЭ™Щ]ЭЫ”›Ь\ќQ\ШЬљ\ЬЉ‹
-J_JJ_\™]\›€_Yќ[Э[Ы€ЉKЉ^Ь™]\›ЉYќ[Э[ЫЉJ^Э\€Yќ[Э[ЫЉK
-^ЪYЉ›Шљ™XЭ€OO[ЉJ_ќ[OOYJ\™]\›€NЭ\€ЏYVФЮ[X›ЫќФљ[Z]]™WNЪYЉ›ЪYOO[Љ^Э\€Џ[‹Ш[
-K™Y][ЉNЪYЉ›Шљ™XЭ€OO[ЉЉJ\™]\›€ЋЭ›ЭИ™]И\Q\њ›ЬЉђФљ[Z]]™H]\Э™]\›€Hљ[Z]]™H[YK€Љ_\™]\›ЉњЭљ[™ИЏOO]ФЭљ[™О“ќ[X™\ЉJJ_JKњЭљ[™ИЉNЬ™]\›€њЮ[X›ЫЏOO[Љ
-OЭ”Эљ[™К
-_J
-JZ[€OУШљ™XЭ™Yљ[™T›Ь\ќJKЭ[YN›‹[ќ[Y\X›N€LЫЫ™љYЭ\X›N€LЬљ]X›N€LJN™VЭO[‹_Yќ[Э[Ы€\ЉK
-^ЪYЉќ[OYJ\™]\›ћЯNЭ\€‹‹ПYќ[Э[ЫЉK
-^ЪYЉќ[OYJ\™]\›ћЯNЭ\€‹‹П^ЯKOSШљ™XЭљЩ^\КJNЩ›ЬЉЏLЬЏK›[™ЭЬЉКК[ЏZVЬ—Kљ[™^ЩЉЉOЏL
-ЦЫ—OYVЫ—JNЬ™]\›€ЯJK
-NЪYЉШљ™XЭ™Щ]ЭЫ”›Ь\ќTЮ[X›ЫК^Э\€OSШљ™XЭ™Щ]ЭЫ”›Ь\ќTЮ[X›ЫКJNЩ›ЬЉЏLЬЏK›[™ЭЬЉКК[ЏZVЬ—Kљ[™^ЩЉЉOЏLШљ™XЭњ›ЭЭ\Kњ›Ь\ќR\С[ќ[Y\X›KШ[
-KЉI‰ЉЦЫ—OYVЫ—J_\™]\›€ЯYќ[Э[Ы€њЉJ^Ь™]\›€ќ[Э[ЫЉJ^ЪYЉ\њ^Kљ\Р\њ^JJJ\™]\›€ЉJ_JJ_ќ[Э[ЫЉJ^ЪYЉќ[™Yљ[™Y€O]\[Щ€Ю[X›Ы	‰›ќ[OYVФЮ[X›Ыљ]\]Ь—_ќ[OYVИђ]\]Ь€—J\™]\›€\њ^K™њ›ЫJJ_JJ_ќ[Э[ЫЉK
-^ЪYЉYJ\™]\›ЋЪYЉњЭљ[™ИЏO]\[Щ€J\™]\›€ЉK
-NЭ\€ЏSШљ™XЭњ›ЭЭ\KќФЭљ[™ЛШ[
-JKњЫXЩJLJNИ“Шљ™XЭЏOO[‰‰™KЫЫњЭќXЭЬ‰‰ЉЏYKЫЫњЭќXЭЬ‹›[YJNЪYЉ“X\ЏOO[џ”Щ]ЏOO[Љ\™]\›€\њ^K™њ›ЫJJNЪYЉђ\™Э[Y[ќИЏOO[џЧЉО•Z_J[ќ
-ОЋMџМЉJОђЫ[\Y
-OР\њ^IЛќ\Э
-ЉJ\™]\›€ЉK
-_JJ_ќ[Э[ЫЉ
-^Э›ЭИ™]И\Q\њ›ЬЉ’[ќ[Y][\ИЬ™XY›Ы‹Z]\X›H[њЭ[ЩK—’[€Ь™\€И™H]\X›K›Ы‹X\њ^HШљ™XЭИ]\Э]™HHФЮ[X›Ыљ]\]Ь—J
-HY]Щ€Љ_J
-_Yќ[Э[Ы€ЉK
-^Кќ[O]™K›[™Э
-I‰ЉYK›[™Э
-NЩ›ЬЉ\€ЏLЏ[™]И\њ^J
-NЫЏЫЉКК\–Ы—OYVЫ—NЬ™]\›€џYќ[Э[Ы€\ЉJ^Э\€YKЬ™X]Q[[Y[ќЏYK‘њYЫY[ќЩќ[Э[Ы€ЉJ^Э\€ЏYKљ]ПYK]љXќ]KOYKќYУ[YKO]›ЪYOOZOИ›X\љИЋљNЬ™]\›€
-‹ЯKЫЉЪ]њ‹]љXќ]N›ЯJK›X\
-
-ќ[Э[ЫЉKЉ^Ь™]\›€Kљ\ТYЪYЪYЭ
-KЪЩ^N›џKKќ[YJN™Kќ[Y_JJJ_\™]\›€‹—ЧШ]]ШЫЫ\]WШЫЫ\Ы™[ќ[YOH’YЪYЪ‹џYќ[Э[Ы€њЉJ^Э\€YKЬ™X]Q[[Y[ќЏYK‘њYЫY[ќЩќ[Э[Ы€ЉJ^Э\€‹ПYKљ]OYK]љXќ]KOYKќYУ[YKO]›ЪYOO]OИ›X\љИЋќNЬ™]\›€
-‹ЯK
-Џ^Ъ]›Л]љXќ]Nљ_K\ЉЫЉЉJJK›X\
-
-ќ[Э[ЫЉKЉ^Ь™]\›€Kљ\ТYЪYЪYЭ
-KЪЩ^N›џKKќ[YJN™Kќ[Y_JJJ_\™]\›€‹—ЧШ]]ШЫЫ\]WШЫЫ\Ы™[ќ[YOH”™]™\њЩRYЪYЪ‹џYќ[Э[Ы€ЬЉJ^Э\€YKЬ™X]Q[[Y[ќЏYK‘њYЫY[ќЩќ[Э[Ы€ЉJ^Э\€‹ПYKљ]OYK]љXќ]KOYKќYУ[YKO]›ЪYOO]OИ›X\љИЋќNЬ™]\›€
-‹ЯK
-Џ^Ъ]›Л]љXќ]Nљ_K\ЉњЉЉJJK›X\
-
-ќ[Э[ЫЉKЉ^Ь™]\›€Kљ\ТYЪYЪYЭ
-KЪЩ^N›џKKќ[YJN™Kќ[Y_JJJ_\™]\›€‹—ЧШ]]ШЫЫ\]WШЫЫ\Ы™[ќ[YOH”™]™\њЩTЫљ\]‹џYќ[Э[Ы€ЉJ^Э\€YKЬ™X]Q[[Y[ќЏYK‘њYЫY[ќЩќ[Э[Ы€ЉJ^Э\€ЏYKљ]ПYK]љXќ]KOYKќYУ[YKO]›ЪYOOZOИ›X\љИЋљNЬ™]\›€
-‹ЯKњЉЪ]њ‹]љXќ]N›ЯJK›X\
-
-ќ[Э[ЫЉKЉ^Ь™]\›€Kљ\ТYЪYЪYЭ
-KЪЩ^N›џKKќ[YJN™Kќ[Y_JJJ_\™]\›€‹—ЧШ]]ШЫЫ\]WШЫЫ\Ы™[ќ[YOH”Ыљ\]‹џ]\€ЬЏVИЫ\ЬУ[Y\И‹ЫЫќZ[™\€‹™Щ][ќљ\›Ы›Y[ќ›ЬИ‹™Щ]›Ь›T›ЬИ‹™Щ][њ]›ЬИ‹™Щ]][T›ЬИ‹™Щ]X™[›ЬИ‹™Щ]\Э›ЬИ‹™Щ][™[›ЬИ‹™Щ]›ЫЭ›ЬИ‹њ[™[ЫЫќZ[™\€‹њ[™[XЩ[Y[ќ‹њ™[™\€‹њ™[™\“›Ф™\Э[И‹њ™[™\™\€‹™]XЪYYYXT]Y\ћH‹ЫЫ\Ы™[ќИ‹ќ[њЫ][ЫњИ—KЬЏ^ШЫX\ђќ]ЫЋ€XKPЫX\ђќ]Ы€‹]XЪYШ[Щ[ќ]ЫЋ€XKQ]XЪYШ[Щ[ќ]Ы€‹]XЪYЫЫќZ[™\Ћ€XKQ]XЪYЫЫќZ[™\€‹]XЪY›Ь›PЫЫќZ[™\Ћ€XKQ]XЪY›Ь›PЫЫќZ[™\€‹]XЪYЭ™\›^N€XKQ]XЪYЭ™\›^H‹]XЪYЩX\Ъќ]ЫЋ€XKQ]XЪYЩX\Ъќ]Ы€‹]XЪYЩX\Ъќ]Ы’XЫЫЋ€XKQ]XЪYЩX\Ъќ]Ы’XЫЫ€‹]XЪYЩX\Ъќ]Ы”XЩZЫ\Ћ€XKQ]XЪYЩX\Ъќ]Ы”XЩZЫ\€‹]XЪYЩX\Ъќ]Ы”]Y\ћN€XKQ]XЪYЩX\Ъќ]Ы”]Y\ћH‹›Ь›N€XKQ›Ь›H‹[њ]€XKR[њ]‹[њ]Ь\\Ћ€XKR[њ]Ь\\€‹[њ]Ь\\”™Yљ^€XKR[њ]Ь\\”™Yљ^‹[њ]Ь\\”ЭY™љ^€XKR[њ]Ь\\”ЭY™љ^‹][N€XKR][H‹X™[€XKSX™[‹\Э€XKS\Э‹ШY[™Т[™XШ]ЬЋ€XKSШY[™Т[™XШ]Ь€‹[™[€XKT[™[‹[™[^[Э]€XKT[™[^[Э]XKT[™[K\ШЬ›ЫX›H‹›ЫЭ€XKP]]ШЫЫ\]H‹ЫЭ\ЩN€XKTЫЭ\ЩH‹ЫЭ\ЩQ›ЫЭ\Ћ€XKTЫЭ\ЩQ›ЫЭ\€‹ЫЭ\ЩRXY\Ћ€XKTЫЭ\ЩRXY\€‹ЫЭ\ЩS›Ф™\Э[О€XKTЫЭ\ЩS›Ф™\Э[И‹ЭX›Z]ќ]ЫЋ€XKTЭX›Z]ќ]Ы€џKЬЏYќ[Э[ЫЉK
-^Э\€ЏYKЪ[™[ЋКKњ™[™\ЉJ‹
-_KњЏ^ШЬ™X]Q[[Y[ќ›‹њYЫY[ќљ‹™[™\Ћ™ќ[Э[ЫЉKЉ^Э\€‹ЛNЭ[‹—ЧЙ‰ќ[‹—ЧКK
-KПJЏH™ќ[Э[Ы€ЏO]\[Щ€ЉOЫќ[›‰‰›‹—ЧЪЯ—ЧЪЛOVЧK›ЉOJ\‰‰›џ
-K—ЧЪПX›Љ‹ќ[ЩWJKЯ‹‹›ЪYOO]›ЭЫ™\”Х‘С[[Y[ќ\‰‰›ЏЦЫ—N›ПЫќ[ќ™љ\њЭЪ[ЫЫ‹Ш[
-Ъ[›Щ\КN›ќ[K\‰‰›ЏЫЋ›ПЫЛ—ЧЩNќ™љ\њЭЪ[ЉKЉKJ__NЩќ[Э[Ы€ЉJ^Э\€YKњ[™[XЩ[Y[ќЏYKЫЫќZ[™\‹ЏYK™›Ь›KПYK™[ќљ\›Ы›Y[ќO[‹™Щ]›Э[™[™РЫY[ќ™XЭ
-
-KOJЛњYЩVSЩ™њЩ]Л™ШЭ[Y[ќ™ШЭ[Y[ќ[[Y[ќњШЬ›ЫЬЛ™ШЭ[Y[ќ›ЩKњШЬ›ЫЬ
-JЪKќЬ
-ЪKљZYЪЬЭЪ]Ъ
-
-^ШШ\ЩHњЭ\ќЋњ™]\›ћЭЬќKYќљK›YќNШШ\ЩH™[™Ћњ™]\›ћЭЬќKљYЪ›Л™ШЭ[Y[ќ™ШЭ[Y[ќ[[Y[ќЫY[ќЪYJK›Yќ
-ЪKќЪY
-_NШШ\ЩH™ќ[]ЪYЋњ™]\›ћЭЬќKYќЊљYЪЊЪY€ќ[њЩ]‹X^ЪY€ќ[њЩ]џNШШ\ЩHљ[њ]]Ь\\‹]ЪYЋќ\€O\‹™Щ]›Э[™[™РЫY[ќ™XЭ
-
-NЬ™]\›ћЭЬќKYќK›YќљYЪ›Л™ШЭ[Y[ќ™ШЭ[Y[ќ[[Y[ќЫY[ќЪYJK›Yќ
-ШKќЪY
-KЪY€ќ[њЩ]‹X^ЪY€ќ[њЩ]џNЩY][ќ›ЭИ™]И\њ›ЬЉ–Р]]ШЫЫ\]WHH[™[XЩ[Y[ќ[YH‹ЫЫШ]
-”УУ‹њЭљ[™ЪYћJ
-K€\И›Э[Y€ЉJ__]\€ЬЏVЮЬЩYЫY[ќ€]]ШЫЫ\]KZњИ‹™\њЪ[ЫЋ“ЯWK\ЏVИЫЫ\Ы™[ќИ—NЭ\€\ЏYќ[Э[ЫЉK
-^Щќ[Э[Ы€Љ
-^Ь™]\›€JЬЩX\ЪЫY[ќќњЩX\ЪЫY[ќ]Y\љY\Оќњ™\]Y\ЭЛ›X\
-
-ќ[Э[ЫЉJ^Ь™]\›€Kњ]Y\ћ_JJ_JKќ[Љ
-ќ[Э[ЫЉJ^Ь™]\›€K›X\
-
-ќ[Э[ЫЉKЉ^Э\€Џ]њ™\]Y\ЭЦЫ—NЬ™]\›ћЪ][\О™KЫЭ\ЩRYњ‹њЫЭ\ЩRY[њЩ›Ь›T™\ЬЫњЩNњ‹ќ[њЩ›Ь›T™\ЬЫњЩ__JJ_JJ_\™]\›€ќ[Э[ЫЉJ^Ь™]\›€ќ[Э[ЫЉЉ^Ь™]\›€\Љ\ЉЬ™\]Y\Э\’Yќ^XЭ]N›џKJKЉ___J
-ќ[Э[ЫЉJ^Ь™]\›€ќ[Э[ЫЉJ^Э\€YKњЩX\ЪЫY[ќЏYKњ]Y\љY\ЛЏYKќ\Щ\ђYЩ[ќЛП]›ЪYOO\ЏЦЧNњЋИ™ќ[Э[Ы€ЏO]\[Щ€Y[ЫЫXPYЩ[ќ	‰–ЧKЫЫШ]
-њЉКKњЉКJK™›Ь‘XXЪ
-
-ќ[Э[ЫЉJ^Э\€ЏYKњЩYЫY[ќЏYKќ™\њЪ[ЫЋЭY[ЫЫXPYЩ[ќ
-‹Љ_JJNЭ\€OYќ[Э[ЫЉJ^Э\€YKќ[њЬЬќ\џЯKЏ]љXY\њЯ\ЩRXY\њЯЯKЏ]њ]Y\ћT\[Y]\њЯ\ЩT]Y\ћT\[Y]\њЯЯKПHћX[ЫЫXKX\XШ][Ы‹ZY‹OHћX[ЫЫXKX\KZЩ^HЋЬ™]\›ћШ\Y›–ЫЧ_–ЫЧK\RЩ^N›–ЪW_–ЪW__J
-KOZK\YOZK\RЩ^NЬ™]\›€њЩX\Ъ
-‹›X\
-
-ќ[Э[ЫЉJ^Э\€YKњ\[\ОЬ™]\›€њЉњЉЯK\ЉKЬЉJKЯKЬ\[\О™њЉЪ]Ф\”YЩNЌKYЪYЪ™UYО‘›‹YЪYЪЬЭYО•[џK
-_J_JJJKќ[Љ
-ќ[Э[ЫЉJ^Ь™]\›€Kњ™\Э[Л›X\
-
-ќ[Э[ЫЉK
-^Э\€ЋЬ™]\›€њЉњЉЯKJKЯKЪ]О›ќ[OOJЏYKљ]К_›ЪYOO\ЏЭ›ЪYњ‹›X\
-
-ќ[Э[ЫЉЉ^Ь™]\›€њЉњЉЯKЉKЯKЧЧШ]]ШЫЫ\]WЪ[™^[YN™Kљ[™^–ЭKљ[™^[YKЧШ]]ШЫЫ\]WЬ]Y\ћRQ™Kњ]Y\ћRQЧШ]]ШЫЫ\]WШ[ЫЫXPЬ™Y[ќX[ОћШ\YќK\RЩ^N__J_JJ_J_JJ_JJ_JЉЉЯKJKЯKЭ\Щ\ђYЩ[ќОќЬџJJ_JK[ЫЫXHЉNЭ\€\ЏP\ЉЭ[њЩ›Ь›T™\ЬЫњЩN™ќ[Э[ЫЉJ^Ь™]\›€Kљ]Я_JNЩK]]ШЫЫ\]OYќ[Э[ЫЉJ^Э\€ЏYќ[Э[ЫЉ
-^Э\€OVЧKVЧNЩќ[Э[Ы€ЉЉ^ЩKњ\Ъ
-ЉNЭ\€Џ[Љ
-NЭњ\Ъ
-Љ_\™]\›ћЬќ[‘Y™™XЭ›‹ЫX[ќ\Y™™XЭО™ќ[Э[ЫЉ
-^Э\€O]ЭVЧKK™›Ь‘XXЪ
-
-ќ[Э[ЫЉJ^ЩJ
-_JJ_Kќ[‘Y™™XЭО™ќ[Э[ЫЉ
-^Э\€YNЩOVЧK™›Ь‘XXЪ
-
-ќ[Э[ЫЉJ^ЫЉJ_JJ___J
-KO\‹њќ[‘Y™™XЭ\‹ЫX[ќ\Y™™XЭЛП\‹њќ[‘Y™™XЭЛПJVЧKЬ™XXЭ]™N™ќ[Э[ЫЉJ^Э\€ЏYJ
-KЏ^ЧЩ›Ћ™KЬ™YЋћШЭ\њ™[ќ›џKЩ][YJ
-^Ь™]\›€\Л—Ь™Y‹Э\њ™[ќKЩ][YJJ^Э\Л—Ь™Y‹Э\њ™[ќY__NЬ™]\›€њ\Ъ
-ЉKџKќ[”™XXЭ]™\О™ќ[Э[ЫЉ
-^Э™›Ь‘XXЪ
-
-ќ[Э[ЫЉJ^ЩK—Ь™Y‹Э\њ™[ќYK—Щ›Љ
-_JJ__JKO\Лњ™XXЭ]™KЏ\Лњќ[”™XXЭ]™\ЛOYЉLJKПYЉJKYЉ›ЪY
-KП[J
-ќ[Э[ЫЉ
-^Ь™]\›€ќ[Э[ЫЉJ^Э\€ЏYKЫ\ЬУ[Y\ЛПYKЫЫќZ[™\‹OYK™Щ][ќљ\›Ы›Y[ќ›ЬЛOYK™Щ]›Ь›T›ЬЛYK™Щ][њ]›ЬЛПYK™Щ]][T›ЬЛПYK™Щ]X™[›ЬЛЏYK™Щ]\Э›ЬЛYK™Щ][™[›ЬЛOYK™Щ]›ЫЭ›ЬЛЏYKњ[™[ЫЫќZ[™\‹OYKњ[™[XЩ[Y[ќЏYKњ™[™\‹ПYKњ™[™\“›Ф™\Э[ЛYKњ™[™\™\‹ПYK™]XЪYYYXT]Y\ћKПYKЫЫ\Ы™[ќЛПYKќ[њЫ][ЫњЛЏ]JKЬЉKHќ[™Yљ[™Y€O]\[Щ€Ъ[™ЭПЭЪ[™ЭОћЯKПU]
-КNЭЛќYУ[YNЭ\€O[ЉЉЯKњЉK
-KO^ТYЪYЪћ\ЉJK™]™\њЩRYЪYЪњЉJK™]™\њЩTЫљ\]™ЬЉJKЫљ\]љЉJ_NЬ™]\›ћЬ™[™\™\ЋћШЫ\ЬУ[Y\О“]
-Ь‹ќ[O\ЏЬЋћЯJKЫЫќZ[™\ЋќЛЩ][ќљ\›Ы›Y[ќ›ЬО›ќ[OZOЪN™ќ[Э[ЫЉJ^Ь™]\›€Kњ›ЬЯKЩ]›Ь›T›ЬО›ќ[OXOШN™ќ[Э[ЫЉJ^Ь™]\›€Kњ›ЬЯKЩ][њ]›ЬО›ќ[O[Ы™ќ[Э[ЫЉJ^Ь™]\›€Kњ›ЬЯKЩ]][T›ЬО›ќ[OXПШО™ќ[Э[ЫЉJ^Ь™]\›€Kњ›ЬЯKЩ]X™[›ЬО›ќ[O\ПЬО™ќ[Э[ЫЉJ^Ь™]\›€Kњ›ЬЯKЩ]\Э›ЬО›ќ[OYЏЩЋ™ќ[Э[ЫЉJ^Ь™]\›€Kњ›ЬЯKЩ][™[›ЬО›ќ[O\Ь™ќ[Э[ЫЉJ^Ь™]\›€Kњ›ЬЯKЩ]›ЫЭ›ЬО›ќ[O[OЫN™ќ[Э[ЫЉJ^Ь™]\›€Kњ›ЬЯK[™[ЫЫќZ[™\ЋќЏХ]
-ЉN”™ШЭ[Y[ќ›ЩK[™[XЩ[Y[ќ›ќ[O^OЮN€љ[њ]]Ь\\‹]ЪY‹™[™\Ћ›ќ[OXЏШЋ”Ь‹™[™\“›Ф™\Э[О™Л™[™\™\Ћ’K]XЪYYYXT]Y\ћN›ќ[OWПЧО™Щ]ЫЫ\]YЭ[J™ШЭ[Y[ќ™ШЭ[Y[ќ[[Y[ќ
-K™Щ]›Ь\ќU[YJ‹KXXKY]XЪY[YYXK\]Y\ћHЉKЫЫ\Ы™[ќО›ЉЉЯKJKКK[њЫ][ЫњО›ЉЉЯKШЫX\ђќ]Ы•]N€ђЫX\€‹]XЪYШ[Щ[ќ]Ы•^€ђШ[Щ[‹]XЪYЩX\Ъќ]Ы•]N€”ЩX\Ъ‹ЭX›Z]ќ]Ы•]N€”ЭX›Z]џJKК_KЫЬ™N›ЉЉЯKЉKЯKЪY›ќ[OOJZ‹љY
-I‰ќ›ЪYOO]Э™
-
-K[ќљ\›Ы›Y[ќ”J__JЛЭ\њ™[ќ
-_JJKП[J
-ќ[Э[ЫЉ
-^Ь™]\›€Лќ[YKЫЬ™K™[ќљ\›Ы›Y[ќ›X]ЪYYXJЛќ[YKњ™[™\™\‹™]XЪYYYXT]Y\ћJK›X]Ъ\ЯJJKП[J
-ќ[Э[ЫЉ
-^Ь™]\›€]
-ЉЉЯKЛќ[YKЫЬ™JKЯKЫЫ”Э]PЪ[™ЩN™ќ[Э[ЫЉJ^Э\€‹ЋЮKЭ\њ™[ќYKњЭ]KЫЫXЭ[ЫњЛњЫЫYJ
-ќ[Э[ЫЉJ^Ь™]\›€KњЫЭ\ЩKќ[\]\Л››Ф™\Э[ЯJJKќ[OOJZЭ\њ™[ќ
-_›ЪYOO]Ш[
-JKќ[OOJЏJЏWЛќ[YKЫЬ™JK›Ы”Э]PЪ[™ЩJ_›ЪYOO[џ‹Ш[
-‹J_KЪЭ[[™[Ь[Ћ™ЛЭ\њ™[ќњЪЭ[[™[Ь[џќ[Э[ЫЉJ^Э\€YKњЭ]NЪYЉЛќ[YJ\™]\›€LЭ\€ЏXЉ
-OЊЪYЉWЛќ[YKЫЬ™K›Ь[“Ы‘›ШЭ\Й‰€]њ]Y\ћJ\™]\›€ЋЭ\€ЏP›ЫЫX[ЉKЭ\њ™[ќЛќ[YKњ™[™\™\‹њ™[™\“›Ф™\Э[КNЬ™]\›€[‰‰њџџKЧШ]]ШЫЫ\]WЫY]Y]NћЭ\Щ\ђYЩ[ќОќЬ‹Ь[ЫњО™__JJ_JJKЏYЉЉШЫЫXЭ[ЫњО–ЧKЫЫ\][ЫЋ›ќ[ЫЫќ^ћЯK\УЬ[Ћ€LK]Y\ћN€€‹XЭ]™R][RY›ќ[Э]\О€љYHџKЛќ[YKЫЬ™Kљ[љ]X[Э]JJK^ЩЩ][ќљ\›Ы›Y[ќ›ЬО—Лќ[YKњ™[™\™\‹™Щ][ќљ\›Ы›Y[ќ›ЬЛЩ]›Ь›T›ЬО—Лќ[YKњ™[™\™\‹™Щ]›Ь›T›ЬЛЩ][њ]›ЬО—Лќ[YKњ™[™\™\‹™Щ][њ]›ЬЛЩ]][T›ЬО—Лќ[YKњ™[™\™\‹™Щ]][T›ЬЛЩ]X™[›ЬО—Лќ[YKњ™[™\™\‹™Щ]X™[›ЬЛЩ]\Э›ЬО—Лќ[YKњ™[™\™\‹™Щ]\Э›ЬЛЩ][™[›ЬО—Лќ[YKњ™[™\™\‹™Щ][™[›ЬЛЩ]›ЫЭ›ЬО—Лќ[YKњ™[™\™\‹™Щ]›ЫЭ›ЬЯKП^ЬЩ]XЭ]™R][RY”Лќ[YKњЩ]XЭ]™R][RYЩ]]Y\ћN”Лќ[YKњЩ]]Y\ћKЩ]ЫЫXЭ[ЫњО”Лќ[YKњЩ]ЫЫXЭ[ЫњЛЩ]\УЬ[Ћ”Лќ[YKњЩ]\УЬ[‹Щ]Э]\О”Лќ[YKњЩ]Э]\ЛЩ]ЫЫќ^”Лќ[YKњЩ]ЫЫќ^™Yњ™\Ъ”Лќ[YKњ™Yњ™\Ъ]љYШ]ЬЋ”Лќ[YK›]љYШ]ЬџKO[J
-ќ[Э[ЫЉ
-^Ь™]\›€љ[™
-Лќ[YKњ™[™\™\‹њ™[™\™\‹Ь™X]Q[[Y[ќ
-_JJKO[J
-ќ[Э[ЫЉ
-^Ь™]\›€›ЉШ]]ШЫЫ\]N”Лќ[YK]]ШЫЫ\]TШЫЬP\NќЛЫ\ЬУ[Y\О—Лќ[YKњ™[™\™\‹Ы\ЬУ[Y\Л[ќљ\›Ы›Y[ќ—Лќ[YKЫЬ™K™[ќљ\›Ы›Y[ќ\С]XЪY“Лќ[YKXЩZЫ\Ћ—Лќ[YKЫЬ™KњXЩZЫ\‹›ЬЩ]\њО”Щ]\У[Щ[Ь[ЋљЛЭ]Nљ‹Э\њ™[ќ[њЫ][ЫњО—Лќ[YKњ™[™\™\‹ќ[њЫ][ЫњЯJ_JJNЩќ[Э[Ы€J
-^Тќ
-Kќ[YKњ[™[ЬЭ[N“Лќ[YOЮЯN”ЉЬ[™[XЩ[Y[ќ—Лќ[YKњ™[™\™\‹њ[™[XЩ[Y[ќЫЫќZ[™\ЋђKќ[YKњ›ЫЭ›Ь›NђKќ[YK™›Ь›K[ќљ\›Ы›Y[ќ—Лќ[YKЫЬ™K™[ќљ\›Ы›Y[ќJ_J_Yќ[Э[Ы€
-J^Ъ‹Э\њ™[ќYNЭ\€^Ш]]ШЫЫ\]N”Лќ[YK]]ШЫЫ\]TШЫЬP\NќЛЫ\ЬУ[Y\О—Лќ[YKњ™[™\™\‹Ы\ЬУ[Y\ЛЫЫ\Ы™[ќО—Лќ[YKњ™[™\™\‹ЫЫ\Ы™[ќЛЫЫќZ[™\Ћ—Лќ[YKњ™[™\™\‹ЫЫќZ[™\‹[’Kќ[YKЫNђKќ[YK[™[ЫЫќZ[™\Ћ“Лќ[YOРKќ[YK™]XЪYЫЫќZ[™\Ћ—Лќ[YKњ™[™\™\‹њ[™[ЫЫќZ[™\‹›ЬЩ]\њО”Э]Nљ‹Э\њ™[ќ™[™\™\Ћ—Лќ[YKњ™[™\™\‹њ™[™\™\џKЏHXЉJI‰€^KЭ\њ™[ќ	‰—Лќ[YKњ™[™\™\‹њ™[™\“›Ф™\Э[ЯЛќ[YKњ™[™\™\‹њ™[™\ЋИYќ[Э[ЫЉJ^Э\€YK]]ШЫЫ\]KЏYK]]ШЫЫ\]TШЫЬP\KПYK™ЫKOYKњ›ЬЩ]\њЛOYKњЭ]NЦ
-Лњ›ЫЭK™Щ]›ЫЭ›ЬКЉЬЭ]NќK›ЬОќ™Щ]›ЫЭ›ЬКЯJ_KЉJJK
-Лљ[њ]K™Щ][њ]›ЬКЉЬЭ]NќK›ЬОќ™Щ][њ]›ЬКЪ[њ][[Y[ќ›Лљ[њ]JK[њ][[Y[ќ›Лљ[њ]KЉJJKќ
-Л›X™[ЪY[Ћ€њЭ[YЏOO]KњЭ]\ЯJKќ
-Л›ШY[™Т[™XШ]Ь‹ЪY[Ћ€њЭ[Y€OO]KњЭ]\ЯJKќ
-ЛЫX\ђќ]Ы‹ЪY[Ћ€]Kњ]Y\ћ_JKќ
-Л™]XЪYЩX\Ъќ]Ы”]Y\ћKЭ^ЫЫќ[ќќKњ]Y\ћ_JKќ
-Л™]XЪYЩX\Ъќ]Ы”XЩZЫ\‹ЪY[Ћђ›ЫЫX[ЉKњ]Y\ћJ_J_J
-Kќ[Э[ЫЉK
-^Э\€Џ]]]ШЫЫ\]KП]]]ШЫЫ\]TШЫЬP\KO]Ы\ЬУ[Y\ЛO]љ[]™ЫKП]њ[™[ЫЫќZ[™\‹П]њ›ЬЩ]\њЛЏ]њЭ]K]ЫЫ\Ы™[ќЛO]њ™[™\™\ЋЪYЉ‹љ\УЬ[Љ^ШЛЫЫќZ[њКњ[™[
-_›ШY[™ИЏOOY‹њЭ]\ЯЛ\[™Ъ[
-њ[™[
-Kњ[™[Ы\ЬУ\ЭќЩЩЫJXKT[™[K\Э[Y‹њЭ[YЏOOY‹њЭ]\КNЭ\€ЏY‹ЫЫXЭ[ЫњЛ™љ[\Љ
-ќ[Э[ЫЉJ^Э\€YKњЫЭ\ЩKЏYKљ][\ОЬ™]\›€ќ[\]\Л››Ф™\Э[Я‹›[™ЭЊJJK›X\
-
-ќ[Э[ЫЉK
-^Э\€YKњЫЭ\ЩKПYKљ][\ОЬ™]\›€KЬ™X]Q[[Y[ќ
-њЩXЭ[Ы€‹ЪЩ^NќЫ\ЬУ[YNќKњЫЭ\ЩK™]KX]]ШЫЫ\]K\ЫЭ\ЩKZYЋ›њЫЭ\ЩRYKќ[\]\ЛљXY\‰‰›KЬ™X]Q[[Y[ќ
-™]€‹ШЫ\ЬУ[YNќKњЫЭ\ЩRXY\џKќ[\]\ЛљXY\ЉШЫЫ\Ы™[ќОњЬ™X]Q[[Y[ќ›KЬ™X]Q[[Y[ќњYЫY[ќ›K‘њYЫY[ќ][\ОЛЫЭ\ЩN›Э]N™‹[_JJKќ[\]\Л››Ф™\Э[Й‰ЊOOXЛ›[™ЭЫKЬ™X]Q[[Y[ќ
-™]€‹ШЫ\ЬУ[YNќKњЫЭ\ЩS›Ф™\Э[ЯKќ[\]\Л››Ф™\Э[КШЫЫ\Ы™[ќОњЬ™X]Q[[Y[ќ›KЬ™X]Q[[Y[ќњYЫY[ќ›K‘њYЫY[ќЫЭ\ЩN›Э]N™‹[_JJN›KЬ™X]Q[[Y[ќ
-ќ[‹JШЫ\ЬУ[YNќK›\ЭKЛ™Щ]\Э›ЬКЉЬЭ]N™‹›ЬОњ‹™Щ]\Э›ЬКЬЫЭ\ЩN›J_KКJJKЛ›X\
-
-ќ[Э[ЫЉJ^Э\€\‹™Щ]][T›ЬКЪ][N™KЫЭ\ЩN›JNЬ™]\›€KЬ™X]Q[[Y[ќ
-›H‹JЪЩ^NќљYЫ\ЬУ[YNќKљ][_KЛ™Щ]][T›ЬКЉЬЭ]N™‹›ЬОќKКJJKќ[\]\Лљ][JШЫЫ\Ы™[ќОњЬ™X]Q[[Y[ќ›KЬ™X]Q[[Y[ќњYЫY[ќ›K‘њYЫY[ќ][N™KЭ]N™‹[_JJ_JJJKќ[\]\Л™›ЫЭ\‰‰›KЬ™X]Q[[Y[ќ
-™]€‹ШЫ\ЬУ[YNќKњЫЭ\ЩQ›ЫЭ\џKќ[\]\Л™›ЫЭ\ЉШЫЫ\Ы™[ќОњЬ™X]Q[[Y[ќ›KЬ™X]Q[[Y[ќњYЫY[ќ›K‘њYЫY[ќ][\ОЛЫЭ\ЩN›Э]N™‹[_JJJ_JJK[KЬ™X]Q[[Y[ќ
-K‘њYЫY[ќќ[KЬ™X]Q[[Y[ќ
-™]€‹ШЫ\ЬУ[YNќKњ[™[^[Э]KЉKKЬ™X]Q[[Y[ќ
-™]€‹ШЫ\ЬУ[YN€XKQЬYY[ќ›ЭЫHџJJKO]‹њ™YXЩJ
-ќ[Э[ЫЉK
-^Ь™]\›€VЭњ›ЬЦИ™]KX]]ШЫЫ\]K\ЫЭ\ЩKZY—WO]_JKЯJNЩJЉЉШЪ[™[Ћ™Э]N™‹ЩXЭ[ЫњОќ‹[[Y[ќОћ_KJKЯKШЫЫ\Ы™[ќОњ[_KКKњ[™[
-_Y[ЩHЛЫЫќZ[њКњ[™[
-I‰Лњ™[[Э™PЪ[
-њ[™[
-_J‹
-_Yќ[Э[Ы€К
-^Э\€OX\™Э[Y[ќЛ›[™ЭЊ	‰ќ›ЪYOOX\™Э[Y[ќЦМOШ\™Э[Y[ќЦМNћЯNЫ
-
-NЭ\€WЛќ[YKњ™[™\™\‹Џ]ЫЫ\Ы™[ќЛЏ]J\ЉNЩЛЭ\њ™[ќUќ
-‹Лќ[YKЫЬ™KШЫЫ\Ы™[ќО•Э
-‹
-ќ[Э[ЫЉJ^Ь™]\›€YKќ[YKљ\УЭЫ”›Ь\ќJ—ЧШ]]ШЫЫ\]WШЫЫ\Ы™[ќ[YHЉ_JJK[љ]X[Э]Nљ‹Э\њ™[ќKJKЉ
-KК
-KЛќ[YKњ™Yњ™\Ъ
-
-Kќ[Љ
-ќ[Э[ЫЉ
-^С
-‹Э\њ™[ќ
-_JJ_Yќ[Э[Ы€КJ^ЩHOOWЛќ[YKЫЬ™K™[ќљ\›Ы›Y[ќ™ШЭ[Y[ќ›ЩKЫЫќZ[њКKќ[YK™]XЪYЭ™\›^JI‰ЉOКЛќ[YKЫЬ™K™[ќљ\›Ы›Y[ќ™ШЭ[Y[ќ›ЩK\[™Ъ[
-Kќ[YK™]XЪYЭ™\›^JKЛќ[YKЫЬ™K™[ќљ\›Ы›Y[ќ™ШЭ[Y[ќ›ЩKЫ\ЬУ\ЭY
-XKQ]XЪYЉKKќ[YKљ[њ]™›ШЭ\К
-JNЉЛќ[YKЫЬ™K™[ќљ\›Ы›Y[ќ™ШЭ[Y[ќ›ЩKњ™[[Э™PЪ[
-Kќ[YK™]XЪYЭ™\›^JKЛќ[YKЫЬ™K™[ќљ\›Ы›Y[ќ™ШЭ[Y[ќ›ЩKЫ\ЬУ\Эњ™[[Э™JXKQ]XЪYЉJJ_\™]\›€J
-ќ[Э[ЫЉ
-^Э\€OTЛќ[YK™Щ][ќљ\›Ы›Y[ќ›ЬКЩ›Ь›Q[[Y[ќђKќ[YK™›Ь›K[™[[[Y[ќђKќ[YKњ[™[[њ][[Y[ќђKќ[YKљ[њ]JNЬ™]\›€ќ
-Лќ[YKЫЬ™K™[ќљ\›Ы›Y[ќJKќ[Э[ЫЉ
-^Тќ
-Лќ[YKЫЬ™K™[ќљ\›Ы›Y[ќШљ™XЭљЩ^\КJKњ™YXЩJ
-ќ[Э[ЫЉK
-^Ь™]\›€ЉЉЯKJKЯKКЯK›ЪY
-J_JKЯJJ__JJKJ
-ќ[Э[ЫЉ
-^Э\€OSЛќ[YOЧЛќ[YKЫЬ™K™[ќљ\›Ы›Y[ќ™ШЭ[Y[ќ›ЩN—Лќ[YKњ™[™\™\‹њ[™[ЫЫќZ[™\‹SЛќ[YOРKќ[YK™]XЪYЭ™\›^NђKќ[YKњ[™[Ь™]\›€Лќ[YI‰љ‹Э\њ™[ќљ\УЬ[‰‰љКL
-K
-‹Э\њ™[ќ
-Kќ[Э[ЫЉ
-^ЩKЫЫќZ[њК
-I‰ЉKњ™[[Э™PЪ[
-
-KKЫ\ЬУ\Эњ™[[Э™JXKQ]XЪYЉJ__JJKJ
-ќ[Э[ЫЉ
-^Э\€OWЛќ[YKњ™[™\™\‹ЫЫќZ[™\ЋЬ™]\›€K\[™Ъ[
-Kќ[YKњ›ЫЭ
-Kќ[Э[ЫЉ
-^ЩKњ™[[Э™PЪ[
-Kќ[YKњ›ЫЭ
-__JJKJ
-ќ[Э[ЫЉ
-^Э\€O\
-
-ќ[Э[ЫЉJ^С
-KњЭ]J_JK
-NЬ™]\›€Э\њ™[ќYќ[Э[ЫЉ
-^Э\€Џ]њЭ]KЏ]њ™]”Э]NКЛќ[YI‰њ‹љ\УЬ[€OO[‹љ\УЬ[‰‰љК‹љ\УЬ[ЉKЛќ[Y_[‹љ\УЬ[џ‹љ\УЬ[џJ
-K‹њ]Y\ћHOO\‹њ]Y\ћJI‰—Лќ[YKЫЬ™K™[ќљ\›Ы›Y[ќ™ШЭ[Y[ќњ]Y\ћTЩ[XЭЬђ[
-‹XKT[™[K\ШЬ›ЫX›HЉK™›Ь‘XXЪ
-
-ќ[Э[ЫЉJ^МOOYKњШЬ›ЫЬ	‰ЉKњШЬ›ЫЬL
-_JJNЩJЬЭ]N›џJ_Kќ[Э[ЫЉ
-^ЪЭ\њ™[ќ]›ЪY_JJKJ
-ќ[Э[ЫЉ
-^Э\€O\
-
-ќ[Э[ЫЉ
-^Э\€OSЛќ[YNУЛќ[YOWЛќ[YKЫЬ™K™[ќљ\›Ы›Y[ќ›X]ЪYYXJЛќ[YKњ™[™\™\‹™]XЪYYYXT]Y\ћJK›X]Ъ\ЛHOOSЛќ[YOРКЯJNњ™\]Y\Э[љ[X][Ы‘њ[YJJ_JKЊ
-NЬ™]\›€Лќ[YKЫЬ™K™[ќљ\›Ы›Y[ќY]™[ќ\Э[™\Љњ™\Ъ^™H‹JKќ[Э[ЫЉ
-^ЧЛќ[YKЫЬ™K™[ќљ\›Ы›Y[ќњ™[[Э™Q]™[ќ\Э[™\Љњ™\Ъ^™H‹J__JJKJ
-ќ[Э[ЫЉ
-^ЪYЉSЛќ[YJ\™]\›€ќ[Э[ЫЉ
-^ЯNЩќ[Э[Ы€JJ^РKќ[YK™]XЪYЫЫќZ[™\‹Ы\ЬУ\ЭќЩЩЫJXKQ]XЪYЫЫќZ[™\‹K[[Щ[‹J_Yќ[Э[Ы€
-
-^ЩJ›X]Ъ\К_]\€ЏWЛќ[YKЫЬ™K™[ќљ\›Ы›Y[ќ›X]ЪYYXJЩ]ЫЫ\]YЭ[JЛќ[YKЫЬ™K™[ќљ\›Ы›Y[ќ™ШЭ[Y[ќ™ШЭ[Y[ќ[[Y[ќ
-K™Щ]›Ь\ќU[YJ‹KXXKY]XЪY[[Щ[[YYXK\]Y\ћHЉJNЩJ‹›X]Ъ\КNЭ\€ЏP›ЫЫX[Љ‹Y]™[ќ\Э[™\ЉNЬ™]\›€ЏЫ‹Y]™[ќ\Э[™\ЉЪ[™ЩH‹
-N›‹Y\Э[™\Љ
-Kќ[Э[ЫЉ
-^ЬЏЫ‹њ™[[Э™Q]™[ќ\Э[™\ЉЪ[™ЩH‹
-N›‹њ™[[Э™S\Э[™\Љ
-__JJKJ
-ќ[Э[ЫЉ
-^Ь™]\›€™\]Y\Э[љ[X][Ы‘њ[YJJKќ[Э[ЫЉ
-^Я_JJKЉЉЯKКKЯKЭ\]NђЛ\Э›ЮN™ќ[Э[ЫЉ
-^Ы
-
-__J_KK™Щ][ЫЫXQXЩ]ПYќ[Э[ЫЉJ^Э\€P\ЉЭ[њЩ›Ь›T™\ЬЫњЩN™ќ[Э[ЫЉJ^Ь™]\›€K™XЩ]]Я_JKЏYKњ]Y\љY\Л›X\
-
-ќ[Э[ЫЉJ^Ь™]\›€ЉЉЯKJKЯKЭ\N€™XЩ]џJ_JJNЬ™]\›€
-ЉЉЯKJKЯKЬ]Y\љY\ОњџJJ_KK™Щ][ЫЫXT™\Э[ПQ\‹Шљ™XЭ™Yљ[™T›Ь\ќJK—ЧЩ\У[Щ[H‹Э[YN€LJ_JJNВ‚

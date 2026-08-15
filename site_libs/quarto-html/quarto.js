@@ -1,447 +1,845 @@
-şŠmş&yºŞÃòân¶«Ëñè™æë{Ü™ßì…éez{ì†X§{_?n)ÿ¦Ã©z¶­Š‰ç¢Ú^®h­µçZ[\Ü
-ˆ\ÈXœÙ]Èœ›ÛH‹‹İXœÙ]ËİXœÙ]ËšœÈÂ‚˜ÛÛœİÙXİ[ÛÚ[™ÙYH™]Èİ\İÛQ]™[
-œ]X\Ë\ÙXİ[ÛÚ[™ÙY‹Âˆ]Z[ˆßKˆX˜›\ÎˆYKˆØ[˜Ù[X›Nˆ˜[ÙKˆÛÛ\ÜÙYˆ˜[ÙKŸJNÂ‚˜ÛÛœİ^[İ]X\™Ú[‘[ÈH
+import * as tabsets from "./tabsets/tabsets.js";
 
-HOˆÂˆËÈš[™[HÛÛ™›Xİ[™ÈX\™Ú[ˆ[[Y[È[™YX\™Ú[œÈÈBˆËÈÜÈ™]™[İ™\›\ˆÛÛœİX\™Ú[Ú[™[ˆHÚ[™İË™Øİ[Y[œ]Y\TÙ[XİÜ[
-ˆ‹˜ÛÛ[[‹[X\™Ú[‹˜ÛÛ[[‹XÛÛZ[™\ˆˆ
-‹›X\™Ú[‹XØ\[Û‹˜\ÚYH‚ˆ
-NÂ‚ˆ]\İ›İÛHHÂˆ›Üˆ
-ÛÛœİX\™Ú[Ú[ÙˆX\™Ú[Ú[™[ŠHÂˆYˆ
-X\™Ú[Ú[›Ù™œÙ]\™[OOH[
-HÂˆËÈÛX\ˆHÜX\™Ú[ˆÛÈÙH™XÛÛ\]H]ˆX\™Ú[Ú[œİ[K›X\™Ú[•ÜH[ÂˆÛÛœİÜHX\™Ú[Ú[™Ù]›İ[™[™ĞÛY[™Xİ
+const sectionChanged = new CustomEvent("quarto-sectionChanged", {
+  detail: {},
+  bubbles: true,
+  cancelable: false,
+  composed: false,
+});
 
-KÜ
-ÈÚ[™İËœØÜ›ÛNÂˆYˆ
-Ü\İ›İÛJHÂˆÛÛœİX\™Ú[Ú[İ[HHÚ[™İË™Ù]ÛÛ\]Yİ[JX\™Ú[Ú[
-NÂˆÛÛœİX\™Ú[›İÛHH\œÙQ›Ø]
-X\™Ú[Ú[İ[VÈ›X\™Ú[›İÛH—JNÂˆÛÛœİX\™Ú[ˆH\İ›İÛHHÜ
-ÈX\™Ú[›İÛNÂˆX\™Ú[Ú[œİ[K›X\™Ú[•ÜH	ÛX\™Ú[Ÿ\ÂˆBˆÛÛœİİ[\ÈHÚ[™İË™Ù]ÛÛ\]Yİ[JX\™Ú[Ú[
-NÂˆÛÛœİX\™Ú[•ÜH\œÙQ›Ø]
-İ[\ÖÈ›X\™Ú[•Ü—JNÂˆ\İ›İÛHHÜ
-ÈX\™Ú[Ú[™Ù]›İ[™[™ĞÛY[™Xİ
+const layoutMarginEls = () => {
+  // Find any conflicting margin elements and add margins to the
+  // top to prevent overlap
+  const marginChildren = window.document.querySelectorAll(
+    ".column-margin.column-container > *, .margin-caption, .aside"
+  );
 
-KšZYÚ
-ÈX\™Ú[•ÜÂˆBˆBŸNÂ‚Ú[™İË™Øİ[Y[˜Y]™[\İ[™\Š‘ÓPÛÛ[ØYY‹[˜İ[Ûˆ
-Ù]™[
-HÂˆËÈ™XÛÛ\]HHÜÚ][ÛˆÙˆX\™Ú[ˆ[[Y[È[][YHH›ÙHÚ^™HÚ[™Ù\ÂˆYˆ
-Ú[™İË”™\Ú^™SØœÙ\™\ŠHÂˆÛÛœİ™\Ú^™SØœÙ\™\ˆH™]ÈÚ[™İË”™\Ú^™SØœÙ\™\Šˆ›İJ
+  let lastBottom = 0;
+  for (const marginChild of marginChildren) {
+    if (marginChild.offsetParent !== null) {
+      // clear the top margin so we recompute it
+      marginChild.style.marginTop = null;
+      const top = marginChild.getBoundingClientRect().top + window.scrollY;
+      if (top < lastBottom) {
+        const marginChildStyle = window.getComputedStyle(marginChild);
+        const marginBottom = parseFloat(marginChildStyle["marginBottom"]);
+        const margin = lastBottom - top + marginBottom;
+        marginChild.style.marginTop = `${margin}px`;
+      }
+      const styles = window.getComputedStyle(marginChild);
+      const marginTop = parseFloat(styles["marginTop"]);
+      lastBottom = top + marginChild.getBoundingClientRect().height + marginTop;
+    }
+  }
+};
 
-HOˆÂˆ^[İ]X\™Ú[‘[Ê
-NÂˆYˆ
-ˆÚ[™İË™Øİ[Y[˜›ÙK™Ù]›İ[™[™ĞÛY[™Xİ
+window.document.addEventListener("DOMContentLoaded", function (_event) {
+  // Recompute the position of margin elements anytime the body size changes
+  if (window.ResizeObserver) {
+    const resizeObserver = new window.ResizeObserver(
+      throttle(() => {
+        layoutMarginEls();
+        if (
+          window.document.body.getBoundingClientRect().width < 990 &&
+          isReaderMode()
+        ) {
+          quartoToggleReader();
+        }
+      }, 50)
+    );
+    resizeObserver.observe(window.document.body);
+  }
 
-KÚYNL	‰‚ˆ\Ô™XY\“[ÙJ
-Bˆ
-HÂˆ]X\ÕÙÙÛT™XY\Š
-NÂˆBˆKL
-Bˆ
-NÂˆ™\Ú^™SØœÙ\™\‹›ØœÙ\™JÚ[™İË™Øİ[Y[˜›ÙJNÂˆB‚ˆÛÛœİØÑ[HÚ[™İË™Øİ[Y[œ]Y\TÙ[XİÜŠ	Û˜]‹ØËXXİ]™VÜ›ÛOH™ØË]ØÈ—IÊNÂˆÛÛœİÚYX˜\‘[HÚ[™İË™Øİ[Y[™Ù][[Y[RY
-œ]X\Ë\ÚYX˜\ˆŠNÂˆÛÛœİYØÑ[HÚ[™İË™Øİ[Y[™Ù][[Y[RY
-œ]X\Ë\ÚYX˜\‹]ØË[YŠNÂˆÛÛœİX\™Ú[”ÚYX˜\‘[HÚ[™İË™Øİ[Y[™Ù][[Y[RY
-ˆœ]X\Ë[X\™Ú[‹\ÚYX˜\ˆ‚ˆ
-NÂˆËÈ[˜İ[ÛˆÈ]\›Z[™HÚ]\ˆH[[Y[\ÈH™]š[İ\ÈÚX›[™È]\ÈXİ]™BˆÛÛœİ™]”ÚX›[™Ò\ĞXİ]™S[šÈH
-[
-HOˆÂˆÛÛœİÚX›[™ÈH[œ™]š[İ\Ñ[[Y[ÚX›[™ÎÂˆYˆ
-ÚX›[™È	‰ˆÚX›[™ËYÓ˜[YHOOHHŠHÂˆ™]\›ˆÚX›[™Ë˜Û\ÜÓ\İ˜ÛÛZ[œÊ˜Xİ]™HŠNÂˆH[ÙHÂˆ™]\›ˆ˜[ÙNÂˆBˆNÂ‚ˆËÈ\Ü]Ú›Üˆ[ÚYÙ]ÂˆËÈ^H\ÙHÛYY[\ˆ]™[ÈšYÙÙ\ˆ™\Ú^™Bˆ[˜İ[Ûˆš\™TÛYQ[\Š
-HÂˆÛÛœİ]™[HÚ[™İË™Øİ[Y[˜Ü™X]Q]™[
-‘]™[ŠNÂˆ]™[š[š]]™[
-œÛYY[\ˆ‹YKYJNÂˆÚ[™İË™Øİ[Y[™\Ü]Ú]™[
-]™[
-NÂˆB‚ˆÛÛœİXœÈHÚ[™İË™Øİ[Y[œ]Y\TÙ[XİÜ[
-	ØVÙ]KXœË]ÙÙÛOHXˆ—IÊNÂˆXœË™›Ü‘XXÚ
+  const tocEl = window.document.querySelector('nav.toc-active[role="doc-toc"]');
+  const sidebarEl = window.document.getElementById("quarto-sidebar");
+  const leftTocEl = window.document.getElementById("quarto-sidebar-toc-left");
+  const marginSidebarEl = window.document.getElementById(
+    "quarto-margin-sidebar"
+  );
+  // function to determine whether the element has a previous sibling that is active
+  const prevSiblingIsActiveLink = (el) => {
+    const sibling = el.previousElementSibling;
+    if (sibling && sibling.tagName === "A") {
+      return sibling.classList.contains("active");
+    } else {
+      return false;
+    }
+  };
 
-XŠHOˆÂˆX‹˜Y]™[\İ[™\ŠœÚİÛ‹˜œËXˆ‹š\™TÛYQ[\ŠNÂˆJNÂ‚ˆËÈ\Ü]Ú›ÜˆÚ[BˆËÈ^H\ÙH”ÈÚİÛˆ[™Y[ˆ]™[ÈÈšYÙÙ\ˆ™[™\š[™Âˆ[˜İ[Ûˆ\İ]ÚÚ[Q]™[Ê™]š[İ\Ëİ\œ™[
-HÂˆYˆ
-Ú[™İËš”]Y\JHÂˆYˆ
-™]š[İ\ÊHÂˆÚ[™İËš”]Y\J™]š[İ\ÊKšYÙÙ\ŠšY[ˆŠNÂˆBˆYˆ
-İ\œ™[
-HÂˆÚ[™İËš”]Y\Jİ\œ™[
-KšYÙÙ\ŠœÚİÛˆŠNÂˆBˆBˆB‚ˆËÈX˜KšœÈ\İ[™\ˆšYÙÙ\ˆ]™[›Üˆ[ÚYÙ][™Ú[BˆØİ[Y[˜Y]™[\İ[™\ŠˆX˜H‹ˆ[˜İ[Ûˆ
-]™[
-HÂˆš\™TÛYQ[\Š
-NÂˆ\İ]ÚÚ[Q]™[Ê]™[™]Z[œ™]š[İ\ÕX‹]™[™]Z[XŠNÂˆKˆ˜[ÙBˆ
-NÂ‚ˆËÈ˜XÚÈØÜ›Û[™È[™X\šÈĞÈ[šÜÈ\ÈXİ]™BˆËÈÙ]X›HÙˆÛÛ[È[™ÚYX˜\ˆ
-˜Z[YˆÙHÛ‰İ]™H]X\İÛ™JBˆÛÛœİØÓ[šÜÈHØÑ[ˆÈË‹‹ØÑ[œ]Y\TÙ[XİÜ[
-˜VÙ]K\ØÜ›Û]\™Ù]HŠWBˆˆ×NÂˆÛÛœİXZÙPXİ]™HH
-[šÊHOˆØÓ[šÜÖÛ[š×K˜Û\ÜÓ\İ˜Y
-˜Xİ]™HŠNÂˆÛÛœİ™[[İ™PXİ]™HH
-[šÊHOˆØÓ[šÜÖÛ[š×K˜Û\ÜÓ\İœ™[[İ™J˜Xİ]™HŠNÂˆÛÛœİ™[[İ™P[Xİ]™HH
+  // dispatch for htmlwidgets
+  // they use slideenter event to trigger resize
+  function fireSlideEnter() {
+    const event = window.document.createEvent("Event");
+    event.initEvent("slideenter", true, true);
+    window.document.dispatchEvent(event);
+  }
 
-HO‚ˆË‹‹\œ˜^JØÓ[šÜË›[™İ
-KšÙ^\Ê
-WK™›Ü‘XXÚ
+  const tabs = window.document.querySelectorAll('a[data-bs-toggle="tab"]');
+  tabs.forEach((tab) => {
+    tab.addEventListener("shown.bs.tab", fireSlideEnter);
+  });
 
-[šÊHOˆ™[[İ™PXİ]™J[šÊJNÂ‚ˆËÈXİ]˜]HH[˜ÚÜˆ›ÜˆHÙXİ[Ûˆ\ÜÛØÚX]YÚ]\ÈĞÈ[BˆØÓ[šÜË™›Ü‘XXÚ
+  // dispatch for shiny
+  // they use BS shown and hidden events to trigger rendering
+  function distpatchShinyEvents(previous, current) {
+    if (window.jQuery) {
+      if (previous) {
+        window.jQuery(previous).trigger("hidden");
+      }
+      if (current) {
+        window.jQuery(current).trigger("shown");
+      }
+    }
+  }
 
-[šÊHOˆÂˆ[šË˜Y]™[\İ[™\Š˜ÛXÚÈ‹
+  // tabby.js listener: Trigger event for htmlwidget and shiny
+  document.addEventListener(
+    "tabby",
+    function (event) {
+      fireSlideEnter();
+      distpatchShinyEvents(event.detail.previousTab, event.detail.tab);
+    },
+    false
+  );
 
-HOˆÂˆYˆ
-[šËš™Y‹š[™^ÙŠˆÈŠHOOHLJHÂˆÛÛœİ[˜ÚÜˆH[šËš™Y‹œÜ]
-ˆÈŠVÌWNÂˆÛÛœİXY[™ÈHÚ[™İË™Øİ[Y[œ]Y\TÙ[XİÜŠˆÙ]KX[˜ÚÜ‹ZYH‰Ø[˜ÚÜŸH—Xˆ
-NÂˆYˆ
-XY[™ÊHÂˆËÈYHÛ\ÜÂˆXY[™Ë˜Û\ÜÓ\İ˜Y
-œ™]™X[X[˜ÚÜšœË[[šÈŠNÂ‚ˆËÈ[˜İ[ÛˆÈÚİÈH[˜ÚÜ‚ˆÛÛœİ[™S[İ\Ù[İ]H
+  // Track scrolling and mark TOC links as active
+  // get table of contents and sidebar (bail if we don't have at least one)
+  const tocLinks = tocEl
+    ? [...tocEl.querySelectorAll("a[data-scroll-target]")]
+    : [];
+  const makeActive = (link) => tocLinks[link].classList.add("active");
+  const removeActive = (link) => tocLinks[link].classList.remove("active");
+  const removeAllActive = () =>
+    [...Array(tocLinks.length).keys()].forEach((link) => removeActive(link));
 
-HOˆÂˆXY[™Ë˜Û\ÜÓ\İœ™[[İ™Jœ™]™X[X[˜ÚÜšœË[[šÈŠNÂˆXY[™Ëœ™[[İ™Q]™[\İ[™\Š›[İ\Ù[İ]‹[™S[İ\Ù[İ]
-NÂˆNÂ‚ˆËÈYH[˜İ[ÛˆÈÛX\ˆH[˜ÚÜˆÚ[ˆH\Ù\ˆ[İ\Ù\Èİ]Ùˆ]ˆXY[™Ë˜Y]™[\İ[™\Š›[İ\Ù[İ]‹[™S[İ\Ù[İ]
-NÂˆBˆBˆJNÂˆJNÂ‚ˆÛÛœİÙXİ[ÛœÈHØÓ[šÜË›X\
+  // activate the anchor for a section associated with this TOC entry
+  tocLinks.forEach((link) => {
+    link.addEventListener("click", () => {
+      if (link.href.indexOf("#") !== -1) {
+        const anchor = link.href.split("#")[1];
+        const heading = window.document.querySelector(
+          `[data-anchor-id="${anchor}"]`
+        );
+        if (heading) {
+          // Add the class
+          heading.classList.add("reveal-anchorjs-link");
 
-[šÊHOˆÂˆÛÛœİ\™Ù]H[šË™Ù]]šX]J™]K\ØÜ›Û]\™Ù]ŠNÂˆYˆ
-\™Ù]œİ\ÕÚ]
-ˆÈŠJHÂˆ™]\›ˆÚ[™İË™Øİ[Y[™Ù][[Y[RY
-XÛÙUT’J	İ\™Ù]œÛXÙJJ_X
-JNÂˆH[ÙHÂˆ™]\›ˆÚ[™İË™Øİ[Y[œ]Y\TÙ[XİÜŠXÛÙUT’J	İ\™Ù]X
-JNÂˆBˆJNÂ‚ˆÛÛœİÙXİ[Û“X\™Ú[ˆHŒÂˆ]İ\œ™[Xİ]™HHÂˆËÈ˜XÚÈÚ]\ˆÙIİ™H[š]X[^™Yİ]HHš\œİ[YBˆ][š]H˜[ÙNÂ‚ˆÛÛœİ\]PXİ]™S[šÈH
+          // function to show the anchor
+          const handleMouseout = () => {
+            heading.classList.remove("reveal-anchorjs-link");
+            heading.removeEventListener("mouseout", handleMouseout);
+          };
 
-HOˆÂˆËÈH[™^œ›ÛH›İÛHÈÜ
-K™Ëˆ™]™\œÙY\İ
-Bˆ]ÙXİ[Û’[™^HLNÂˆYˆ
-ˆÚ[™İËš[›™\’ZYÚ
-ÈÚ[™İËœYÙVSÙ™œÙ]BˆÚ[™İË™Øİ[Y[˜›ÙK›Ù™œÙ]ZYÚˆ
-HÂˆËÈ\È\ÈH›Ë\ØÜ›ÛØ\ÙHÚ\™H\İÙXİ[ÛˆÚİ[™HHXİ]™HÛ™BˆÙXİ[Û’[™^HÂˆH[ÙHÂˆËÈ\Èš[™ÈH\İÙXİ[Ûˆš\ÚX›HÛˆØÜ™Y[ˆ]Úİ[™HXYHXİ]™BˆÙXİ[Û’[™^HË‹‹œÙXİ[Ûœ×Kœ™]™\œÙJ
-K™š[™[™^
+          // add a function to clear the anchor when the user mouses out of it
+          heading.addEventListener("mouseout", handleMouseout);
+        }
+      }
+    });
+  });
 
-ÙXİ[ÛŠHOˆÂˆYˆ
-ÙXİ[ÛŠHÂˆ™]\›ˆÚ[™İËœYÙVSÙ™œÙ]HÙXİ[Û‹›Ù™œÙ]ÜHÙXİ[Û“X\™Ú[ÂˆH[ÙHÂˆ™]\›ˆ˜[ÙNÂˆBˆJNÂˆBˆYˆ
-ÙXİ[Û’[™^ˆLJHÂˆÛÛœİİ\œ™[HÙXİ[ÛœË›[™İHÙXİ[Û’[™^HNÂˆYˆ
-İ\œ™[OOHİ\œ™[Xİ]™JHÂˆ™[[İ™P[Xİ]™J
-NÂˆİ\œ™[Xİ]™HHİ\œ™[ÂˆXZÙPXİ]™Jİ\œ™[
-NÂˆYˆ
-[š]
-HÂˆÚ[™İË™\Ü]Ú]™[
-ÙXİ[ÛÚ[™ÙY
-NÂˆBˆ[š]HYNÂˆBˆBˆNÂ‚ˆÛÛœİ[’Y[”™YÚ[ÛˆH
-Ü›İÛKY[”™YÚ[ÛœÊHOˆÂˆ›Üˆ
-ÛÛœİ™YÚ[ÛˆÙˆY[”™YÚ[ÛœÊHÂˆYˆ
-ÜH™YÚ[Û‹˜›İÛH	‰ˆ›İÛHH™YÚ[Û‹Ü
-HÂˆ™]\›ˆYNÂˆBˆBˆ™]\›ˆ˜[ÙNÂˆNÂ‚ˆÛÛœİØ]YÛÜTÙ[XİÜˆHšXY\‹œ]X\Ë]]KX›ØÚÈœ]X\ËXØ]YÛÜHÂˆÛÛœİXİ]˜]PØ]YÛÜšY\ÈH
-™YŠHOˆÂˆËÈš[™[HØ]YÛÜšY\ÂˆËÈİ\œ›İ[™[HÚ]H[šÈÚ[[™È˜XÚÈÎ‚ˆËÈØØ]YÛÜOP]]Üš[™ÂˆHÂˆÛÛœİØ]YÛÜQ[ÈHÚ[™İË™Øİ[Y[œ]Y\TÙ[XİÜ[
-Ø]YÛÜTÙ[XİÜŠNÂˆ›Üˆ
-ÛÛœİØ]YÛÜQ[ÙˆØ]YÛÜQ[ÊHÂˆÛÛœİØ]YÛÜU^HØ]YÛÜQ[^ÛÛ[ÂˆYˆ
-Ø]YÛÜU^
-HÂˆÛÛœİ[šÈH	Ú™YŸHØØ]YÛÜOIÙ[˜ÛÙUT’PÛÛ\Û™[
-Ø]YÛÜU^
-_XÂˆÛÛœİ[šÑ[HÚ[™İË™Øİ[Y[˜Ü™X]Q[[Y[
-˜HŠNÂˆ[šÑ[œÙ]]šX]Jš™Yˆ‹[šÊNÂˆ›Üˆ
-ÛÛœİÚ[ÙˆØ]YÛÜQ[˜Ú[›Ù\ÊHÂˆ[šÑ[˜\[™
-Ú[
-NÂˆBˆØ]YÛÜQ[˜\[™Ú[
-[šÑ[
-NÂˆBˆBˆHØ]ÚÂˆËÈYÛ›Ü™H\œ›ÜœÂˆBˆNÂˆ[˜İ[Ûˆ\Õ]PØ]YÛÜšY\Ê
-HÂˆ™]\›ˆÚ[™İË™Øİ[Y[œ]Y\TÙ[XİÜŠØ]YÛÜTÙ[XİÜŠHOOH[ÂˆB‚ˆ[˜İ[ÛˆÙ™œÙ]™[]]™U\›
-\›
-HÂˆÛÛœİÙ™œÙ]HÙ]Y]Jœ]X\Î›Ù™œÙ]ŠNÂˆ™]\›ˆÙ™œÙ]ÈÙ™œÙ]
-È\›ˆ\›ÂˆB‚ˆ[˜İ[ÛˆÙ™œÙ]XœÛÛ]U\›
-\›
-HÂˆÛÛœİÙ™œÙ]HÙ]Y]Jœ]X\Î›Ù™œÙ]ŠNÂˆÛÛœİ˜\ÙU\›H™]ÈT“
-Ù™œÙ]Ú[™İË›ØØ][ÛŠNÂ‚ˆÛÛœİ›Ú”™[]]™U\›H\›œ™\XÙJ˜\ÙU\›ˆŠNÂˆYˆ
-›Ú”™[]]™U\›œİ\ÕÚ]
-‹ÈŠJHÂˆ™]\›ˆ›Ú”™[]]™U\›ÂˆH[ÙHÂˆ™]\›ˆ‹Èˆ
-È›Ú”™[]]™U\›ÂˆBˆB‚ˆËÈ™XYHY]HYÈ˜[YBˆ[˜İ[ÛˆÙ]Y]JY]S˜[YJHÂˆÛÛœİY]\ÈHÚ[™İË™Øİ[Y[™Ù][[Y[ĞUYÓ˜[YJ›Y]HŠNÂˆ›Üˆ
-]HHÈHY]\Ë›[™İÈJÊÊHÂˆYˆ
-Y]\ÖÚWK™Ù]]šX]J›˜[YHŠHOOHY]S˜[YJHÂˆ™]\›ˆY]\ÖÚWK™Ù]]šX]J˜ÛÛ[ŠNÂˆBˆBˆ™]\›ˆˆÂˆB‚ˆ\Ş[˜È[˜İ[Ûˆš[™[™Xİ]˜]PØ]YÛÜšY\Ê
-HÂˆËÈØ]YÛÜšY\ÈÙX\˜ÚÚ]\İ[™ÈÛ›H\ÙH]Ú]İ]]Y\BˆÛÛœİİ\œ™[YÙT]HÙ™œÙ]XœÛÛ]U\›
-ˆÚ[™İË›ØØ][Û‹›ÜšYÚ[ˆ
-ÈÚ[™İË›ØØ][Û‹œ]˜[YBˆ
-NÂˆÛÛœİ™\ÜÛœÙHH]ØZ]™]Ú
-Ù™œÙ]™[]]™U\›
-›\İ[™ÜËšœÛÛˆŠJNÂˆYˆ
-™\ÜÛœÙKœİ]\ÈOHŒ
-HÂˆ™]\›ˆ™\ÜÛœÙKšœÛÛŠ
-K[Š[˜İ[Ûˆ
-\İ[™Ô]ÊHÂˆÛÛœİ\İ[™Ò™YœÈH×NÂˆ›Üˆ
-ÛÛœİ\İ[™Ô]Ùˆ\İ[™Ô]ÊHÂˆÛÛœİ]Ú]İ]XY[™ÔÛ\ÚH\İ[™Ô]›\İ[™ËœİXœİš[™ÊJNÂˆ›Üˆ
-ÛÛœİ][HÙˆ\İ[™Ô]š][\ÊHÂˆÛÛœİ[˜ÛÙY][HH[˜ÛÙUT’J][JNÂˆYˆ
-ˆ[˜ÛÙY][HOOHİ\œ™[YÙT]ˆ[˜ÛÙY][HOOHİ\œ™[YÙT]
-Èš[™^š[‚ˆ
-HÂˆËÈ™\ÛÛ™H\È]YØZ[œİHÙ™œÙ]È™Hİ\™BˆËÈÙH[™XYH\™H\Ú[™ÈHÛÜœ™Xİ]ÈH\İ[™ÂˆËÈ
-\ÈY\İÈH\İ[™È\›ÈÈ™H›ÛİYYØZ[œİˆËÈÚ]]™\ˆ›ÛİHYÙH\ÈXİX[H[›š[™ÈYØZ[œİ
-BˆÛÛœİ™[]]™HHÙ™œÙ]™[]]™U\›
-]Ú]İ]XY[™ÔÛ\Ú
-NÂˆÛÛœİ˜\ÙU\›HÚ[™İË›ØØ][ÛÂˆÛÛœİ™\ÛÛ™Y]H™]ÈT“
-™[]]™K˜\ÙU\›
-NÂˆ\İ[™Ò™YœËœ\Ú
-™\ÛÛ™Y]œ]˜[YJNÂˆœ™XZÎÂˆBˆBˆB‚ˆËÈÛÚÈ\H™YH›ÜˆH™X\˜H[[™È[™\ÙH]YˆÙHš[™Û™BˆÛÛœİ™X\™\İ\İ[™ÈHš[™™X\™\İ\™[\İ[™ÊˆÙ™œÙ]XœÛÛ]U\›
-Ú[™İË›ØØ][Û‹œ]˜[YJKˆ\İ[™Ò™YœÂˆ
-NÂˆYˆ
-™X\™\İ\İ[™ÊHÂˆXİ]˜]PØ]YÛÜšY\Ê™X\™\İ\İ[™ÊNÂˆH[ÙHÂˆËÈÙYHYˆH™Y™\œ™\ˆ\ÈH\İ[™ÈYÙH›Üˆ\È][BˆÛÛœİ™Y™\œ™Y™[]]™T]HÙ™œÙ]XœÛÛ]U\›
-Øİ[Y[œ™Y™\œ™\ŠNÂˆÛÛœİ™Y™\œ™\“\İ[™ÈH\İ[™Ò™YœË™š[™
+  const sections = tocLinks.map((link) => {
+    const target = link.getAttribute("data-scroll-target");
+    if (target.startsWith("#")) {
+      return window.document.getElementById(decodeURI(`${target.slice(1)}`));
+    } else {
+      return window.document.querySelector(decodeURI(`${target}`));
+    }
+  });
 
-\İ[™Ò™YŠHOˆÂˆÛÛœİ\Ó\İ[™Ô™Y™\œ™\ˆBˆ\İ[™Ò™YˆOOH™Y™\œ™Y™[]]™T]ˆ\İ[™Ò™YˆOOH™Y™\œ™Y™[]]™T]
-Èš[™^š[Âˆ™]\›ˆ\Ó\İ[™Ô™Y™\œ™\ÂˆJNÂ‚ˆYˆ
-™Y™\œ™\“\İ[™ÊHÂˆËÈHÈ\ÙHH™Y™\œ™\ˆYˆÜÜÚX›BˆXİ]˜]PØ]YÛÜšY\Ê™Y™\œ™\“\İ[™ÊNÂˆH[ÙHYˆ
-\İ[™Ò™YœË›[™İˆ
-HÂˆËÈİ\Ú\ÙK\İ˜[˜XÚÈÈHš\œİ\İ[™ÂˆXİ]˜]PØ]YÛÜšY\Ê\İ[™Ò™YœÖÌJNÂˆBˆBˆJNÂˆBˆBˆYˆ
-\Õ]PØ]YÛÜšY\Ê
-JHÂˆš[™[™Xİ]˜]PØ]YÛÜšY\Ê
-NÂˆB‚ˆÛÛœİš[™™X\™\İ\™[\İ[™ÈH
-™Y‹\İ[™Ò™YœÊHOˆÂˆYˆ
-Z™Yˆ[\İ[™Ò™YœÊHÂˆ™]\›ˆ[™Yš[™YÂˆBˆËÈÛÚÈ\H™YH›ÜˆH™X\˜H[[™È[™\ÙH]YˆÙHš[™Û™BˆÛÛœİ™[]]™T\ÈH™Y‹œİXœİš[™ÊJKœÜ]
-‹ÈŠNÂˆÚ[H
-™[]]™T\Ë›[™İˆ
-HÂˆÛÛœİ]H™[]]™T\Ëš›Ú[Š‹ÈŠNÂˆ›Üˆ
-ÛÛœİ\İ[™Ò™YˆÙˆ\İ[™Ò™YœÊHÂˆYˆ
-\İ[™Ò™Y‹œİ\ÕÚ]
-]
-JHÂˆ™]\›ˆ\İ[™Ò™YÂˆBˆBˆ™[]]™T\ËœÜ
+  const sectionMargin = 200;
+  let currentActive = 0;
+  // track whether we've initialized state the first time
+  let init = false;
 
-NÂˆB‚ˆ™]\›ˆ[™Yš[™YÂˆNÂ‚ˆÛÛœİX[˜YÙTÚYX˜\•š\ÚX›]HH
-[XÙZÛ\‘\ØÜš\ÜŠHOˆÂˆ]\Õš\ÚX›HHYNÂˆ][™XİÂ‚ˆ™]\›ˆ
-Y[”™YÚ[ÛœÊHOˆÂˆYˆ
-[OOH[
-HÂˆ™]\›ÂˆB‚ˆËÈš[™H\İ[[Y[ÙˆHĞÂˆÛÛœİ\İÚ[[H[›\İ[[Y[Ú[Â‚ˆYˆ
-\İÚ[[
-HÂˆËÈÛÛ™\ÈHÚYX˜\ˆÈHY[BˆÛÛœİÛÛ™\ÓY[HH
+  const updateActiveLink = () => {
+    // The index from bottom to top (e.g. reversed list)
+    let sectionIndex = -1;
+    if (
+      window.innerHeight + window.pageYOffset >=
+      window.document.body.offsetHeight
+    ) {
+      // This is the no-scroll case where last section should be the active one
+      sectionIndex = 0;
+    } else {
+      // This finds the last section visible on screen that should be made active
+      sectionIndex = [...sections].reverse().findIndex((section) => {
+        if (section) {
+          return window.pageYOffset >= section.offsetTop - sectionMargin;
+        } else {
+          return false;
+        }
+      });
+    }
+    if (sectionIndex > -1) {
+      const current = sections.length - sectionIndex - 1;
+      if (current !== currentActive) {
+        removeAllActive();
+        currentActive = current;
+        makeActive(current);
+        if (init) {
+          window.dispatchEvent(sectionChanged);
+        }
+        init = true;
+      }
+    }
+  };
 
-HOˆÂˆ›Üˆ
-ÛÛœİÚ[Ùˆ[˜Ú[™[ŠHÂˆÚ[œİ[K›ÜXÚ]HHÂˆÚ[œİ[K›İ™\™›İÈHšY[ˆÂˆÚ[œİ[KœÚ[\‘]™[ÈH››Û™HÂˆB‚ˆ™^XÚÊ
+  const inHiddenRegion = (top, bottom, hiddenRegions) => {
+    for (const region of hiddenRegions) {
+      if (top <= region.bottom && bottom >= region.top) {
+        return true;
+      }
+    }
+    return false;
+  };
 
-HOˆÂˆÛÛœİÙÙÛPÛÛZ[™\ˆHÚ[™İË™Øİ[Y[˜Ü™X]Q[[Y[
-™]ˆŠNÂˆÙÙÛPÛÛZ[™\‹œİ[KÚYHŒL	HÂˆÙÙÛPÛÛZ[™\‹˜Û\ÜÓ\İ˜Y
-š[™^[İ™\‹XÛÛ[ŠNÂˆÙÙÛPÛÛZ[™\‹˜Û\ÜÓ\İ˜Y
-œ]X\Ë\ÚYX˜\‹]ÙÙÛHŠNÂˆÙÙÛPÛÛZ[™\‹˜Û\ÜÓ\İ˜Y
-šXY›ÛÛK]\™Ù]ŠNÈËÈX\šÜÈ\ÈÈ™HX[˜YÙYHXY\›ÛÛBˆÙÙÛPÛÛZ[™\‹šYHXÙZÛ\‘\ØÜš\Ü‹šYÂˆÙÙÛPÛÛZ[™\‹œİ[KœÜÚ][ÛˆH™š^YÂ‚ˆÛÛœİÙÙÛRXÛÛˆHÚ[™İË™Øİ[Y[˜Ü™X]Q[[Y[
-šHŠNÂˆÙÙÛRXÛÛ‹˜Û\ÜÓ\İ˜Y
-œ]X\Ë\ÚYX˜\‹]ÙÙÛKZXÛÛˆŠNÂˆÙÙÛRXÛÛ‹˜Û\ÜÓ\İ˜Y
-˜šHŠNÂˆÙÙÛRXÛÛ‹˜Û\ÜÓ\İ˜Y
-˜šKXØ\™]YİÛ‹Yš[ŠNÂ‚ˆÛÛœİÙÙÛU]HHÚ[™İË™Øİ[Y[˜Ü™X]Q[[Y[
-™]ˆŠNÂˆÛÛœİ]Q[HÚ[™İË™Øİ[Y[˜›ÙKœ]Y\TÙ[XİÜŠˆXÙZÛ\‘\ØÜš\Ü‹]TÙ[XİÜ‚ˆ
-NÂˆYˆ
-]Q[
-HÂˆÙÙÛU]K˜\[™
-ˆ]Q[^ÛÛ[]Q[š[›™\•^ˆÙÙÛRXÛÛ‚ˆ
-NÂˆBˆÙÙÛU]K˜Û\ÜÓ\İ˜Y
-š[™^[İ™\‹XÛÛ[ŠNÂˆÙÙÛU]K˜Û\ÜÓ\İ˜Y
-œ]X\Ë\ÚYX˜\‹]ÙÙÛK]]HŠNÂˆÙÙÛPÛÛZ[™\‹˜\[™
-ÙÙÛU]JNÂ‚ˆÛÛœİÙÙÛPÛÛ[ÈHÚ[™İË™Øİ[Y[˜Ü™X]Q[[Y[
-™]ˆŠNÂˆÙÙÛPÛÛ[Ë˜Û\ÜÓ\İH[˜Û\ÜÓ\İÂˆÙÙÛPÛÛ[Ë˜Û\ÜÓ\İ˜Y
-š[™^[İ™\‹XÛÛ[ŠNÂˆÙÙÛPÛÛ[Ë˜Û\ÜÓ\İ˜Y
-œ]X\Ë\ÚYX˜\‹]ÙÙÛKXÛÛ[ÈŠNÂˆ›Üˆ
-ÛÛœİÚ[Ùˆ[˜Ú[™[ŠHÂˆYˆ
-Ú[šYOOHØË]]HŠHÂˆÛÛ[YNÂˆB‚ˆÛÛœİÛÛ™HHÚ[˜ÛÛ™S›ÙJYJNÂˆÛÛ™Kœİ[K›ÜXÚ]HHNÂˆÛÛ™Kœİ[KœÚ[\‘]™[ÈH[ÂˆÛÛ™Kœİ[K™\Ü^HH[ÂˆÙÙÛPÛÛ[Ë˜\[™
-ÛÛ™JNÂˆBˆÙÙÛPÛÛ[Ëœİ[KšZYÚHŒÂˆÛÛœİÜÚ][Û•ÙÙÛHH
+  const categorySelector = "header.quarto-title-block .quarto-category";
+  const activateCategories = (href) => {
+    // Find any categories
+    // Surround them with a link pointing back to:
+    // #category=Authoring
+    try {
+      const categoryEls = window.document.querySelectorAll(categorySelector);
+      for (const categoryEl of categoryEls) {
+        const categoryText = categoryEl.textContent;
+        if (categoryText) {
+          const link = `${href}#category=${encodeURIComponent(categoryText)}`;
+          const linkEl = window.document.createElement("a");
+          linkEl.setAttribute("href", link);
+          for (const child of categoryEl.childNodes) {
+            linkEl.append(child);
+          }
+          categoryEl.appendChild(linkEl);
+        }
+      }
+    } catch {
+      // Ignore errors
+    }
+  };
+  function hasTitleCategories() {
+    return window.document.querySelector(categorySelector) !== null;
+  }
 
-HOˆÂˆËÈÜÚ][ÛˆH[[Y[
-ÜYÙˆ\™[Ø[YHÚY\È\™[
-BˆYˆ
-Y[™Xİ
-HÂˆ[™XİH[™Ù]›İ[™[™ĞÛY[™Xİ
+  function offsetRelativeUrl(url) {
+    const offset = getMeta("quarto:offset");
+    return offset ? offset + url : url;
+  }
 
-NÂˆBˆÙÙÛPÛÛZ[™\‹œİ[K›YH	Ù[™Xİ›Y\ÂˆÙÙÛPÛÛZ[™\‹œİ[KÜH	Ù[™XİÜ\ÂˆÙÙÛPÛÛZ[™\‹œİ[KÚYH	Ù[™XİÚY\ÂˆNÂˆÜÚ][Û•ÙÙÛJ
-NÂ‚ˆÙÙÛPÛÛZ[™\‹˜\[™
-ÙÙÛPÛÛ[ÊNÂˆ[œ\™[[[Y[œ™\[™
-ÙÙÛPÛÛZ[™\ŠNÂ‚ˆËÈ›ØÙ\ÜÈÛXÚÜÂˆ]ØÔÚİÚ[™ÈH˜[ÙNÂˆËÈ[İÈHØ[\ˆÈÛÛ›ÛÚ]\ˆ\È\È\ÛZ\ÜÙYˆËÈÚ[ˆ]\ÈÛXÚÙY
-K™ËˆÚYX˜\ˆ˜]šYØ][Ûˆİ\ÜÂˆËÈÜ[š[™È[™ÛÜÚ[™ÈH˜]ˆ™YKÛÈÛ‰İ\ÛZ\ÜÈÛˆÛXÚÊBˆÛÛœİÛXÚÑ[HXÙZÛ\‘\ØÜš\Ü‹™\ÛZ\ÜÓÛÛXÚÂˆÈÙÙÛPÛÛZ[™\‚ˆˆÙÙÛU]NÂ‚ˆÛÛœİÛÜÙUÙÙÛHH
+  function offsetAbsoluteUrl(url) {
+    const offset = getMeta("quarto:offset");
+    const baseUrl = new URL(offset, window.location);
 
-HOˆÂˆYˆ
-ØÔÚİÚ[™ÊHÂˆÙÙÛPÛÛZ[™\‹˜Û\ÜÓ\İœ™[[İ™J™^[™YŠNÂˆÙÙÛPÛÛ[Ëœİ[KšZYÚHŒÂˆØÔÚİÚ[™ÈH˜[ÙNÂˆBˆNÂ‚ˆËÈÙ]šYÙˆ[H^[™YÙÙÛHYˆH\Ù\ˆØÜ›ÛÂˆÚ[™İË™Øİ[Y[˜Y]™[\İ[™\ŠˆœØÜ›Û‹ˆ›İJ
+    const projRelativeUrl = url.replace(baseUrl, "");
+    if (projRelativeUrl.startsWith("/")) {
+      return projRelativeUrl;
+    } else {
+      return "/" + projRelativeUrl;
+    }
+  }
 
-HOˆÂˆÛÜÙUÙÙÛJ
-NÂˆKL
-Bˆ
-NÂ‚ˆËÈ[™HÜÚ][Ûš[™ÈÙˆHÙÙÛBˆÚ[™İË˜Y]™[\İ[™\Šˆœ™\Ú^™H‹ˆ›İJ
+  // read a meta tag value
+  function getMeta(metaName) {
+    const metas = window.document.getElementsByTagName("meta");
+    for (let i = 0; i < metas.length; i++) {
+      if (metas[i].getAttribute("name") === metaName) {
+        return metas[i].getAttribute("content");
+      }
+    }
+    return "";
+  }
 
-HOˆÂˆ[™XİH[™Yš[™YÂˆÜÚ][Û•ÙÙÛJ
-NÂˆKL
-Bˆ
-NÂ‚ˆÚ[™İË˜Y]™[\İ[™\Šœ]X\ËZÚ[™ÙY‹
+  async function findAndActivateCategories() {
+    // Categories search with listing only use path without query
+    const currentPagePath = offsetAbsoluteUrl(
+      window.location.origin + window.location.pathname
+    );
+    const response = await fetch(offsetRelativeUrl("listings.json"));
+    if (response.status == 200) {
+      return response.json().then(function (listingPaths) {
+        const listingHrefs = [];
+        for (const listingPath of listingPaths) {
+          const pathWithoutLeadingSlash = listingPath.listing.substring(1);
+          for (const item of listingPath.items) {
+            const encodedItem = encodeURI(item);
+            if (
+              encodedItem === currentPagePath ||
+              encodedItem === currentPagePath + "index.html"
+            ) {
+              // Resolve this path against the offset to be sure
+              // we already are using the correct path to the listing
+              // (this adjusts the listing urls to be rooted against
+              // whatever root the page is actually running against)
+              const relative = offsetRelativeUrl(pathWithoutLeadingSlash);
+              const baseUrl = window.location;
+              const resolvedPath = new URL(relative, baseUrl);
+              listingHrefs.push(resolvedPath.pathname);
+              break;
+            }
+          }
+        }
 
-HOˆÂˆ[™XİH[™Yš[™YÂˆJNÂ‚ˆËÈ›ØÙ\ÜÈHÛXÚÂˆÛXÚÑ[›Û˜ÛXÚÈH
+        // Look up the tree for a nearby linting and use that if we find one
+        const nearestListing = findNearestParentListing(
+          offsetAbsoluteUrl(window.location.pathname),
+          listingHrefs
+        );
+        if (nearestListing) {
+          activateCategories(nearestListing);
+        } else {
+          // See if the referrer is a listing page for this item
+          const referredRelativePath = offsetAbsoluteUrl(document.referrer);
+          const referrerListing = listingHrefs.find((listingHref) => {
+            const isListingReferrer =
+              listingHref === referredRelativePath ||
+              listingHref === referredRelativePath + "index.html";
+            return isListingReferrer;
+          });
 
-HOˆÂˆYˆ
-]ØÔÚİÚ[™ÊHÂˆÙÙÛPÛÛZ[™\‹˜Û\ÜÓ\İ˜Y
-™^[™YŠNÂˆÙÙÛPÛÛ[Ëœİ[KšZYÚH[ÂˆØÔÚİÚ[™ÈHYNÂˆH[ÙHÂˆÛÜÙUÙÙÛJ
-NÂˆBˆNÂˆJNÂˆNÂ‚ˆËÈÛÛ™\ÈHÚYX˜\ˆœ›ÛHHY[H˜XÚÈÈHÚYX˜\‚ˆÛÛœİÛÛ™\ÔÚYX˜\ˆH
+          if (referrerListing) {
+            // Try to use the referrer if possible
+            activateCategories(referrerListing);
+          } else if (listingHrefs.length > 0) {
+            // Otherwise, just fall back to the first listing
+            activateCategories(listingHrefs[0]);
+          }
+        }
+      });
+    }
+  }
+  if (hasTitleCategories()) {
+    findAndActivateCategories();
+  }
 
-HOˆÂˆ›Üˆ
-ÛÛœİÚ[Ùˆ[˜Ú[™[ŠHÂˆÚ[œİ[K›ÜXÚ]HHNÂˆÚ[œİ[K›İ™\™›İÈH[ÂˆÚ[œİ[KœÚ[\‘]™[ÈH[ÂˆB‚ˆÛÛœİXÙZÛ\‘[HÚ[™İË™Øİ[Y[™Ù][[Y[RY
-ˆXÙZÛ\‘\ØÜš\Ü‹šYˆ
-NÂˆYˆ
-XÙZÛ\‘[
-HÂˆXÙZÛ\‘[œ™[[İ™J
-NÂˆB‚ˆ[˜Û\ÜÓ\İœ™[[İ™Jœ›Û\ŠNÂˆNÂ‚ˆYˆ
-\Ô™XY\“[ÙJ
-JHÂˆÛÛ™\ÓY[J
-NÂˆ\Õš\ÚX›HH˜[ÙNÂˆH[ÙHÂˆËÈš[™HÜ[™›İÛHÈH[[Y[]\È™Z[™ÈX[˜YÙYˆÛÛœİ[ÜH[›Ù™œÙ]ÜÂˆÛÛœİ[›İÛHBˆ[Ü
-È\İÚ[[›Ù™œÙ]Ü
-È\İÚ[[›Ù™œÙ]ZYÚÂ‚ˆYˆ
-Z\Õš\ÚX›JHÂˆËÈYˆH[[Y[\Èİ\œ™[›İš\ÚX›H™]™X[Yˆ\™H\™BˆËÈ›ÈÛÛ™›XİÈÚ]İ™\›^H™YÚ[ÛœÂˆYˆ
-Z[’Y[”™YÚ[ÛŠ[Ü[›İÛKY[”™YÚ[ÛœÊJHÂˆÛÛ™\ÔÚYX˜\Š
-NÂˆ\Õš\ÚX›HHYNÂˆBˆH[ÙHÂˆËÈYˆH[[Y[\Èš\ÚX›KYH]Yˆ]ÛÛ™›XİÈÚ]İ™\›^H™YÚ[ÛœÂˆËÈ[™[œÙ\HXÙZÛ\ˆÙÙÛH
-ÜˆYˆÙIÜ™H[ˆ™XY\ˆ[ÙJBˆYˆ
-[’Y[”™YÚ[ÛŠ[Ü[›İÛKY[”™YÚ[ÛœÊJHÂˆÛÛ™\ÓY[J
-NÂˆ\Õš\ÚX›HH˜[ÙNÂˆBˆBˆBˆBˆNÂˆNÂ‚ˆÛÛœİX‘[ÈHØİ[Y[œ]Y\TÙ[XİÜ[
-	ØVÙ]KXœË]ÙÙÛOHXˆ—IÊNÂˆ›Üˆ
-ÛÛœİX‘[ÙˆX‘[ÊHÂˆÛÛœİYHX‘[™Ù]]šX]J™]KXœË]\™Ù]ŠNÂˆYˆ
-Y
-HÂˆÛÛœİÛÛ[[‘[HØİ[Y[œ]Y\TÙ[XİÜŠˆ	ÚYH˜ÛÛ[[‹[X\™Ú[‹XœÙ][X\™Ú[‹XÛÛ[ˆ
-NÂˆYˆ
-ÛÛ[[‘[
-BˆX‘[˜Y]™[\İ[™\ŠœÚİÛ‹˜œËXˆ‹[˜İ[Ûˆ
-]™[
-HÂˆÛÛœİ[H]™[œÜ˜Ñ[[Y[ÂˆYˆ
-[
-HÂˆÛÛœİš\ÚX›PÛÈH	Ù[šYK[X\™Ú[‹XÛÛ[ÂˆËÈØ[È\[[ÙHš[™H\™[XœÙ]ˆ][™[XœÙ][H[œ\™[[[Y[ÂˆÚ[H
-[™[XœÙ][
-HÂˆYˆ
-[™[XœÙ][˜Û\ÜÓ\İ˜ÛÛZ[œÊœ[™[]XœÙ]ŠJHÂˆœ™XZÎÂˆBˆ[™[XœÙ][H[™[XœÙ][œ\™[[[Y[ÂˆB‚ˆYˆ
-[™[XœÙ][
-HÂˆÛÛœİ™]”ÚXˆH[™[XœÙ][œ™]š[İ\Ñ[[Y[ÚX›[™ÎÂˆYˆ
-ˆ™]”ÚXˆ	‰‚ˆ™]”ÚX‹˜Û\ÜÓ\İ˜ÛÛZ[œÊXœÙ][X\™Ú[‹XÛÛZ[™\ˆŠBˆ
-HÂˆÛÛœİÚ[›Ù\ÈH™]”ÚX‹œ]Y\TÙ[XİÜ[
-ˆ‹XœÙ][X\™Ú[‹XÛÛ[‚ˆ
-NÂˆ›Üˆ
-ÛÛœİÚ[[ÙˆÚ[›Ù\ÊHÂˆYˆ
-Ú[[˜Û\ÜÓ\İ˜ÛÛZ[œÊš\ÚX›PÛÊJHÂˆÚ[[˜Û\ÜÓ\İœ™[[İ™J˜ÛÛ\ÙHŠNÂˆH[ÙHÂˆÚ[[˜Û\ÜÓ\İ˜Y
-˜ÛÛ\ÙHŠNÂˆBˆBˆBˆBˆB‚ˆ^[İ]X\™Ú[‘[Ê
-NÂˆJNÂˆBˆB‚ˆËÈX[˜YÙHHš\ÚXš[]HÙˆHØÈ[™HÚYX˜\‚ˆÛÛœİX\™Ú[”ØÜ›Ûš\ÚXš[]HHX[˜YÙTÚYX˜\•š\ÚX›]JX\™Ú[”ÚYX˜\‘[ÂˆYˆœ]X\Ë]ØË]ÙÙÛH‹ˆ]TÙ[XİÜˆˆİØË]]H‹ˆ\ÛZ\ÜÓÛÛXÚÎˆYKˆJNÂˆÛÛœİÚYX˜\”ØÜ›Ûš\ÚX›]HHX[˜YÙTÚYX˜\•š\ÚX›]JÚYX˜\‘[ÂˆYˆœ]X\Ë\ÚYX˜\›˜]‹]ÙÙÛH‹ˆ]TÙ[XİÜˆ‹]H‹ˆ\ÛZ\ÜÓÛÛXÚÎˆ˜[ÙKˆJNÂˆ]ØÓYØÜ›Ûš\ÚXš[]NÂˆYˆ
-YØÑ[
-HÂˆØÓYØÜ›Ûš\ÚXš[]HHX[˜YÙTÚYX˜\•š\ÚX›]JYØÑ[ÂˆYˆœ]X\Ë[YØË]ÙÙÛH‹ˆ]TÙ[XİÜˆˆİØË]]H‹ˆ\ÛZ\ÜÓÛÛXÚÎˆYKˆJNÂˆB‚ˆËÈš[™Hš\œİ[[Y[]\Ù\È›Ü›X][™È[ˆÜXÚX[ÛÛ[[œÂˆÛÛœİÛÛ™›Xİ[™Ñ[ÈHÚ[™İË™Øİ[Y[˜›ÙKœ]Y\TÙ[XİÜ[
-ˆ	ÖØÛ\Ü×H˜ÛÛ[[‹H—KØÛ\ÜÊHˆÛÛ[[‹H—K\ÚYKØÛ\ÜÊH›X\™Ú[‹XØ\[Ûˆ—KØÛ\ÜÊHˆX\™Ú[‹XØ\[Ûˆ—KØÛ\ÜÊH›X\™Ú[‹\™Yˆ—KØÛ\ÜÊHˆX\™Ú[‹\™Yˆ—IÂˆ
-NÂ‚ˆËÈš[\ˆ[HÜÜÚX›HÛÛ™›Xİ[™È[[Y[È[ÈÛ™\ÂˆËÈHÈÛÛ™›XİÛˆHYÜˆšYHÚYBˆÛÛœİ\œÛÛ™›Xİ[™Ñ[ÈH\œ˜^K™œ›ÛJÛÛ™›Xİ[™Ñ[ÊNÂˆÛÛœİYÚYPÛÛ™›Xİ[ÈH\œÛÛ™›Xİ[™Ñ[Ë™š[\Š
-[
-HOˆÂˆYˆ
-[YÓ˜[YHOOHTÒQHŠHÂˆ™]\›ˆ˜[ÙNÂˆBˆ™]\›ˆ\œ˜^K™œ›ÛJ[˜Û\ÜÓ\İ
-K™š[™
+  const findNearestParentListing = (href, listingHrefs) => {
+    if (!href || !listingHrefs) {
+      return undefined;
+    }
+    // Look up the tree for a nearby linting and use that if we find one
+    const relativeParts = href.substring(1).split("/");
+    while (relativeParts.length > 0) {
+      const path = relativeParts.join("/");
+      for (const listingHref of listingHrefs) {
+        if (listingHref.startsWith(path)) {
+          return listingHref;
+        }
+      }
+      relativeParts.pop();
+    }
 
-Û\ÜÓ˜[YJHOˆÂˆ™]\›ˆ
-ˆÛ\ÜÓ˜[YHOOH˜ÛÛ[[‹X›ÙHˆ	‰‚ˆÛ\ÜÓ˜[YKœİ\ÕÚ]
-˜ÛÛ[[‹HŠH	‰‚ˆXÛ\ÜÓ˜[YK™[™ÕÚ]
-œšYÚŠH	‰‚ˆXÛ\ÜÓ˜[YK™[™ÕÚ]
-˜ÛÛZ[™\ˆŠH	‰‚ˆÛ\ÜÓ˜[YHOOH˜ÛÛ[[‹[X\™Ú[ˆ‚ˆ
-NÂˆJNÂˆJNÂˆÛÛœİšYÚÚYPÛÛ™›Xİ[ÈH\œÛÛ™›Xİ[™Ñ[Ë™š[\Š
-[
-HOˆÂˆYˆ
-[YÓ˜[YHOOHTÒQHŠHÂˆ™]\›ˆYNÂˆB‚ˆÛÛœİ\ÓX\™Ú[Ø\[ÛˆH\œ˜^K™œ›ÛJ[˜Û\ÜÓ\İ
-K™š[™
+    return undefined;
+  };
 
-Û\ÜÓ˜[YJHOˆÂˆ™]\›ˆÛ\ÜÓ˜[YHOH›X\™Ú[‹XØ\[ÛˆÂˆJNÂˆYˆ
-\ÓX\™Ú[Ø\[ÛŠHÂˆ™]\›ˆYNÂˆB‚ˆ™]\›ˆ\œ˜^K™œ›ÛJ[˜Û\ÜÓ\İ
-K™š[™
+  const manageSidebarVisiblity = (el, placeholderDescriptor) => {
+    let isVisible = true;
+    let elRect;
 
-Û\ÜÓ˜[YJHOˆÂˆ™]\›ˆ
-ˆÛ\ÜÓ˜[YHOOH˜ÛÛ[[‹X›ÙHˆ	‰‚ˆXÛ\ÜÓ˜[YK™[™ÕÚ]
-˜ÛÛZ[™\ˆŠH	‰‚ˆÛ\ÜÓ˜[YKœİ\ÕÚ]
-˜ÛÛ[[‹HŠH	‰‚ˆXÛ\ÜÓ˜[YK™[™ÕÚ]
-›YŠBˆ
-NÂˆJNÂˆJNÂ‚ˆÛÛœİÓİ™\›\Y[™ÔÚ^™HHLÂˆ[˜İ[ÛˆÔ™YÚ[ÛœÊ[ÊHÂˆ™]\›ˆ[Ë›X\
+    return (hiddenRegions) => {
+      if (el === null) {
+        return;
+      }
 
-[
-HOˆÂˆÛÛœİ›İ[™™XİH[™Ù]›İ[™[™ĞÛY[™Xİ
+      // Find the last element of the TOC
+      const lastChildEl = el.lastElementChild;
 
-NÂˆÛÛœİÜBˆ›İ[™™XİÜ
-ÂˆØİ[Y[™Øİ[Y[[[Y[œØÜ›ÛÜBˆÓİ™\›\Y[™ÔÚ^™NÂˆ™]\›ˆÂˆÜˆ›İÛNˆÜ
-È[œØÜ›ÛZYÚ
-Èˆ
-ˆÓİ™\›\Y[™ÔÚ^™KˆNÂˆJNÂˆB‚ˆ]\ÓØœÙ\™YH˜[ÙNÂˆÛÛœİš\ÚX›R][SØœÙ\™\ˆH
-[ÊHOˆÂˆ]š\ÚX›Q[[Y[ÈHË‹‹™[×NÂˆÛÛœİ[\œÙXİ[Û“ØœÙ\™\ˆH™]È[\œÙXİ[Û“ØœÙ\™\Šˆ
-[šY\ËÛØœÙ\™\ŠHOˆÂˆ[šY\Ë™›Ü‘XXÚ
+      if (lastChildEl) {
+        // Converts the sidebar to a menu
+        const convertToMenu = () => {
+          for (const child of el.children) {
+            child.style.opacity = 0;
+            child.style.overflow = "hidden";
+            child.style.pointerEvents = "none";
+          }
 
-[JHOˆÂˆYˆ
-[Kš\Ò[\œÙXİ[™ÊHÂˆYˆ
-š\ÚX›Q[[Y[Ëš[™^ÙŠ[K\™Ù]
-HOOHLJHÂˆš\ÚX›Q[[Y[Ëœ\Ú
-[K\™Ù]
-NÂˆBˆH[ÙHÂˆš\ÚX›Q[[Y[ÈHš\ÚX›Q[[Y[Ë™š[\Š
-š\ÚX›Q[JHOˆÂˆ™]\›ˆš\ÚX›Q[HOOH[NÂˆJNÂˆBˆJNÂ‚ˆYˆ
-Z\ÓØœÙ\™Y
-HÂˆYSİ™\›\YÚYX˜\œÊ
-NÂˆBˆ\ÓØœÙ\™YHYNÂˆKˆßBˆ
-NÂˆ[Ë™›Ü‘XXÚ
+          nexttick(() => {
+            const toggleContainer = window.document.createElement("div");
+            toggleContainer.style.width = "100%";
+            toggleContainer.classList.add("zindex-over-content");
+            toggleContainer.classList.add("quarto-sidebar-toggle");
+            toggleContainer.classList.add("headroom-target"); // Marks this to be managed by headeroom
+            toggleContainer.id = placeholderDescriptor.id;
+            toggleContainer.style.position = "fixed";
 
-[
-HOˆÂˆ[\œÙXİ[Û“ØœÙ\™\‹›ØœÙ\™J[
-NÂˆJNÂ‚ˆ™]\›ˆÂˆÙ]š\ÚX›Q[šY\Îˆ
+            const toggleIcon = window.document.createElement("i");
+            toggleIcon.classList.add("quarto-sidebar-toggle-icon");
+            toggleIcon.classList.add("bi");
+            toggleIcon.classList.add("bi-caret-down-fill");
 
-HOˆÂˆ™]\›ˆš\ÚX›Q[[Y[ÎÂˆKˆNÂˆNÂ‚ˆÛÛœİšYÚ[[Y[ØœÙ\™\ˆHš\ÚX›R][SØœÙ\™\ŠšYÚÚYPÛÛ™›Xİ[ÊNÂˆÛÛœİY[[Y[ØœÙ\™\ˆHš\ÚX›R][SØœÙ\™\ŠYÚYPÛÛ™›Xİ[ÊNÂ‚ˆÛÛœİYSİ™\›\YÚYX˜\œÈH
+            const toggleTitle = window.document.createElement("div");
+            const titleEl = window.document.body.querySelector(
+              placeholderDescriptor.titleSelector
+            );
+            if (titleEl) {
+              toggleTitle.append(
+                titleEl.textContent || titleEl.innerText,
+                toggleIcon
+              );
+            }
+            toggleTitle.classList.add("zindex-over-content");
+            toggleTitle.classList.add("quarto-sidebar-toggle-title");
+            toggleContainer.append(toggleTitle);
 
-HOˆÂˆX\™Ú[”ØÜ›Ûš\ÚXš[]JÔ™YÚ[ÛœÊšYÚ[[Y[ØœÙ\™\‹™Ù]š\ÚX›Q[šY\Ê
-JJNÂˆÚYX˜\”ØÜ›Ûš\ÚX›]JÔ™YÚ[ÛœÊY[[Y[ØœÙ\™\‹™Ù]š\ÚX›Q[šY\Ê
-JJNÂˆYˆ
-ØÓYØÜ›Ûš\ÚXš[]JHÂˆØÓYØÜ›Ûš\ÚXš[]JˆÔ™YÚ[ÛœÊY[[Y[ØœÙ\™\‹™Ù]š\ÚX›Q[šY\Ê
-JBˆ
-NÂˆBˆNÂ‚ˆÚ[™İËœ]X\ÕÙÙÛT™XY\ˆH
+            const toggleContents = window.document.createElement("div");
+            toggleContents.classList = el.classList;
+            toggleContents.classList.add("zindex-over-content");
+            toggleContents.classList.add("quarto-sidebar-toggle-contents");
+            for (const child of el.children) {
+              if (child.id === "toc-title") {
+                continue;
+              }
 
-HOˆÂˆËÈ\Y\ÈHÛİÈÛ\ÜÈ
-Üˆ™[[İ™\È]
-BˆËÈÈ\]HH˜[œÚ][ÛˆÜYYˆÛÛœİÛİÕ˜[œÚ][ÛˆH
-ÛİÊHOˆÂˆÛÛœİX[˜YÙU˜[œÚ][ÛˆH
-YÛİÊHOˆÂˆÛÛœİ[HØİ[Y[™Ù][[Y[RY
-Y
-NÂˆYˆ
-[
-HÂˆYˆ
-ÛİÊHÂˆ[˜Û\ÜÓ\İ˜Y
-œÛİÈŠNÂˆH[ÙHÂˆ[˜Û\ÜÓ\İœ™[[İ™JœÛİÈŠNÂˆBˆBˆNÂ‚ˆX[˜YÙU˜[œÚ][ÛŠ•ĞÈ‹ÛİÊNÂˆX[˜YÙU˜[œÚ][ÛŠœ]X\Ë\ÚYX˜\ˆ‹ÛİÊNÂˆNÂˆÛÛœİ™XY\“[ÙHHZ\Ô™XY\“[ÙJ
-NÂˆÙ]™XY\“[ÙU˜[YJ™XY\“[ÙJNÂ‚ˆËÈYˆÙIÜ™H[\š[™È™XY\ˆ[ÙKÛİÈH˜[œÚ][Û‚ˆYˆ
-™XY\“[ÙJHÂˆÛİÕ˜[œÚ][ÛŠ™XY\“[ÙJNÂˆBˆYÚYÚ™XY\•ÙÙÛJ™XY\“[ÙJNÂˆYSİ™\›\YÚYX˜\œÊ
-NÂ‚ˆËÈYˆÙIÜ™H^][™È™XY\ˆ[ÙK™\İÜ™HH›Û‹\ÛİÈ˜[œÚ][Û‚ˆYˆ
-\™XY\“[ÙJHÂˆÛİÕ˜[œÚ][ÛŠ\™XY\“[ÙJNÂˆBˆNÂ‚ˆÛÛœİYÚYÚ™XY\•ÙÙÛHH
-™XY\“[ÙJHOˆÂˆÛÛœİ[ÈHØİ[Y[œ]Y\TÙ[XİÜ[
-‹œ]X\Ë\™XY\‹]ÙÙÛHŠNÂˆYˆ
-[ÊHÂˆ[Ë™›Ü‘XXÚ
+              const clone = child.cloneNode(true);
+              clone.style.opacity = 1;
+              clone.style.pointerEvents = null;
+              clone.style.display = null;
+              toggleContents.append(clone);
+            }
+            toggleContents.style.height = "0px";
+            const positionToggle = () => {
+              // position the element (top left of parent, same width as parent)
+              if (!elRect) {
+                elRect = el.getBoundingClientRect();
+              }
+              toggleContainer.style.left = `${elRect.left}px`;
+              toggleContainer.style.top = `${elRect.top}px`;
+              toggleContainer.style.width = `${elRect.width}px`;
+            };
+            positionToggle();
 
-[
-HOˆÂˆYˆ
-™XY\“[ÙJHÂˆ[˜Û\ÜÓ\İ˜Y
-œ™XY\ˆŠNÂˆH[ÙHÂˆ[˜Û\ÜÓ\İœ™[[İ™Jœ™XY\ˆŠNÂˆBˆJNÂˆBˆNÂ‚ˆÛÛœİÙ]™XY\“[ÙU˜[YHH
-˜[
-HOˆÂˆYˆ
-Ú[™İË›ØØ][Û‹œ›İØÛÛOOH™š[NˆŠHÂˆÚ[™İË›ØØ[İÜ˜YÙKœÙ]][Jœ]X\Ë\™XY\‹[[ÙH‹˜[
-NÂˆH[ÙHÂˆØØ[™XY\“[ÙHH˜[ÂˆBˆNÂ‚ˆÛÛœİ\Ô™XY\“[ÙHH
+            toggleContainer.append(toggleContents);
+            el.parentElement.prepend(toggleContainer);
 
-HOˆÂˆYˆ
-Ú[™İË›ØØ][Û‹œ›İØÛÛOOH™š[NˆŠHÂˆ™]\›ˆÚ[™İË›ØØ[İÜ˜YÙK™Ù]][Jœ]X\Ë\™XY\‹[[ÙHŠHOOHYHÂˆH[ÙHÂˆ™]\›ˆØØ[™XY\“[ÙNÂˆBˆNÂˆ]ØØ[™XY\“[ÙHH[Â‚ˆÛÛœİØÓÜ[‘\İˆHØÑ[Ë™Ù]]šX]J™]K]ØËY^[™YŠNÂˆÛÛœİØÓÜ[‘\HØÓÜ[‘\İˆÈ[X™\ŠØÓÜ[‘\İŠHˆNÂ‚ˆËÈØ[ÈHĞÈ[™ÛÛ\ÙKÙ^[™›Ù\ÂˆËÈ›Ù\È\™H^[™YY‚ˆËÈH^H\™HÜ]™[ˆËÈH^H]™HÚ[™[ˆ]\™H	ØXİ]™IÈ[šÜÂˆËÈH^H\™H\™XİH™[İÈ[ˆ[šÈ]\È	ØXİ]™IÂˆÛÛœİØ[ÈH
-[\
-HOˆÂˆËÈXÚÈ\Ú[ˆÙH[\ˆHSˆYˆ
-[YÓ˜[YHOOH•SŠHÂˆ\H\
-ÈNÂˆB‚ˆËÈ]\È\ÈXİ]™H[šÂˆ]\ĞXİ]™S›ÙHH˜[ÙNÂˆYˆ
-[YÓ˜[YHOOHHˆ	‰ˆ[˜Û\ÜÓ\İ˜ÛÛZ[œÊ˜Xİ]™HŠJHÂˆ\ĞXİ]™S›ÙHHYNÂˆB‚ˆËÈÙYHYˆ\™H\È[ˆXİ]™HÚ[È\È[[Y[ˆ]\ĞXİ]™PÚ[H˜[ÙNÂˆ›Üˆ
-ÛÛœİÚ[Ùˆ[˜Ú[™[ŠHÂˆ\ĞXİ]™PÚ[HØ[ÊÚ[\
-H\ĞXİ]™PÚ[ÂˆB‚ˆËÈ›ØÙ\ÜÈHÛÛ\ÙHİ]HYˆ\È\È[ˆSˆYˆ
-[YÓ˜[YHOOH•SŠHÂˆYˆ
-ØÓÜ[‘\OOHLH	‰ˆ\ˆJHÂˆËÈØËY^[™ˆ˜[ÙBˆ[˜Û\ÜÓ\İ˜Y
-˜ÛÛ\ÙHŠNÂˆH[ÙHYˆ
-ˆ\HØÓÜ[‘\ˆ\ĞXİ]™PÚ[ˆ™]”ÚX›[™Ò\ĞXİ]™S[šÊ[
-Bˆ
-HÂˆ[˜Û\ÜÓ\İœ™[[İ™J˜ÛÛ\ÙHŠNÂˆH[ÙHÂˆ[˜Û\ÜÓ\İ˜Y
-˜ÛÛ\ÙHŠNÂˆB‚ˆËÈ[XÚÈ\Ú[ˆÙHX]™HHSˆ\H\HNÂˆBˆ™]\›ˆ\ĞXİ]™PÚ[\ĞXİ]™S›ÙNÂˆNÂ‚ˆËÈØ[ÈHĞÈ[™^[™ÈÛÛ\ÙH[H][\È]Úİ[™HÚİÛ‚ˆYˆ
-ØÑ[
-HÂˆ\]PXİ]™S[šÊ
-NÂˆØ[ÊØÑ[
-NÂˆB‚ˆËÈ›İHHØÜ›Û]™[[™Ø[È\šY[ØØ[BˆÚ[™İË™Øİ[Y[˜Y]™[\İ[™\ŠˆœØÜ›Û‹ˆ›İJ
+            // Process clicks
+            let tocShowing = false;
+            // Allow the caller to control whether this is dismissed
+            // when it is clicked (e.g. sidebar navigation supports
+            // opening and closing the nav tree, so don't dismiss on click)
+            const clickEl = placeholderDescriptor.dismissOnClick
+              ? toggleContainer
+              : toggleTitle;
 
-HOˆÂˆYˆ
-ØÑ[
-HÂˆ\]PXİ]™S[šÊ
-NÂˆØ[ÊØÑ[
-NÂˆBˆYˆ
-Z\Ô™XY\“[ÙJ
-JHÂˆYSİ™\›\YÚYX˜\œÊ
-NÂˆBˆKJBˆ
-NÂˆÚ[™İË˜Y]™[\İ[™\Šˆœ™\Ú^™H‹ˆ›İJ
+            const closeToggle = () => {
+              if (tocShowing) {
+                toggleContainer.classList.remove("expanded");
+                toggleContents.style.height = "0px";
+                tocShowing = false;
+              }
+            };
 
-HOˆÂˆYˆ
-ØÑ[
-HÂˆ\]PXİ]™S[šÊ
-NÂˆØ[ÊØÑ[
-NÂˆBˆYˆ
-Z\Ô™XY\“[ÙJ
-JHÂˆYSİ™\›\YÚYX˜\œÊ
-NÂˆBˆKL
-Bˆ
-NÂˆYSİ™\›\YÚYX˜\œÊ
-NÂˆYÚYÚ™XY\•ÙÙÛJ\Ô™XY\“[ÙJ
-JNÂŸJNÂ‚XœÙ]Ëš[š]
+            // Get rid of any expanded toggle if the user scrolls
+            window.document.addEventListener(
+              "scroll",
+              throttle(() => {
+                closeToggle();
+              }, 50)
+            );
 
-NÂ‚™[˜İ[Ûˆ›İJ[˜ËØZ]
-HÂˆ]ØZ][™ÈH˜[ÙNÂˆ™]\›ˆ[˜İ[Ûˆ
+            // Handle positioning of the toggle
+            window.addEventListener(
+              "resize",
+              throttle(() => {
+                elRect = undefined;
+                positionToggle();
+              }, 50)
+            );
 
-HÂˆYˆ
-]ØZ][™ÊHÂˆ[˜Ë˜\J\Ë\™İ[Y[ÊNÂˆØZ][™ÈHYNÂˆÙ][Y[İ]
-[˜İ[Ûˆ
+            window.addEventListener("quarto-hrChanged", () => {
+              elRect = undefined;
+            });
 
-HÂˆØZ][™ÈH˜[ÙNÂˆKØZ]
-NÂˆBˆNÂŸB‚™[˜İ[Ûˆ™^XÚÊ[˜ÊHÂˆ™]\›ˆÙ][Y[İ]
-[˜Ë
-NÂŸB
+            // Process the click
+            clickEl.onclick = () => {
+              if (!tocShowing) {
+                toggleContainer.classList.add("expanded");
+                toggleContents.style.height = null;
+                tocShowing = true;
+              } else {
+                closeToggle();
+              }
+            };
+          });
+        };
+
+        // Converts a sidebar from a menu back to a sidebar
+        const convertToSidebar = () => {
+          for (const child of el.children) {
+            child.style.opacity = 1;
+            child.style.overflow = null;
+            child.style.pointerEvents = null;
+          }
+
+          const placeholderEl = window.document.getElementById(
+            placeholderDescriptor.id
+          );
+          if (placeholderEl) {
+            placeholderEl.remove();
+          }
+
+          el.classList.remove("rollup");
+        };
+
+        if (isReaderMode()) {
+          convertToMenu();
+          isVisible = false;
+        } else {
+          // Find the top and bottom o the element that is being managed
+          const elTop = el.offsetTop;
+          const elBottom =
+            elTop + lastChildEl.offsetTop + lastChildEl.offsetHeight;
+
+          if (!isVisible) {
+            // If the element is current not visible reveal if there are
+            // no conflicts with overlay regions
+            if (!inHiddenRegion(elTop, elBottom, hiddenRegions)) {
+              convertToSidebar();
+              isVisible = true;
+            }
+          } else {
+            // If the element is visible, hide it if it conflicts with overlay regions
+            // and insert a placeholder toggle (or if we're in reader mode)
+            if (inHiddenRegion(elTop, elBottom, hiddenRegions)) {
+              convertToMenu();
+              isVisible = false;
+            }
+          }
+        }
+      }
+    };
+  };
+
+  const tabEls = document.querySelectorAll('a[data-bs-toggle="tab"]');
+  for (const tabEl of tabEls) {
+    const id = tabEl.getAttribute("data-bs-target");
+    if (id) {
+      const columnEl = document.querySelector(
+        `${id} .column-margin, .tabset-margin-content`
+      );
+      if (columnEl)
+        tabEl.addEventListener("shown.bs.tab", function (event) {
+          const el = event.srcElement;
+          if (el) {
+            const visibleCls = `${el.id}-margin-content`;
+            // walk up until we find a parent tabset
+            let panelTabsetEl = el.parentElement;
+            while (panelTabsetEl) {
+              if (panelTabsetEl.classList.contains("panel-tabset")) {
+                break;
+              }
+              panelTabsetEl = panelTabsetEl.parentElement;
+            }
+
+            if (panelTabsetEl) {
+              const prevSib = panelTabsetEl.previousElementSibling;
+              if (
+                prevSib &&
+                prevSib.classList.contains("tabset-margin-container")
+              ) {
+                const childNodes = prevSib.querySelectorAll(
+                  ".tabset-margin-content"
+                );
+                for (const childEl of childNodes) {
+                  if (childEl.classList.contains(visibleCls)) {
+                    childEl.classList.remove("collapse");
+                  } else {
+                    childEl.classList.add("collapse");
+                  }
+                }
+              }
+            }
+          }
+
+          layoutMarginEls();
+        });
+    }
+  }
+
+  // Manage the visibility of the toc and the sidebar
+  const marginScrollVisibility = manageSidebarVisiblity(marginSidebarEl, {
+    id: "quarto-toc-toggle",
+    titleSelector: "#toc-title",
+    dismissOnClick: true,
+  });
+  const sidebarScrollVisiblity = manageSidebarVisiblity(sidebarEl, {
+    id: "quarto-sidebarnav-toggle",
+    titleSelector: ".title",
+    dismissOnClick: false,
+  });
+  let tocLeftScrollVisibility;
+  if (leftTocEl) {
+    tocLeftScrollVisibility = manageSidebarVisiblity(leftTocEl, {
+      id: "quarto-lefttoc-toggle",
+      titleSelector: "#toc-title",
+      dismissOnClick: true,
+    });
+  }
+
+  // Find the first element that uses formatting in special columns
+  const conflictingEls = window.document.body.querySelectorAll(
+    '[class^="column-"], [class*=" column-"], aside, [class*="margin-caption"], [class*=" margin-caption"], [class*="margin-ref"], [class*=" margin-ref"]'
+  );
+
+  // Filter all the possibly conflicting elements into ones
+  // the do conflict on the left or ride side
+  const arrConflictingEls = Array.from(conflictingEls);
+  const leftSideConflictEls = arrConflictingEls.filter((el) => {
+    if (el.tagName === "ASIDE") {
+      return false;
+    }
+    return Array.from(el.classList).find((className) => {
+      return (
+        className !== "column-body" &&
+        className.startsWith("column-") &&
+        !className.endsWith("right") &&
+        !className.endsWith("container") &&
+        className !== "column-margin"
+      );
+    });
+  });
+  const rightSideConflictEls = arrConflictingEls.filter((el) => {
+    if (el.tagName === "ASIDE") {
+      return true;
+    }
+
+    const hasMarginCaption = Array.from(el.classList).find((className) => {
+      return className == "margin-caption";
+    });
+    if (hasMarginCaption) {
+      return true;
+    }
+
+    return Array.from(el.classList).find((className) => {
+      return (
+        className !== "column-body" &&
+        !className.endsWith("container") &&
+        className.startsWith("column-") &&
+        !className.endsWith("left")
+      );
+    });
+  });
+
+  const kOverlapPaddingSize = 10;
+  function toRegions(els) {
+    return els.map((el) => {
+      const boundRect = el.getBoundingClientRect();
+      const top =
+        boundRect.top +
+        document.documentElement.scrollTop -
+        kOverlapPaddingSize;
+      return {
+        top,
+        bottom: top + el.scrollHeight + 2 * kOverlapPaddingSize,
+      };
+    });
+  }
+
+  let hasObserved = false;
+  const visibleItemObserver = (els) => {
+    let visibleElements = [...els];
+    const intersectionObserver = new IntersectionObserver(
+      (entries, _observer) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            if (visibleElements.indexOf(entry.target) === -1) {
+              visibleElements.push(entry.target);
+            }
+          } else {
+            visibleElements = visibleElements.filter((visibleEntry) => {
+              return visibleEntry !== entry;
+            });
+          }
+        });
+
+        if (!hasObserved) {
+          hideOverlappedSidebars();
+        }
+        hasObserved = true;
+      },
+      {}
+    );
+    els.forEach((el) => {
+      intersectionObserver.observe(el);
+    });
+
+    return {
+      getVisibleEntries: () => {
+        return visibleElements;
+      },
+    };
+  };
+
+  const rightElementObserver = visibleItemObserver(rightSideConflictEls);
+  const leftElementObserver = visibleItemObserver(leftSideConflictEls);
+
+  const hideOverlappedSidebars = () => {
+    marginScrollVisibility(toRegions(rightElementObserver.getVisibleEntries()));
+    sidebarScrollVisiblity(toRegions(leftElementObserver.getVisibleEntries()));
+    if (tocLeftScrollVisibility) {
+      tocLeftScrollVisibility(
+        toRegions(leftElementObserver.getVisibleEntries())
+      );
+    }
+  };
+
+  window.quartoToggleReader = () => {
+    // Applies a slow class (or removes it)
+    // to update the transition speed
+    const slowTransition = (slow) => {
+      const manageTransition = (id, slow) => {
+        const el = document.getElementById(id);
+        if (el) {
+          if (slow) {
+            el.classList.add("slow");
+          } else {
+            el.classList.remove("slow");
+          }
+        }
+      };
+
+      manageTransition("TOC", slow);
+      manageTransition("quarto-sidebar", slow);
+    };
+    const readerMode = !isReaderMode();
+    setReaderModeValue(readerMode);
+
+    // If we're entering reader mode, slow the transition
+    if (readerMode) {
+      slowTransition(readerMode);
+    }
+    highlightReaderToggle(readerMode);
+    hideOverlappedSidebars();
+
+    // If we're exiting reader mode, restore the non-slow transition
+    if (!readerMode) {
+      slowTransition(!readerMode);
+    }
+  };
+
+  const highlightReaderToggle = (readerMode) => {
+    const els = document.querySelectorAll(".quarto-reader-toggle");
+    if (els) {
+      els.forEach((el) => {
+        if (readerMode) {
+          el.classList.add("reader");
+        } else {
+          el.classList.remove("reader");
+        }
+      });
+    }
+  };
+
+  const setReaderModeValue = (val) => {
+    if (window.location.protocol !== "file:") {
+      window.localStorage.setItem("quarto-reader-mode", val);
+    } else {
+      localReaderMode = val;
+    }
+  };
+
+  const isReaderMode = () => {
+    if (window.location.protocol !== "file:") {
+      return window.localStorage.getItem("quarto-reader-mode") === "true";
+    } else {
+      return localReaderMode;
+    }
+  };
+  let localReaderMode = null;
+
+  const tocOpenDepthStr = tocEl?.getAttribute("data-toc-expanded");
+  const tocOpenDepth = tocOpenDepthStr ? Number(tocOpenDepthStr) : 1;
+
+  // Walk the TOC and collapse/expand nodes
+  // Nodes are expanded if:
+  // - they are top level
+  // - they have children that are 'active' links
+  // - they are directly below an link that is 'active'
+  const walk = (el, depth) => {
+    // Tick depth when we enter a UL
+    if (el.tagName === "UL") {
+      depth = depth + 1;
+    }
+
+    // It this is active link
+    let isActiveNode = false;
+    if (el.tagName === "A" && el.classList.contains("active")) {
+      isActiveNode = true;
+    }
+
+    // See if there is an active child to this element
+    let hasActiveChild = false;
+    for (const child of el.children) {
+      hasActiveChild = walk(child, depth) || hasActiveChild;
+    }
+
+    // Process the collapse state if this is an UL
+    if (el.tagName === "UL") {
+      if (tocOpenDepth === -1 && depth > 1) {
+        // toc-expand: false
+        el.classList.add("collapse");
+      } else if (
+        depth <= tocOpenDepth ||
+        hasActiveChild ||
+        prevSiblingIsActiveLink(el)
+      ) {
+        el.classList.remove("collapse");
+      } else {
+        el.classList.add("collapse");
+      }
+
+      // untick depth when we leave a UL
+      depth = depth - 1;
+    }
+    return hasActiveChild || isActiveNode;
+  };
+
+  // walk the TOC and expand / collapse any items that should be shown
+  if (tocEl) {
+    updateActiveLink();
+    walk(tocEl, 0);
+  }
+
+  // Throttle the scroll event and walk peridiocally
+  window.document.addEventListener(
+    "scroll",
+    throttle(() => {
+      if (tocEl) {
+        updateActiveLink();
+        walk(tocEl, 0);
+      }
+      if (!isReaderMode()) {
+        hideOverlappedSidebars();
+      }
+    }, 5)
+  );
+  window.addEventListener(
+    "resize",
+    throttle(() => {
+      if (tocEl) {
+        updateActiveLink();
+        walk(tocEl, 0);
+      }
+      if (!isReaderMode()) {
+        hideOverlappedSidebars();
+      }
+    }, 10)
+  );
+  hideOverlappedSidebars();
+  highlightReaderToggle(isReaderMode());
+});
+
+tabsets.init();
+
+function throttle(func, wait) {
+  let waiting = false;
+  return function () {
+    if (!waiting) {
+      func.apply(this, arguments);
+      waiting = true;
+      setTimeout(function () {
+        waiting = false;
+      }, wait);
+    }
+  };
+}
+
+function nexttick(func) {
+  return setTimeout(func, 0);
+}

@@ -138,6 +138,7 @@ h2 .r-project-icon, h3 .r-project-icon { color: var(--portfolio-teal); }
 .metric-card { min-height: 130px; border: 1px solid var(--portfolio-card-line); border-top: 4px solid var(--portfolio-teal); background: var(--portfolio-card); padding: 1.1rem; }
 .metric { color: var(--portfolio-deep); font-size: 2.1rem; font-weight: 800; line-height: 1; margin-bottom: .7rem; }
 .metric-label { color: var(--portfolio-muted); font-size: .91rem; line-height: 1.35; }
+.metric-secondary { margin-top: .55rem; padding-top: .5rem; border-top: 1px solid var(--portfolio-card-line); color: var(--portfolio-teal); font-size: .82rem; line-height: 1.3; }
 
 .feature-grid, .package-grid, .journal-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 1rem; margin: 1.2rem 0 2.5rem; }
 .feature-grid.three { grid-template-columns: repeat(3, 1fr); }

@@ -165,6 +165,14 @@ pre code, pre.sourceCode, div.sourceCode code { color: var(--portfolio-code-ink)
 .timeline-item { margin-bottom: 1.5rem; }
 .contact-grid { display: grid; grid-template-columns: minmax(0, 1.7fr) minmax(260px, .7fr); gap: 3rem; margin-top: 2rem; }
 .contact-card { background: var(--portfolio-sand); border-top: 5px solid var(--portfolio-teal); padding: 1.5rem; border-radius: .6rem; }
+.interactive-showcase { margin: 1.4rem 0 2.5rem; padding: clamp(1rem, 3vw, 2rem); background: var(--portfolio-card); border: 1px solid var(--portfolio-card-line); border-radius: 1rem; }
+.showcase-intro h3 { margin-top: 0; }
+.nose-viewer { margin-top: 1.25rem; padding: .5rem; background: var(--portfolio-surface); border: 1px solid var(--portfolio-card-line); border-radius: .85rem; box-shadow: 0 18px 45px rgba(14, 116, 144, .12); }
+.nose-viewer iframe { display: block; width: 100%; height: min(70vw, 680px); min-height: 480px; border: 0; border-radius: .55rem; background: #f8fbfc; }
+.shape-index-key { max-width: 720px; margin: 1rem auto 0; }
+.shape-index-gradient { height: 18px; border: 1px solid var(--portfolio-card-line); border-radius: 999px; background: linear-gradient(90deg, #003cff, #00c9ff, #3ce6a4, #fff39a, #ff9b29, #f02222); }
+.shape-index-labels { display: flex; justify-content: space-between; gap: 1rem; margin-top: .3rem; color: var(--portfolio-muted); font-size: .76rem; }
+.shape-index-caption { color: var(--portfolio-deep); text-align: center; font-size: .82rem; font-weight: 800; }
 table { background: var(--portfolio-surface); color: var(--portfolio-ink); }
 .quarto-title-banner { background: linear-gradient(120deg, #164e63, #21758b); color: white; }
 .quarto-title-banner h1, .quarto-title-banner .subtitle { color: white; }
@@ -185,4 +193,8 @@ table { background: var(--portfolio-surface); color: var(--portfolio-ink); }
   .constellation-wrap::before { content: "Experience Constellation · swipe to explore →"; display: block; position: sticky; left: .2rem; width: max-content; margin: 0 0 .4rem .2rem; color: var(--portfolio-teal); font-size: .75rem; font-weight: 800; letter-spacing: .06em; text-transform: uppercase; }
   .experience-constellation { display: block; width: 720px; max-width: none; min-height: 390px; }
   .constellation-mobile { display: none; }
+  .interactive-showcase { padding: .7rem; }
+  .nose-viewer { padding: .3rem; }
+  .nose-viewer iframe { height: 72vh; min-height: 460px; }
+  .shape-index-labels { font-size: .68rem; }
 }

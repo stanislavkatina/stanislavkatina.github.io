@@ -352,6 +352,7 @@ window.Quarto = {
   <ul class="collapse">
   <li><a href="#coloured-3d-nose-local-surface-shape" id="toc-coloured-3d-nose-local-surface-shape" class="nav-link active" data-scroll-target="#coloured-3d-nose-local-surface-shape">Coloured 3D nose: local surface shape</a></li>
   <li><a href="#power-function-and-changing-density" id="toc-power-function-and-changing-density" class="nav-link" data-scroll-target="#power-function-and-changing-density">Power function and changing density</a></li>
+  <li><a href="#detection-limits-and-mechanical-substitution" id="toc-detection-limits-and-mechanical-substitution" class="nav-link" data-scroll-target="#detection-limits-and-mechanical-substitution">Detection limits and mechanical substitution</a></li>
   </ul>
 </nav>
     </div>
@@ -425,6 +426,26 @@ Shape-index colour scale
 </div>
 <div class="figure-note">
 <strong>How to read the animation:</strong> follow the red point on the power curve. At every position, the alternative density on the right changes continuously, and its shaded volume beyond the two orange critical values equals the power indicated by the point.
+</div>
+</div>
+</section>
+<section id="detection-limits-and-mechanical-substitution" class="level2">
+<h2 class="anchored" data-anchor-id="detection-limits-and-mechanical-substitution">Detection limits and mechanical substitution</h2>
+<div class="interactive-showcase power-showcase">
+<section id="an-animated-example-based-on-my-statistical-inference-book" class="level3 showcase-intro">
+<h3 class="anchored" data-anchor-id="an-animated-example-based-on-my-statistical-inference-book"><i class="r-project-icon" aria-hidden="true"></i> An animated example based on my Statistical Inference book</h3>
+<p>This animation develops <strong>Example 7.38: Bias caused by mechanical handling of nondetects</strong>. Laboratory concentrations follow a lognormal distribution, and the detection limit moves continuously across the latent population.</p>
+<ul>
+<li><strong>Latent concentration:</strong> the orange line is the current limit of detection (LoD). The red area contains values that would be reported only as nondetects; its probability grows as the LoD increases.</li>
+<li><strong>Mean estimation:</strong> the right panel follows the repeated-sampling distributions of the complete-data benchmark, detected values only, replacement of nondetects by zero, and replacement by LoD/2. The vertical reference line is the true population mean.</li>
+</ul>
+<p>The animation makes the resulting bias visible. Detected values only systematically overestimate the mean, while substitution by zero or LoD/2 imposes artificial values and produces method-dependent distortion.</p>
+</section>
+<div class="theme-aware-figure">
+<p><img class="power-figure power-figure-light" src="images/interactive/detection-limits-substitution-book-light.gif" alt="Animated laboratory detection limit moving across a lognormal concentration distribution while sampling distributions of four mean estimators change, light theme"> <img class="power-figure power-figure-dark" src="images/interactive/detection-limits-substitution-book-dark.gif" alt="Animated laboratory detection limit moving across a lognormal concentration distribution while sampling distributions of four mean estimators change, dark theme"></p>
+</div>
+<div class="figure-note">
+<strong>Key message:</strong> a nondetect is censored information—not a measured zero and not an ordinary missing value. A defensible analysis should represent the observation mechanism rather than silently manufacture measurements.
 </div>
 </div>
 

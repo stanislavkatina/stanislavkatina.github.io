@@ -20,6 +20,11 @@
   --portfolio-line: #d8e3e4;
   --portfolio-paper: #fbfdfc;
   --portfolio-surface: #ffffff;
+  --portfolio-card: #eef7f9;
+  --portfolio-card-line: #9cc9d3;
+  --portfolio-code-bg: #fff3c4;
+  --portfolio-code-ink: #493600;
+  --portfolio-code-line: #d4a72c;
 }
 
 body.quarto-dark {
@@ -32,6 +37,11 @@ body.quarto-dark {
   --portfolio-line: #355159;
   --portfolio-paper: #10191c;
   --portfolio-surface: #18262a;
+  --portfolio-card: #18343b;
+  --portfolio-card-line: #4f8996;
+  --portfolio-code-bg: #332b13;
+  --portfolio-code-ink: #ffe59a;
+  --portfolio-code-line: #e0b83f;
 }
 
 body {
@@ -70,15 +80,26 @@ p, li { max-width: 82ch; }
 .profile-link { display: inline-flex; align-items: center; gap: .4rem; padding: .4rem .7rem; border: 1px solid rgba(255,255,255,.6); border-radius: 999px; color: white; font-size: .9rem; font-weight: 700; text-decoration: none; }
 
 .metric-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 1rem; margin: 1.5rem 0 4rem; }
-.metric-card { min-height: 130px; border-top: 4px solid var(--portfolio-teal); background: var(--portfolio-surface); padding: 1.1rem; }
+.metric-card { min-height: 130px; border: 1px solid var(--portfolio-card-line); border-top: 4px solid var(--portfolio-teal); background: var(--portfolio-card); padding: 1.1rem; }
 .metric { color: var(--portfolio-deep); font-size: 2.1rem; font-weight: 800; line-height: 1; margin-bottom: .7rem; }
 .metric-label { color: var(--portfolio-muted); font-size: .91rem; line-height: 1.35; }
 
 .feature-grid, .package-grid, .journal-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 1rem; margin: 1.2rem 0 2.5rem; }
 .feature-grid.three { grid-template-columns: repeat(3, 1fr); }
-.feature-card, .package-card, .journal-card { background: var(--portfolio-surface); border: 1px solid var(--portfolio-line); border-radius: .8rem; padding: 1.2rem 1.3rem; }
+.feature-card, .package-card, .journal-card { background: var(--portfolio-card); border: 1px solid var(--portfolio-card-line); border-radius: .8rem; padding: 1.2rem 1.3rem; }
 .journal-card { border-left: 4px solid var(--portfolio-teal); }
 .feature-card h3, .package-card h3, .journal-card h3 { margin-top: 0; font-size: 1.12rem; }
+
+/* Warm reporting and code treatment, designed to remain legible in both modes. */
+code:not(pre code) { color: var(--portfolio-code-ink); background: var(--portfolio-code-bg); border: 1px solid color-mix(in srgb, var(--portfolio-code-line) 55%, transparent); border-radius: .28rem; padding: .08em .32em; }
+pre, div.sourceCode { background: var(--portfolio-code-bg) !important; border: 1px solid var(--portfolio-code-line) !important; border-left: 5px solid var(--portfolio-code-line) !important; border-radius: .55rem; }
+pre code, pre.sourceCode, div.sourceCode code { color: var(--portfolio-code-ink); background: transparent !important; }
+.cell-output, .cell-output-display { border-left: 4px solid var(--portfolio-code-line); background: color-mix(in srgb, var(--portfolio-code-bg) 70%, var(--portfolio-surface)); padding: .75rem 1rem; border-radius: .4rem; }
+
+/* Quarto callouts: stronger blue contrast than the theme defaults. */
+.callout.callout-style-default { background: var(--portfolio-card); border-color: var(--portfolio-card-line); }
+.callout.callout-style-default > .callout-header { background: color-mix(in srgb, var(--portfolio-card-line) 24%, var(--portfolio-card)); color: var(--portfolio-ink); }
+.callout.callout-style-default .callout-icon-container { color: var(--portfolio-teal); }
 
 .constellation-wrap { margin: 1.5rem 0 4rem; padding: .75rem; background: var(--portfolio-surface); border: 1px solid var(--portfolio-line); border-radius: 1.2rem; overflow: hidden; }
 .experience-constellation { display: block; width: 100%; height: auto; min-height: 480px; }

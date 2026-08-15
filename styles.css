@@ -1,0 +1,112 @@
+:root {
+  --portfolio-ink: #19313a;
+  --portfolio-muted: #5a6f76;
+  --portfolio-teal: #0e7490;
+  --portfolio-deep: #164e63;
+  --portfolio-mint: #dff4ef;
+  --portfolio-sand: #f5f0e6;
+  --portfolio-line: #d8e3e4;
+  --portfolio-paper: #fbfdfc;
+  --portfolio-surface: #ffffff;
+}
+
+body.quarto-dark {
+  --portfolio-ink: #e6f0f1;
+  --portfolio-muted: #aec2c7;
+  --portfolio-teal: #58c4d8;
+  --portfolio-deep: #9bdce7;
+  --portfolio-mint: #17383d;
+  --portfolio-sand: #1d3035;
+  --portfolio-line: #355159;
+  --portfolio-paper: #10191c;
+  --portfolio-surface: #18262a;
+}
+
+body {
+  background: var(--portfolio-paper);
+  color: var(--portfolio-ink);
+  font-family: "Aptos", "Avenir Next", "Segoe UI", Arial, sans-serif;
+  line-height: 1.65;
+}
+
+h1, h2, h3, h4, h5, h6,
+.navbar, .btn, .metric, .eyebrow {
+  font-family: "Aptos Display", "Avenir Next", "Segoe UI", Arial, sans-serif;
+}
+
+h1, h2, h3 { color: var(--portfolio-deep); letter-spacing: -.02em; }
+h1 { font-size: clamp(2.2rem, 5vw, 4.4rem); line-height: 1.04; }
+h2 { margin-top: 2.4rem; }
+p, li { max-width: 82ch; }
+.navbar { border-bottom: 1px solid var(--portfolio-line); }
+.navbar-brand, .navbar-nav .nav-link { font-weight: 700; }
+#quarto-content { max-width: 1240px; margin-inline: auto; }
+
+.hero-grid { display: grid; grid-template-columns: minmax(0, 1.65fr) minmax(230px, .65fr); gap: clamp(2rem, 6vw, 5.5rem); align-items: center; padding: clamp(3rem, 7vw, 7rem) 0 3rem; }
+.hero-copy h1 { margin: .5rem 0 1rem; }
+.hero-copy h2 { color: var(--portfolio-muted); font-size: clamp(1.25rem, 2.2vw, 1.8rem); line-height: 1.35; margin: 0 0 1.3rem; }
+.hero-copy p { font-size: 1.1rem; }
+.eyebrow { color: var(--portfolio-teal); font-size: .79rem; font-weight: 800; letter-spacing: .13em; text-transform: uppercase; }
+.hero-photo img { width: min(100%, 320px); aspect-ratio: 4 / 5; object-fit: cover; object-position: 50% 18%; border-radius: 1.2rem; box-shadow: 22px 24px 0 var(--portfolio-mint); }
+.btn { margin: .35rem .35rem .35rem 0; font-weight: 700; }
+
+.callout-band { margin: 3rem 0 1rem; padding: clamp(1.5rem, 4vw, 3rem); background: #164e63; color: white; border-radius: 1rem; }
+.callout-band h3, .callout-band p, .callout-band a { color: white; }
+.callout-band h3 { margin-top: 0; }
+.who-am-i .iscb-role { margin-top: 1rem; padding-top: 1rem; border-top: 1px solid rgba(255,255,255,.25); }
+.profile-links { display: flex; flex-wrap: wrap; gap: .6rem; margin-top: 1rem; }
+.profile-link { display: inline-flex; align-items: center; gap: .4rem; padding: .4rem .7rem; border: 1px solid rgba(255,255,255,.6); border-radius: 999px; color: white; font-size: .9rem; font-weight: 700; text-decoration: none; }
+
+.metric-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 1rem; margin: 1.5rem 0 4rem; }
+.metric-card { min-height: 130px; border-top: 4px solid var(--portfolio-teal); background: var(--portfolio-surface); padding: 1.1rem; }
+.metric { color: var(--portfolio-deep); font-size: 2.1rem; font-weight: 800; line-height: 1; margin-bottom: .7rem; }
+.metric-label { color: var(--portfolio-muted); font-size: .91rem; line-height: 1.35; }
+
+.feature-grid, .package-grid, .journal-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 1rem; margin: 1.2rem 0 2.5rem; }
+.feature-grid.three { grid-template-columns: repeat(3, 1fr); }
+.feature-card, .package-card, .journal-card { background: var(--portfolio-surface); border: 1px solid var(--portfolio-line); border-radius: .8rem; padding: 1.2rem 1.3rem; }
+.journal-card { border-left: 4px solid var(--portfolio-teal); }
+.feature-card h3, .package-card h3, .journal-card h3 { margin-top: 0; font-size: 1.12rem; }
+
+.constellation-wrap { margin: 1.5rem 0 4rem; padding: .75rem; background: var(--portfolio-surface); border: 1px solid var(--portfolio-line); border-radius: 1.2rem; overflow: hidden; }
+.experience-constellation { display: block; width: 100%; height: auto; min-height: 480px; }
+.constellation-lines path, .constellation-lines circle { fill: none; stroke: var(--portfolio-line); stroke-width: 2; stroke-dasharray: 5 8; }
+.constellation-core circle { fill: #164e63; }
+.constellation-core text { fill: white; text-anchor: middle; }
+.core-kicker { font-size: 14px; font-weight: 800; letter-spacing: .15em; }
+.core-title { font-size: 42px; font-weight: 800; }
+.core-subtitle { font-size: 17px; font-weight: 600; }
+.constellation-node rect { fill: var(--portfolio-surface); stroke: var(--portfolio-line); stroke-width: 2; }
+.constellation-node:hover rect { stroke: var(--portfolio-teal); }
+.constellation-node text { text-anchor: middle; }
+.node-title { fill: var(--portfolio-deep); font-size: 24px; font-weight: 800; }
+.node-tags, .constellation-satellites text { fill: var(--portfolio-muted); font-size: 15px; font-weight: 600; }
+.constellation-orbit text { fill: var(--portfolio-teal); font-size: 12px; font-weight: 800; letter-spacing: .16em; text-anchor: middle; }
+.constellation-mobile { display: none; }
+
+.timeline { border-left: 3px solid var(--portfolio-teal); margin: 1.5rem 0 2rem .45rem; padding-left: 1.4rem; }
+.timeline-item { margin-bottom: 1.5rem; }
+.contact-grid { display: grid; grid-template-columns: minmax(0, 1.7fr) minmax(260px, .7fr); gap: 3rem; margin-top: 2rem; }
+.contact-card { background: var(--portfolio-sand); border-top: 5px solid var(--portfolio-teal); padding: 1.5rem; border-radius: .6rem; }
+table { background: var(--portfolio-surface); color: var(--portfolio-ink); }
+.quarto-title-banner { background: linear-gradient(120deg, #164e63, #21758b); color: white; }
+.quarto-title-banner h1, .quarto-title-banner .subtitle { color: white; }
+
+@media (max-width: 900px) {
+  .hero-grid { grid-template-columns: 1fr; }
+  .hero-photo { grid-row: 1; }
+  .hero-photo img { width: 190px; height: 230px; }
+  .metric-grid { grid-template-columns: repeat(2, 1fr); }
+  .feature-grid.three, .contact-grid { grid-template-columns: 1fr; }
+}
+
+@media (max-width: 620px) {
+  .metric-grid, .feature-grid, .package-grid, .journal-grid { grid-template-columns: 1fr; }
+  .hero-grid { padding-top: 2rem; }
+  h1 { font-size: 2.45rem; }
+  .experience-constellation { display: none; }
+  .constellation-mobile { display: grid; gap: .7rem; }
+  .constellation-mobile a { display: grid; gap: .15rem; padding: .9rem 1rem; border-left: 4px solid var(--portfolio-teal); background: var(--portfolio-sand); color: var(--portfolio-ink); text-decoration: none; }
+  .constellation-mobile strong { color: var(--portfolio-deep); }
+  .constellation-mobile span { color: var(--portfolio-muted); font-size: .84rem; }
+}

@@ -353,6 +353,7 @@ window.Quarto = {
   <li><a href="#coloured-3d-nose-local-surface-shape" id="toc-coloured-3d-nose-local-surface-shape" class="nav-link active" data-scroll-target="#coloured-3d-nose-local-surface-shape">Coloured 3D nose: local surface shape</a></li>
   <li><a href="#power-function-and-changing-density" id="toc-power-function-and-changing-density" class="nav-link" data-scroll-target="#power-function-and-changing-density">Power function and changing density</a></li>
   <li><a href="#detection-limits-and-mechanical-substitution" id="toc-detection-limits-and-mechanical-substitution" class="nav-link" data-scroll-target="#detection-limits-and-mechanical-substitution">Detection limits and mechanical substitution</a></li>
+  <li><a href="#sequential-design-triangular-test" id="toc-sequential-design-triangular-test" class="nav-link" data-scroll-target="#sequential-design-triangular-test">Sequential design: triangular test</a></li>
   </ul>
 </nav>
     </div>
@@ -446,6 +447,27 @@ Shape-index colour scale
 </div>
 <div class="figure-note">
 <strong>Key message:</strong> a nondetect is censored information—not a measured zero and not an ordinary missing value. A defensible analysis should represent the observation mechanism rather than silently manufacture measurements.
+</div>
+</div>
+</section>
+<section id="sequential-design-triangular-test" class="level2">
+<h2 class="anchored" data-anchor-id="sequential-design-triangular-test">Sequential design: triangular test</h2>
+<div class="interactive-showcase power-showcase">
+<section id="a-patient-by-patient-animation-from-my-statistical-inference-book" class="level3 showcase-intro">
+<h3 class="anchored" data-anchor-id="a-patient-by-patient-animation-from-my-statistical-inference-book"><i class="r-project-icon" aria-hidden="true"></i> A patient-by-patient animation from my Statistical Inference book</h3>
+<p>This animation develops <strong>Example 25.4: Triangular test for a normal mean</strong>. Ten successive patient heights are monitored for <span class="math inline">\(H_0:\mu=180\)</span> against the one-sided alternative <span class="math inline">\(H_1:\mu\geq185\)</span>, using <span class="math inline">\(\alpha=0.01\)</span>, <span class="math inline">\(\beta=0.10\)</span> and known variance <span class="math inline">\(\sigma^2=16\)</span>.</p>
+<ul>
+<li><strong>Triangular continuation region:</strong> the unequal stopping boundaries converge at a finite maximum information value. The accumulating path is shown in the information and score coordinates <span class="math inline">\((v_n,z_n)\)</span>.</li>
+<li><strong>Patient-by-patient monitoring:</strong> each frame adds one patient, updates the cumulative mean and extends the evidence path. The highlighted point is the current analysis.</li>
+<li><strong>Stopping decision:</strong> the path remains inside the continuation region through patient 9 and crosses the upper boundary after patient 10, terminating the study in favour of the specified one-sided alternative.</li>
+</ul>
+<p>The example makes the stopping rule part of the design: the decision depends on the complete monitored path and its prespecified boundaries, not on repeatedly applying an ordinary fixed-sample test.</p>
+</section>
+<div class="theme-aware-figure">
+<p><img class="power-figure power-figure-light" src="images/interactive/triangular-sequential-test-book-light.gif" alt="Patient-by-patient triangular sequential test with an accumulating evidence path crossing the upper boundary after patient ten, light theme"> <img class="power-figure power-figure-dark" src="images/interactive/triangular-sequential-test-book-dark.gif" alt="Patient-by-patient triangular sequential test with an accumulating evidence path crossing the upper boundary after patient ten, dark theme"></p>
+</div>
+<div class="figure-note">
+<strong>Design result:</strong> continue after each of the first nine patients; stop after patient 10 when the score path crosses the upper boundary. If no earlier crossing occurred, the converging triangular boundaries would still guarantee termination at the maximum information value.
 </div>
 </div>
 

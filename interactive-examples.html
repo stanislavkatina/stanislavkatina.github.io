@@ -322,6 +322,7 @@ ul.task-list li input[type="checkbox"] {
    
   <ul class="collapse">
   <li><a href="#coloured-3d-nose-local-surface-shape" id="toc-coloured-3d-nose-local-surface-shape" class="nav-link active" data-scroll-target="#coloured-3d-nose-local-surface-shape">Coloured 3D nose: local surface shape</a></li>
+  <li><a href="#two-sample-means-power-under-model-departure" id="toc-two-sample-means-power-under-model-departure" class="nav-link" data-scroll-target="#two-sample-means-power-under-model-departure">Two-sample means: power under model departure</a></li>
   </ul>
 </nav>
     </div>
@@ -377,6 +378,26 @@ Shape-index colour scale
 </div>
 </div>
 <p>The example illustrates how statistical computation, anatomical annotation and interactive graphics can be combined in a reproducible analytical workflow. Additional examples will be added selectively from my work in statistical inference, linear models, multivariate analysis and clinical visualization.</p>
+</section>
+<section id="two-sample-means-power-under-model-departure" class="level2">
+<h2 class="anchored" data-anchor-id="two-sample-means-power-under-model-departure">Two-sample means: power under model departure</h2>
+<div class="interactive-showcase power-showcase">
+<section id="a-monte-carlo-example-from-my-statistical-inference-book" class="level3 showcase-intro">
+<h3 class="anchored" data-anchor-id="a-monte-carlo-example-from-my-statistical-inference-book"><i class="r-project-icon" aria-hidden="true"></i> A Monte Carlo example from my Statistical Inference book</h3>
+<p>These two coordinated panels illustrate the power of a <strong>classical two-sample Student <em>t</em>-test for a difference between two means</strong>. Both use balanced samples with (n_1=n_2=25), 20,000 Monte Carlo repetitions and a two-sided significance level of 0.05.</p>
+<ul>
+<li><strong>Normal model:</strong> the empirical distribution of the simulated test statistic closely follows its exact non-central <em>t</em> reference, with estimated power <strong>0.7903</strong>.</li>
+<li><strong>Contaminated-normal model:</strong> a small proportion of observations comes from a more variable component. The resulting distribution departs from the normal-theory reference and estimated power falls to <strong>0.7087</strong>.</li>
+</ul>
+<p>The comparison makes an important design principle visible: power depends not only on sample size and effect size, but also on whether the assumed data-generating model is an adequate representation of the population.</p>
+</section>
+<div class="theme-aware-figure">
+<p><img class="power-figure power-figure-light" src="images/interactive/two-sample-power-simulation-light.png" alt="Two side-by-side simulated distributions for a classical two-sample t-test under a normal model and a contaminated-normal model, light theme"> <img class="power-figure power-figure-dark" src="images/interactive/two-sample-power-simulation-dark.png" alt="Two side-by-side simulated distributions for a classical two-sample t-test under a normal model and a contaminated-normal model, dark theme"></p>
+</div>
+<div class="figure-note">
+<strong>How to read the panels:</strong> histograms show 20,000 simulated test statistics; the blue curve is the central <em>t</em> distribution under the null, the red curve is the non-central <em>t</em> reference under the alternative, and dashed vertical lines mark the two rejection boundaries.
+</div>
+</div>
 
 
 </section>

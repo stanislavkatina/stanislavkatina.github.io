@@ -193,9 +193,8 @@ table { background: var(--portfolio-surface); color: var(--portfolio-ink); }
   .metric-grid, .feature-grid, .package-grid, .journal-grid { grid-template-columns: 1fr; }
   .hero-grid { padding-top: 2rem; }
   h1 { font-size: 2.45rem; }
-  .experience-constellation { display: none; }
-  .constellation-mobile { display: grid; gap: .7rem; }
-  .constellation-mobile a { display: grid; gap: .15rem; padding: .9rem 1rem; border-left: 4px solid var(--portfolio-teal); background: var(--portfolio-sand); color: var(--portfolio-ink); text-decoration: none; }
-  .constellation-mobile strong { color: var(--portfolio-deep); }
-  .constellation-mobile span { color: var(--portfolio-muted); font-size: .84rem; }
+  .constellation-wrap { overflow-x: auto; padding: .6rem; scrollbar-color: var(--portfolio-teal) var(--portfolio-sand); }
+  .constellation-wrap::before { content: "Experience Constellation · swipe to explore →"; display: block; position: sticky; left: .2rem; width: max-content; margin: 0 0 .4rem .2rem; color: var(--portfolio-teal); font-size: .75rem; font-weight: 800; letter-spacing: .06em; text-transform: uppercase; }
+  .experience-constellation { display: block; width: 720px; max-width: none; min-height: 390px; }
+  .constellation-mobile { display: none; }
 }

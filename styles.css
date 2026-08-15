@@ -10,9 +10,9 @@
   --portfolio-surface: #ffffff;
   --portfolio-card: #eef7f9;
   --portfolio-card-line: #9cc9d3;
-  --portfolio-code-bg: #fff3c4;
-  --portfolio-code-ink: #493600;
-  --portfolio-code-line: #d4a72c;
+  --portfolio-code-bg: #e8f4fb;
+  --portfolio-code-ink: #123f56;
+  --portfolio-code-line: #4da3c7;
 }
 
 body.quarto-dark {
@@ -27,9 +27,9 @@ body.quarto-dark {
   --portfolio-surface: #18262a;
   --portfolio-card: #18343b;
   --portfolio-card-line: #4f8996;
-  --portfolio-code-bg: #332b13;
-  --portfolio-code-ink: #ffe59a;
-  --portfolio-code-line: #e0b83f;
+  --portfolio-code-bg: #102b3a;
+  --portfolio-code-ink: #d9f3ff;
+  --portfolio-code-line: #48b8dd;
 }
 
 body {
@@ -134,7 +134,7 @@ h2 .r-project-icon, h3 .r-project-icon { color: var(--portfolio-teal); }
 .journal-card { border-left: 4px solid var(--portfolio-teal); }
 .feature-card h3, .package-card h3, .journal-card h3 { margin-top: 0; font-size: 1.12rem; }
 
-/* Warm reporting and code treatment, designed to remain legible in both modes. */
+/* Cool-blue reporting and code treatment, designed for both colour modes. */
 code:not(pre code) { color: var(--portfolio-code-ink); background: var(--portfolio-code-bg); border: 1px solid color-mix(in srgb, var(--portfolio-code-line) 55%, transparent); border-radius: .28rem; padding: .08em .32em; }
 pre, div.sourceCode { background: var(--portfolio-code-bg) !important; border: 1px solid var(--portfolio-code-line) !important; border-left: 5px solid var(--portfolio-code-line) !important; border-radius: .55rem; }
 pre code, pre.sourceCode, div.sourceCode code { color: var(--portfolio-code-ink); background: transparent !important; }

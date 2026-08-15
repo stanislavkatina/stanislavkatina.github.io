@@ -120,6 +120,20 @@ p, li { max-width: 82ch; }
 .btn[href*="webofscience.com"]::before { content: "W"; }
 .btn[href*="muni.cz"]::before { content: "M"; border-radius: .22rem; }
 
+/* R Project mark for technology labels and headings. */
+.r-project-icon {
+  display: inline-block;
+  width: 1.45em;
+  height: 1.05em;
+  margin-right: .22em;
+  background: currentColor;
+  -webkit-mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 -32 581 448'%3E%3Cpath transform='translate(0 416) scale(1 -1)' d='M581 221.4C581 328.9 450.9 416 290.5 416S0 328.9 0 221.4C0 125.6 103.3 46 239.4 29.9V-32H338.5V29.5C362.8 32.2 386.1 36.9 407.9 43.4L448-32H560L492.6 81.7C547.1 117.1 581 166.6 581 221.4zM114.2 206.9C114.2 280.4 213.1 339.9 335 339.9S546.9 299.2 546.9 206.9C546.9 156.8 520.4 121.9 476.6 100.5C474.2 102.1 471.9 103.4 470.2 104.2C460 109.4 442.4 114.7 442.4 114.7S529 121.1 529 207.4S438.4 295.3 438.4 295.3H239.4V87C165.3 108.5 114.2 154.1 114.2 206.9zM339.3 168.6V224.2C397.1 224.2 427.1 231 427.1 196.9C427.1 160.4 388.9 168.6 339.3 168.6zM338.4 96.1H365C375.8 96.1 383.9 84.4 389 76.9C372.9 75 356 74.1 338.4 74V96.1z'/%3E%3C/svg%3E") center / contain no-repeat;
+  mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 -32 581 448'%3E%3Cpath transform='translate(0 416) scale(1 -1)' d='M581 221.4C581 328.9 450.9 416 290.5 416S0 328.9 0 221.4C0 125.6 103.3 46 239.4 29.9V-32H338.5V29.5C362.8 32.2 386.1 36.9 407.9 43.4L448-32H560L492.6 81.7C547.1 117.1 581 166.6 581 221.4zM114.2 206.9C114.2 280.4 213.1 339.9 335 339.9S546.9 299.2 546.9 206.9C546.9 156.8 520.4 121.9 476.6 100.5C474.2 102.1 471.9 103.4 470.2 104.2C460 109.4 442.4 114.7 442.4 114.7S529 121.1 529 207.4S438.4 295.3 438.4 295.3H239.4V87C165.3 108.5 114.2 154.1 114.2 206.9zM339.3 168.6V224.2C397.1 224.2 427.1 231 427.1 196.9C427.1 160.4 388.9 168.6 339.3 168.6zM338.4 96.1H365C375.8 96.1 383.9 84.4 389 76.9C372.9 75 356 74.1 338.4 74V96.1z'/%3E%3C/svg%3E") center / contain no-repeat;
+  vertical-align: -.12em;
+}
+.btn .r-project-icon { font-size: 1.12em; }
+h2 .r-project-icon, h3 .r-project-icon { color: var(--portfolio-teal); }
+
 .metric-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 1rem; margin: 1.5rem 0 4rem; }
 .metric-card { min-height: 130px; border: 1px solid var(--portfolio-card-line); border-top: 4px solid var(--portfolio-teal); background: var(--portfolio-card); padding: 1.1rem; }
 .metric { color: var(--portfolio-deep); font-size: 2.1rem; font-weight: 800; line-height: 1; margin-bottom: .7rem; }

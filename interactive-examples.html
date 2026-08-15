@@ -351,7 +351,7 @@ window.Quarto = {
    
   <ul class="collapse">
   <li><a href="#coloured-3d-nose-local-surface-shape" id="toc-coloured-3d-nose-local-surface-shape" class="nav-link active" data-scroll-target="#coloured-3d-nose-local-surface-shape">Coloured 3D nose: local surface shape</a></li>
-  <li><a href="#two-sample-means-power-function-and-density" id="toc-two-sample-means-power-function-and-density" class="nav-link" data-scroll-target="#two-sample-means-power-function-and-density">Two-sample means: power function and density</a></li>
+  <li><a href="#power-function-and-changing-density" id="toc-power-function-and-changing-density" class="nav-link" data-scroll-target="#power-function-and-changing-density">Power function and changing density</a></li>
   </ul>
 </nav>
     </div>
@@ -408,23 +408,23 @@ Shape-index colour scale
 </div>
 <p>The example illustrates how statistical computation, anatomical annotation and interactive graphics can be combined in a reproducible analytical workflow. Additional examples will be added selectively from my work in statistical inference, linear models, multivariate analysis and clinical visualization.</p>
 </section>
-<section id="two-sample-means-power-function-and-density" class="level2">
-<h2 class="anchored" data-anchor-id="two-sample-means-power-function-and-density">Two-sample means: power function and density</h2>
+<section id="power-function-and-changing-density" class="level2">
+<h2 class="anchored" data-anchor-id="power-function-and-changing-density">Power function and changing density</h2>
 <div class="interactive-showcase power-showcase">
-<section id="an-animated-example-from-my-statistical-inference-book" class="level3 showcase-intro">
-<h3 class="anchored" data-anchor-id="an-animated-example-from-my-statistical-inference-book"><i class="r-project-icon" aria-hidden="true"></i> An animated example from my Statistical Inference book</h3>
-<p>These two coordinated animated panels illustrate the exact power of a <strong>classical two-sample Student <em>t</em>-test for a difference between two means</strong>. The example uses balanced samples with <span class="math inline">\(n_1=n_2=25\)</span>, a common standard deviation of 2.5 and a two-sided significance level of 0.05.</p>
+<section id="original-animation-from-my-statistical-inference-book" class="level3 showcase-intro">
+<h3 class="anchored" data-anchor-id="original-animation-from-my-statistical-inference-book"><i class="r-project-icon" aria-hidden="true"></i> Original animation from my Statistical Inference book</h3>
+<p>These two continuously coordinated panels illustrate the exact power of a <strong>two-sided test for a normal mean with known variance</strong>.</p>
 <ul>
-<li><strong>Power function:</strong> the left panel follows the exact two-sided power as the true difference <span class="math inline">\((\mu_1-\mu_2)-\Delta_0\)</span> moves away from the null value. The red point marks the current power.</li>
-<li><strong>Density and rejection probability:</strong> the right panel compares the central <em>t</em> distribution under the null with the non-central <em>t</em> distribution under the current alternative. The shaded probability beyond the two critical boundaries is exactly the power shown on the left.</li>
+<li><strong>Power function:</strong> the red point moves continuously along the exact two-sided power curve as the true effect <span class="math inline">\(\mu-\mu_0\)</span> changes.</li>
+<li><strong>Changing density:</strong> the alternative normal density moves continuously relative to the fixed null distribution and critical boundaries. Its shaded volume in the rejection region changes simultaneously and is exactly the power shown on the left.</li>
 </ul>
-<p>The animation connects two views of the same quantity: the power function across possible effect sizes and the rejection probability under one particular alternative.</p>
+<p>The animation connects two views of the same quantity: power as a function of the true effect and power as the probability of rejection under the corresponding alternative distribution.</p>
 </section>
 <div class="theme-aware-figure">
-<p><img class="power-figure power-figure-light" src="images/interactive/two-sample-power-density-light.gif" alt="Animated two-sample t-test power function beside the corresponding null and alternative densities and shaded rejection probability, light theme"> <img class="power-figure power-figure-dark" src="images/interactive/two-sample-power-density-dark.gif" alt="Animated two-sample t-test power function beside the corresponding null and alternative densities and shaded rejection probability, dark theme"></p>
+<p><img class="power-figure power-figure-light" src="images/interactive/two-sample-power-density-light.gif" alt="Continuous animation of a moving point on a two-sided power function beside a changing alternative density and shaded rejection probability, light theme"> <img class="power-figure power-figure-dark" src="images/interactive/two-sample-power-density-dark.gif" alt="Continuous animation of a moving point on a two-sided power function beside a changing alternative density and shaded rejection probability, dark theme"></p>
 </div>
 <div class="figure-note">
-<strong>How to read the animation:</strong> the vertical orange line and red point move along the power function. In the density panel, the alternative distribution moves with the true mean difference; its shaded area beyond the two orange critical values equals the current power.
+<strong>How to read the animation:</strong> follow the red point on the power curve. At every position, the alternative density on the right changes continuously, and its shaded volume beyond the two orange critical values equals the power indicated by the point.
 </div>
 </div>
 

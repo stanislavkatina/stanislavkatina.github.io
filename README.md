@@ -1,0 +1,1 @@
+This GitHub profile focuses on statistical software packages and selected scholarly projects, including books and reproducible teaching resources. My broader experience in clinical development, biostatistics, data science, and statistical programming is presented on my website.

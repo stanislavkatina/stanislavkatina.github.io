@@ -1,0 +1,77 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Synthetic baseline characteristics table</title>
+<style>
+:root{color-scheme:light dark;--bg:#f8fafc;--panel:#fff;--ink:#18263a;--muted:#5f6f84;--line:#d7e0eb;--soft:#edf4fb;--accent:#1769aa;--head:#dcecf8;--stripe:#f6f9fc}*{box-sizing:border-box}body{margin:0;padding:18px;background:var(--bg);color:var(--ink);font:14px/1.45 system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif}body.dark{--bg:#1c2733;--panel:#243241;--ink:#eef5fb;--muted:#b7c5d4;--line:#43566a;--soft:#2d4052;--accent:#73b9ea;--head:#304b61;--stripe:#293948}.shell{max-width:1050px;margin:auto;background:var(--panel);border:1px solid var(--line);border-radius:14px;box-shadow:0 12px 35px #10203016;overflow:hidden}.notice{padding:12px 18px;background:var(--soft);border-bottom:1px solid var(--line);color:var(--muted)}.notice strong{color:var(--ink)}.toolbar{display:flex;gap:12px;align-items:end;flex-wrap:wrap;padding:14px 18px;border-bottom:1px solid var(--line)}label{display:grid;gap:4px;color:var(--muted);font-size:12px;font-weight:650}input,select,button{font:inherit;color:var(--ink);background:var(--panel);border:1px solid var(--line);border-radius:7px;padding:7px 9px}input{width:min(240px,70vw)}button{cursor:pointer;color:var(--accent);font-weight:700}.table-wrap{overflow:auto;padding:18px}.title{text-align:center;font-size:16px;font-weight:750;margin:2px 0 4px}.subtitle{text-align:center;color:var(--muted);font-size:13px;margin:0 0 14px}table{border-collapse:collapse;width:100%;min-width:660px;font-variant-numeric:tabular-nums}th,td{padding:9px 12px;border-bottom:1px solid var(--line);text-align:right;vertical-align:top}th:first-child,td:first-child{text-align:left;width:40%}thead th{background:var(--head);border-top:2px solid var(--accent);border-bottom:2px solid var(--accent)}tbody tr:nth-child(even):not(.group){background:var(--stripe)}tr.group td{font-weight:750;border-top:2px solid var(--line);background:var(--soft)}td.indent{padding-left:30px}body.compact th,body.compact td{padding-top:5px;padding-bottom:5px}tr.hidden{display:none}.notes{padding:0 18px 18px;color:var(--muted);font-size:12px}.notes p{margin:5px 0}.status{margin-left:auto;color:var(--muted);font-size:12px}@media(max-width:620px){body{padding:8px}.toolbar,.table-wrap{padding:12px}.status{width:100%;margin:0}}
+.key-stat{font-weight:800;color:var(--accent)}tr.key-summary td{white-space:nowrap}.pct{font-weight:800;color:var(--accent)}
+</style>
+</head>
+<body>
+<main class="shell">
+<div class="notice"><strong>Portfolio demonstration:</strong> all labels, group sizes and values are simulated. They do not represent any study, treatment, sponsor or patient population.</div>
+<div class="toolbar" aria-label="Table review tools">
+  <label>Search<input id="search" type="search" placeholder="Find a characteristic"></label>
+  <label>Density<select id="density"><option value="comfortable">Comfortable</option><option value="compact">Compact</option></select></label>
+  <label>Theme<select id="theme"><option value="auto">Follow website</option><option value="light">Light</option><option value="dark">Dark</option></select></label>
+  <button id="reset" type="button">Reset</button><span id="status" class="status" aria-live="polite"></span>
+</div>
+<div class="table-wrap">
+<div class="title">Synthetic summary of baseline characteristics</div>
+<div class="subtitle">Illustrative analysis population</div>
+<table>
+<thead><tr><th scope="col">Characteristic</th><th scope="col">Group A<br>(N = 96)</th><th scope="col">Group B<br>(N = 104)</th><th scope="col">Overall<br>(N = 200)</th></tr></thead>
+<tbody>
+<tr class="group"><td>Age, years</td><td></td><td></td><td></td></tr>
+<tr><td class="indent">n</td><td>96</td><td>104</td><td>200</td></tr>
+<tr><td class="indent">Mean (SD)</td><td>54.8 (11.9)</td><td>55.6 (12.4)</td><td>55.2 (12.1)</td></tr>
+<tr><td class="indent">Median</td><td>56.0</td><td>56.5</td><td>56.0</td></tr>
+<tr><td class="indent">Minimum, maximum</td><td>24, 78</td><td>22, 79</td><td>22, 79</td></tr>
+<tr class="group"><td>Age category, n (%)</td><td></td><td></td><td></td></tr>
+<tr><td class="indent">&lt; 50 years</td><td>29 (30.2)</td><td>31 (29.8)</td><td>60 (30.0)</td></tr>
+<tr><td class="indent">50–64 years</td><td>43 (44.8)</td><td>45 (43.3)</td><td>88 (44.0)</td></tr>
+<tr><td class="indent">≥ 65 years</td><td>24 (25.0)</td><td>28 (26.9)</td><td>52 (26.0)</td></tr>
+<tr class="group"><td>Sex, n (%)</td><td></td><td></td><td></td></tr>
+<tr><td class="indent">Female</td><td>50 (52.1)</td><td>53 (51.0)</td><td>103 (51.5)</td></tr>
+<tr><td class="indent">Male</td><td>46 (47.9)</td><td>51 (49.0)</td><td>97 (48.5)</td></tr>
+<tr class="group"><td>Body mass index, kg/m²</td><td></td><td></td><td></td></tr>
+<tr><td class="indent">n</td><td>95</td><td>103</td><td>198</td></tr>
+<tr><td class="indent">Mean (SD)</td><td>27.1 (4.3)</td><td>27.5 (4.7)</td><td>27.3 (4.5)</td></tr>
+<tr><td class="indent">Median (Q1, Q3)</td><td>26.7 (24.1, 29.8)</td><td>27.0 (24.3, 30.2)</td><td>26.9 (24.2, 30.0)</td></tr>
+<tr class="group"><td>Time since index date, years</td><td></td><td></td><td></td></tr>
+<tr><td class="indent">n</td><td>94</td><td>102</td><td>196</td></tr>
+<tr><td class="indent">Mean (SD)</td><td>4.8 (3.1)</td><td>5.0 (3.4)</td><td>4.9 (3.3)</td></tr>
+</tbody>
+</table>
+</div>
+<div class="notes"><p><strong>Note:</strong> Percentages use the displayed group denominator unless otherwise stated. Values are synthetic and deliberately unrelated to source material.</p><p>SD = standard deviation; Q1 = first quartile; Q3 = third quartile.</p></div>
+</main>
+<script>
+const body=document.body, search=document.querySelector('#search'), rows=[...document.querySelectorAll('tbody tr')], status=document.querySelector('#status');let websiteDark=null;
+let percentageSection=false;
+rows.forEach(row=>{
+  const label=row.cells[0]?.textContent.trim()||'';
+  if(row.classList.contains('group')) percentageSection=/n \(%\)/.test(label);
+  const statistic=label.match(/^(Mean|Median)\b/);
+  if(statistic){
+    row.classList.add('key-summary');
+    [...row.cells].slice(1).forEach(cell=>{
+      const value=cell.textContent.match(/^(\S+)(.*)$/);
+      if(value)cell.innerHTML='<span class="key-stat">'+value[1]+'</span>'+value[2];
+    });
+  }
+  if(percentageSection&&!row.classList.contains('group')) [...row.cells].slice(1).forEach(cell=>{
+    cell.innerHTML=cell.textContent.replace(/\((\d+(?:\.\d+)?)\)$/, '(<span class="pct">$1</span>)');
+  });
+});
+function inheritedDark(){if(websiteDark!==null)return websiteDark;try{return parent.document.body.classList.contains('quarto-dark')}catch(e){return matchMedia('(prefers-color-scheme:dark)').matches}}
+function setTheme(){const v=document.querySelector('#theme').value;body.classList.toggle('dark',v==='dark'||(v==='auto'&&inheritedDark()))}
+function filter(){const q=search.value.trim().toLowerCase();let shown=0;rows.forEach(r=>{const match=!q||r.textContent.toLowerCase().includes(q);r.classList.toggle('hidden',!match);if(match)shown++});status.textContent=q?shown+' matching rows':''}
+const requestedTheme=new URLSearchParams(location.search).get('theme');if(['light','dark'].includes(requestedTheme))document.querySelector('#theme').value=requestedTheme;
+search.addEventListener('input',filter);document.querySelector('#density').addEventListener('change',e=>body.classList.toggle('compact',e.target.value==='compact'));document.querySelector('#theme').addEventListener('change',setTheme);document.querySelector('#reset').addEventListener('click',()=>{search.value='';document.querySelector('#density').value='comfortable';document.querySelector('#theme').value='auto';body.classList.remove('compact');filter();setTheme()});
+addEventListener('message',event=>{if(event.data?.type==='portfolio-theme'){websiteDark=event.data.theme==='dark';if(document.querySelector('#theme').value==='auto')setTheme()}});setTheme();setInterval(()=>{if(document.querySelector('#theme').value==='auto')setTheme()},800);
+</script>
+</body>
+</html>

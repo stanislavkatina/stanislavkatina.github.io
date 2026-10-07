@@ -4295,6 +4295,33 @@ margin-top: 0.35rem;
 color: var(--bs-secondary-color);
 font-size: 0.9rem;
 }
+.citation-group-table {
+max-width: 72rem;
+margin: 1.1rem auto 1rem;
+overflow-x: auto;
+border: 1px solid var(--portfolio-card-line);
+border-radius: .85rem;
+background: var(--portfolio-surface);
+box-shadow: 0 14px 34px rgba(14, 116, 144, .09);
+}
+.citation-group-table table {
+width: 100%;
+margin: 0;
+background: transparent;
+}
+.citation-group-table th,
+.citation-group-table td {
+padding: .62rem .72rem;
+vertical-align: middle;
+}
+.citation-group-table th:first-child,
+.citation-group-table td:first-child {
+min-width: 23rem;
+}
+.citation-group-table th:not(:first-child),
+.citation-group-table td:not(:first-child) {
+white-space: nowrap;
+}
 .publication-count {
 display: inline-block;
 margin: -0.25rem 0 0.85rem;
@@ -4572,7 +4599,8 @@ grid-template-columns: 1fr;
     <h2 id="toc-title">On this page</h2>
    
   <ul class="collapse">
-  <li><a href="#thematic-publication-record" id="toc-thematic-publication-record" class="nav-link active" data-scroll-target="#thematic-publication-record">Thematic publication record</a></li>
+  <li><a href="#citation-impact-by-thematic-group" id="toc-citation-impact-by-thematic-group" class="nav-link active" data-scroll-target="#citation-impact-by-thematic-group">Citation impact by thematic group</a></li>
+  <li><a href="#thematic-publication-record" id="toc-thematic-publication-record" class="nav-link" data-scroll-target="#thematic-publication-record">Thematic publication record</a></li>
   <li><a href="#clinical-trials-and-clinical-research" id="toc-clinical-trials-and-clinical-research" class="nav-link" data-scroll-target="#clinical-trials-and-clinical-research">Clinical trials and clinical research</a></li>
   <li><a href="#neuroimmunology-neurodegeneration-and-translational-biomarkers" id="toc-neuroimmunology-neurodegeneration-and-translational-biomarkers" class="nav-link" data-scroll-target="#neuroimmunology-neurodegeneration-and-translational-biomarkers">Neuroimmunology, neurodegeneration and translational biomarkers</a></li>
   <li><a href="#statistical-methodology-and-computational-statistics" id="toc-statistical-methodology-and-computational-statistics" class="nav-link" data-scroll-target="#statistical-methodology-and-computational-statistics">Statistical methodology and computational statistics</a></li>
@@ -4656,6 +4684,96 @@ documents in the full Web of Science researcher profile
 </div>
 <p><em>Database metrics checked 7 October 2026. Scopus reports 1,792 citing documents.</em></p>
 <p><a href="https://www.scopus.com/authid/detail.uri?authorId=57245705700" class="btn btn-primary">Scopus</a> <a href="https://www.webofscience.com/wos/author/record/W-3936-2018" class="btn btn-outline-primary">Web of Science</a> <a href="https://orcid.org/0000-0002-3256-5482" class="btn btn-outline-primary">ORCID</a> <a href="https://www.muni.cz/en/people/111465-stanislav-katina/publications" class="btn btn-outline-primary">MUNI publication record</a></p>
+<section id="citation-impact-by-thematic-group" class="level2">
+<h2 class="anchored" data-anchor-id="citation-impact-by-thematic-group">Citation impact by thematic group</h2>
+<p>The table connects the publication themes below with their citation reach. Scopus and Web of Science are shown separately; the reconciled column removes overlapping citation links between the two databases rather than adding their totals.</p>
+<div class="citation-group-table">
+<table class="caption-top table">
+<colgroup>
+<col style="width: 20%">
+<col style="width: 20%">
+<col style="width: 20%">
+<col style="width: 20%">
+<col style="width: 20%">
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: left;">Thematic publication group</th>
+<th style="text-align: right;">Indexed publications</th>
+<th style="text-align: right;">Scopus</th>
+<th style="text-align: right;">Web of Science</th>
+<th style="text-align: right;">Reconciled citations</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">Clinical biostatistics and clinical trials</td>
+<td style="text-align: right;">5</td>
+<td style="text-align: right;">639</td>
+<td style="text-align: right;">537</td>
+<td style="text-align: right;">666</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Medical imaging, computational phenotyping and 3D facial analysis</td>
+<td style="text-align: right;">10</td>
+<td style="text-align: right;">136</td>
+<td style="text-align: right;">109</td>
+<td style="text-align: right;">137</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Preclinical and translational biomedical research</td>
+<td style="text-align: right;">10</td>
+<td style="text-align: right;">389</td>
+<td style="text-align: right;">303</td>
+<td style="text-align: right;">400</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Statistical and computational methodology</td>
+<td style="text-align: right;">7</td>
+<td style="text-align: right;">51</td>
+<td style="text-align: right;">25</td>
+<td style="text-align: right;">53</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Medical informatics, reproducible research and statistical software</td>
+<td style="text-align: right;">2</td>
+<td style="text-align: right;">5</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">5</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Other clinical, biomedical and health applications</td>
+<td style="text-align: right;">12</td>
+<td style="text-align: right;">206</td>
+<td style="text-align: right;">157</td>
+<td style="text-align: right;">211</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Human morphology, anthropology and related applications</td>
+<td style="text-align: right;">14</td>
+<td style="text-align: right;">252</td>
+<td style="text-align: right;">179</td>
+<td style="text-align: right;">262</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Fish morphology, ecology and shape analysis</td>
+<td style="text-align: right;">9</td>
+<td style="text-align: right;">228</td>
+<td style="text-align: right;">204</td>
+<td style="text-align: right;">231</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"><strong>Selected portfolio subtotal</strong></td>
+<td style="text-align: right;"><strong>69</strong></td>
+<td style="text-align: right;"><strong>1,906</strong></td>
+<td style="text-align: right;"><strong>1,514</strong></td>
+<td style="text-align: right;"><strong>1,965</strong></td>
+</tr>
+</tbody>
+</table>
+</div>
+<p><em>Citation evidence snapshot: 7 October 2026. Publications are assigned to one primary thematic group to avoid duplication. The broader indexed record also contains publications and database records intentionally not selected for the thematic portfolio.</em></p>
+</section>
 <section id="thematic-publication-record" class="level2">
 <h2 class="anchored" data-anchor-id="thematic-publication-record">Thematic publication record</h2>
 <p>The bibliography below provides <strong>90 full publication records</strong>, combining the current Doctor of Science source bibliography with subsequently published work. It complements the broader total of more than 130 peer-reviewed publications, including outputs recorded outside the principal indexed databases and publications not yet incorporated into the thematic source bibliography. Conference and meeting abstracts are excluded. Publications are assigned to one primary theme to avoid duplication.</p>

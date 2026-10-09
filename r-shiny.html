@@ -4295,6 +4295,33 @@ margin-top: 0.35rem;
 color: var(--bs-secondary-color);
 font-size: 0.9rem;
 }
+.citation-group-table {
+max-width: 72rem;
+margin: 1.1rem auto 1rem;
+overflow-x: auto;
+border: 1px solid var(--portfolio-card-line);
+border-radius: .85rem;
+background: var(--portfolio-surface);
+box-shadow: 0 14px 34px rgba(14, 116, 144, .09);
+}
+.citation-group-table table {
+width: 100%;
+margin: 0;
+background: transparent;
+}
+.citation-group-table th,
+.citation-group-table td {
+padding: .62rem .72rem;
+vertical-align: middle;
+}
+.citation-group-table th:first-child,
+.citation-group-table td:first-child {
+min-width: 23rem;
+}
+.citation-group-table th:not(:first-child),
+.citation-group-table td:not(:first-child) {
+white-space: nowrap;
+}
 .publication-count {
 display: inline-block;
 margin: -0.25rem 0 0.85rem;

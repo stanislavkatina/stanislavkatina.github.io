@@ -28,7 +28,7 @@
 
   const review = records.find((d) => d.id === "A-014" && d.visitIndex === 4);
   if (review) {
-    review.value = 75;
+    review.value = 175;
     review.review = true;
   }
 

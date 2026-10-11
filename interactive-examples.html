@@ -4351,6 +4351,7 @@ html.quarto-dark .nose-viewer iframe,
 [data-bs-theme="dark"] .nose-viewer iframe { background: #25292b; }
 .clinical-table-viewer { margin-top: 1.25rem; padding: .5rem; background: var(--portfolio-surface); border: 1px solid var(--portfolio-card-line); border-radius: .85rem; box-shadow: 0 18px 45px rgba(14, 116, 144, .12); }
 .clinical-table-viewer iframe { display: block; width: 100%; height: 780px; border: 0; border-radius: .55rem; background: #f8fbfc; }
+.longitudinal-figure-viewer iframe { height: auto; aspect-ratio: 1050 / 610; }
 .acceptance-table-viewer iframe { height: 1040px; }
 body.quarto-dark .clinical-table-viewer iframe,
 html.quarto-dark .clinical-table-viewer iframe,
@@ -4415,6 +4416,7 @@ h1 { font-size: 2.45rem; }
 .nose-viewer iframe { height: 72vh; min-height: 460px; }
 .clinical-table-viewer { padding: .3rem; }
 .clinical-table-viewer iframe { height: 820px; }
+.longitudinal-figure-viewer iframe { height: auto; aspect-ratio: 1050 / 610; }
 .acceptance-table-viewer iframe { height: 1040px; }
 .shape-index-labels { font-size: .68rem; }
 }
@@ -4858,7 +4860,7 @@ grid-template-columns: 1fr;
 <p>This example presents repeated patient-level change from baseline by visit and group. Stable synthetic subject identifiers connect observations across visits, correlated subject-specific effects create realistic within-person dependence, and monotone dropout reduces the later-visit sample sizes. The violin shapes show visit-specific distributions, with medians and interquartile ranges retained as precise visual anchors.</p>
 <p><strong>Explore individual values:</strong> hover over a point to inspect its synthetic subject identifier, group, visit and change from baseline. The yellow diamond marks a synthetic review value, while the dashed lines provide illustrative review limits. Every visit, identifier and value is simulated.</p>
 </section>
-<div class="clinical-table-viewer">
+<div class="clinical-table-viewer longitudinal-figure-viewer">
 <iframe role="img" src="interactive/synthetic-change-from-baseline-violin.html" title="Interactive synthetic patient-level change-from-baseline violin plots" loading="lazy">
 </iframe>
 </div>
@@ -4872,7 +4874,7 @@ grid-template-columns: 1fr;
 <p>The group-specific visit means and pointwise 95% confidence intervals below summarize exactly the same simulated patient-level records as the violin plots. The intervals use the descriptive mean plus or minus 1.96 standard errors at each visit. They are not estimates from a longitudinal model; a formal repeated-measures analysis would additionally specify the estimand, covariance structure, missing-data assumptions and sensitivity analyses.</p>
 <p><strong>Explore the estimates:</strong> hover over a marker to see the mean, 95% confidence interval and number of simulated observations at that visit.</p>
 </section>
-<div class="clinical-table-viewer">
+<div class="clinical-table-viewer longitudinal-figure-viewer">
 <iframe role="img" src="interactive/synthetic-change-from-baseline-mean-ci.html" title="Interactive synthetic mean change-from-baseline profile with 95 percent confidence intervals" loading="lazy">
 </iframe>
 </div>

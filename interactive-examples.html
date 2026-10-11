@@ -5036,15 +5036,15 @@ Symmetric signal colour scale
 </div>
 <script>
 (() => {
-  const synchronizeTableThemes = () => {
+  const synchronizeEmbeddedThemes = () => {
     const theme = document.body.classList.contains('quarto-dark') ? 'dark' : 'light';
-    document.querySelectorAll('.clinical-table-viewer iframe').forEach(frame => {
+    document.querySelectorAll('.clinical-table-viewer iframe, .nose-viewer iframe').forEach(frame => {
       if (frame.contentWindow) frame.contentWindow.postMessage({type: 'portfolio-theme', theme}, '*');
     });
   };
-  window.addEventListener('load', synchronizeTableThemes);
-  document.querySelectorAll('.clinical-table-viewer iframe').forEach(frame => frame.addEventListener('load', synchronizeTableThemes));
-  new MutationObserver(synchronizeTableThemes).observe(document.body, {attributes: true, attributeFilter: ['class']});
+  window.addEventListener('load', synchronizeEmbeddedThemes);
+  document.querySelectorAll('.clinical-table-viewer iframe, .nose-viewer iframe').forEach(frame => frame.addEventListener('load', synchronizeEmbeddedThemes));
+  new MutationObserver(synchronizeEmbeddedThemes).observe(document.body, {attributes: true, attributeFilter: ['class']});
 })();
 </script>
 

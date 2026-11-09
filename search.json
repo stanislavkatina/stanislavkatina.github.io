@@ -42,242 +42,32 @@
     "text": "Contact\nAssoc. Prof. PaedDr. RNDr. Stanislav Katina, PhD.\nBrno, Czech Republic\nstanislav.katina@gmail.com"
   },
   {
-    "objectID": "interactive-examples.html",
-    "href": "interactive-examples.html",
-    "title": "Interactive Examples",
+    "objectID": "teaching-vision.html",
+    "href": "teaching-vision.html",
+    "title": "Teaching Mathematical & Statistical Sciences",
     "section": "",
-    "text": "This gallery presents selected interactive and animated examples from my work in statistical methodology, biomedical visualization and teaching. Each example is designed to make a complex quantitative idea directly explorable."
+    "text": "Mathematical and statistical education is changing rapidly. Data are larger and less tidy, computation is inseparable from analysis, and artificial intelligence can now produce plausible proofs, code and reports within seconds. Yet the enduring purpose of education has not changed: students must learn to reason clearly, work responsibly and defend conclusions that are supported by evidence.\nI therefore view modern teaching as an integrated progression from foundations to independent practice. Mathematical theory, statistical reasoning, programming, data work, modelling, uncertainty, communication and professional responsibility should reinforce one another throughout a programme—not appear as isolated subjects that students are expected to connect only at the end."
   },
   {
-    "objectID": "interactive-examples.html#interactive-clinical-reporting-table",
-    "href": "interactive-examples.html#interactive-clinical-reporting-table",
-    "title": "Interactive Examples",
-    "section": "Interactive clinical reporting table",
-    "text": "Interactive clinical reporting table\n\n\n Synthetic baseline-characteristics table\nThis example demonstrates a user-facing clinical reporting table designed for efficient review. Search, display density and light/dark presentation can be changed directly in the table.\nThe example was rebuilt specifically for this public portfolio. Every label, group size and numerical value is simulated; it contains no study name, treatment identity, sponsor, therapeutic indication or patient data."
+    "objectID": "teaching-vision.html#six-complementary-guidance-areas",
+    "href": "teaching-vision.html#six-complementary-guidance-areas",
+    "title": "Teaching Mathematical & Statistical Sciences",
+    "section": "Six complementary guidance areas",
+    "text": "Six complementary guidance areas\nThe following guidance syntheses bring together recommendations from international statistical, mathematical, actuarial, computing and educational organisations. They are not intended as detailed prescriptions for individual courses. Together, they describe the direction in which I believe mathematical and statistical education should develop.\n\n\nStatistical education\nStatistics should begin with questions, study design and data—not with a catalogue of tests. Theory, computation and application belong together, with repeated attention to assumptions, diagnostics, validation, uncertainty, reproducibility and clear interpretation.\nSynthesises guidance from the ASA, GAISE and contemporary statistical-learning practice.\n\n\nData science education\nData science should be taught as a complete and cumulative practice connecting data acquisition, management, programming, statistical modelling, validation, ethics and communication. A collection of unrelated statistics and computing courses is not enough.\nSynthesises PCMI/ASA, National Academies, ACM DS2021, ASA and MAA/CUPM guidance.\n\n\nTheoretical and computational mathematics\nRigour and computation are complementary. Students should move between definitions, proofs, algorithms, numerical or symbolic experiments and interpretation, while learning error, stability, complexity, testing and verification.\nSynthesises QAA, MAA/CUPM, SIAM and broader mathematical-sciences guidance.\n\n\nMathematical modelling\nModelling is an iterative cycle, not simply the construction of equations. Assumptions, mathematical representation, computation, data, calibration, identifiability, validation, uncertainty and revision should all be visible in students’ work.\nSynthesises GAIMME, SIAM, MAA/CUPM, QAA and National Academies guidance.\n\n\nFinancial and actuarial mathematics\nStudents need a coherent foundation in probability, statistics, stochastic processes, computation and risk before narrow specialisation. Professional judgement requires calibration, validation, uncertainty, regulation, ethics and communication—not formula rehearsal alone.\nSynthesises the IAA, IFoA, SOA and MAA/CUPM educational frameworks.\n\n\nArtificial intelligence in education\nAI should be treated as a powerful but fallible analytical partner. Students must disclose material use, verify generated claims and code, protect sensitive data and remain able to explain and defend every substantive decision independently.\nSynthesises guidance from UNESCO, the European Commission, MAA, QAA and Jisc."
   },
   {
-    "objectID": "interactive-examples.html#interactive-adverse-event-summary",
-    "href": "interactive-examples.html#interactive-adverse-event-summary",
-    "title": "Interactive Examples",
-    "section": "Interactive adverse-event summary",
-    "text": "Interactive adverse-event summary\n\n\n Synthetic safety-review table\nThis example demonstrates a compact user-facing overview of adverse events, organized into occurrence, severity, serious outcomes and focused-review categories. Search, display density and light/dark presentation can be changed directly in the table.\nThe table was rebuilt specifically for this public portfolio. Every event definition, group size and numerical value is simulated; it contains no study name, treatment identity, sponsor, therapeutic indication, coding version or patient data."
+    "objectID": "teaching-vision.html#what-these-guidances-have-in-common",
+    "href": "teaching-vision.html#what-these-guidances-have-in-common",
+    "title": "Teaching Mathematical & Statistical Sciences",
+    "section": "What these guidances have in common",
+    "text": "What these guidances have in common\nAcross disciplines, the same priorities repeatedly emerge:\n\n\nFoundations with purpose\nMathematical and statistical foundations remain essential, but students understand them more deeply when they repeatedly see how assumptions, structures and methods shape real analyses and decisions.\n\n\nComputation as scholarship\nProgramming, data management, testing, version control and reproducible reporting are intellectual components of modern quantitative work—not merely technical support skills.\n\n\nEvidence of independent competence\nAssessment should include executable work, interpretation, critique and oral defence. A polished final product is not sufficient evidence when software and AI can generate one without genuine understanding."
   },
   {
-    "objectID": "interactive-examples.html#longitudinal-analysis-with-statistical-signals",
-    "href": "interactive-examples.html#longitudinal-analysis-with-statistical-signals",
-    "title": "Interactive Examples",
-    "section": "Longitudinal analysis with statistical signals",
-    "text": "Longitudinal analysis with statistical signals\n\n\n Synthetic visit-by-visit model table\nThis example combines observed values, change from baseline and repeated-measures model results across visits. The primary estimate in each descriptive cell is emphasized, while SD remains visually secondary.\nInferential signals are coordinated across the result: green identifies p-values below 0.05 and their corresponding confidence intervals; orange identifies p-values from 0.05 to below 0.10 and the related intervals. All outcomes, visits, group sizes and estimates are simulated."
-  },
-  {
-    "objectID": "interactive-examples.html#acceptance-checks-and-issue-traceability",
-    "href": "interactive-examples.html#acceptance-checks-and-issue-traceability",
-    "title": "Interactive Examples",
-    "section": "Acceptance checks and issue traceability",
-    "text": "Acceptance checks and issue traceability\n\n\n Synthetic acceptance-review matrix\nThis example shows how acceptance checks can connect each finding to its output, issue category, evidence, decision and required action. It brings numerical validation together with checks of populations, denominators, derivations, statistical presentation, specifications and reproducibility.\nThe issue patterns reflect realistic findings encountered during independent table and listing validation, but the output names, counts, values and wording have been rebuilt for this public portfolio. All content is synthetic and study-neutral; it contains no study, sponsor, treatment, indication or participant information."
-  },
-  {
-    "objectID": "interactive-examples.html#interactive-change-from-baseline-distributions",
-    "href": "interactive-examples.html#interactive-change-from-baseline-distributions",
-    "title": "Interactive Examples",
-    "section": "Interactive change-from-baseline distributions",
-    "text": "Interactive change-from-baseline distributions\n\n\n Synthetic patient-level violin plots\nThis example presents repeated patient-level change from baseline by visit and group. Stable synthetic subject identifiers connect observations across visits, correlated subject-specific effects create realistic within-person dependence, and monotone dropout reduces the later-visit sample sizes. The violin shapes show visit-specific distributions, with medians and interquartile ranges retained as precise visual anchors.\nExplore individual values: hover over a point to inspect its synthetic subject identifier, group, visit and change from baseline. The yellow diamond marks a synthetic review value, while the dashed lines provide illustrative review limits. Every visit, identifier and value is simulated."
-  },
-  {
-    "objectID": "interactive-examples.html#mean-profile-with-95-confidence-intervals",
-    "href": "interactive-examples.html#mean-profile-with-95-confidence-intervals",
-    "title": "Interactive Examples",
-    "section": "Mean profile with 95% confidence intervals",
-    "text": "Mean profile with 95% confidence intervals\n\n\n Coordinated summary of the same synthetic data\nThe group-specific visit means and pointwise 95% confidence intervals below summarize exactly the same simulated patient-level records as the violin plots. The intervals use the descriptive mean plus or minus 1.96 standard errors at each visit. They are not estimates from a longitudinal model; a formal repeated-measures analysis would additionally specify the estimand, covariance structure, missing-data assumptions and sensitivity analyses.\nExplore the estimates: hover over a marker to see the mean, 95% confidence interval and number of simulated observations at that visit."
-  },
-  {
-    "objectID": "interactive-examples.html#interactive-survival-curves",
-    "href": "interactive-examples.html#interactive-survival-curves",
-    "title": "Interactive Examples",
-    "section": "Interactive survival curves",
-    "text": "Interactive survival curves\n\n\n Synthetic time-to-event analysis\nThis example presents two Kaplan–Meier-style survival curves as separated step functions with stepwise 95% confidence bands and a corresponding numbers-at-risk table below.\nExplore across time: move over the plot to inspect the nearest failure or censoring time. Failures use the stronger Group A or Group B tone; censoring marks use the related lighter tone. Controls can hide the confidence bands or either marker type, and the figure follows the website’s light/dark theme.\nAll event times, censoring times, survival estimates, confidence intervals and risk counts are simulated."
-  },
-  {
-    "objectID": "interactive-examples.html#coloured-3d-nose-local-surface-shape",
-    "href": "interactive-examples.html#coloured-3d-nose-local-surface-shape",
-    "title": "Interactive Examples",
-    "section": "Coloured 3D nose: local surface shape",
-    "text": "Coloured 3D nose: local surface shape\n\n\nAn interactive example from my face3d R package\nThis example uses the packaged, de-identified facial template from face3d, an R package for three-dimensional facial morphometrics and statistical shape analysis. The nasal surface is coloured by shape index, which summarizes local surface form from concave through saddle-shaped to convex regions.\nThe mesh contains 1,317 unique surface points connected into 2,498 triangles, revealing the local surface structure in detail. Dark red lines show stored anatomical nasal curves, while teal points identify anatomical landmarks.\nExplore the model: drag to rotate, scroll or pinch to zoom, and use two fingers or the secondary mouse button to move the surface.\nView the public face3d repository →\n\n\n\n\n\n\n\n\n\n\n−1 · concave0 · saddle+1 · convex\n\n\nShape-index colour scale\n\n\n\nThe example illustrates how statistical computation, anatomical annotation and interactive graphics can be combined in a reproducible analytical workflow. Additional examples will be added selectively from my work in statistical inference, linear models, multivariate analysis and clinical visualization."
-  },
-  {
-    "objectID": "interactive-examples.html#triangulated-3d-signal-surface",
-    "href": "interactive-examples.html#triangulated-3d-signal-surface",
-    "title": "Interactive Examples",
-    "section": "Triangulated 3D signal surface",
-    "text": "Triangulated 3D signal surface\n\n\n An interactive example from my diegr R package\nThis example uses the de-identified high-density EEG example data included with diegr. The package constructs the complete triangulated HCGSN256 three-dimensional head mesh and interpolates the sensor-level signal directly across the curved scalp surface.\nThe head geometry preserves the three-dimensional sensor template using 2,602 mesh points connected into 5,009 triangles, while surface colour encodes the interpolated signal. The symmetric blue–white–red scale is generated by diegr::create_scale(): blue represents negative signal, white is centred at zero and red represents positive signal. The exterior is intentionally shown as a clean coloured surface; the triangulated grid is recessed just inside the scalp and becomes visible from the internal view.\nExplore the surface: drag to rotate, scroll or pinch to zoom, and use two fingers or the secondary mouse button to move it. Rotate beneath the open lower boundary to inspect the internal triangulation.\nView the public diegr repository →\n\n\n\n\n\n\n\n\n\n\nnegative signal0positive signal\n\n\nSymmetric signal colour scale"
-  },
-  {
-    "objectID": "interactive-examples.html#power-function-and-changing-density",
-    "href": "interactive-examples.html#power-function-and-changing-density",
-    "title": "Interactive Examples",
-    "section": "Power function and changing density",
-    "text": "Power function and changing density\n\n\n Original animation from my Statistical Inference book\nThese two continuously coordinated panels illustrate the exact power of a two-sided test for a normal mean with known variance.\n\nPower function: the red point moves continuously along the exact two-sided power curve as the true effect \\(\\mu-\\mu_0\\) changes.\nChanging density: the alternative normal density moves continuously relative to the fixed null distribution and critical boundaries. Its shaded volume in the rejection region changes simultaneously and is exactly the power shown on the left.\n\nThe animation connects two views of the same quantity: power as a function of the true effect and power as the probability of rejection under the corresponding alternative distribution.\n\n\n \n\n\nHow to read the animation: follow the red point on the power curve. At every position, the alternative density on the right changes continuously, and its shaded volume beyond the two orange critical values equals the power indicated by the point."
-  },
-  {
-    "objectID": "interactive-examples.html#detection-limits-and-mechanical-substitution",
-    "href": "interactive-examples.html#detection-limits-and-mechanical-substitution",
-    "title": "Interactive Examples",
-    "section": "Detection limits and mechanical substitution",
-    "text": "Detection limits and mechanical substitution\n\n\n An animated example based on my Statistical Inference book\nThis animation develops Example 7.38: Bias caused by mechanical handling of nondetects. Laboratory concentrations follow a lognormal distribution, and the detection limit moves continuously across the latent population.\n\nLatent concentration: the orange line is the current limit of detection (LoD). The red area contains values that would be reported only as nondetects; its probability grows as the LoD increases.\nMean estimation: the right panel follows the repeated-sampling distributions of the complete-data benchmark, detected values only, replacement of nondetects by zero, and replacement by LoD/2. The vertical reference line is the true population mean.\n\nThe animation makes the resulting bias visible. Detected values only systematically overestimate the mean, while substitution by zero or LoD/2 imposes artificial values and produces method-dependent distortion.\n\n\n \n\n\nKey message: a nondetect contains measurement-limit information. Depending on the assay and reporting rule, it may be left-censored, interval-censored or otherwise thresholded. It is not automatically zero, an ordinary missing value or one half of the detection limit."
-  },
-  {
-    "objectID": "interactive-examples.html#sequential-design-triangular-test",
-    "href": "interactive-examples.html#sequential-design-triangular-test",
-    "title": "Interactive Examples",
-    "section": "Sequential design: triangular test",
-    "text": "Sequential design: triangular test\n\n\n An illustrative patient-by-patient animation from my Statistical Inference book\nThis animation develops Example 25.4: Triangular test for a normal mean. Ten successive patient heights are monitored for \\(H_0:\\mu=180\\) against the one-sided alternative \\(H_1:\\mu\\geq185\\), using \\(\\alpha=0.01\\), \\(\\beta=0.10\\) and known variance \\(\\sigma^2=16\\).\n\nTriangular continuation region: the unequal stopping boundaries converge at a finite maximum information value. The accumulating path is shown in the information and score coordinates \\((v_n,z_n)\\).\nPatient-by-patient monitoring: each frame adds one patient, updates the cumulative mean and extends the evidence path. The highlighted point is the current analysis.\nStopping decision: the path remains inside the continuation region through patient 9 and crosses the upper boundary after patient 10, terminating the study in favour of the specified one-sided alternative.\n\nThe example makes the stopping rule part of the design: the decision depends on the complete monitored path and its prespecified boundaries, not on repeatedly applying an ordinary fixed-sample test.\n\n\n \n\n\nDesign result: continue after each of the first nine patients; stop after patient 10 when the score path crosses the upper boundary. If no earlier crossing occurred, the converging triangular boundaries would still guarantee termination at the maximum information value."
-  },
-  {
-    "objectID": "research.html",
-    "href": "research.html",
-    "title": "Research & Publications",
-    "section": "",
-    "text": "My research connects statistical methodology with biomedical questions across clinical trials, neuroimmunology, neurodegeneration, biomarkers, omics, medical imaging and statistical shape analysis. I have contributed to more than 130 peer-reviewed publications. As of 7 October 2026, Scopus records 79 documents, 2,044 citations and an h-index of 23; the Web of Science Core Collection records 91 documents, 1,639 citations and an h-index of 21.\nExplore the thematic publication record → View my Scopus profile →\nThe unifying principle across this work is the disciplined construction of evidence. Scientific design, measurement, data validation, modelling, computation, software, visualization and interpretation are strongest when they form one coherent system. This perspective connects my methodological research with clinical and biological applications rather than treating them as separate tracks."
-  },
-  {
-    "objectID": "research.html#major-research-themes",
-    "href": "research.html#major-research-themes",
-    "title": "Research & Publications",
-    "section": "Major research themes",
-    "text": "Major research themes\n\n\nClinical and translational biostatistics\nStudy design, longitudinal analysis, survival outcomes, biomarkers, PK/PD, integrated evidence, missing data and publication-ready statistical reporting.\n\n\nNeuroimmunology and neurodegeneration\nLong-standing collaboration with an academic neuroimmunology research institute, including Alzheimer’s disease, tauopathies, animal models and translational biomarker studies.\n\n\nShape, image and signal analysis\nStatistical shape analysis, computational neuroanatomy, 2D/3D morphometrics, imaging, functional data, EEG/ECG and visualization of complex biological structures."
-  },
-  {
-    "objectID": "research.html#from-experimental-design-to-publication",
-    "href": "research.html#from-experimental-design-to-publication",
-    "title": "Research & Publications",
-    "section": "From experimental design to publication",
-    "text": "From experimental design to publication\nI design and analyse preclinical animal experiments and translational studies, including longitudinal and high-dimensional investigations. My contributions include methodological strategy, data validation, statistical modelling, visualization, interpretation, reproducible reporting and manuscript preparation.\nIn clinical research, I have written or reviewed statistical methods and results, contributed to study publications and worked with medical writers on public clinical-trial reporting."
-  },
-  {
-    "objectID": "research.html#representative-journals-by-research-area",
-    "href": "research.html#representative-journals-by-research-area",
-    "title": "Research & Publications",
-    "section": "Representative journals by research area",
-    "text": "Representative journals by research area\n\n\nClinical research, neuroscience and immunology\nThe Lancet Neurology · Nature Aging · Neurology · Alzheimer’s Research & Therapy · Journal of Alzheimer’s Disease · Journal for ImmunoTherapy of Cancer · Frontiers in Immunology · Frontiers in Aging Neuroscience · International Journal of Cardiology\n\n\nStatistical methodology\nJournal of the Royal Statistical Society: Series C (Applied Statistics) · The Annals of Applied Statistics · Computational Statistics & Data Analysis · Computational Statistics · Journal of Statistical Computation and Simulation\n\n\nShape analysis, medical imaging and human biology\nAmerican Journal of Physical Anthropology · American Journal of Medical Genetics Part A · Journal of Anatomy · International Journal of Oral and Maxillofacial Surgery · Psychiatry Research · Human Mutation\n\n\nBiological morphology, ecology and evolution\nJournal of Fish Biology · Hydrobiologia · Journal of Zoological Systematics and Evolutionary Research · Journal of Applied Ichthyology · General and Comparative Endocrinology"
-  },
-  {
-    "objectID": "research.html#research-profiles",
-    "href": "research.html#research-profiles",
-    "title": "Research & Publications",
-    "section": "Research profiles",
-    "text": "Research profiles\nPublications ORCID Scopus Web of Science"
-  },
-  {
-    "objectID": "research.html#selected-scientific-contributions",
-    "href": "research.html#selected-scientific-contributions",
-    "title": "Research & Publications",
-    "section": "Selected scientific contributions",
-    "text": "Selected scientific contributions\n\n\nTau immunotherapy and biomarkers\nClinical, cognitive, functional and biomarker analyses across Phase I and II tau-immunotherapy studies, including proteomics, microRNA, phosphorylated tau and neurofilament light.\n\n\nPreclinical and translational neuroimmunology\nExperimental design and analysis of animal and biomarker studies in Alzheimer’s disease, tau pathology and related neurodegenerative processes.\n\n\nCardiovascular publication workflow\nEnd-to-end analysis and manuscript contribution for a cardiovascular Phase IV study; manuscript submitted to The Lancet.\n\n\nStatistical methodology and software\nResearch and software contributions in circular statistics, statistical shape analysis, truncated-data methodology and EEG analysis."
-  },
-  {
-    "objectID": "clinical-development.html",
-    "href": "clinical-development.html",
-    "title": "Clinical Development",
-    "section": "",
-    "text": "My experience spans 31 distinct clinical, real-world evidence, registry and representative preclinical studies or programs, covering a broad range of designs, therapeutic domains and statistical responsibilities."
-  },
-  {
-    "objectID": "clinical-development.html#development-stage-summary",
-    "href": "clinical-development.html#development-stage-summary",
-    "title": "Clinical Development",
-    "section": "Development-stage summary",
-    "text": "Development-stage summary\n\n\n\n\nDevelopment category\nStudies/programs\n\n\n\n\nPreclinical and translational\n2\n\n\nPhase I / Ib\n6\n\n\nPhase I/II\n4\n\n\nPhase II\n4\n\n\nPhase II/III\n3\n\n\nPhase III\n8\n\n\nPhase IV\n1\n\n\nRWE and registry\n3\n\n\nTotal\n31"
-  },
-  {
-    "objectID": "clinical-development.html#experience-by-development-phase",
-    "href": "clinical-development.html#experience-by-development-phase",
-    "title": "Clinical Development",
-    "section": "Experience by development phase",
-    "text": "Experience by development phase\n\nPreclinical and translational research\nI have long-standing experience designing and analysing controlled animal experiments and translational biomarker studies in neuroimmunology, neurodegeneration and tau pathology. This includes longitudinal designs, biomarkers, proteomics, microRNA and other high-dimensional data. I also developed end-to-end reproducible workflows for a pharmaceutical preclinical animal study, from raw-data validation through analysis, visualization and reporting.\n\n\nPhase I and Ib\nMy early-phase work includes first-in-human studies, single-ascending-dose clinical-pharmacology studies, dose escalation, active dose comparisons and longer-term follow-up. Therapeutic areas include oncology, neuroimmunology, metabolic disease, endocrinology and immunology. Treatment modalities have included cellular and cytokine-based immunotherapy and tau immunotherapy. Responsibilities have included design strategy, simulations, protocol and SAP input and review, safety, PK/PD, immunogenicity, biomarker analysis and senior statistical review.\n\n\nPhase I/II\nI have supported combined dose-escalation and expansion studies in oncology using CAR-T-cell therapy, antibody-drug conjugates and dendritic-cell immunotherapy. The cancer indications included hepatocellular, lung, gastric, gastroesophageal-junction, pancreatic and prostate cancers, together with liposarcoma, Merkel-cell carcinoma and other biomarker-defined advanced solid tumors. The work has covered Bayesian and conventional design simulations, cohort and dose-escalation strategy, dose-escalation charters and meeting presentations, safety, efficacy, PK/PD, biomarkers and integrated decision support.\n\n\nPhase II\nMy Phase II experience includes proof-of-concept and efficacy studies in oncology and neuroimmunology. I contributed to single-arm and controlled designs, biomarker-defined cohorts, longitudinal cognitive outcomes and a Bayesian adaptive proof-of-concept study in Guillain–Barré syndrome, an acute immune-mediated polyradiculoneuropathy. Work has included protocol and SAP development, estimands, missing-data simulations, TLFs, analysis, interpretation and publication.\n\n\nPhase II/III\nI contributed statistical sections for synopses and protocols and performed statistical analyses for randomized active-controlled oncology studies across localized, non-metastatic and metastatic disease settings. The principal outcomes included progression, survival and safety.\n\n\nPhase III\nMy Phase III portfolio includes global randomized, double-blind, placebo-controlled studies in autoimmune and inflammatory disease, nephrology and dermatology; a placebo-controlled Phase III oncology study; an acute-pain study; and an active-controlled pediatric vaccine program. My work includes statistical programming and review, SDTM and ADaM review, TLFs, pooled analyses, subgroup and longitudinal modelling, predictive modelling, senior statistical review and reproducible reporting.\n\n\nPhase IV\nAs Lead Statistician for a cardiovascular Phase IV study at Charles University, I developed an end-to-end reproducible workflow covering data processing, validation, statistical analysis, visualization and publication-ready outputs. I performed and interpreted the analyses and contributed extensively to the scientific manuscript.\n\n\nReal-world evidence and registries\nMy RWE experience includes two prospective non-interventional studies: one spanning dermatology and rheumatology, and a multicountry study in immunology, dermatology and allergology, together with long-term work on a national orthopedic arthroplasty registry. Responsibilities include effectiveness and safety analyses, treatment patterns, quality of life, healthcare-resource use, longitudinal follow-up, data quality, implant usage and survival, annual reporting and interactive applications."
-  },
-  {
-    "objectID": "clinical-development.html#therapeutic-breadth",
-    "href": "clinical-development.html#therapeutic-breadth",
-    "title": "Clinical Development",
-    "section": "Therapeutic breadth",
-    "text": "Therapeutic breadth\n\n\n\n\nPrimary therapeutic domain\nStudies/programs\n\n\n\n\nOncology and immuno-oncology\n12\n\n\nImmunology, dermatology, allergology and rheumatology\n6\n\n\nNeurology, neuroimmunology and neurodegeneration\n4\n\n\nClinical pharmacology, metabolic disease and endocrinology\n2\n\n\nPreclinical and translational research\n2\n\n\nNephrology and cardio-renal medicine\n1\n\n\nCardiology\n1\n\n\nAcute pain and dental surgery\n1\n\n\nInfectious diseases, vaccines and pediatrics\n1\n\n\nOrthopedics, medical devices and registry-based RWE\n1\n\n\nTotal\n31\n\n\n\n\nEach study is assigned once to its principal domain. Several studies are multidisciplinary, and the narrative preserves those overlaps."
-  },
-  {
-    "objectID": "clinical-development.html#responsibilities-grouped-by-type-of-engagement",
-    "href": "clinical-development.html#responsibilities-grouped-by-type-of-engagement",
-    "title": "Clinical Development",
-    "section": "Responsibilities grouped by type of engagement",
-    "text": "Responsibilities grouped by type of engagement\n\nStatistical leadership in early-phase oncology\nAs Lead Statistician, I provided statistical leadership across study design, conduct, analysis and reporting. Responsibilities included protocol development and review, Bayesian and conventional design simulations, dose-escalation strategy, dose-escalation charters and meeting presentations, SAPs and TLF shells, review of data-management documentation, and development and review of SDTM and ADaM specifications. I reviewed and validated SAS programs and supported efficacy, safety, PK/PD, biomarker and exploratory analyses, DSURs/ASRs, CSRs, public trial-registration submissions and scientific publications.\n\n\nStatistical programming and data science in global programs\nI provide statistical-programming and data-science support across global Phase III and RWE programs. My work includes programming and review of efficacy and safety analyses, pooled and subgroup analyses, longitudinal modelling, and exploratory and predictive modelling. I extensively review SDTM and ADaM datasets and specifications, review define.xml, and program or review TLFs. I also review and validate SAS programs, reproduce selected analyses in R, and develop reproducible and interactive reporting solutions.\n\n\nLead programming for a prospective RWE study\nAs Lead Statistical Programmer, I am responsible for validation and independent double programming of TLFs and senior review of data-management and statistical documentation. I review SDTM and ADaM datasets, specifications and related study data, help ensure consistency across protocol, analysis requirements, data structures and outputs, and design and program an R Shiny application supporting interactive study review.\n\n\nLead statistical review within a CRO\nAs Lead Statistician within a CRO, I provided statistical leadership and review across Phase I and Phase III studies. This included review of protocols, SAPs, TLF shells, statistical methods, programs and outputs, together with review of safety, efficacy, PK/PD, corrected-QT or immunogenicity results, as applicable.\n\n\nNeurodegeneration and integrated biomarkers\nI provided senior statistical and bioinformatics leadership across Phase I and II clinical, cognitive, language, functional, safety, immunogenicity and biomarker analyses. This included protocol and SAP input, TLF development and review, longitudinal and exploratory modelling, reproducible reporting, and end-to-end analysis of phosphorylated tau, neurofilament light, proteomics, microRNA and other complex biomarker data."
-  },
-  {
-    "objectID": "index.html",
-    "href": "index.html",
-    "title": "Assoc. Prof. PaedDr. RNDr. Stanislav Katina, PhD.",
-    "section": "",
-    "text": "Biostatistics · Statistical Programming · Data Science\n\n\n\n\n\nI connect statistical strategy, clinical-development evidence and modern analytical engineering. Across 28+ years, I have designed studies, led statistical work, built reproducible systems and translated complex biomedical data into decisions.\nApproximately 23.5 years of cumulative international experience, combining long-term appointments abroad, 37 short-term research visits and work for international companies.\nExplore clinical development  View R & Shiny work Experience and contact"
-  },
-  {
-    "objectID": "index.html#principal-and-senior-principal-level-biostatistician-statistical-programming-leader-and-rr-shiny-expert",
-    "href": "index.html#principal-and-senior-principal-level-biostatistician-statistical-programming-leader-and-rr-shiny-expert",
-    "title": "Assoc. Prof. PaedDr. RNDr. Stanislav Katina, PhD.",
-    "section": "",
-    "text": "I connect statistical strategy, clinical-development evidence and modern analytical engineering. Across 28+ years, I have designed studies, led statistical work, built reproducible systems and translated complex biomedical data into decisions.\nApproximately 23.5 years of cumulative international experience, combining long-term appointments abroad, 37 short-term research visits and work for international companies.\nExplore clinical development  View R & Shiny work Experience and contact"
-  },
-  {
-    "objectID": "index.html#my-experience-connected",
-    "href": "index.html#my-experience-connected",
-    "title": "Assoc. Prof. PaedDr. RNDr. Stanislav Katina, PhD.",
-    "section": "My Experience, Connected",
-    "text": "My Experience, Connected\nThe strongest part of my profile is not any single method or technology, but the way the elements work together—from scientific question and study design to validated data, reproducible analysis, interpretation and decisions.\n\n\n  Stanislav Katina’s connected professional experience\n  An interactive map connecting biostatistics with clinical development, statistical programming, R and Shiny, research, and leadership.\n\n  \n    \n    \n    \n    \n    \n    \n    \n    \n  \n\n  \n    REGULATORY SCIENCE\n    EVIDENCE STRATEGY\n    REPRODUCIBILITY\n    SCIENTIFIC INTERPRETATION\n  \n\n  \n    \n    DESIGN · DATA · ANALYSIS\n    Biostatistics\n    from question to decision\n  \n\n  \n    \n      Clinical Development: study design, Phases I–IV, RWE and regulatory reporting\n      \n      Clinical Development\n      Phase I–IV · RWE · study design\n      SAPs · estimands · simulations\n    \n  \n\n  \n    \n      Statistical Programming: standards, validated outputs and traceable delivery\n      \n      Statistical Programming\n      SDTM · ADaM · TLFs · validation\n      SAS · R · SQL · GitLab\n    \n  \n\n  \n    \n      R and Shiny: interactive applications, reporting and analytical modernization\n      \n      R & Shiny\n      apps · Quarto · packages\n      interactive reporting · Azure\n    \n  \n\n  \n    \n      Research: clinical evidence, neuroimmunology, biomarkers, shape and image analysis\n      \n      Research & Publications\n      neuroimmunology · biomarkers · omics\n      shape · image · methodology\n    \n  \n\n  \n    \n      Leadership: strategic direction, professional service, modernization and mentorship\n      \n      Leadership & Strategy\n      ISCB · SiRA · governance\n      modernization · teaching · mentoring\n    \n  \n\n  \n    PK/PD\n    Bayesian design\n    Dose escalation\n    Patient profiles\n    HTML reports\n    Regulatory reporting\n    Data visualization\n  \n\n\nClinical DevelopmentPhase I–IV · RWE · design · SAPs · estimands Statistical ProgrammingSDTM · ADaM · TLFs · SAS · R · validation R & ShinyApplications · Quarto · packages · interactive reporting Research & PublicationsNeuroimmunology · biomarkers · shape · imaging · methodology Leadership & StrategyISCB · SiRA · modernization · teaching · mentoring"
-  },
-  {
-    "objectID": "index.html#what-i-bring",
-    "href": "index.html#what-i-bring",
-    "title": "Assoc. Prof. PaedDr. RNDr. Stanislav Katina, PhD.",
-    "section": "What I bring",
-    "text": "What I bring\n\n\nClinical-development leadership\nStudy design, protocol and SAP strategy, Bayesian simulations, dose escalation, estimands, safety and efficacy analyses, PK/PD, biomarkers and scientific reporting.\nClinical portfolio →\n\n\nStatistical programming leadership\nProgramming-ready SAPs, SDTM and ADaM review and programming, TLF development and validation, SAS-to-R validation, pooled analyses and traceable reporting.\nProgramming expertise →\n\n\n Modernization with R and Shiny\nEnd-to-end R workflows, R Shiny applications, interactive HTML reports, patient profiles, Quarto publications, SQL/SQLite integration, Azure and GitLab-supported delivery.\nSelected work →\n\n\nResearch and academic leadership\nNeuroimmunology, neurodegeneration, biomarkers, omics, statistical shape analysis, teaching, supervision and international collaboration.\nResearch profile →"
-  },
-  {
-    "objectID": "index.html#professional-focus",
-    "href": "index.html#professional-focus",
-    "title": "Assoc. Prof. PaedDr. RNDr. Stanislav Katina, PhD.",
-    "section": "Professional focus",
-    "text": "Professional focus\nMy recent work spans global Phase III and real-world programs in immunology, autoimmune and inflammatory disease, nephrology, dermatology and allergology. Earlier leadership includes Phase I–II oncology and immuno-oncology, tau-immunotherapy studies in neurodegeneration, clinical pharmacology, vaccines, cardiovascular research and registry-based evidence.\nI work at the intersection of biostatistics and statistical programming: shaping an analysis so that it is scientifically defensible, implementation-ready, reproducible and useful to clinical and medical teams."
-  },
-  {
-    "objectID": "r-shiny.html",
-    "href": "r-shiny.html",
-    "title": "R, R Shiny & Statistical Programming",
-    "section": "",
-    "text": "I have 28 years of programming experience and use R as both a statistical language and an engineering platform for reproducible clinical and scientific work. My focus is not a tool in isolation, but the complete path from data and specifications to validated, interpretable outputs."
-  },
-  {
-    "objectID": "r-shiny.html#statistical-programming",
-    "href": "r-shiny.html#statistical-programming",
-    "title": "R, R Shiny & Statistical Programming",
-    "section": "Statistical programming",
-    "text": "Statistical programming\n\n\nClinical data and standards\nProgramming and extensive review of SDTM and ADaM datasets; creation and review of SDTM and ADaM specifications; review of define.xml; traceability from source data through analysis outputs.\n\n\nTLF production and validation\nProgramming, double programming and review of tables, figures and listings; validation of SAS programs; independent reprogramming of selected SAS analyses in R.\n\n\nProgramming-ready SAPs\nWriting and reviewing classical CSR-related SAPs and exploratory SAPs, with growing emphasis on specifications precise enough to support efficient, unambiguous statistical programming."
-  },
-  {
-    "objectID": "r-shiny.html#r-shiny-and-interactive-reporting",
-    "href": "r-shiny.html#r-shiny-and-interactive-reporting",
-    "title": "R, R Shiny & Statistical Programming",
-    "section": " R Shiny and interactive reporting",
-    "text": "R Shiny and interactive reporting\nI have designed applications for both ongoing studies and completed or pooled studies. Selected uses include:\n\nInteractive patient profiles and medical-review views\nEfficacy, safety, PK/PD and biomarker exploration\nDose-escalation and meeting support\nCross-study and pooled analyses\nRWE study review and reporting\nInternal annual reporting for a national orthopedic arthroplasty registry\nReproducible implant-usage reporting supporting regulatory needs"
-  },
-  {
-    "objectID": "r-shiny.html#end-to-end-modernization",
-    "href": "r-shiny.html#end-to-end-modernization",
-    "title": "R, R Shiny & Statistical Programming",
-    "section": "End-to-end modernization",
-    "text": "End-to-end modernization\nMy workflows combine R, R Shiny, Quarto, interactive HTML, conditionally formatted Excel workbooks and presentation-ready outputs. I have connected analytical systems to SQL databases, including SQLite, and worked with Microsoft Azure and GitLab to support controlled, collaborative delivery.\nThe modernization principle is simple: analytical logic should be reusable, reviewable and consistent across data processing, statistical analysis, reporting and communication."
-  },
-  {
-    "objectID": "r-shiny.html#public-r-ecosystem-contributions",
-    "href": "r-shiny.html#public-r-ecosystem-contributions",
-    "title": "R, R Shiny & Statistical Programming",
-    "section": " Public R ecosystem contributions",
-    "text": "Public R ecosystem contributions\nMy GitHub profile contains R packages, books and selected scholarly projects.\n\n\ndiegr\nAdvanced EEG data analysis.\nCRAN · GitHub\n\n\ncircularKDE\nCircular kernel density estimation.\nCRAN · GitHub\n\n\nface3D\nThree-dimensional facial morphometrics and statistical shape analysis.\nPublic GitHub repository\nA modernized version of the R package, together with an updated vignette, is currently maintained in a private GitHub repository. The repository will be made public when the new version is released on CRAN.\n\n\nnlimited\nStatistical analysis of truncated data with detection and quantification limits.\nGitHub\n\n\n Visit my GitHub profile"
+    "objectID": "teaching-vision.html#my-teaching-perspective",
+    "href": "teaching-vision.html#my-teaching-perspective",
+    "title": "Teaching Mathematical & Statistical Sciences",
+    "section": "My teaching perspective",
+    "text": "My teaching perspective\nMy own teaching spans statistical inference, design of scientific and clinical studies, linear statistical models, survival analysis, multivariate methods and spline smoothing, complemented by R programming, reproducible research, statistical shape and image analysis and data science. Across these subjects, I aim to connect mathematical foundations with complete analytical practice.\nThe goal is not simply that students can reproduce a derivation or run a method. It is that they can recognise the problem, construct a defensible solution, verify it, explain it and take responsibility for it. That combination of rigour, computation, judgement and communication is increasingly important in modern statistics, data science and mathematical sciences—and even more important in the age of AI.\nExplore my leadership and teaching profile → View interactive statistical examples →"
   },
   {
     "objectID": "publications.html",
@@ -350,6 +140,258 @@
     "text": "Other biomedical, anthropological and applied research\n\n3 publications\n\n\nM Thurzo, R Beňuš, S Masnicová, and S Katina (2017). Anthropological and Taphonomic Data on the Body Remains of Cardinal Peter Pázmány (4 October 1570–19 March 1637) Exhumed from the Crypt under St Martin’s Cathedral in Bratislava. Acta Rerum Naturalium Musei Nationalis Slovaci, 63, 135–178.\nS Katina, M Králík, and A Hupková (2015). Aplikovaná štatistická inferencia I. Biologická antropológia očami matematickej štatistiky. Masarykova univerzita, 320.\nM Thurzo, A Šefčáková, S Katina, J Jakab, R Beňuš, and S Bodoriková (2002). Dental Disease as an Indicator of Ecological Factors in Medieval Skeletal Populations from Slovakia. Ecological Aspects of Past Human Settlements in Europe, 2, 233–248."
   },
   {
+    "objectID": "r-shiny.html",
+    "href": "r-shiny.html",
+    "title": "R, R Shiny & Statistical Programming",
+    "section": "",
+    "text": "I have 28 years of programming experience and use R as both a statistical language and an engineering platform for reproducible clinical and scientific work. My focus is not a tool in isolation, but the complete path from data and specifications to validated, interpretable outputs."
+  },
+  {
+    "objectID": "r-shiny.html#statistical-programming",
+    "href": "r-shiny.html#statistical-programming",
+    "title": "R, R Shiny & Statistical Programming",
+    "section": "Statistical programming",
+    "text": "Statistical programming\n\n\nClinical data and standards\nProgramming and extensive review of SDTM and ADaM datasets; creation and review of SDTM and ADaM specifications; review of define.xml; traceability from source data through analysis outputs.\n\n\nTLF production and validation\nProgramming, double programming and review of tables, figures and listings; validation of SAS programs; independent reprogramming of selected SAS analyses in R.\n\n\nProgramming-ready SAPs\nWriting and reviewing classical CSR-related SAPs and exploratory SAPs, with growing emphasis on specifications precise enough to support efficient, unambiguous statistical programming."
+  },
+  {
+    "objectID": "r-shiny.html#r-shiny-and-interactive-reporting",
+    "href": "r-shiny.html#r-shiny-and-interactive-reporting",
+    "title": "R, R Shiny & Statistical Programming",
+    "section": " R Shiny and interactive reporting",
+    "text": "R Shiny and interactive reporting\nI have designed applications for both ongoing studies and completed or pooled studies. Selected uses include:\n\nInteractive patient profiles and medical-review views\nEfficacy, safety, PK/PD and biomarker exploration\nDose-escalation and meeting support\nCross-study and pooled analyses\nRWE study review and reporting\nInternal annual reporting for a national orthopedic arthroplasty registry\nReproducible implant-usage reporting supporting regulatory needs"
+  },
+  {
+    "objectID": "r-shiny.html#end-to-end-modernization",
+    "href": "r-shiny.html#end-to-end-modernization",
+    "title": "R, R Shiny & Statistical Programming",
+    "section": "End-to-end modernization",
+    "text": "End-to-end modernization\nMy workflows combine R, R Shiny, Quarto, interactive HTML, conditionally formatted Excel workbooks and presentation-ready outputs. I have connected analytical systems to SQL databases, including SQLite, and worked with Microsoft Azure and GitLab to support controlled, collaborative delivery.\nThe modernization principle is simple: analytical logic should be reusable, reviewable and consistent across data processing, statistical analysis, reporting and communication."
+  },
+  {
+    "objectID": "r-shiny.html#public-r-ecosystem-contributions",
+    "href": "r-shiny.html#public-r-ecosystem-contributions",
+    "title": "R, R Shiny & Statistical Programming",
+    "section": " Public R ecosystem contributions",
+    "text": "Public R ecosystem contributions\nMy GitHub profile contains R packages, books and selected scholarly projects.\n\n\ndiegr\nAdvanced EEG data analysis.\nCRAN · GitHub\n\n\ncircularKDE\nCircular kernel density estimation.\nCRAN · GitHub\n\n\nface3D\nThree-dimensional facial morphometrics and statistical shape analysis.\nPublic GitHub repository\nA modernized version of the R package, together with an updated vignette, is currently maintained in a private GitHub repository. The repository will be made public when the new version is released on CRAN.\n\n\nnlimited\nStatistical analysis of truncated data with detection and quantification limits.\nGitHub\n\n\n Visit my GitHub profile"
+  },
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "Assoc. Prof. PaedDr. RNDr. Stanislav Katina, PhD.",
+    "section": "",
+    "text": "Biostatistics · Statistical Programming · Data Science\n\n\n\n\n\nI connect statistical strategy, clinical-development evidence and modern analytical engineering. Across 28+ years, I have designed studies, led statistical work, built reproducible systems and translated complex biomedical data into decisions.\nApproximately 23.5 years of cumulative international experience, combining long-term appointments abroad, 37 short-term research visits and work for international companies.\nExplore clinical development  View R & Shiny work Experience and contact"
+  },
+  {
+    "objectID": "index.html#principal-and-senior-principal-level-biostatistician-statistical-programming-leader-and-rr-shiny-expert",
+    "href": "index.html#principal-and-senior-principal-level-biostatistician-statistical-programming-leader-and-rr-shiny-expert",
+    "title": "Assoc. Prof. PaedDr. RNDr. Stanislav Katina, PhD.",
+    "section": "",
+    "text": "I connect statistical strategy, clinical-development evidence and modern analytical engineering. Across 28+ years, I have designed studies, led statistical work, built reproducible systems and translated complex biomedical data into decisions.\nApproximately 23.5 years of cumulative international experience, combining long-term appointments abroad, 37 short-term research visits and work for international companies.\nExplore clinical development  View R & Shiny work Experience and contact"
+  },
+  {
+    "objectID": "index.html#my-experience-connected",
+    "href": "index.html#my-experience-connected",
+    "title": "Assoc. Prof. PaedDr. RNDr. Stanislav Katina, PhD.",
+    "section": "My Experience, Connected",
+    "text": "My Experience, Connected\nThe strongest part of my profile is not any single method or technology, but the way the elements work together—from scientific question and study design to validated data, reproducible analysis, interpretation and decisions.\n\n\n  Stanislav Katina’s connected professional experience\n  An interactive map connecting biostatistics with clinical development, statistical programming, R and Shiny, research, and leadership.\n\n  \n    \n    \n    \n    \n    \n    \n    \n    \n  \n\n  \n    REGULATORY SCIENCE\n    EVIDENCE STRATEGY\n    REPRODUCIBILITY\n    SCIENTIFIC INTERPRETATION\n  \n\n  \n    \n    DESIGN · DATA · ANALYSIS\n    Biostatistics\n    from question to decision\n  \n\n  \n    \n      Clinical Development: study design, Phases I–IV, RWE and regulatory reporting\n      \n      Clinical Development\n      Phase I–IV · RWE · study design\n      SAPs · estimands · simulations\n    \n  \n\n  \n    \n      Statistical Programming: standards, validated outputs and traceable delivery\n      \n      Statistical Programming\n      SDTM · ADaM · TLFs · validation\n      SAS · R · SQL · GitLab\n    \n  \n\n  \n    \n      R and Shiny: interactive applications, reporting and analytical modernization\n      \n      R & Shiny\n      apps · Quarto · packages\n      interactive reporting · Azure\n    \n  \n\n  \n    \n      Research: clinical evidence, neuroimmunology, biomarkers, shape and image analysis\n      \n      Research & Publications\n      neuroimmunology · biomarkers · omics\n      shape · image · methodology\n    \n  \n\n  \n    \n      Leadership: strategic direction, professional service, modernization and mentorship\n      \n      Leadership & Strategy\n      ISCB · SiRA · governance\n      modernization · teaching · mentoring\n    \n  \n\n  \n    PK/PD\n    Bayesian design\n    Dose escalation\n    Patient profiles\n    HTML reports\n    Regulatory reporting\n    Data visualization\n  \n\n\nClinical DevelopmentPhase I–IV · RWE · design · SAPs · estimands Statistical ProgrammingSDTM · ADaM · TLFs · SAS · R · validation R & ShinyApplications · Quarto · packages · interactive reporting Research & PublicationsNeuroimmunology · biomarkers · shape · imaging · methodology Leadership & StrategyISCB · SiRA · modernization · teaching · mentoring"
+  },
+  {
+    "objectID": "index.html#what-i-bring",
+    "href": "index.html#what-i-bring",
+    "title": "Assoc. Prof. PaedDr. RNDr. Stanislav Katina, PhD.",
+    "section": "What I bring",
+    "text": "What I bring\n\n\nClinical-development leadership\nStudy design, protocol and SAP strategy, Bayesian simulations, dose escalation, estimands, safety and efficacy analyses, PK/PD, biomarkers and scientific reporting.\nClinical portfolio →\n\n\nStatistical programming leadership\nProgramming-ready SAPs, SDTM and ADaM review and programming, TLF development and validation, SAS-to-R validation, pooled analyses and traceable reporting.\nProgramming expertise →\n\n\n Modernization with R and Shiny\nEnd-to-end R workflows, R Shiny applications, interactive HTML reports, patient profiles, Quarto publications, SQL/SQLite integration, Azure and GitLab-supported delivery.\nSelected work →\n\n\nResearch and academic leadership\nNeuroimmunology, neurodegeneration, biomarkers, omics, statistical shape analysis, teaching, supervision and international collaboration.\nResearch profile →"
+  },
+  {
+    "objectID": "index.html#professional-focus",
+    "href": "index.html#professional-focus",
+    "title": "Assoc. Prof. PaedDr. RNDr. Stanislav Katina, PhD.",
+    "section": "Professional focus",
+    "text": "Professional focus\nMy recent work spans global Phase III and real-world programs in immunology, autoimmune and inflammatory disease, nephrology, dermatology and allergology. Earlier leadership includes Phase I–II oncology and immuno-oncology, tau-immunotherapy studies in neurodegeneration, clinical pharmacology, vaccines, cardiovascular research and registry-based evidence.\nI work at the intersection of biostatistics and statistical programming: shaping an analysis so that it is scientifically defensible, implementation-ready, reproducible and useful to clinical and medical teams."
+  },
+  {
+    "objectID": "clinical-development.html",
+    "href": "clinical-development.html",
+    "title": "Clinical Development",
+    "section": "",
+    "text": "My experience spans 35 distinct clinical, real-world evidence, registry and representative preclinical studies or programs, covering a broad range of designs, therapeutic domains and statistical responsibilities."
+  },
+  {
+    "objectID": "clinical-development.html#development-stage-summary",
+    "href": "clinical-development.html#development-stage-summary",
+    "title": "Clinical Development",
+    "section": "Development-stage summary",
+    "text": "Development-stage summary\n\n\n\n\nDevelopment category\nStudies/programs\n\n\n\n\nPreclinical and translational\n2\n\n\nPhase I / Ib\n6\n\n\nPhase I/II\n4\n\n\nPhase II\n4\n\n\nPhase II/III\n3\n\n\nPhase III / IIIb\n10\n\n\nPhase IV\n1\n\n\nRWE and registry\n5\n\n\nTotal\n35"
+  },
+  {
+    "objectID": "clinical-development.html#experience-by-development-phase",
+    "href": "clinical-development.html#experience-by-development-phase",
+    "title": "Clinical Development",
+    "section": "Experience by development phase",
+    "text": "Experience by development phase\n\nPreclinical and translational research\nI have long-standing experience designing and analysing controlled animal experiments and translational biomarker studies in neuroimmunology, neurodegeneration and tau pathology. This includes longitudinal designs, biomarkers, proteomics, microRNA and other high-dimensional data. I also developed end-to-end reproducible workflows for a pharmaceutical preclinical animal study, from raw-data validation through analysis, visualization and reporting.\n\n\nPhase I and Ib\nMy early-phase work includes first-in-human studies, single-ascending-dose clinical-pharmacology studies, dose escalation, active dose comparisons and longer-term follow-up. Therapeutic areas include oncology, neuroimmunology, metabolic disease, endocrinology and immunology. Treatment modalities have included cellular and cytokine-based immunotherapy and tau immunotherapy. Responsibilities have included design strategy, simulations, protocol and SAP input and review, safety, PK/PD, immunogenicity, biomarker analysis and senior statistical review.\n\n\nPhase I/II\nI have supported combined dose-escalation and expansion studies in oncology using CAR-T-cell therapy, antibody-drug conjugates and dendritic-cell immunotherapy. The cancer indications included hepatocellular, lung, gastric, gastroesophageal-junction, pancreatic and prostate cancers, together with liposarcoma, Merkel-cell carcinoma and other biomarker-defined advanced solid tumors. The work has covered Bayesian and conventional design simulations, cohort and dose-escalation strategy, dose-escalation charters and meeting presentations, safety, efficacy, PK/PD, biomarkers and integrated decision support.\n\n\nPhase II\nMy Phase II experience includes proof-of-concept and efficacy studies in oncology and neuroimmunology. I contributed to single-arm and controlled designs, biomarker-defined cohorts, longitudinal cognitive outcomes and a Bayesian adaptive proof-of-concept study in Guillain–Barré syndrome, an acute immune-mediated polyradiculoneuropathy. Work has included protocol and SAP development, estimands, missing-data simulations, TLFs, analysis, interpretation and publication.\n\n\nPhase II/III\nI contributed statistical sections for synopses and protocols and performed statistical analyses for randomized active-controlled oncology studies across localized, non-metastatic and metastatic disease settings. The principal outcomes included progression, survival and safety.\n\n\nPhase III\nMy Phase III portfolio includes global randomized, double-blind, placebo-controlled studies in autoimmune and inflammatory disease, nephrology and dermatology; a placebo-controlled Phase III oncology study; an acute-pain study; and an active-controlled pediatric vaccine program. My work includes statistical programming and review, SDTM and ADaM review, TLFs, pooled analyses, subgroup and longitudinal modelling, predictive modelling, senior statistical review and reproducible reporting.\nRecent additions include RECLAIM, a randomized Phase IIIb comparison in chronic spontaneous urticaria, and the MANIFEST-2 myelofibrosis evidence program, where I support additional Phase III analyses for European Union Health Technology Assessment Joint Clinical Assessment. This work extends confirmatory-trial programming into multiple-imputation validation, patient-reported outcomes, survival and restricted-mean analyses, and assessment-ready evidence specifications.\n\n\nPhase IV\nAs Lead Statistician for a cardiovascular Phase IV study at Charles University, I developed an end-to-end reproducible workflow covering data processing, validation, statistical analysis, visualization and publication-ready outputs. I performed and interpreted the analyses and contributed extensively to the scientific manuscript.\n\n\nReal-world evidence and registries\nMy RWE experience includes two prospective non-interventional studies: one spanning dermatology and rheumatology, and a multicountry study in immunology, dermatology and allergology, together with long-term work on a national orthopedic arthroplasty registry. Responsibilities include effectiveness and safety analyses, treatment patterns, quality of life, healthcare-resource use, longitudinal follow-up, data quality, implant usage and survival, annual reporting and interactive applications.\nThe portfolio now also includes the COTA/Verana LBCL study, a retrospective secondary-use study of longitudinal United States oncology electronic health records, and REASSERT, a prospective multinational non-interventional study of treatment escalation in chronic spontaneous urticaria. These studies add complex cohort construction, episode-specific time origins, source-to-analysis mapping, descriptive effectiveness, time-to-event outcomes and reproducible validation of real-world data."
+  },
+  {
+    "objectID": "clinical-development.html#therapeutic-breadth",
+    "href": "clinical-development.html#therapeutic-breadth",
+    "title": "Clinical Development",
+    "section": "Therapeutic breadth",
+    "text": "Therapeutic breadth\n\n\n\n\nPrimary therapeutic domain\nStudies/programs\n\n\n\n\nOncology and immuno-oncology\n14\n\n\nImmunology, dermatology, allergology and rheumatology\n8\n\n\nNeurology, neuroimmunology and neurodegeneration\n4\n\n\nClinical pharmacology, metabolic disease and endocrinology\n2\n\n\nPreclinical and translational research\n2\n\n\nNephrology and cardio-renal medicine\n1\n\n\nCardiology\n1\n\n\nAcute pain and dental surgery\n1\n\n\nInfectious diseases, vaccines and pediatrics\n1\n\n\nOrthopedics, medical devices and registry-based RWE\n1\n\n\nTotal\n35\n\n\n\n\nEach study is assigned once to its principal domain. Several studies are multidisciplinary, and the narrative preserves those overlaps."
+  },
+  {
+    "objectID": "clinical-development.html#recent-portfolio-additions",
+    "href": "clinical-development.html#recent-portfolio-additions",
+    "title": "Clinical Development",
+    "section": "Recent portfolio additions",
+    "text": "Recent portfolio additions\n\nRECLAIM (CLOU064AUS02)\nRECLAIM is a United States Phase IIIb randomized, double-blind, double-dummy comparison of remibrutinib with dupilumab in adults with chronic spontaneous urticaria inadequately controlled by second-generation H1 antihistamines. My work focuses on statistical programming and independent validation of the multiple-imputation datasets and their lineage from analysis scores, subject-level data and intercurrent-event data. The validation framework distinguishes observed values, deterministic composite-strategy replacements and stochastic imputation and reconciles the completed datasets with the prespecified estimands and analyses.\n\n\nCOTA/Verana LBCL real-world evidence study (CYTB323E12002)\nThis retrospective non-interventional study uses longitudinal United States oncology electronic health-record data to characterize outcomes after first-line treatment for large B-cell lymphoma. My work translates the protocol and evolving source-data dictionaries into auditable cohort definitions, source-to-analysis mappings, time-to-event structures, sensitivity analyses, validation rules and programming-ready output specifications. The study requires careful separation of descriptive real-world evidence from causal interpretation.\n\n\nREASSERT (CLOU064A2402)\nREASSERT is a prospective multinational non-interventional study of treatment escalation in adults with chronic spontaneous urticaria. Its umbrella design follows three clinically distinct cohorts and allows some participants to contribute separate cohort episodes after switching treatment. I lead statistical programming and validation work covering analysis specifications, cohort-episode construction, treatment indices, endpoint windows, TLFs and an R Shiny review application.\n\n\nMANIFEST-2 EU HTA/JCA evidence program\nMANIFEST-2 is a randomized Phase III study of pelabresib plus ruxolitinib versus placebo plus ruxolitinib in symptomatic myelofibrosis. My work supports additional analyses for European Union Health Technology Assessment Joint Clinical Assessment, including patient-reported outcomes, survival and restricted-mean analyses, multiple imputation, endpoint specifications, output programming and statistical review. This programme connects confirmatory clinical-trial evidence with assessment questions concerning relevant populations, comparators and outcomes."
+  },
+  {
+    "objectID": "clinical-development.html#responsibilities-grouped-by-type-of-engagement",
+    "href": "clinical-development.html#responsibilities-grouped-by-type-of-engagement",
+    "title": "Clinical Development",
+    "section": "Responsibilities grouped by type of engagement",
+    "text": "Responsibilities grouped by type of engagement\n\nStatistical leadership in early-phase oncology\nAs Lead Statistician, I provided statistical leadership across study design, conduct, analysis and reporting. Responsibilities included protocol development and review, Bayesian and conventional design simulations, dose-escalation strategy, dose-escalation charters and meeting presentations, SAPs and TLF shells, review of data-management documentation, and development and review of SDTM and ADaM specifications. I reviewed and validated SAS programs and supported efficacy, safety, PK/PD, biomarker and exploratory analyses, DSURs/ASRs, CSRs, public trial-registration submissions and scientific publications.\n\n\nStatistical programming and data science in global programs\nI provide statistical-programming and data-science support across global Phase III and RWE programs. My work includes programming and review of efficacy and safety analyses, pooled and subgroup analyses, longitudinal modelling, and exploratory and predictive modelling. I extensively review SDTM and ADaM datasets and specifications, review define.xml, and program or review TLFs. I also review and validate SAS programs, reproduce selected analyses in R, and develop reproducible and interactive reporting solutions.\n\n\nLead programming for a prospective RWE study\nAs Lead Statistical Programmer, I am responsible for validation and independent double programming of TLFs and senior review of data-management and statistical documentation. I review SDTM and ADaM datasets, specifications and related study data, help ensure consistency across protocol, analysis requirements, data structures and outputs, and design and program an R Shiny application supporting interactive study review.\n\n\nLead statistical review within a CRO\nAs Lead Statistician within a CRO, I provided statistical leadership and review across Phase I and Phase III studies. This included review of protocols, SAPs, TLF shells, statistical methods, programs and outputs, together with review of safety, efficacy, PK/PD, corrected-QT or immunogenicity results, as applicable.\n\n\nNeurodegeneration and integrated biomarkers\nI provided senior statistical and bioinformatics leadership across Phase I and II clinical, cognitive, language, functional, safety, immunogenicity and biomarker analyses. This included protocol and SAP input, TLF development and review, longitudinal and exploratory modelling, reproducible reporting, and end-to-end analysis of phosphorylated tau, neurofilament light, proteomics, microRNA and other complex biomarker data."
+  },
+  {
+    "objectID": "research.html",
+    "href": "research.html",
+    "title": "Research & Publications",
+    "section": "",
+    "text": "My research connects statistical methodology with biomedical questions across clinical trials, neuroimmunology, neurodegeneration, biomarkers, omics, medical imaging and statistical shape analysis. I have contributed to more than 130 peer-reviewed publications. As of 7 October 2026, Scopus records 79 documents, 2,044 citations and an h-index of 23; the Web of Science Core Collection records 91 documents, 1,639 citations and an h-index of 21.\nExplore the thematic publication record → View my Scopus profile →\nThe unifying principle across this work is the disciplined construction of evidence. Scientific design, measurement, data validation, modelling, computation, software, visualization and interpretation are strongest when they form one coherent system. This perspective connects my methodological research with clinical and biological applications rather than treating them as separate tracks."
+  },
+  {
+    "objectID": "research.html#major-research-themes",
+    "href": "research.html#major-research-themes",
+    "title": "Research & Publications",
+    "section": "Major research themes",
+    "text": "Major research themes\n\n\nClinical and translational biostatistics\nStudy design, longitudinal analysis, survival outcomes, biomarkers, PK/PD, integrated evidence, missing data and publication-ready statistical reporting.\n\n\nNeuroimmunology and neurodegeneration\nLong-standing collaboration with an academic neuroimmunology research institute, including Alzheimer’s disease, tauopathies, animal models and translational biomarker studies.\n\n\nShape, image and signal analysis\nStatistical shape analysis, computational neuroanatomy, 2D/3D morphometrics, imaging, functional data, EEG/ECG and visualization of complex biological structures."
+  },
+  {
+    "objectID": "research.html#from-experimental-design-to-publication",
+    "href": "research.html#from-experimental-design-to-publication",
+    "title": "Research & Publications",
+    "section": "From experimental design to publication",
+    "text": "From experimental design to publication\nI design and analyse preclinical animal experiments and translational studies, including longitudinal and high-dimensional investigations. My contributions include methodological strategy, data validation, statistical modelling, visualization, interpretation, reproducible reporting and manuscript preparation.\nIn clinical research, I have written or reviewed statistical methods and results, contributed to study publications and worked with medical writers on public clinical-trial reporting."
+  },
+  {
+    "objectID": "research.html#representative-journals-by-research-area",
+    "href": "research.html#representative-journals-by-research-area",
+    "title": "Research & Publications",
+    "section": "Representative journals by research area",
+    "text": "Representative journals by research area\n\n\nClinical research, neuroscience and immunology\nThe Lancet Neurology · Nature Aging · Neurology · Alzheimer’s Research & Therapy · Journal of Alzheimer’s Disease · Journal for ImmunoTherapy of Cancer · Frontiers in Immunology · Frontiers in Aging Neuroscience · International Journal of Cardiology\n\n\nStatistical methodology\nJournal of the Royal Statistical Society: Series C (Applied Statistics) · The Annals of Applied Statistics · Computational Statistics & Data Analysis · Computational Statistics · Journal of Statistical Computation and Simulation\n\n\nShape analysis, medical imaging and human biology\nAmerican Journal of Physical Anthropology · American Journal of Medical Genetics Part A · Journal of Anatomy · International Journal of Oral and Maxillofacial Surgery · Psychiatry Research · Human Mutation\n\n\nBiological morphology, ecology and evolution\nJournal of Fish Biology · Hydrobiologia · Journal of Zoological Systematics and Evolutionary Research · Journal of Applied Ichthyology · General and Comparative Endocrinology"
+  },
+  {
+    "objectID": "research.html#research-profiles",
+    "href": "research.html#research-profiles",
+    "title": "Research & Publications",
+    "section": "Research profiles",
+    "text": "Research profiles\nPublications ORCID Scopus Web of Science"
+  },
+  {
+    "objectID": "research.html#selected-scientific-contributions",
+    "href": "research.html#selected-scientific-contributions",
+    "title": "Research & Publications",
+    "section": "Selected scientific contributions",
+    "text": "Selected scientific contributions\n\n\nTau immunotherapy and biomarkers\nClinical, cognitive, functional and biomarker analyses across Phase I and II tau-immunotherapy studies, including proteomics, microRNA, phosphorylated tau and neurofilament light.\n\n\nPreclinical and translational neuroimmunology\nExperimental design and analysis of animal and biomarker studies in Alzheimer’s disease, tau pathology and related neurodegenerative processes.\n\n\nCardiovascular publication workflow\nEnd-to-end analysis and manuscript contribution for a cardiovascular Phase IV study; manuscript submitted to The Lancet.\n\n\nStatistical methodology and software\nResearch and software contributions in circular statistics, statistical shape analysis, truncated-data methodology and EEG analysis."
+  },
+  {
+    "objectID": "interactive-examples.html",
+    "href": "interactive-examples.html",
+    "title": "Interactive Examples",
+    "section": "",
+    "text": "This gallery presents selected interactive and animated examples from my work in statistical methodology, biomedical visualization and teaching. Each example is designed to make a complex quantitative idea directly explorable."
+  },
+  {
+    "objectID": "interactive-examples.html#interactive-clinical-reporting-table",
+    "href": "interactive-examples.html#interactive-clinical-reporting-table",
+    "title": "Interactive Examples",
+    "section": "Interactive clinical reporting table",
+    "text": "Interactive clinical reporting table\n\n\n Synthetic baseline-characteristics table\nThis example demonstrates a user-facing clinical reporting table designed for efficient review. Search, display density and light/dark presentation can be changed directly in the table.\nThe example was rebuilt specifically for this public portfolio. Every label, group size and numerical value is simulated; it contains no study name, treatment identity, sponsor, therapeutic indication or patient data."
+  },
+  {
+    "objectID": "interactive-examples.html#interactive-adverse-event-summary",
+    "href": "interactive-examples.html#interactive-adverse-event-summary",
+    "title": "Interactive Examples",
+    "section": "Interactive adverse-event summary",
+    "text": "Interactive adverse-event summary\n\n\n Synthetic safety-review table\nThis example demonstrates a compact user-facing overview of adverse events, organized into occurrence, severity, serious outcomes and focused-review categories. Search, display density and light/dark presentation can be changed directly in the table.\nThe table was rebuilt specifically for this public portfolio. Every event definition, group size and numerical value is simulated; it contains no study name, treatment identity, sponsor, therapeutic indication, coding version or patient data."
+  },
+  {
+    "objectID": "interactive-examples.html#longitudinal-analysis-with-statistical-signals",
+    "href": "interactive-examples.html#longitudinal-analysis-with-statistical-signals",
+    "title": "Interactive Examples",
+    "section": "Longitudinal analysis with statistical signals",
+    "text": "Longitudinal analysis with statistical signals\n\n\n Synthetic visit-by-visit model table\nThis example combines observed values, change from baseline and repeated-measures model results across visits. The primary estimate in each descriptive cell is emphasized, while SD remains visually secondary.\nInferential signals are coordinated across the result: green identifies p-values below 0.05 and their corresponding confidence intervals; orange identifies p-values from 0.05 to below 0.10 and the related intervals. All outcomes, visits, group sizes and estimates are simulated."
+  },
+  {
+    "objectID": "interactive-examples.html#acceptance-checks-and-issue-traceability",
+    "href": "interactive-examples.html#acceptance-checks-and-issue-traceability",
+    "title": "Interactive Examples",
+    "section": "Acceptance checks and issue traceability",
+    "text": "Acceptance checks and issue traceability\n\n\n Synthetic acceptance-review matrix\nThis example shows how acceptance checks can connect each finding to its output, issue category, evidence, decision and required action. It brings numerical validation together with checks of populations, denominators, derivations, statistical presentation, specifications and reproducibility.\nThe issue patterns reflect realistic findings encountered during independent table and listing validation, but the output names, counts, values and wording have been rebuilt for this public portfolio. All content is synthetic and study-neutral; it contains no study, sponsor, treatment, indication or participant information."
+  },
+  {
+    "objectID": "interactive-examples.html#interactive-change-from-baseline-distributions",
+    "href": "interactive-examples.html#interactive-change-from-baseline-distributions",
+    "title": "Interactive Examples",
+    "section": "Interactive change-from-baseline distributions",
+    "text": "Interactive change-from-baseline distributions\n\n\n Synthetic patient-level violin plots\nThis example presents repeated patient-level change from baseline by visit and group. Stable synthetic subject identifiers connect observations across visits, correlated subject-specific effects create realistic within-person dependence, and monotone dropout reduces the later-visit sample sizes. The violin shapes show visit-specific distributions, with medians and interquartile ranges retained as precise visual anchors. One deliberately extreme synthetic value was inserted at Week 16 in Group A to demonstrate how an influential patient-level observation appears during graphical data review and affects a coordinated statistical summary.\nExplore individual values: hover over a point to inspect its synthetic subject identifier, group, visit and change from baseline. The yellow diamond identifies the intentionally inserted extreme review value; it is not an accidental simulation artefact. The dashed lines provide illustrative review limits. Every visit, identifier and value is simulated."
+  },
+  {
+    "objectID": "interactive-examples.html#mean-profile-with-95-confidence-intervals",
+    "href": "interactive-examples.html#mean-profile-with-95-confidence-intervals",
+    "title": "Interactive Examples",
+    "section": "Mean profile with 95% confidence intervals",
+    "text": "Mean profile with 95% confidence intervals\n\n\n Coordinated summary of the same synthetic data\nThe group-specific visit means and pointwise 95% confidence intervals below summarise exactly the same simulated patient-level records as the violin plots. The intentionally inserted extreme Week 16 value is retained in this calculation specifically to demonstrate its influence: the Group A mean is shifted and its confidence interval becomes substantially wider than at the surrounding visits. The individual value is not marked in this summary figure, because the purpose of this panel is to show its statistical consequence rather than repeat the patient-level symbol.\nThe intervals use the descriptive mean plus or minus 1.96 standard errors at each visit. They are not estimates from a longitudinal model; a formal repeated-measures analysis would additionally specify the estimand, covariance structure, missing-data assumptions and sensitivity analyses.\nExplore the estimates: hover over a marker to see the mean, 95% confidence interval and number of simulated observations at that visit."
+  },
+  {
+    "objectID": "interactive-examples.html#interactive-survival-curves",
+    "href": "interactive-examples.html#interactive-survival-curves",
+    "title": "Interactive Examples",
+    "section": "Interactive survival curves",
+    "text": "Interactive survival curves\n\n\n Synthetic time-to-event analysis\nThis example presents two Kaplan–Meier-style survival curves as separated step functions with stepwise 95% confidence bands and a corresponding numbers-at-risk table below.\nExplore across time: move over the plot to inspect the nearest failure or censoring time. Failures use the stronger Group A or Group B tone; censoring marks use the related lighter tone. Controls can hide the confidence bands or either marker type, and the figure follows the website’s light/dark theme.\nAll event times, censoring times, survival estimates, confidence intervals and risk counts are simulated."
+  },
+  {
+    "objectID": "interactive-examples.html#animated-survival-by-age-group-for-female-and-male-patients",
+    "href": "interactive-examples.html#animated-survival-by-age-group-for-female-and-male-patients",
+    "title": "Interactive Examples",
+    "section": "Animated survival by age group for female and male patients",
+    "text": "Animated survival by age group for female and male patients\n\n\n Dynamic subgroup views from an orthopaedic survival-analysis workflow\nThese coordinated animations show how Kaplan–Meier survival estimates and their confidence bands can be revealed sequentially across four age groups, separately for female and male patients. Both use the same primary-hip endpoint, time scale and graphical grammar, making the sex-specific age patterns directly comparable.\nThe examples illustrate reproducible survival reporting in which estimates, uncertainty, subgroup labels and follow-up time are generated consistently from an analytical workflow. Light and dark versions are synchronized automatically with the website theme.\n\n\n\nFemale patients — survival by age group\n \n\n\nMale patients — survival by age group\n \n\n\n\nHow to read the animations: each frame adds another age-group-specific survival curve and confidence band. The common axes support direct comparison of long-term implant survival across age groups and between the female and male patient populations."
+  },
+  {
+    "objectID": "interactive-examples.html#coloured-3d-nose-local-surface-shape",
+    "href": "interactive-examples.html#coloured-3d-nose-local-surface-shape",
+    "title": "Interactive Examples",
+    "section": "Coloured 3D nose: local surface shape",
+    "text": "Coloured 3D nose: local surface shape\n\n\nAn interactive example from my face3d R package\nThis example uses the packaged, de-identified facial template from face3d, an R package for three-dimensional facial morphometrics and statistical shape analysis. The nasal surface is coloured by shape index, which summarizes local surface form from concave through saddle-shaped to convex regions.\nThe mesh contains 1,317 unique surface points connected into 2,498 triangles, revealing the local surface structure in detail. Dark red lines show stored anatomical nasal curves, while teal points identify anatomical landmarks.\nExplore the model: drag to rotate, scroll or pinch to zoom, and use two fingers or the secondary mouse button to move the surface.\nView the public face3d repository →\n\n\n\n\n\n\n\n\n\n\n−1 · concave0 · saddle+1 · convex\n\n\nShape-index colour scale\n\n\n\nThe example illustrates how statistical computation, anatomical annotation and interactive graphics can be combined in a reproducible analytical workflow. Additional examples will be added selectively from my work in statistical inference, linear models, multivariate analysis and clinical visualization."
+  },
+  {
+    "objectID": "interactive-examples.html#triangulated-3d-signal-surface",
+    "href": "interactive-examples.html#triangulated-3d-signal-surface",
+    "title": "Interactive Examples",
+    "section": "Triangulated 3D signal surface",
+    "text": "Triangulated 3D signal surface\n\n\n An interactive example from my diegr R package\nThis example uses the de-identified high-density EEG example data included with diegr. The package constructs the complete triangulated HCGSN256 three-dimensional head mesh and interpolates the sensor-level signal directly across the curved scalp surface.\nThe head geometry preserves the three-dimensional sensor template using 2,602 mesh points connected into 5,009 triangles, while surface colour encodes the interpolated signal. The symmetric blue–white–red scale is generated by diegr::create_scale(): blue represents negative signal, white is centred at zero and red represents positive signal. The exterior is intentionally shown as a clean coloured surface; the triangulated grid is recessed just inside the scalp and becomes visible from the internal view.\nExplore the surface: drag to rotate, scroll or pinch to zoom, and use two fingers or the secondary mouse button to move it. Rotate beneath the open lower boundary to inspect the internal triangulation.\nView the public diegr repository →\n\n\n\n\n\n\n\n\n\n\nnegative signal0positive signal\n\n\nSymmetric signal colour scale"
+  },
+  {
+    "objectID": "interactive-examples.html#power-function-and-changing-density",
+    "href": "interactive-examples.html#power-function-and-changing-density",
+    "title": "Interactive Examples",
+    "section": "Power function and changing density",
+    "text": "Power function and changing density\n\n\n Original animation from my Statistical Inference book\nThese two continuously coordinated panels illustrate the exact power of a two-sided test for a normal mean with known variance.\n\nPower function: the red point moves continuously along the exact two-sided power curve as the true effect \\(\\mu-\\mu_0\\) changes.\nChanging density: the alternative normal density moves continuously relative to the fixed null distribution and critical boundaries. Its shaded volume in the rejection region changes simultaneously and is exactly the power shown on the left.\n\nThe animation connects two views of the same quantity: power as a function of the true effect and power as the probability of rejection under the corresponding alternative distribution.\n\n\n \n\n\nHow to read the animation: follow the red point on the power curve. At every position, the alternative density on the right changes continuously, and its shaded volume beyond the two orange critical values equals the power indicated by the point."
+  },
+  {
+    "objectID": "interactive-examples.html#detection-limits-and-mechanical-substitution",
+    "href": "interactive-examples.html#detection-limits-and-mechanical-substitution",
+    "title": "Interactive Examples",
+    "section": "Detection limits and mechanical substitution",
+    "text": "Detection limits and mechanical substitution\n\n\n An animated example based on my Statistical Inference book\nThis animation develops Example 7.38: Bias caused by mechanical handling of nondetects. Laboratory concentrations follow a lognormal distribution, and the detection limit moves continuously across the latent population.\n\nLatent concentration: the orange line is the current limit of detection (LoD). The red area contains values that would be reported only as nondetects; its probability grows as the LoD increases.\nMean estimation: the right panel follows the repeated-sampling distributions of the complete-data benchmark, detected values only, replacement of nondetects by zero, and replacement by LoD/2. The vertical reference line is the true population mean.\n\nThe animation makes the resulting bias visible. Detected values only systematically overestimate the mean, while substitution by zero or LoD/2 imposes artificial values and produces method-dependent distortion.\n\n\n \n\n\nKey message: a nondetect contains measurement-limit information. Depending on the assay and reporting rule, it may be left-censored, interval-censored or otherwise thresholded. It is not automatically zero, an ordinary missing value or one half of the detection limit."
+  },
+  {
+    "objectID": "interactive-examples.html#sequential-design-triangular-test",
+    "href": "interactive-examples.html#sequential-design-triangular-test",
+    "title": "Interactive Examples",
+    "section": "Sequential design: triangular test",
+    "text": "Sequential design: triangular test\n\n\n An illustrative patient-by-patient animation from my Statistical Inference book\nThis animation develops Example 25.4: Triangular test for a normal mean. Ten successive patient heights are monitored for \\(H_0:\\mu=180\\) against the one-sided alternative \\(H_1:\\mu\\geq185\\), using \\(\\alpha=0.01\\), \\(\\beta=0.10\\) and known variance \\(\\sigma^2=16\\).\n\nTriangular continuation region: the unequal stopping boundaries converge at a finite maximum information value. The accumulating path is shown in the information and score coordinates \\((v_n,z_n)\\).\nPatient-by-patient monitoring: each frame adds one patient, updates the cumulative mean and extends the evidence path. The highlighted point is the current analysis.\nStopping decision: the path remains inside the continuation region through patient 9 and crosses the upper boundary after patient 10, terminating the study in favour of the specified one-sided alternative.\n\nThe example makes the stopping rule part of the design: the decision depends on the complete monitored path and its prespecified boundaries, not on repeatedly applying an ordinary fixed-sample test.\n\n\n \n\n\nDesign result: continue after each of the first nine patients; stop after patient 10 when the score path crosses the upper boundary. If no earlier crossing occurred, the converging triangular boundaries would still guarantee termination at the maximum information value."
+  },
+  {
     "objectID": "leadership.html",
     "href": "leadership.html",
     "title": "Leadership & Teaching",
@@ -382,7 +424,7 @@
     "href": "leadership.html#teaching-themes",
     "title": "Leadership & Teaching",
     "section": "Teaching themes",
-    "text": "Teaching themes\nI teach statistics from mathematical foundations through study design, modelling and practical analysis. My principal teaching areas include:\n\n\nStatistical foundations\nStatistical inference, including estimation, hypothesis testing and the principles needed to select, apply and interpret statistical methods rigorously.\n\n\nDesign of studies\nStatistical design of scientific and clinical studies, connecting research questions, study populations, endpoints, sample-size considerations and analysis strategies.\n\n\nStatistical modelling\nLinear statistical models, from core model formulation and diagnostics to interpretation and application in biomedical and scientific research.\n\n\nSurvival analysis\nMethods for time-to-event data, including censoring, survival-function estimation, comparison of groups and regression modelling.\n\n\nMultivariate methods\nAnalysis and interpretation of multiple correlated outcomes and high-dimensional observations, including dimension reduction and classification-oriented methods.\n\n\nSpline smoothing\nFlexible modelling of nonlinear relationships and curves using spline-based smoothing methods, with emphasis on principled model choice and interpretation.\n\n\nThese subjects are complemented by teaching and mentoring in applied biostatistics, R programming, reproducible research, statistical shape and image analysis, data science and the clear communication of statistical evidence. I have supervised or co-supervised 118 theses across five European universities—17 PhD, 63 Master’s, 33 Bachelor’s and 5 RNDr.—and separately consulted on four Masaryk University theses. I have also completed 48 formal written thesis reviews across seven universities: 20 PhD, 24 Master’s, 2 RNDr. and 2 Bachelor’s theses. Formal reviewing is reported separately from committee membership and supervision.\nMy doctoral governance includes service on 33 documented PhD examination and dissertation-defence committees involving 29 doctoral students at Masaryk University, Palacký University, Charles University and Brno University of Technology."
+    "text": "Teaching themes\nI teach statistics from mathematical foundations through study design, modelling and practical analysis. My principal teaching areas include:\n\n\nStatistical foundations\nStatistical inference, including estimation, hypothesis testing and the principles needed to select, apply and interpret statistical methods rigorously.\n\n\nDesign of studies\nStatistical design of scientific and clinical studies, connecting research questions, study populations, endpoints, sample-size considerations and analysis strategies.\n\n\nStatistical modelling\nLinear statistical models, from core model formulation and diagnostics to interpretation and application in biomedical and scientific research.\n\n\nSurvival analysis\nMethods for time-to-event data, including censoring, survival-function estimation, comparison of groups and regression modelling.\n\n\nMultivariate methods\nAnalysis and interpretation of multiple correlated outcomes and high-dimensional observations, including dimension reduction and classification-oriented methods.\n\n\nSpline smoothing\nFlexible modelling of nonlinear relationships and curves using spline-based smoothing methods, with emphasis on principled model choice and interpretation.\n\n\nThese subjects are complemented by teaching and mentoring in applied biostatistics, R programming, reproducible research, statistical shape and image analysis, data science and the clear communication of statistical evidence. I have supervised or co-supervised 118 theses across five European universities—17 PhD, 63 Master’s, 33 Bachelor’s and 5 RNDr.—and separately consulted on four Masaryk University theses. I have also completed 48 formal written thesis reviews across seven universities: 20 PhD, 24 Master’s, 2 RNDr. and 2 Bachelor’s theses. Formal reviewing is reported separately from committee membership and supervision.\nRead my perspective on teaching mathematical and statistical sciences →\nMy doctoral governance includes service on 33 documented PhD examination and dissertation-defence committees involving 29 doctoral students at Masaryk University, Palacký University, Charles University and Brno University of Technology."
   },
   {
     "objectID": "leadership.html#collaboration",
